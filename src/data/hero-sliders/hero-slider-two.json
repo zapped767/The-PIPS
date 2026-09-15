@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Trade Smart. Grow Confident.",
+    "text": "At The Pips, we make trading simple, transparent, and rewarding, helping every beginner take confident steps in the financial markets.",
+    "image": "/images/home/hero-slide-1.png",
+    "url": "https://portal.thepips.com/login",
+    "external": true
+  },
+  {
+    "id": 2,
+    "title": "Real Markets. Real Results.",
+    "text": "Access live market data across Forex, Crypto, Stocks, and Commodities - all from one powerful platform built for serious traders.",
+    "image": "/images/home/hero-slide-2.png",
+    "url": "https://portal.thepips.com/login",
+    "external": true
+  },
+  {
+    "id": 3,
+    "title": "Start Small. Dream Big.",
+    "text": "Whether you're investing $50 or $50,000, The Pips gives you the tools, insights, and support to grow your wealth step by step.",
+    "image": "/images/home/hero-slide-3.png",
+    "url": "https://portal.thepips.com/login",
+    "external": true
+  },
+  {
+    "id": 4,
+    "title": "100% Bonus on Your First Deposit",
+    "text": "Plus 50% extra every time you top up.",
+    "image": "/images/home/hero-slide-4.png",
+    "url": "https://portal.thepips.com/login",
+    "external": true
+  }
+]

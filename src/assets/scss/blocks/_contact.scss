@@ -1,0 +1,562 @@
+.contact__title {
+  text-align: center;
+  perspective: 1000px;
+  perspective-origin: center;
+
+  h2 {
+    font-size: 36px;
+    margin-top: 48px;
+    color: #1752b4;
+  }
+
+  p {
+    padding: 0 20%;
+  }
+}
+
+.conact__area {
+  .container {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  }
+  .container-fluid {
+    margin-top: 120px;
+    margin-right: -15px;
+    margin-left: -15px;
+    background: #fafafa;
+  }
+}
+
+.single-contact-form {
+  margin-bottom: 22px;
+
+  span {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #03193d;
+  }
+
+  input {
+    width: 450px;
+    height: 45px;
+    padding: 0 20px;
+    border: 1px solid #97b4e5;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  textarea {
+    width: 450px;
+    min-height: 115px;
+    padding: 10px;
+    border: 1px solid #97b4e5;
+    border-radius: 5px;
+    outline: none;
+  }
+}
+
+.contact-btn {
+  margin-top: 30px;
+
+  button {
+    height: 40px;
+    padding: 0 40px;
+    transition: 0.5s;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background: #1752b4;
+
+    &:hover {
+      background: #f7a901;
+    }
+  }
+}
+
+.dg__contact__wrapper {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.google__map {
+  width: 100%;
+  height: 750px;
+  position: relative;
+}
+
+/* Contact Cards */
+
+.contact__cards {
+  margin-top: 60px;
+
+  .contact__card {
+    text-align: left;
+    background: #f3f6fb;
+    padding: 40px 20px;
+    margin: 0 15px;
+    height: 200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+
+    .icon {
+      font-size: 40px;
+      color: #1752b4;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #03193d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-header img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+}
+
+/* ================================
+   FLOATING IMAGE — BASE (Desktop)
+   ================================ */
+
+.floating-image-contact {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+
+  animation:
+    fadeInUp 1.4s ease-out forwards,
+    premiumFloat 4s ease-in-out infinite 1.4s,
+    glowPulse 3s ease-in-out infinite;
+
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+
+  &:hover {
+    transform: scale(1.08) translateY(-12px) rotateY(6deg);
+    filter: drop-shadow(0 35px 70px rgba(0, 123, 255, 0.45));
+  }
+}
+
+/* Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Smooth premium floating */
+@keyframes premiumFloat {
+  0% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotateX(3deg) rotateY(2deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(-2deg) rotateY(-2deg);
+  }
+  75% {
+    transform: translateY(-22px) rotateX(2deg) rotateY(3deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* Soft blue glow pulse */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 20px 40px rgba(0, 123, 255, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 25px 55px rgba(0, 123, 255, 0.35));
+  }
+  100% {
+    filter: drop-shadow(0 20px 40px rgba(0, 123, 255, 0.15));
+  }
+}
+
+/*-------------------
+    RESPONSIVE CSS
+--------------------*/
+
+/* 1920px and above */
+@media #{$sp-layout} {
+  .contact__cards .contact__card {
+    .card-header {
+      gap: 14px;
+    }
+    .card-header img {
+      width: 45px;
+      height: 45px;
+    }
+    h4 {
+      font-size: 1.35rem;
+    }
+  }
+
+  .contact__title h2 {
+    font-size: 42px;
+  }
+
+  .contact__title p {
+    padding: 0 25%;
+  }
+
+  .google__map {
+    height: 850px;
+  }
+
+  .floating-image-contact {
+    max-width: 700px;
+  }
+}
+
+/* 1600px - 1919px */
+@media #{$xx-layout} {
+  .contact__cards .contact__card {
+    .card-header {
+      gap: 12px;
+    }
+    .card-header img {
+      width: 42px;
+      height: 42px;
+    }
+    h4 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .contact__title p {
+    padding: 0 22%;
+  }
+
+  .google__map {
+    height: 800px;
+  }
+
+  .floating-image-contact {
+    max-width: 600px;
+  }
+}
+
+/* 1200px - 1599px */
+@media #{$xlg-layout} {
+  .contact__cards .contact__card {
+    .card-header {
+      gap: 10px;
+    }
+    .card-header img {
+      width: 38px;
+      height: 38px;
+    }
+    h4 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .contact__title p {
+    padding: 0 18%;
+  }
+
+  .google__map {
+    height: 700px;
+  }
+
+  .dg__contact__wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .floating-image-contact {
+    max-width: 480px;
+  }
+}
+
+/* 992px - 1199px */
+@media #{$lg-layout} {
+  .contact__cards .contact__card {
+    .card-header img {
+      width: 35px;
+      height: 35px;
+    }
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .contact__title p {
+    padding: 0 13%;
+    color: black;
+  }
+
+  .dg__contact__wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .floating-image-contact {
+    max-width: 420px;
+  }
+}
+
+/* 768px - 991px */
+@media #{$md-layout} {
+  .contact__cards .contact__card {
+    .card-header img {
+      width: 32px;
+      height: 32px;
+    }
+    h4 {
+      font-size: 1.15rem;
+    }
+  }
+
+  .dg__contact__wrapper {
+    padding: 40px 30px;
+  }
+
+  .contact__title img,
+  .floating-image-contact {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .contact__title p {
+    padding: 0 8%;
+    color: black;
+  }
+
+  .google__map {
+    height: 500px;
+    margin-right: 0;
+  }
+
+  .single-contact-form input,
+  .single-contact-form textarea {
+    width: 100%;
+  }
+
+  .conact__area .container-fluid {
+    margin: 44px 0 0 0;
+  }
+
+  /* Reduce float distance on tablet */
+  @keyframes premiumFloat {
+    0% {
+      transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+      transform: translateY(-12px) rotateX(2deg) rotateY(1deg);
+    }
+    50% {
+      transform: translateY(-5px) rotateX(-1deg) rotateY(-1deg);
+    }
+    75% {
+      transform: translateY(-14px) rotateX(1deg) rotateY(2deg);
+    }
+    100% {
+      transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+  }
+}
+
+/* ≤767px */
+@media #{$sm-layout} {
+  .contact__cards .contact__card {
+    text-align: center;
+
+    .card-header {
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-header img {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+  }
+
+  .contact__title img,
+  .floating-image-contact {
+    width: 100%;
+    max-width: 300px;
+    /* Tone down 3D on small screens — rotateY can cause clipping */
+    animation:
+      fadeInUp 1.4s ease-out forwards,
+      premiumFloatMobile 4s ease-in-out infinite 1.4s,
+      glowPulse 3s ease-in-out infinite;
+
+    &:hover {
+      transform: scale(1.05) translateY(-8px);
+    }
+  }
+
+  .contact__title p {
+    padding: 0;
+    color: black;
+  }
+
+  .google__map {
+    height: 300px;
+    margin-right: 0;
+  }
+
+  .dg__contact__wrapper {
+    padding: 40px 20px;
+  }
+
+  .single-contact-form input,
+  .single-contact-form textarea {
+    width: 100%;
+  }
+
+  .conact__area .container-fluid {
+    margin: 44px 0 0 0;
+  }
+
+  .contact__title h2 {
+    font-size: 24px;
+    margin-bottom: 19px;
+  }
+}
+
+/* ≤575px */
+@media #{$xs-layout} {
+  .contact__cards .contact__card {
+    text-align: center;
+    padding: 25px 15px;
+    height: auto;
+
+    .card-header img {
+      width: 28px;
+      height: 28px;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
+  }
+
+  .google__map {
+    height: 260px;
+  }
+
+  .single-contact-form span {
+    margin-bottom: 10px;
+  }
+
+  .floating-image-contact {
+    max-width: 260px;
+  }
+}
+
+/* ≤420px */
+@media #{$xxs-layout} {
+  .contact__cards .contact__card {
+    .card-header img {
+      width: 26px;
+      height: 26px;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+    }
+  }
+
+  .contact__title h2 {
+    font-size: 20px;
+  }
+
+  .contact-btn button {
+    width: 100%;
+  }
+
+  .single-contact-form input,
+  .single-contact-form textarea {
+    font-size: 14px;
+  }
+
+  .floating-image-contact {
+    max-width: 220px;
+    /* Disable 3D rotation completely on very small screens */
+    animation:
+      fadeInUp 1.4s ease-out forwards,
+      premiumFloatMobile 4s ease-in-out infinite 1.4s,
+      glowPulse 3s ease-in-out infinite;
+
+    &:hover {
+      transform: scale(1.04) translateY(-6px);
+    }
+  }
+}
+
+/* Mobile-safe float — no rotateX/rotateY to prevent overflow/clipping */
+@keyframes premiumFloatMobile {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  75% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

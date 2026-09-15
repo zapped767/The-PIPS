@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+    "symbol": "Bitcoin (BTC)",
+    "price": 8003.77,
+    "volume": 8919790000,
+    "percent": -8.03
+  },
+  {
+    "id": "2",
+    "image": "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+    "symbol": "Ethereum (ETH)",
+    "price": 799.77,
+    "volume": 3401300000,
+    "percent": -15.59
+  },
+  {
+    "id": "3",
+    "image": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
+    "symbol": "Ripple (XRP)",
+    "price": 8003.77,
+    "volume": 8919790000,
+    "percent": -8.03
+  },
+  {
+    "id": "4",
+    "image": "https://assets.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png",
+    "symbol": "Bitcoin Cash (BCH)",
+    "price": 799.77,
+    "volume": 3401300000,
+    "percent": -15.59
+  },
+  {
+    "id": "5",
+    "image": "https://assets.coingecko.com/coins/images/975/large/cardano.png",
+    "symbol": "Cardano (ADA)",
+    "price": 8003.77,
+    "volume": 8919790000,
+    "percent": -8.03
+  },
+  {
+    "id": "6",
+    "image": "https://assets.coingecko.com/coins/images/2/large/litecoin.png",
+    "symbol": "Litecoin (LTC)",
+    "price": 799.77,
+    "volume": 3401300000,
+    "percent": -15.59
+  },
+  {
+    "id": "7",
+    "image": "https://assets.coingecko.com/coins/images/100/large/stellar.png",
+    "symbol": "Stellar (XML)",
+    "price": 8003.77,
+    "volume": 8919790000,
+    "percent": -8.03
+  },
+  {
+    "id": "8",
+    "image": "https://assets.coingecko.com/coins/images/692/large/IOTA_Swirl.png",
+    "symbol": "IOTA (MIOTA)",
+    "price": 799.77,
+    "volume": 3401300000,
+    "percent": -15.59
+  }
+]

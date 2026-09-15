@@ -1,0 +1,919 @@
+/* ===============================
+   NAVIGATION STYLES
+=================================*/
+
+/* -------- Base Header -------- */
+.header--absolute {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0;
+  left: 0;
+
+  width: 100%;
+  height: 104px !important;
+  min-height: 104px !important;
+
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  background-color: #ffffff !important;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+
+  box-sizing: border-box;
+
+  &.stick {
+    position: fixed !important;
+    top: 0 !important;
+
+    width: 100%;
+    height: 104px !important;
+    min-height: 104px !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    background-color: #ffffff !important;
+
+    display: flex;
+    align-items: center;
+
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+/* Keep navbar inner content same height before/after scroll */
+.header--absolute .container-fluid,
+.header--absolute.stick .container-fluid {
+  height: 100%;
+}
+
+.header--absolute .dg__header,
+.header--absolute.stick .dg__header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  padding: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo a .logo-img {
+  width: auto !important;
+  max-height: 72px !important;
+  margin: 0 !important;
+}
+
+/* -------- Main Menu -------- */
+.mainmenu__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mainmenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  // transform: translateX(-50px);
+
+  li {
+    margin: 0 21px;
+    line-height: 42px;
+
+    a {
+      font-family: "Poppins";
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #000000;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #1752b4;
+      }
+    }
+
+    /* Dropdown */
+    &.drop {
+      position: relative;
+
+      ul.dropdown {
+        position: absolute;
+        top: 107%;
+        left: 0;
+        width: 250px;
+        padding: 12px 0;
+        opacity: 0;
+        visibility: hidden;
+        background: #fff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+
+        li {
+          margin: 0;
+          padding: 0 14px;
+          line-height: 29px;
+
+          a {
+            font-weight: 600;
+            line-height: 29px;
+            text-transform: capitalize;
+            color: #444;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: #1752b4;
+              padding-left: 3px;
+            }
+          }
+        }
+      }
+
+      &:hover ul.dropdown {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+/* default (dark text) */
+.dark-menu .mainmenu li a {
+  color: #000000;
+}
+
+/* when URL starts with /about → white text */
+.white-menu .mainmenu li a {
+  color: #ffffff;
+}
+
+/* hover colors can stay consistent or change too */
+.white-menu .mainmenu li a:hover {
+  color: #cccccc; /* light gray hover for contrast */
+}
+
+/* -------- Account Buttons -------- */
+.dg__header {
+  .accounts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+
+      a {
+        font-family: "Poppins";
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.space-right-left {
+    padding: 0 217px;
+  }
+}
+
+/* LOGIN BUTTON */
+.header-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;
+  height: 40px;
+  padding: 0 24px;
+
+  background-color: #f2f3f5;
+  border: 1.5px solid #012d65;
+  border-radius: 4px;
+
+  color: #012d65 !important;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #012d65;
+    border-color: #012d65;
+    color: #ffffff !important;
+  }
+}
+
+/* SIGN IN BUTTON */
+.header-signin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;
+  height: 40px;
+  padding: 0 24px;
+
+  background-color: #012d65;
+  border: 1.5px solid #012d65;
+  border-radius: 4px;
+
+  color: #ffffff !important;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ffffff;
+    border-color: #012d65;
+    color: #012d65 !important;
+  }
+}
+
+/* ===============================
+   RESPONSIVE STYLES
+=================================*/
+
+/* ---------- Super Large (≥1920px) ---------- */
+@media #{$sp-layout} {
+  .dg__header.space-right-left {
+    padding: 0 260px;
+  }
+  .dg__header.space-right-left-header--white {
+    padding: 0 80px;
+    background: white;
+    top: 0px;
+  }
+}
+
+/* ---------- Extra Extra Large (1600–1919px) ---------- */
+@media #{$xx-layout} {
+  .dg__header.space-right-left {
+    padding: 0 100px;
+  }
+
+  .dg__header.space-right-left-header--white {
+    padding: 0 80px;
+    background: white;
+    top: 0px;
+  }
+}
+
+/* ---------- Extra Large (1200–1599px) ---------- */
+@media #{$xlg-layout} {
+  .dg__header.space-right-left {
+    padding: 0 20px;
+  }
+
+  .dg__header.space-right-left-header--white {
+    padding: 0 20px;
+    background: white;
+    top: 0px;
+  }
+
+  .dg__header .accounts li.active a {
+    padding: 0 24px;
+  }
+
+  .dg__header .accounts li + li {
+    margin-left: 18px;
+  }
+}
+
+/* ---------- Large (992–1199px) ---------- */
+// @media #{$lg-layout} {
+//   .dg__header.space-right-left {
+//     padding: 0 30px;
+//   }
+
+//   .header--absolute .container-fluid {
+//     position: relative;
+//     z-index: 99;
+//   }
+
+//   .mean-container {
+//     position: absolute;
+//     top: -9px;
+//     right: 24px;
+//     width: 93%;
+//   }
+
+//   .mean-container a.meanmenu-reveal {
+//     padding: 0;
+//   }
+// }
+
+@media #{$lg-layout} {
+  .header--absolute {
+    background: white;
+  }
+  .mainmenu__nav {
+    display: none;
+  }
+
+  .dg__header.space-right-left {
+    padding: 0 40px;
+  }
+
+  .mainmenu li {
+    margin: 0 14px;
+    display: none;
+  }
+
+  .dg__header .accounts li.active a {
+    padding: 0 14px;
+    display: none;
+  }
+  .dg__header .accounts li a {
+    display: none;
+  }
+
+  .dg__header .accounts li + li {
+    margin-left: 11px;
+    display: none;
+  }
+
+  .logo a img {
+    width: 100%;
+  }
+}
+
+/* ---------- Medium (768–991px) ---------- */
+@media #{$md-layout} {
+  .header--absolute {
+    background: white;
+  }
+  .dg__header.space-right-left {
+    padding: 0 30px;
+  }
+
+  .header--absolute .container-fluid {
+    position: relative;
+    z-index: 99;
+  }
+
+  .mean-container {
+    position: absolute;
+    top: -9px;
+    right: 24px;
+    width: 93%;
+  }
+
+  .mean-container a.meanmenu-reveal {
+    padding: 0;
+  }
+}
+
+/* ---------- Small (≤767px) ---------- */
+@media #{$sm-layout} {
+  .header--absolute {
+    background: white;
+  }
+  .dg__header.space-right-left {
+    padding: 0 30px;
+  }
+
+  .header--absolute .container-fluid {
+    position: relative;
+    z-index: 99;
+  }
+
+  .mean-container {
+    position: absolute;
+    top: -9px;
+    right: 24px;
+    width: 93%;
+  }
+
+  .mean-container a.meanmenu-reveal {
+    padding: 0;
+  }
+
+  .mainmenu {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Extra Small (≤575px) ---------- */
+@media #{$xs-layout} {
+  .header--absolute {
+    background: white;
+  }
+  .dg__header .accounts {
+    justify-content: flex-start;
+  }
+
+  .dg__header .accounts li.active a {
+    height: 41px;
+    line-height: 37px;
+    padding: 0 36px;
+  }
+
+  .mean-container {
+    top: 48px;
+    width: 81%;
+  }
+}
+
+/* ---------- Extra Extra Small (≤420px) ---------- */
+@media #{$xxs-layout} {
+  .header--absolute {
+    background: white;
+  }
+  .dg__header .accounts {
+    justify-content: flex-start;
+  }
+
+  .dg__header .accounts li.active a {
+    padding: 0 30px;
+  }
+
+  .mean-container {
+    top: 48px;
+    width: 81%;
+  }
+}
+
+/* Container for the language selector to allow positioning the dropdown */
+.language-selector-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Adjust padding/margin as needed for your layout */
+}
+
+/* Button that triggers the dropdown */
+.language-selector-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: #333; /* Dark text color */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.language-selector-button:hover {
+  color: #012d65; /* Example hover color */
+}
+
+.globe-icon {
+  font-size: 28px; /* Matching the size from the original component */
+  margin-right: 5px;
+}
+
+.lang-text {
+  /* No additional styles needed, inherits from button */
+}
+
+/* Dropdown Menu Styles */
+.language-dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position right below the button */
+  right: 0; /* Align to the right edge of the button/wrapper */
+  z-index: 1000; /* Ensure it appears above other elements */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  margin-top: 5px; /* Small gap between button and dropdown */
+  padding: 5px 0;
+}
+
+.language-dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.language-dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style for the currently selected language */
+.language-dropdown-menu button.active {
+  background-color: #e9ecef; /* Light gray background for active item */
+  font-weight: bold;
+  color: #012d65; /* Highlight color for active item */
+}
+/* Hero starts below fixed navbar */
+.dg__slider__area.slider--2 {
+  margin-top: 108px;
+}
+
+@media (max-width: 991px) {
+  .dg__slider__area.slider--2 {
+    margin-top: 90px;
+  }
+}
+/* =========================================
+   MOBILE NAVBAR FIX
+========================================= */
+@media (max-width: 767px) {
+  .header--absolute,
+  .header--absolute.stick {
+    height: 64px !important;
+    min-height: 64px !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    background: #012d65 !important;
+
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .header--absolute .container-fluid,
+  .header--absolute.stick .container-fluid {
+    width: 100%;
+    height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .header--absolute .dg__header,
+  .header--absolute.stick .dg__header {
+    width: 100%;
+    height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Remove desktop movement */
+  .header--absolute .logo,
+  .header--absolute .mainmenu__nav,
+  .header--absolute .header-btn-wrapper {
+    transform: none !important;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .logo a {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo a img {
+    width: auto !important;
+    max-height: 44px !important;
+    margin: 0 !important;
+  }
+
+  /* Right side */
+  .header-btn-wrapper {
+    height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hamburger wrapper */
+  .mobile-button-wrapper {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: auto !important;
+    height: 64px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hamburger button */
+  .mobile-aside-button {
+    width: 40px !important;
+    height: 40px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+
+    color: #ffffff !important;
+
+    line-height: 1 !important;
+  }
+
+  .mobile-aside-button svg {
+    width: 27px !important;
+    height: 27px !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
+
+  /* Hero starts immediately after navbar */
+  .dg__slider__area.slider--2 {
+    margin-top: 64px !important;
+  }
+}
+
+/* Desktop only - move navbar content slightly down */
+@media (min-width: 768px) {
+  .header--absolute .logo,
+  .header--absolute .mainmenu__nav,
+  .header--absolute .header-btn-wrapper {
+    transform: translateY(10px);
+  }
+}
+/* MOBILE LOGO SIZE - FINAL OVERRIDE */
+@media (max-width: 767px) {
+  .header--absolute .logo a picture,
+  .header--absolute.stick .logo a picture {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .header--absolute .logo a picture img,
+  .header--absolute.stick .logo a picture img {
+    width: 90px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+}
+
+/* =========================================
+   MOBILE MENU - LOGIN / CONTACT
+========================================= */
+
+@media (max-width: 767px) {
+  .mobile-widget-area {
+    width: 100%;
+    padding: 0 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    color: #012d65;
+  }
+  .mobile-account-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .mobile-widget-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    color: #012d65 !important;
+
+    font-family: "Poppins";
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none !important;
+  }
+
+  .mobile-widget-item svg {
+    flex-shrink: 0;
+
+    color: #012d65 !important;
+    stroke: #012d65 !important;
+  }
+
+  /* ==============================
+     LOGIN POSITION
+  ============================== */
+
+  .mobile-login-item {
+    left: 0px;
+    top: 0px;
+  }
+
+  /* ==============================
+     SIGN IN POSITION
+  ============================== */
+
+  .mobile-signin-item {
+    left: 0px;
+    top: 0px;
+  }
+
+  /* ==============================
+     CONTACT POSITION
+  ============================== */
+
+  .mobile-contact-item {
+    left: 0px;
+    top: 0px;
+  }
+
+  /* ==============================
+     EMAIL POSITION
+  ============================== */
+
+  .mobile-email-item {
+    left: 0px;
+    top: 0px;
+  }
+
+  /* Contact / Email text row */
+
+  .mobile-widget-row {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+  }
+
+  .mobile-widget-label {
+    color: #012d65;
+    font-weight: 600;
+  }
+
+  .mobile-widget-value {
+    color: #012d65;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap !important;
+  }
+}
+/* =========================================
+   NEVER SHOW MOBILE MENU ON DESKTOP
+========================================= */
+@media (min-width: 1200px) {
+  #offcanvas-mobile-menu,
+  #offcanvas-mobile-menu.active,
+  .offcanvas-mobile-menu,
+  .offcanvas-mobile-menu.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-button-wrapper {
+    display: none !important;
+  }
+}
+/* =========================================
+   DESKTOP NAVBAR - GLASS → WHITE ON SCROLL
+========================================= */
+@media (min-width: 1200px) {
+  /* BEFORE SCROLL */
+  .header--absolute {
+    height: 76px !important;
+    min-height: 76px !important;
+
+    background: rgba(255, 255, 255, 0.28) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: none !important;
+
+    transition:
+      height 0.3s ease,
+      min-height 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease !important;
+  }
+
+  /* AFTER SCROLL */
+  .header--absolute.stick {
+    height: 76px !important;
+    min-height: 76px !important;
+
+    background: #ffffff !important;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+
+    transition:
+      height 0.3s ease,
+      min-height 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease !important;
+  }
+
+  /* Keep content vertically centered */
+  .header--absolute .container-fluid,
+  .header--absolute.stick .container-fluid,
+  .header--absolute .dg__header,
+  .header--absolute.stick .dg__header {
+    height: 100% !important;
+  }
+
+  /* Normal logo size */
+  .header--absolute .logo a .logo-img {
+    max-height: 62px !important;
+
+    transition: max-height 0.3s ease !important;
+  }
+
+  /* Smaller logo after scroll */
+  .header--absolute.stick .logo a .logo-img {
+    max-height: 52px !important;
+  }
+
+  /* Stop old translateY from affecting alignment */
+  .header--absolute .logo,
+  .header--absolute .mainmenu__nav,
+  .header--absolute .header-btn-wrapper {
+    transform: translateY(3px) !important;
+  }
+
+  .header--absolute.stick .logo,
+  .header--absolute.stick .mainmenu__nav,
+  .header--absolute.stick .header-btn-wrapper {
+    transform: translateY(0px) !important;
+  }
+
+  /* Hero goes underneath transparent navbar */
+  .dg__slider__area.slider--2 {
+    margin-top: 0 !important;
+  }
+}
+/* =========================================
+   BUTTON YELLOW HOVER
+========================================= */
+
+/* LOGIN */
+.header-login-btn:hover {
+  background-color: #f7a901 !important;
+  border-color: #f7a901 !important;
+  color: #ffffff !important;
+}
+
+/* SIGN IN */
+.header-signin-btn:hover {
+  background-color: #f7a901 !important;
+  border-color: #f7a901 !important;
+  color: #ffffff !important;
+}

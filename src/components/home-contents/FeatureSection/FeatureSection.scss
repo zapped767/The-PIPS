@@ -1,0 +1,183 @@
+/* =========================================================
+   TOP 3 PREMIUM FEATURES
+========================================================= */
+
+.premium-feature-section {
+  width: 100%;
+
+  /*
+    TOP | LEFT/RIGHT | BOTTOM
+
+    Reduce 10px more if you want less gap.
+  */
+  padding:
+    25px
+    7%
+    10px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+}
+
+
+.premium-feature-container {
+  width: 100%;
+
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border:
+    3px solid
+    #5677b9;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   EACH FEATURE
+========================================================= */
+
+.premium-feature-item {
+  position: relative;
+
+  min-height: 135px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  padding: 25px;
+
+background: #e3e3e3;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+/* SEPARATOR */
+
+.premium-feature-item:not(:last-child) {
+  border-right:
+    1px solid
+    #e5eaf0;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.premium-feature-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #012d65;
+
+  background:
+    rgba(1, 45, 101, 0.06);
+
+  border-radius: 50%;
+
+  transition:
+    all 0.3s ease;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.premium-feature-item h3 {
+  margin: 0;
+
+  color: #012d65;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  text-shadow: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.premium-feature-item:hover {
+  background: #f8fbfe;
+}
+
+
+.premium-feature-item:hover
+.premium-feature-icon {
+  color: #ffffff;
+
+  background: #012d65;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .premium-feature-section {
+    padding:
+      20px;
+  }
+
+
+  .premium-feature-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .premium-feature-item {
+    min-height: 115px;
+  }
+
+
+  .premium-feature-item:not(:last-child) {
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      #e5eaf0;
+  }
+}

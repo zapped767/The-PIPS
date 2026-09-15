@@ -1,0 +1,747 @@
+/* =========================================================
+   COMPLETE SECTION
+========================================================= */
+
+.quality-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   PART 1 - BLUE HEADER SECTION
+========================================================= */
+
+.quality-header-section {
+  width: 100%;
+
+  background: #012d65;
+
+  /* TOP | LEFT/RIGHT | BOTTOM */
+  padding: 35px 7% 55px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER LAYOUT
+========================================================= */
+
+.quality-header-layout {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+/* =========================================================
+   LEFT HEADER CONTENT
+========================================================= */
+
+.quality-header-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 640px;
+
+  text-align: left;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   TRADE WITH CONFIDENCE
+========================================================= */
+
+.quality-header-content h2 {
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: 64px;
+
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  text-shadow: none;
+}
+
+
+/* YELLOW "TRADE" */
+
+.trade-yellow {
+  color: #f7a901;
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.quality-header-content p {
+  margin: 0;
+
+  max-width: 560px;
+
+  color: #d9e3ef;
+
+  font-size: 20px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+
+  text-shadow: none;
+}
+
+
+/* =========================================================
+   RIGHT SIDE LARGE PIPS
+========================================================= */
+
+.quality-header-watermark {
+  position: relative;
+
+  flex-shrink: 0;
+
+  /* MANUAL PIPS SIZE */
+  font-size: 180px;
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: 4px;
+
+  color: rgba(255, 255, 255, 0.12);
+
+  text-transform: uppercase;
+
+  user-select: none;
+
+
+  /* =========================================
+     MANUAL UP / DOWN
+     + = DOWN
+     - = UP
+  ========================================== */
+
+  top: 60px;
+}
+
+
+/* =========================================================
+   PART 2 - WHITE CARDS SECTION
+========================================================= */
+
+.quality-cards-section {
+  width: 100%;
+
+  background: #ffffff;
+
+  padding: 65px 20px 80px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.quality-grid {
+  width: 100%;
+
+  max-width: 1320px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  /* CARD WIDTH STAYS 400PX */
+  grid-template-columns:
+    repeat(3, 400px);
+
+  justify-content: center;
+
+  /* ROW | COLUMN */
+  gap: 28px 28px;
+}
+
+
+/* =========================================================
+   CARD
+   SIZE NOT CHANGED
+========================================================= */
+
+.quality-premium-card {
+  position: relative;
+
+  /* =========================================
+     CARD SIZE
+     KEEPING YOUR CURRENT SIZE
+  ========================================== */
+
+  width: 350px;
+  height: 250px;
+
+
+  overflow: hidden;
+
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+
+  padding: 32px;
+
+
+  /* BEFORE HOVER */
+
+  background: #ffffff;
+
+
+  /* BLUE BORDER */
+
+  border:
+    2px solid
+    #012d65;
+
+
+  border-radius: 24px;
+
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  isolation: isolate;
+
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER WATER FILL
+
+   START:
+   BOTTOM LEFT
+
+   MOVE:
+   TOWARDS RIGHT TOP
+========================================================= */
+
+.quality-premium-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+
+  /* =========================================
+     HOVER GRAY COLOR
+  ========================================== */
+
+background:
+  linear-gradient(
+    135deg,
+    
+    
+    #012d65 100%
+  );
+
+
+  /* =========================================
+     START FROM BOTTOM LEFT
+  ========================================== */
+
+  clip-path:
+    circle(
+      0%
+      at
+      0%
+      100%
+    );
+
+
+  transition:
+    clip-path
+    0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   COMPLETE FILL
+========================================================= */
+
+.quality-premium-card:hover::before {
+  clip-path:
+    circle(
+      150%
+      at
+      0%
+      100%
+    );
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.quality-premium-card:hover {
+  border-color: #012d65;
+
+  box-shadow:
+    0 18px 38px
+    rgba(1, 45, 101, 0.18);
+}
+
+
+/* =========================================================
+   NORMAL CONTENT
+========================================================= */
+
+.quality-normal-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+
+  opacity: 1;
+
+  visibility: visible;
+
+
+  transition:
+    opacity 0.20s ease,
+    visibility 0.20s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.quality-card-icon {
+  width: 68px;
+  height: 68px;
+
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+
+  margin-bottom: 22px;
+
+
+  background: #ffffff;
+
+
+  border:
+    2px solid
+    #012d65;
+
+
+  border-radius: 18px;
+
+
+  color: #012d65;
+
+  font-size: 27px;
+
+
+  /* NO ROTATION */
+
+  transform: none;
+}
+
+
+/* ICON SVG */
+
+.quality-card-icon svg {
+  width: 28px;
+  height: 28px;
+
+  color: #012d65;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ONE LINE
+========================================================= */
+
+.quality-premium-card h3 {
+  margin: 0;
+
+  color: #012d65;
+
+
+  /* MANUAL FONT SIZE */
+  font-size: 21px;
+
+
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  text-align: center;
+
+
+  /* FORCE ONE LINE */
+
+  white-space: nowrap;
+
+
+  text-shadow: none;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SMALL BLUE LINE
+========================================================= */
+
+.quality-card-line {
+  width: 46px;
+
+  height: 2px;
+
+  margin-top: 16px;
+
+  background: #012d65;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   WHEN HOVER
+
+   HIDE:
+   ICON
+   TITLE
+   LINE
+========================================================= */
+
+.quality-premium-card:hover
+.quality-normal-content {
+  opacity: 0;
+
+  visibility: hidden;
+}
+
+
+/* =========================================================
+   HOVER DESCRIPTION
+   HIDDEN BEFORE HOVER
+========================================================= */
+
+.quality-hover-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 5;
+
+
+  width:
+    calc(100% - 70px);
+
+  max-width: 320px;
+
+
+  opacity: 0;
+
+  visibility: hidden;
+
+
+  text-align: center;
+
+
+  transform:
+    translate(
+      -50%,
+      -42%
+    );
+
+
+  transition:
+    opacity 0.30s ease 0.18s,
+    transform 0.35s ease 0.18s,
+    visibility 0.30s ease 0.18s;
+}
+
+
+/* =========================================================
+   SHOW DESCRIPTION ON HOVER
+========================================================= */
+
+.quality-premium-card:hover
+.quality-hover-content {
+  opacity: 1;
+
+  visibility: visible;
+
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+
+/* =========================================================
+   HOVER DESCRIPTION TEXT
+========================================================= */
+
+.quality-hover-content p {
+  margin: 0;
+
+  color: #ffffff;
+
+
+  /* MANUAL DESCRIPTION SIZE */
+  font-size: 17px;
+
+
+  line-height: 1.8;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  text-shadow: none;
+}
+
+
+/* =========================================================
+   REMOVE SEE MORE
+========================================================= */
+
+.quality-card-more {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TABLET LARGE
+========================================================= */
+
+@media (max-width: 1300px) {
+
+  .quality-grid {
+    grid-template-columns:
+      repeat(2, 400px);
+  }
+
+
+  .quality-header-content h2 {
+    font-size: 54px;
+  }
+
+
+  .quality-header-watermark {
+    font-size: 130px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .quality-header-section {
+    padding:
+      70px
+      20px;
+  }
+
+
+  .quality-header-layout {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .quality-header-content h2 {
+    font-size: 44px;
+  }
+
+
+  .quality-header-content p {
+    font-size: 18px;
+  }
+
+
+  .quality-header-watermark {
+    font-size: 110px;
+
+    align-self: flex-end;
+
+    top: 20px;
+  }
+
+
+  .quality-grid {
+    grid-template-columns:
+      repeat(2, 400px);
+
+    gap: 24px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* BLUE HEADER */
+
+  .quality-header-section {
+    padding:
+      50px
+      18px
+      45px;
+  }
+
+
+  .quality-header-content h2 {
+    font-size: 32px;
+  }
+
+
+  .quality-header-content p {
+    font-size: 15px;
+  }
+
+
+  .quality-header-watermark {
+    font-size: 64px;
+
+    align-self: flex-end;
+
+    top: 10px;
+  }
+
+
+  /* WHITE CARDS */
+
+  .quality-cards-section {
+    padding:
+      45px
+      16px
+      55px;
+  }
+
+
+  .quality-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .quality-premium-card {
+    width: 100%;
+
+    height: 265px;
+
+    padding:
+      25px
+      20px;
+  }
+
+
+  .quality-card-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .quality-card-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .quality-premium-card h3 {
+    font-size: 18px;
+
+    white-space: nowrap;
+  }
+
+
+  .quality-hover-content {
+    width:
+      calc(100% - 50px);
+  }
+
+
+  .quality-hover-content p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+}

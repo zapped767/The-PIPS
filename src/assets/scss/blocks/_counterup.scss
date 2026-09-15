@@ -1,0 +1,166 @@
+/*---------------------------------------------
+    Counterup Styles (Cleaned & Aligned)
+---------------------------------------------*/
+
+.counterup__wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.counterup__list {
+  text-align: center;
+}
+
+/* Base Styles for the Counter Number (h6) */
+.counterup__list h6 {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 70px;
+  /* FIX: Center the number text itself */
+  text-align: center; 
+  position: relative;
+  text-transform: capitalize;
+  color: #065292; /* Blue color */
+}
+
+/* Base Styles for the Counter Number Underline (::before) */
+.counterup__list h6::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  height: 1px;
+  content: "";
+  background-color: #065292; /* Assuming line color matches h6 color */
+  transition: all 0.5s ease 0s;
+  /* Ensures the line is perfectly centered beneath the text */
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+/* Base Styles for the Counter Title/Description (p) */
+.counterup__list p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 700;
+  /* FIX: Center the descriptive text */
+  text-align: center; 
+  color: #000000;
+}
+
+/* Hover Effect for the Underline */
+.counterup__list:hover h6::before {
+  width: 40px;
+}
+
+/*
+|------------------------------------------------
+| Responsive Css using defined layouts
+|------------------------------------------------
+| $sp-layout: min-width: 1920px
+| $xx-layout: 1600px - 1919px
+| $xlg-layout: 1200px - 1599px
+| $lg-layout: 992px - 1199px
+| $md-layout: 768px - 991px
+| $sm-layout: max-width: 767px
+| $xs-layout: max-width: 575px
+| $xxs-layout: max-width: 420px
+*/
+
+/* 1. Super Large Display (min-width: 1920px) */
+@media only screen and (min-width: 1920px) {
+  .counterup__list h6 {
+    font-size: 48px; 
+  }
+}
+
+/* 2. Extra Extra Large (1600px - 1919px) */
+@media only screen and (min-width: 1600px) and (max-width: 1919px) {
+  .counterup__list h6 {
+    font-size: 42px;
+  }
+}
+
+/* 3. Extra Large (1200px - 1599px) */
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .counterup__list h6 {
+    font-size: 38px;
+    line-height: 60px;
+  }
+}
+
+/* 4. Large Layout (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .counterup__list h6 {
+    font-size: 32px;
+    line-height: 60px;
+  }
+  .counterup__list p {
+    font-size: 18px;
+  }
+}
+
+/* 5. Medium Layout (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .counterup__wrapper {
+    padding: 40px 0;
+  }
+  .counterup__list h6 {
+    font-size: 28px;
+    line-height: 50px;
+  }
+  .counterup__list p {
+    font-size: 16px;
+  }
+}
+
+/* 6. Small Layout (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+  .counterup__wrapper {
+    flex-flow: wrap;
+    padding: 60px 0;
+  }
+  .counterup__list {
+    flex-basis: 50%;
+    margin-bottom: 30px; 
+  }
+  .counterup__list h6 {
+    font-size: 29px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    text-align: center; /* Ensures h6 is centered here */
+  }
+  .counterup__list p {
+    font-size: 16px;
+    text-align: center; /* Ensures p is centered here */
+  }
+}
+
+/* 7. Extra Small Layout (max-width: 575px) */
+@media only screen and (max-width: 575px) {
+  .counterup__wrapper {
+    padding: 40px 0;
+  }
+  .counterup__list {
+    flex-basis: 100%; /* Full width for single column */
+    margin-bottom: 25px;
+  }
+  .counterup__list h6 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .counterup__list p {
+    font-size: 15px;
+  }
+}
+
+/* 8. Extra Extra Small Layout (max-width: 420px) */
+@media only screen and (max-width: 420px) {
+  .counterup__list {
+    margin-bottom: 20px;
+  }
+  .counterup__list h6 {
+    font-size: 22px;
+  }
+}

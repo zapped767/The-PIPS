@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "image": "https://flagcdn.com/w40/us.png",
+    "symbol": "S&P 500",
+    "ticker": "^GSPC",
+    "price": 5218.19,
+    "volume": 3120000000,
+    "percent": 0.51
+  },
+  {
+    "id": "2",
+    "image": "https://flagcdn.com/w40/us.png",
+    "symbol": "Dow Jones",
+    "ticker": "^DJI",
+    "price": 38904.04,
+    "volume": 1870000000,
+    "percent": 0.34
+  },
+  {
+    "id": "3",
+    "image": "https://flagcdn.com/w40/us.png",
+    "symbol": "NASDAQ 100",
+    "ticker": "^NDX",
+    "price": 18215.44,
+    "volume": 2340000000,
+    "percent": 0.72
+  },
+  {
+    "id": "4",
+    "image": "https://flagcdn.com/w40/gb.png",
+    "symbol": "FTSE 100",
+    "ticker": "^FTSE",
+    "price": 7895.85,
+    "volume": 987000000,
+    "percent": -0.28
+  },
+  {
+    "id": "5",
+    "image": "https://flagcdn.com/w40/de.png",
+    "symbol": "DAX 40",
+    "ticker": "^GDAXI",
+    "price": 17842.5,
+    "volume": 765000000,
+    "percent": 0.19
+  },
+  {
+    "id": "6",
+    "image": "https://flagcdn.com/w40/jp.png",
+    "symbol": "Nikkei 225",
+    "ticker": "^N225",
+    "price": 38647.75,
+    "volume": 1120000000,
+    "percent": -0.61
+  },
+  {
+    "id": "7",
+    "image": "https://flagcdn.com/w40/hk.png",
+    "symbol": "Hang Seng",
+    "ticker": "^HSI",
+    "price": 16512.92,
+    "volume": 890000000,
+    "percent": -1.14
+  },
+  {
+    "id": "8",
+    "image": "https://flagcdn.com/w40/au.png",
+    "symbol": "ASX 200",
+    "ticker": "^AXJO",
+    "price": 7624.3,
+    "volume": 432000000,
+    "percent": 0.38
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "image": "https://assets.coingecko.com/coins/images/commodity/gold.png",
+    "symbol": "Gold (XAU/USD)",
+    "ticker": "GC=F",
+    "price": 2345.6,
+    "volume": 187430000,
+    "percent": 0.42
+  },
+  {
+    "id": "2",
+    "image": "https://assets.coingecko.com/coins/images/commodity/silver.png",
+    "symbol": "Silver (XAG/USD)",
+    "ticker": "SI=F",
+    "price": 27.84,
+    "volume": 94210000,
+    "percent": 0.61
+  },
+  {
+    "id": "3",
+    "image": "https://assets.coingecko.com/coins/images/commodity/crude-oil.png",
+    "symbol": "Crude Oil (WTI)",
+    "ticker": "CL=F",
+    "price": 78.23,
+    "volume": 312540000,
+    "percent": -0.87
+  },
+  {
+    "id": "4",
+    "image": "https://assets.coingecko.com/coins/images/commodity/brent-oil.png",
+    "symbol": "Brent Oil",
+    "ticker": "BZ=F",
+    "price": 82.45,
+    "volume": 198760000,
+    "percent": -0.72
+  },
+  {
+    "id": "5",
+    "image": "https://assets.coingecko.com/coins/images/commodity/natural-gas.png",
+    "symbol": "Natural Gas",
+    "ticker": "NG=F",
+    "price": 2.31,
+    "volume": 76890000,
+    "percent": 1.24
+  },
+  {
+    "id": "6",
+    "image": "https://assets.coingecko.com/coins/images/commodity/platinum.png",
+    "symbol": "Platinum",
+    "ticker": "PL=F",
+    "price": 985.4,
+    "volume": 43210000,
+    "percent": 0.18
+  },
+  {
+    "id": "7",
+    "image": "https://assets.coingecko.com/coins/images/commodity/copper.png",
+    "symbol": "Copper",
+    "ticker": "HG=F",
+    "price": 4.23,
+    "volume": 67540000,
+    "percent": -0.35
+  },
+  {
+    "id": "8",
+    "image": "https://assets.coingecko.com/coins/images/commodity/wheat.png",
+    "symbol": "Wheat",
+    "ticker": "ZW=F",
+    "price": 548.75,
+    "volume": 32100000,
+    "percent": 0.93
+  }
+]

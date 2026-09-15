@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "Tier": "BASIC (Pro Entry Level)",
+    "Subheadline": "Lean, Fast, Ready",
+    "Description": "Trade 50+ instruments with competitive spreads and smooth execution.",
+    "Minimum Deposit": "$500"
+  },
+  {
+    "id": "2",
+    "Tier": "SILVER",
+    "Subheadline": "Tighter Spreads. More Opportunity.",
+    "Description": "Unlock 150+ instruments and tighter spreads from 1.3 pips - built for intermediate traders upgrading their strategy.",
+    "Minimum Deposit": "$2,500"
+  },
+  {
+    "id": "3",
+    "Tier": "GOLD",
+    "Subheadline": "Premium Performance. Dedicated Support.",
+    "Description": "Trade 300+ instruments, enjoy 0.9 pip spreads, and access Dedicated Account Management + Premium Support.",
+    "Minimum Deposit": "$25,000"
+  },
+  {
+    "id": "4",
+    "Tier": "PLATINUM",
+    "Subheadline": "Speed. Depth. Precision.",
+    "Description": "Trade 500+ instruments with tighter spreads and advanced trading tools.",
+    "Minimum Deposit": "$50,000"
+  },
+  {
+    "id": "5",
+    "Tier": "VIP",
+    "Subheadline": "Pro-Level Execution. Greater Control.",
+    "Description": "Access 750+ instruments with raw-style spreads, deeper liquidity, and added benefits.",
+    "Minimum Deposit": "$80,000"
+  },
+  {
+    "id": "6",
+    "Tier": "EXCLUSIVE",
+    "Subheadline": "Institutional Power for Serious Traders.",
+    "Description": "Trade 1200+ instruments with ultra-tight spreads, premium features, and top-tier support.",
+    "Minimum Deposit": "$100,000"
+  }
+]

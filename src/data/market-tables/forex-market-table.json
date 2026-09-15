@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "image": "https://flagcdn.com/w40/us.png",
+    "symbol": "EUR/USD",
+    "ticker": "EURUSD=X",
+    "price": 1.0812,
+    "volume": 4210000000,
+    "percent": 0.14
+  },
+  {
+    "id": "2",
+    "image": "https://flagcdn.com/w40/gb.png",
+    "symbol": "GBP/USD",
+    "ticker": "GBPUSD=X",
+    "price": 1.2694,
+    "volume": 2870000000,
+    "percent": 0.22
+  },
+  {
+    "id": "3",
+    "image": "https://flagcdn.com/w40/jp.png",
+    "symbol": "USD/JPY",
+    "ticker": "JPY=X",
+    "price": 151.42,
+    "volume": 3540000000,
+    "percent": -0.09
+  },
+  {
+    "id": "4",
+    "image": "https://flagcdn.com/w40/ch.png",
+    "symbol": "USD/CHF",
+    "ticker": "CHF=X",
+    "price": 0.9012,
+    "volume": 1230000000,
+    "percent": -0.31
+  },
+  {
+    "id": "5",
+    "image": "https://flagcdn.com/w40/au.png",
+    "symbol": "AUD/USD",
+    "ticker": "AUDUSD=X",
+    "price": 0.6532,
+    "volume": 987000000,
+    "percent": 0.47
+  },
+  {
+    "id": "6",
+    "image": "https://flagcdn.com/w40/ca.png",
+    "symbol": "USD/CAD",
+    "ticker": "CAD=X",
+    "price": 1.3612,
+    "volume": 1120000000,
+    "percent": -0.18
+  },
+  {
+    "id": "7",
+    "image": "https://flagcdn.com/w40/nz.png",
+    "symbol": "NZD/USD",
+    "ticker": "NZDUSD=X",
+    "price": 0.6021,
+    "volume": 430000000,
+    "percent": 0.33
+  },
+  {
+    "id": "8",
+    "image": "https://flagcdn.com/w40/eu.png",
+    "symbol": "EUR/GBP",
+    "ticker": "EURGBP=X",
+    "price": 0.8517,
+    "volume": 780000000,
+    "percent": -0.07
+  }
+]

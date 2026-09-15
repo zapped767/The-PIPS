@@ -1,0 +1,880 @@
+/* Define SCSS variables for easy modification */
+$partners-main-color: #012d65; /* Deep violet for accents */
+$partners-text-color: #000000; /* Dark text */
+$partners-light-bg: #f3f4f6; /* Light gray background */
+$partners-card-bg: #ffffff; /* Card background */
+$partners-border-color: #e5e7eb; /* Light border */
+$partners-blue-accent: #3b82f6; // Used for calendar highlight
+
+/* Media Query Variables */
+$sp-layout: "only screen and (min-width: 1920px)";
+$xx-layout: "only screen and (min-width: 1600px) and (max-width: 1919px)";
+$xlg-layout: "only screen and (min-width: 1200px) and (max-width: 1599px)";
+$lg-layout: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md-layout: "only screen and (min-width: 768px) and (max-width: 991px)";
+$sm-layout: "only screen and (max-width: 767px)";
+$xs-layout: "only screen and (max-width: 575px)";
+$xxs-layout: "only screen and (max-width: 420px)";
+
+.partners-benefits-section {
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+  color: $partners-text-color;
+
+  @media #{$sm-layout} {
+    padding: 40px 15px;
+  }
+
+  .partners-benefits-header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .partners-benefits-main-title {
+      font-size: 36px;
+      font-weight: 600;
+      color: $partners-text-color;
+
+      @media #{$sm-layout} {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .partners-benefits-cards-container {
+    display: grid;
+    // Desktop: 3 columns
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    /* Responsive Grid Layouts */
+    @media #{$lg-layout} {
+      // Large Tablet/Small Desktop: 2 columns
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    @media #{$md-layout} {
+      // Tablet: 2 columns
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media #{$sm-layout} {
+      // Mobile: 1 column
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .partners-benefits-card-wrapper {
+      perspective: 1000px;
+      height: 400px; // Fixed height for flipping consistency
+
+      @media #{$lg-layout} {
+        height: 380px;
+      }
+      @media #{$sm-layout} {
+        height: auto; // Auto height for stacked mobile layout
+      }
+
+      .partners-benefits-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-in-out;
+        border-radius: 12px;
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+        /* Flip on hover for tablet and desktop (min-width: 768px) */
+        @media (min-width: 768px) {
+          &:hover {
+            transform: rotateY(180deg);
+          }
+        }
+
+        /* Disable flip on mobile */
+        @media #{$sm-layout} {
+          transform: none !important;
+          box-shadow: none; // Remove 3D effect shadow on mobile
+          &:active {
+            transform: scale(0.98); // Add slight active feedback
+          }
+        }
+
+        .partners-benefits-card-front,
+        .partners-benefits-card-back {
+          background-color: $partners-light-bg;
+          border: 1px solid $partners-border-color;
+          border-radius: 12px 12px 0px 0px;
+          padding: 30px;
+          box-sizing: border-box;
+
+          /* Common 3D/Positioning styles for desktop flip */
+          @media (min-width: 768px) {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+          }
+        }
+
+        /* CARD FRONT STYLES */
+        .partners-benefits-card-front {
+          z-index: 2;
+          transform: rotateY(0deg);
+
+          @media #{$sm-layout} {
+            position: relative;
+            height: auto;
+            padding-bottom: 15px;
+          }
+
+          .partners-benefits-card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            min-height: 3em; // Ensure consistent title height
+            color: $partners-text-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .partners-benefits-card-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-bottom: 10px;
+
+            .partners-benefits-icon-content {
+              width: 100%;
+              max-width: 300px;
+              height: 100%;
+              border-radius: 8px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 10px;
+              position: relative;
+            }
+
+            .partners-benefits-placeholder-text {
+              color: #a0a0a0;
+              font-style: italic;
+              font-size: 0.8rem;
+            }
+
+            /* 1. Map Placeholder */
+            .partners-benefits-map {
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath fill='%23e0e7ff' d='M0 0h100v60H0z'/%3E%3Ccircle cx='50' cy='30' r='25' fill='%23c7d2fe'/%3E%3Ccircle cx='20' cy='40' r='5' fill='%23818cf8'/%3E%3Ccircle cx='80' cy='20' r='5' fill='%23818cf8'/%3E%3C/svg%3E");
+              background-size: cover;
+              background-position: center;
+              min-height: 150px;
+            }
+
+            /* 2. Tools Placeholder */
+            .partners-benefits-tools {
+              background-color: #0d0130;
+              color: white;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              gap: 10px;
+              padding: 15px;
+              align-items: stretch;
+              text-align: left;
+              min-height: 150px;
+
+              .small-label {
+                font-size: 0.7rem;
+                opacity: 0.7;
+                margin: 3px 0 0 0;
+              }
+
+              .partners-benefits-placeholder-block-small,
+              .partners-benefits-placeholder-block-large {
+                background-color: #2b1f50;
+                border-radius: 6px;
+                padding: 10px;
+                font-size: 0.9rem;
+                line-height: 1.2;
+              }
+              .partners-benefits-placeholder-block-small {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                align-self: flex-start;
+              }
+              .partners-benefits-placeholder-block-large {
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
+                align-self: stretch;
+              }
+              .partners-benefits-placeholder-text {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                color: #d1d5db;
+                font-style: normal;
+                align-self: flex-end;
+                font-size: 0.75rem;
+                padding-left: 10px;
+              }
+            }
+
+            /* 3. Calendar Placeholder */
+            .partners-benefits-calendar {
+              .partners-benefits-calendar-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.85rem;
+                text-align: center;
+
+                th {
+                  color: $partners-main-color;
+                  font-weight: 700;
+                  padding: 5px 0;
+                }
+
+                td {
+                  padding: 8px 0;
+                  font-weight: 500;
+                  color: $partners-text-color;
+
+                  .lucide {
+                    // Styling for the DollarSign icon used as a symbol
+                    width: 10px;
+                    height: 10px;
+                    display: inline-block;
+                    margin-left: 1px;
+                    vertical-align: middle;
+                  }
+
+                  &.paid-day {
+                    color: $partners-main-color;
+                    font-weight: 800;
+                  }
+
+                  &.highlight-day {
+                    background-color: $partners-blue-accent;
+                    color: white;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+
+            /* 4. Stats Placeholder */
+            .partners-benefits-stats {
+              display: block;
+              text-align: left;
+              padding-top: 50px;
+              width: 100%;
+              min-height: 150px;
+
+              .partners-benefits-graph-labels {
+                position: absolute;
+                top: 40px;
+                left: 30px;
+                line-height: 1.4;
+
+                p {
+                  margin: 0;
+                }
+                p:first-child {
+                  font-size: 0.9rem;
+                  color: #4b5563;
+                }
+                p:last-child {
+                  font-size: 1.1rem;
+                  font-weight: 600;
+                  color: #059669; // Green color for profit
+                }
+              }
+
+              .partners-benefits-graph-placeholder {
+                width: 100%;
+                height: 120px;
+                margin-top: 10px;
+                // Complex gradient/mask could be used here to truly replicate the graph,
+                // but for structural integrity, we use this simple placeholder
+                background: linear-gradient(
+                  to right,
+                  #a855f7,
+                  // Purple start
+                  #ec4899,
+                  // Pink middle
+                  #f59e0b // Yellow end
+                );
+                -webkit-mask:
+                  linear-gradient(
+                    to top,
+                    transparent 10%,
+                    black 50%,
+                    transparent 90%
+                  ),
+                  linear-gradient(
+                    to right,
+                    black 5%,
+                    transparent 20%,
+                    black 80%,
+                    transparent 95%
+                  );
+                mask:
+                  linear-gradient(
+                    to top,
+                    transparent 10%,
+                    black 50%,
+                    transparent 90%
+                  ),
+                  linear-gradient(
+                    to right,
+                    black 5%,
+                    transparent 20%,
+                    black 80%,
+                    transparent 95%
+                  );
+                position: relative;
+                border-bottom: 2px solid #a0a0a0;
+              }
+            }
+
+            /* 5. Mobile Placeholder */
+            .partners-benefits-mobile {
+              background-color: #1f2937;
+              color: white;
+              padding: 0;
+              overflow: hidden;
+
+              .partners-benefits-mobile-app-placeholder {
+                width: 100%;
+                height: 100%;
+                background-color: #374151;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  top: -10px;
+                  bottom: -10px;
+                  left: -10px;
+                  right: -10px;
+                  border: 10px solid black; // Thicker border for phone frame effect
+                  border-radius: 18px;
+                  z-index: 10;
+                }
+
+                .partners-benefits-mobile-balance {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  text-align: center;
+                  background: rgba(0, 0, 0, 0.5);
+                  padding: 15px 25px;
+                  border-radius: 8px;
+                  width: 80%;
+
+                  p {
+                    margin: 0;
+                  }
+                  p:nth-child(2) {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                  }
+                  .partners-benefits-mobile-total {
+                    font-size: 0.75rem;
+                    color: #d1d5db;
+                  }
+                }
+              }
+            }
+
+            /* 6. Payments Placeholder */
+            .partners-benefits-payments {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(3, 1fr);
+              gap: 20px 10px;
+              width: 100%;
+              max-width: 250px;
+              height: 100%;
+
+              .partners-benefits-payment-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 0.9rem;
+                padding: 8px;
+                border: 1px solid $partners-border-color;
+                border-radius: 4px;
+                color: #4b5563;
+
+                &.partners-benefits-payment-logo-dot {
+                  &:before {
+                    content: "\2022";
+                    color: #dc2626;
+                    font-size: 1.5rem;
+                    line-height: 0;
+                    margin-right: 5px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        /* CARD BACK STYLES */
+        .partners-benefits-card-back {
+          z-index: 1;
+          transform: rotateY(180deg);
+          justify-content: space-between;
+          padding: 40px 30px;
+          text-align: center;
+
+          @media #{$sm-layout} {
+            position: relative;
+            transform: rotateY(0deg); // Disable 3D flip transform on mobile
+            border-top: 1px solid $partners-border-color;
+            border-radius: 0 0 12px 12px;
+            padding: 20px 30px 30px 30px;
+            height: auto;
+          }
+
+          .partners-benefits-card-icon-back {
+            color: $partners-main-color;
+            margin-bottom: 20px;
+
+            @media #{$sm-layout} {
+              display: none; // Hide icon on small screen back/stacked view
+            }
+          }
+
+          .partners-benefits-card-title-back {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: $partners-text-color;
+
+            @media #{$sm-layout} {
+              font-size: 1.15rem;
+              color: $partners-main-color;
+              margin-top: 0;
+            }
+          }
+
+          .partners-benefits-card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: auto; // Push button to the bottom on flip
+          }
+
+          .partners-benefits-register-btn {
+            background-color: $partners-main-color;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+
+            @media #{$sm-layout} {
+              width: 100%;
+              margin-top: 20px;
+            }
+
+            &:hover {
+              background-color: darken($partners-main-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ============================================================
+   BASE VARIABLES
+============================================================ */
+$partners-main-color: #012d65;
+$partners-text-color: #000000;
+$partners-card-bg: #ffffff;
+$partners-border-color: #e5e7eb;
+
+/* Media Queries */
+$sp-layout: "only screen and (min-width: 1920px)";
+$xx-layout: "only screen and (min-width: 1600px) and (max-width: 1919px)";
+$xlg-layout: "only screen and (min-width: 1200px) and (max-width: 1599px)";
+$lg-layout: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md-layout: "only screen and (min-width: 768px) and (max-width: 991px)";
+$sm-layout: "only screen and (max-width: 767px)";
+$xs-layout: "only screen and (max-width: 575px)";
+$xxs-layout: "only screen and (max-width: 420px)";
+
+/* ============================================================
+   SECTION WRAPPER
+============================================================ */
+.partners-offer-section {
+  background-color: #f6f6f6;
+  // border-radius: 20px;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+
+  font-family: Poppins;
+  color: $partners-text-color;
+  text-align: center;
+
+  /* -----------------------------------------
+     HEADER
+  ------------------------------------------ */
+  .partners-offer-header {
+    margin-bottom: 50px;
+
+    .partners-offer-main-title {
+      font-size: 36px;
+      font-weight: 600;
+      color: $partners-text-color;
+
+      @media #{$sm-layout} {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  /* ============================================================
+     CARDS CONTAINER
+  ============================================================ */
+  .partners-offer-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    /* Tablets + Mobiles */
+    @media #{$md-layout}, #{$sm-layout} {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 450px;
+    }
+
+    /* Extra small phones */
+    @media #{$xs-layout} {
+      max-width: 380px;
+    }
+
+    /* ============================================================
+       CARD
+    ============================================================ */
+    .partners-offer-card {
+      background-color: $partners-card-bg;
+      border: 1px solid $partners-border-color;
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      width: 100%;
+      max-width: 320px; /* Prevent full-width stretching */
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Card number circle */
+      .partners-offer-card-number-wrapper {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $partners-border-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .partners-offer-card-number {
+          font-size: 0.8rem;
+          font-weight: 600;
+        }
+      }
+
+      /* Title */
+      .partners-offer-card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: $partners-text-color;
+      }
+
+      /* Revenue */
+      .partners-offer-card-revenue-box {
+        margin-bottom: 25px;
+        padding: 0 10px;
+
+        .partners-offer-card-revenue-text {
+          font-size: 2.2rem;
+          font-weight: 700;
+          line-height: 1.2;
+
+          @media #{$sm-layout} {
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      /* Description */
+      .partners-offer-card-description {
+        font-size: 1rem;
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: auto;
+        min-height: 80px;
+      }
+
+      /* Button */
+      .partners-offer-button-container {
+        margin-top: 30px;
+
+        .partners-offer-learn-more-btn {
+          background-color: $partners-main-color;
+          color: white;
+          border: none;
+          padding: 12px 35px;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition:
+            background-color 0.3s ease,
+            transform 0.1s ease;
+
+          &:hover {
+            background-color: #f7a901;
+          }
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Define basic variables */
+$client-primary-color: #000000; /* Dark text color */
+$client-icon-color: #1f2937; /* Icon color (matches text) */
+$client-link-color: #5b21b6; /* A common link/accent color, used for the "Help Center" highlight */
+
+/* Media Query Variables (for responsive centering and stacking) */
+$sm-layout: "only screen and (max-width: 767px)";
+
+.client-features-section {
+  background-color: #f6f6f6;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  font-family: Poppins;
+  color: $client-primary-color;
+  text-align: center; /* Center the header */
+
+  .client-features-header {
+    margin-bottom: 50px;
+
+    .client-features-main-title {
+      font-size: 36px;
+      font-weight: 600;
+      color: $client-primary-color;
+
+      @media #{$sm-layout} {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  .client-features-list {
+    max-width: 700px; /* Constrain the list width for readability */
+    margin: 0 auto;
+    text-align: left; /* Align text within the list items */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Spacing between list items */
+
+    .client-features-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: $client-primary-color;
+      font-weight: 400;
+
+      @media #{$sm-layout} {
+        font-size: 1rem;
+      }
+
+      .client-features-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Stylize the icon to resemble the original image */
+        .client-features-icon {
+          color: $client-icon-color;
+          // The image uses thin lines/outlines, often achieved via stroke-width
+          stroke-width: 1.5;
+        }
+      }
+
+      .client-features-text {
+        margin: 0;
+
+        /* Highlight "New Help Center" as seen in the image */
+        strong {
+          font-weight: 600;
+          color: $client-link-color;
+        }
+
+        /* Target the specific text for styling based on content */
+        &:contains("New Help Center") {
+          // This is not standard CSS, but simulates styling based on content
+          .client-features-highlight {
+            font-weight: 600;
+            color: $client-link-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Define basic variables */
+$payouts-bg: #f5f5f5; /* Light background for the overall section */
+$payouts-card-bg: #ffffff; /* White background for the main card */
+$payouts-dark-text: #000000; /* Main text color */
+$payouts-light-text: #6b7280; /* Subtitle color */
+$payouts-divider-color: #e5e7eb; /* Light gray divider */
+
+/* Media Query Variables */
+$sm-layout: "only screen and (max-width: 767px)";
+
+.payouts-list-section {
+  padding: 50px 20px;
+  background-color: $payouts-bg;
+  font-family: Poppins;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .payouts-list-container {
+    background-color: $payouts-card-bg;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    max-width: 600px; /* Constrain width to match typical list presentation */
+    width: 100%;
+
+    @media #{$sm-layout} {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .payouts-list-header {
+      flex-shrink: 0;
+      width: 40%;
+      padding-right: 20px;
+      text-align: left;
+
+      @media #{$sm-layout} {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .payouts-list-title {
+        font-size: 36px;
+        font-weight: 600;
+        color: $payouts-dark-text;
+        margin: 0;
+      }
+
+      .payouts-list-subtitle {
+        font-size: 0.9rem;
+        color: $payouts-light-text;
+        margin-top: 5px;
+        font-weight: 500;
+      }
+    }
+
+    .payouts-list-separator {
+      /* On desktop, this is just a virtual separator */
+      @media #{$sm-layout} {
+        width: 100%;
+        height: 1px;
+        background-color: $payouts-divider-color;
+        margin-bottom: 20px;
+      }
+    }
+
+    .payouts-list-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-grow: 1;
+      width: 60%; /* Takes up the remaining space on desktop */
+
+      @media #{$sm-layout} {
+        width: 100%;
+      }
+
+      .payouts-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid $payouts-divider-color;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .payouts-list-region {
+          font-size: 1rem;
+          color: $payouts-dark-text;
+          font-weight: 500;
+        }
+
+        .payouts-list-payout {
+          font-size: 1rem;
+          color: $payouts-dark-text;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

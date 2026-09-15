@@ -1,0 +1,664 @@
+.how__work__platform {
+  padding: 138px 0;
+  position: relative;
+  // margin-left: 70px; /* keep desktop offset */
+  // display: flex;
+  align-items: center; /* vertically center columns on desktop */
+  gap: 40px;
+
+  /* ensure container doesn't add unexpected horizontal padding on desktop
+     (if using bootstrap container, you'll override only on the wrapper's direct children) */
+  .container {
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+    width: 100%;
+    max-width: 1140px;
+  }
+
+  .thumb-left {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+      display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-width: 520px;
+    }
+  }
+
+  .thumb-right {
+    flex: 1 1 50%;
+    display: flex;
+    // justify-content: center;
+    flex-direction: row-reverse;
+
+    img {
+      display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-width: 520px;
+    }
+  }
+
+  .content-right {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* left on desktop */
+    width: auto;
+    max-width: 510px; /* keeps text column readable on large screens */
+    margin-left: auto;
+
+    h2 {
+      color: #232324;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      line-height: 1.1;
+    }
+
+    h3 {
+      color: #232324;
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      line-height: 1.1;
+    }
+
+    h6 {
+      color: #232324;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 26px;
+      margin-bottom: 20px;
+      padding-right: 20%;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 35px;
+      color: rgb(135, 135, 135);
+      max-width: 510px;
+    }
+
+    .slide__btn,
+    .how__btn {
+      margin-top: auto;
+      align-self: flex-start; /* keep left on desktop */
+    }
+  }
+
+  .content-left {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* left on desktop */
+    width: auto;
+    max-width: 510px; /* keeps text column readable on large screens */
+    margin-right: auto;
+
+    h2 {
+      color: #232324;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      line-height: 1.1;
+    }
+
+    h3 {
+      color: #232324;
+      font-size: 25px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      line-height: 1.1;
+    }
+
+    h6 {
+      color: #232324;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 26px;
+      margin-bottom: 20px;
+      padding-right: 20%;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 35px;
+      color: rgb(135, 135, 135);
+      max-width: 510px;
+    }
+
+    .slide__btn,
+    .how__btn {
+      margin-top: auto;
+      align-self: flex-start; /* keep left on desktop */
+    }
+
+    .intro-text {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #6b7280;
+      margin-bottom: 50px;
+      max-width: 520px;
+    }
+
+    .resource-list {
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+    }
+
+    .resource-item {
+      h4 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #232324;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #6b7280;
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   (mobile-first overrides applied for centering)
+=================================*/
+
+/* ===== Large (1200–1599px) ===== */
+@media #{$xlg-layout} {
+  .how__work__platform {
+    padding: 35px 0;
+    gap: 40px;
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .content-left {
+      h2 {
+        font-size: 34px;
+      }
+      h6 {
+        padding-right: 10%;
+      }
+    }
+
+    .content-right {
+      h2 {
+        font-size: 34px;
+      }
+      h6 {
+        padding-right: 10%;
+      }
+    }
+
+    .thumb-left img {
+      max-width: 510px;
+    }
+
+    .thumb-right img {
+      max-width: 510px;
+    }
+  }
+}
+
+/* ===== LG (992–1199px) ===== */
+@media #{$lg-layout} {
+  .how__work__platform {
+    padding: 90px 0 30px 40px;
+    gap: 40px;
+
+    .container {
+      width: 100%;
+      max-width: 992px;
+    }
+
+    .thumb-left img {
+      max-width: 400px;
+    }
+    .thumb-right {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: unset;
+      img {
+        max-width: 400px;
+      }
+    }
+
+    .content-left {
+      h2 {
+        font-size: 32px;
+      }
+      h6 {
+        font-size: 17px;
+        padding-right: 5%;
+      }
+      p {
+        max-width: 90%;
+      }
+    }
+    .content-right {
+      h2 {
+        font-size: 32px;
+      }
+      h6 {
+        font-size: 17px;
+        padding-right: 5%;
+      }
+      p {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
+/* ===== MD (768–991px) =====
+   Switch to centered stacked layout */
+@media #{$md-layout} {
+  /* ── Improved reverse-mobile: target Bootstrap col wrappers by position ── */
+  .reverse-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+
+    & > [class*="col-"]:first-child {
+      order: 2 !important; /* image column → goes below */
+    }
+
+    & > [class*="col-"]:last-child {
+      order: 1 !important; /* content column → goes above */
+    }
+  }
+
+  .how__work__platform {
+    /* remove desktop left offset and switch to stacked/centered */
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    gap: 50px;
+
+    /* collapse container gutters on this section to avoid visual offset */
+    .container {
+      width: 100%;
+      max-width: 768px;
+    }
+
+    /* Stack all rows explicitly */
+    .row.align-items-center {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thumb-left {
+      order: 2;
+      align-items: center;
+      img {
+        max-width: 480px;
+        padding: 40px 0;
+      }
+    }
+    .thumb-right {
+      order: 2;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 480px;
+        padding: 40px 0;
+      }
+    }
+
+    .content-left {
+      order: 1;
+      align-items: center; /* center children */
+      text-align: center; /* center text */
+      width: 100%;
+      max-width: 991px; /* keep readable line length */
+
+      h2 {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+      h6 {
+        font-size: 16px;
+        margin-bottom: 14px;
+        padding-right: 0;
+      }
+      p {
+        font-size: 15px;
+        max-width: 95%;
+        margin: 0 auto 30px;
+      }
+      .slide__btn,
+      .how__btn {
+        align-self: center;
+        margin: 0 auto;
+      }
+    }
+
+    .content-right {
+      order: 1;
+      align-items: center; /* center children */
+      text-align: center; /* center text */
+      width: 100%;
+      max-width: 991px; /* keep readable line length */
+
+      h2 {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+      h6 {
+        font-size: 16px;
+        margin-bottom: 14px;
+        padding-right: 0;
+      }
+      p {
+        font-size: 15px;
+        max-width: 95%;
+        margin: 0 auto 30px;
+      }
+      .slide__btn,
+      .how__btn {
+        align-self: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/* ===== SM (<=767px) ===== */
+@media #{$sm-layout} {
+  /* ── Improved reverse-mobile: target Bootstrap col wrappers by position ── */
+  .reverse-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+
+    & > [class*="col-"]:first-child {
+      order: 2 !important; /* image column → goes below */
+    }
+
+    & > [class*="col-"]:last-child {
+      order: 1 !important; /* content column → goes above */
+    }
+  }
+
+  .how__work__platform {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 16px;
+    text-align: center;
+    gap: 45px;
+
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Stack all rows explicitly */
+    .row.align-items-center {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thumb-left {
+      order: 2;
+      align-items: center;
+      img {
+        width: 100%;
+        max-width: 420px;
+        padding: 32px 0;
+      }
+    }
+    .thumb-right {
+      order: 2;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        max-width: 420px;
+        padding: 32px 0;
+      }
+    }
+
+    .content-left {
+      order: 1;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 767px; /* smaller constraint for small screens */
+
+      h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        width: auto;
+      }
+
+      h6 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-right: 0;
+      }
+
+      p {
+        font-size: 14.5px;
+        margin: 0 auto 20px;
+        max-width: 90%;
+      }
+
+      .slide__btn,
+      .how__btn {
+        font-size: 14px;
+        padding: 2px 22px;
+        margin: 0 auto;
+        align-self: center;
+      }
+    }
+
+    .content-right {
+      order: 1;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 767px; /* smaller constraint for small screens */
+
+      h2 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        width: auto;
+      }
+
+      h6 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-right: 0;
+      }
+
+      p {
+        font-size: 14.5px;
+        margin: 0 auto 20px;
+        max-width: 90%;
+      }
+
+      .slide__btn,
+      .how__btn {
+        font-size: 14px;
+        padding: 2px 22px;
+        margin: 0 auto;
+        align-self: center;
+      }
+    }
+  }
+}
+
+/* ===== XS (<=575px) ===== */
+@media #{$xs-layout} {
+  /* ── Improved reverse-mobile: target Bootstrap col wrappers by position ── */
+  .reverse-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+
+    & > [class*="col-"]:first-child {
+      order: 2 !important; /* image column → goes below */
+    }
+
+    & > [class*="col-"]:last-child {
+      order: 1 !important; /* content column → goes above */
+    }
+  }
+
+  .how__work__platform {
+    padding: 60px 12px;
+    gap: 40px;
+
+    .thumb-left img {
+      max-width: 575px;
+    }
+
+    .thumb-right img {
+      max-width: 575px;
+    }
+
+    .content-left {
+      max-width: 575px;
+
+      h2 {
+        font-size: 24px;
+      }
+      h6 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 14px;
+        max-width: 92%;
+        margin: 0 auto 18px;
+      }
+      .slide__btn,
+      .how__btn {
+        font-size: 14px;
+        padding: 2px 22px;
+      }
+    }
+
+    .content-right {
+      max-width: 575px;
+
+      h2 {
+        font-size: 24px;
+      }
+      h6 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 14px;
+        max-width: 92%;
+        margin: 0 auto 18px;
+      }
+      .slide__btn,
+      .how__btn {
+        font-size: 14px;
+        padding: 2px 22px;
+      }
+    }
+  }
+}
+
+/* ===== XXS (<=420px) ===== */
+@media #{$xxs-layout} {
+  /* ── Improved reverse-mobile: target Bootstrap col wrappers by position ── */
+  .reverse-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+
+    & > [class*="col-"]:first-child {
+      order: 2 !important; /* image column → goes below */
+    }
+
+    & > [class*="col-"]:last-child {
+      order: 1 !important; /* content column → goes above */
+    }
+  }
+
+  .how__work__platform {
+    padding: 50px 10px;
+    gap: 30px;
+
+    .thumb img {
+      max-width: 355px;
+    }
+
+    .content-left {
+      max-width: 420px;
+      h2 {
+        font-size: 22px;
+      }
+      h6 {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 13px;
+        max-width: 95%;
+        margin: 0 auto 16px;
+      }
+      .slide__btn,
+      .how__btn {
+        font-size: 13px;
+        padding: 0px 18px;
+      }
+    }
+
+    .content-right {
+      max-width: 420px;
+      h2 {
+        font-size: 22px;
+      }
+      h6 {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 13px;
+        max-width: 95%;
+        margin: 0 auto 16px;
+      }
+      .slide__btn,
+      .how__btn {
+        font-size: 13px;
+        padding: 0px 18px;
+      }
+    }
+  }
+}
+
+/* ===== Utility: override bootstrap gutters for this section only (keeps perfect centering) ===== */
+.how__work__platform .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.how__work__platform .col-lg-6,
+.how__work__platform .col-md-12,
+.how__work__platform .col-sm-12,
+.how__work__platform .col-12 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

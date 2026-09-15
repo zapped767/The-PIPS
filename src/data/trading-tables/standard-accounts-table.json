@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "Account Type": "ESSENTIAL",
+    "Premium Tagline": "Where Professional Trading Begins",
+    "Key Features": "100+ instruments • Spreads from 1.4 pips",
+    "Minimum Deposit": "$500"
+  },
+  {
+    "id": "2",
+    "Account Type": "PRIME",
+    "Premium Tagline": "Enhanced Access. Superior Execution.",
+    "Key Features": "250+ instruments • Spreads from 1.1 pips",
+    "Minimum Deposit": "$2,500"
+  },
+  {
+    "id": "3",
+    "Account Type": "PRESTIGE",
+    "Premium Tagline": "Precision Trading for Serious Investors",
+    "Key Features": "500+ instruments • Spreads from 0.8 pips",
+    "Minimum Deposit": "$25,000"
+  },
+  {
+    "id": "4",
+    "Account Type": "BLACK",
+    "Premium Tagline": "Elite Trading Conditions. Institutional Experience.",
+    "Key Features": "750+ instruments • Spreads from 0.5 pips",
+    "Minimum Deposit": "$50,000"
+  },
+  {
+    "id": "5",
+    "Account Type": "VIP ELITE",
+    "Premium Tagline": "Exclusive Privileges for High-Volume Traders",
+    "Key Features": "1000+ instruments • Spreads from 0.2 pips",
+    "Minimum Deposit": "$100,000"
+  }
+]

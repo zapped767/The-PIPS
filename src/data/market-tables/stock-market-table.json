@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "image": "https://logo.clearbit.com/apple.com",
+    "symbol": "Apple (AAPL)",
+    "ticker": "AAPL",
+    "price": 185.92,
+    "volume": 54230000,
+    "percent": 0.83
+  },
+  {
+    "id": "2",
+    "image": "https://logo.clearbit.com/microsoft.com",
+    "symbol": "Microsoft (MSFT)",
+    "ticker": "MSFT",
+    "price": 412.34,
+    "volume": 23450000,
+    "percent": 0.57
+  },
+  {
+    "id": "3",
+    "image": "https://logo.clearbit.com/nvidia.com",
+    "symbol": "NVIDIA (NVDA)",
+    "ticker": "NVDA",
+    "price": 876.45,
+    "volume": 41280000,
+    "percent": 1.94
+  },
+  {
+    "id": "4",
+    "image": "https://logo.clearbit.com/amazon.com",
+    "symbol": "Amazon (AMZN)",
+    "ticker": "AMZN",
+    "price": 187.23,
+    "volume": 31760000,
+    "percent": 0.41
+  },
+  {
+    "id": "5",
+    "image": "https://logo.clearbit.com/meta.com",
+    "symbol": "Meta (META)",
+    "ticker": "META",
+    "price": 512.07,
+    "volume": 18930000,
+    "percent": 1.12
+  },
+  {
+    "id": "6",
+    "image": "https://logo.clearbit.com/tesla.com",
+    "symbol": "Tesla (TSLA)",
+    "ticker": "TSLA",
+    "price": 177.48,
+    "volume": 98340000,
+    "percent": -2.31
+  },
+  {
+    "id": "7",
+    "image": "https://logo.clearbit.com/google.com",
+    "symbol": "Alphabet (GOOGL)",
+    "ticker": "GOOGL",
+    "price": 162.54,
+    "volume": 22540000,
+    "percent": 0.69
+  },
+  {
+    "id": "8",
+    "image": "https://logo.clearbit.com/berkshirehathaway.com",
+    "symbol": "Berkshire (BRK-B)",
+    "ticker": "BRK-B",
+    "price": 398.72,
+    "volume": 4120000,
+    "percent": 0.12
+  }
+]
