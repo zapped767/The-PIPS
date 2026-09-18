@@ -7,8 +7,6 @@
 
   /*
     TOP | LEFT/RIGHT | BOTTOM
-
-    Reduce 10px more if you want less gap.
   */
   padding:
     25px
@@ -67,7 +65,7 @@
 
   padding: 25px;
 
-background: #e3e3e3;
+  background: #e3e3e3;
 
   box-sizing: border-box;
 
@@ -91,6 +89,7 @@ background: #e3e3e3;
 
 .premium-feature-icon {
   width: 48px;
+
   height: 48px;
 
   display: flex;
@@ -107,6 +106,13 @@ background: #e3e3e3;
 
   transition:
     all 0.3s ease;
+}
+
+
+.premium-feature-icon svg {
+  width: 24px;
+
+  height: 24px;
 }
 
 
@@ -152,26 +158,124 @@ background: #e3e3e3;
 
 
 /* =========================================================
-   MOBILE
+   MOBILE ONLY
+   767PX AND BELOW
 ========================================================= */
 
 @media (max-width: 767px) {
 
+  /* =====================================================
+     COMPLETE SECTION SPACE
+  ====================================================== */
+
   .premium-feature-section {
+    /*
+      REDUCE OUTSIDE SPACE
+
+      Change 10px manually if needed.
+    */
     padding:
+      10px
       20px;
   }
 
 
+  /* =====================================================
+     MOBILE CONTAINER
+  ====================================================== */
+
   .premium-feature-container {
     grid-template-columns: 1fr;
+
+    /*
+      OPTIONAL:
+      Reduce border thickness manually
+    */
+    border-width: 2px;
+
+    border-radius: 18px;
   }
 
+
+  /* =====================================================
+     EACH MOBILE FEATURE ROW
+  ====================================================== */
 
   .premium-feature-item {
-    min-height: 115px;
+    /*
+      MOBILE ROW HEIGHT
+
+      80px = smaller
+      90px = recommended
+      100px = bigger
+    */
+    min-height: 90px;
+
+    /*
+      REDUCE INNER SPACE
+    */
+    padding:
+      12px
+      14px;
+
+    /*
+      ICON -> TEXT GAP
+
+      4px = very close
+      7px = recommended
+      10px = more space
+    */
+    gap: 7px;
   }
 
+
+  /* =====================================================
+     MOBILE ICON
+  ====================================================== */
+
+  .premium-feature-icon {
+    /*
+      ICON CIRCLE SIZE
+    */
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .premium-feature-icon svg {
+    /*
+      ACTUAL ICON SIZE
+    */
+    width: 20px;
+
+    height: 20px;
+  }
+
+
+  /* =====================================================
+     MOBILE TEXT
+  ====================================================== */
+
+  .premium-feature-item h3 {
+    /*
+      FONT SIZE
+
+      12px = smaller
+      13px = medium
+      14px = recommended
+    */
+    font-size: 14px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+  }
+
+
+  /* =====================================================
+     MOBILE SEPARATOR
+  ====================================================== */
 
   .premium-feature-item:not(:last-child) {
     border-right: none;

@@ -1424,467 +1424,1802 @@
   }
 }
 
-//We Don't Just Help You Trade Section Start
-:root {
-  --hw-bg: #ffffff;
-  --hw-card-bg: #ffffff;
-  --hw-card-border: #e5e7eb;
-  --hw-card-hover-bg: #f0f5ff;
-  --hw-card-hover-border: rgba(26, 92, 154, 0.3);
-  --hw-accent: #1a5c9a;
-  --hw-text-primary: #0f172a;
-  --hw-text-secondary: #6b7280;
-  --hw-layout-bg: #f3f6fb;
-  --hw-layout-radius: 20px;
-  --hw-img-size: 320px;
-  --hw-font-display: "Poppins", sans-serif;
-  --hw-font-body: "Poppins", sans-serif;
-}
+// =========================================================
+// WE DON'T JUST HELP YOU TRADE
+// 6 CARD BENTO DESIGN
+//
+// DESKTOP:
+// CARD 1 | CARD 2 | CARD 3
+// CARD 4 | CARD 5 | CARD 6
+// =========================================================
 
-/* ─── Section Wrapper ─────────────────────────────────────── */
+
+/* =========================================================
+   SECTION
+========================================================= */
+
 .hw__section {
-  background-color: var(--hw-bg);
-  padding: 90px 40px 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: var(--hw-font-body);
-  position: relative;
+  width: 100%;
+
+  /*
+    SECTION BACKGROUND
+  */
+  background: #012d65;
+
+  /*
+    MANUAL SECTION SPACING
+
+    TOP / LEFT-RIGHT / BOTTOM
+  */
+  padding:
+    90px
+    30px
+    90px;
+
+  box-sizing: border-box;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
   overflow: hidden;
 }
 
-/* ─── Section Heading ─────────────────────────────────────── */
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .hw__heading {
-  text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
   width: 100%;
+
+  max-width: 850px;
+
+  margin:
+    0
+    auto
+    55px;
+
+  text-align: center;
 }
+
 
 .hw__heading h2 {
-  font-family: var(--hw-font-display);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin:
+    0
+    0
+    14px;
+
+  color: #ffffff;
+
+  /*
+    MANUAL HEADING SIZE
+
+    42px = smaller
+    48px = medium
+    52px = recommended
+    58px = bigger
+  */
+  font-size:
+    clamp(
+      38px,
+      3.4vw,
+      52px
+    );
+
   font-weight: 700;
-  color: var(--hw-text-primary);
-  line-height: 1.25;
-  margin: 0 0 12px;
-  letter-spacing: -0.5px;
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
 }
 
+
 .hw__heading p {
-  font-size: 0.95rem;
-  color: var(--hw-text-secondary);
-  font-weight: 300;
-  letter-spacing: 0.03em;
   margin: 0;
+
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  font-weight: 400;
 }
+
 
 .hw__heading-line {
   width: 48px;
+
   height: 3px;
-  background: var(--hw-accent);
-  margin: 16px auto 0;
-  border-radius: 2px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  background: #f7a901;
+
+  border-radius: 30px;
 }
 
-/* ─── Main Layout ─────────────────────────────────────────── */
-.hw__layout {
+/* =========================================================
+   MAIN GRID
+   3 COLUMNS × 2 ROWS
+
+   EACH CARD CAN HAVE ITS OWN WIDTH + HEIGHT
+========================================================= */
+
+.hw__bento-layout {
+  width: 100%;
+
+  /* WHOLE GRID WIDTH */
+  max-width: 1280px;
+
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 1fr var(--hw-img-size) 1fr;
-  align-items: center;
-  gap: 32px;
-  max-width: 1140px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  background-color: var(--hw-layout-bg);
-  border-radius: var(--hw-layout-radius);
-  padding: 40px 36px;
+
+  /* 3 COLUMNS */
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  /*
+    IMPORTANT:
+    NO FIXED ROW HEIGHT.
+
+    EACH CARD HEIGHT CAN BE DIFFERENT.
+  */
+  grid-template-rows:
+    auto
+    auto;
+
+  /* COLUMN / ROW GAP */
+  column-gap: 16px;
+  row-gap: 16px;
+
+  align-items: start;
 }
 
-/* ─── Card Columns ────────────────────────────────────────── */
-.hw__col {
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.hw__bento-card {
+  position: relative;
+width: 100%;
+
+/*
+  DON'T FORCE SAME HEIGHT.
+  EACH CARD GETS HEIGHT BELOW.
+*/
+height: auto;
+
+justify-self: center;
+align-self: start;
+
   display: flex;
+
   flex-direction: column;
-  gap: 16px;
-}
 
-.hw__col--left {
-  align-items: flex-end;
-}
+  background: #071a36;
 
-.hw__col--right {
-  align-items: flex-start;
-}
+  border:
+    1px
+    solid
+    rgba(
+      1,
+      45,
+      101,
+      0.16
+    );
 
-/* ─── Feature Cards ───────────────────────────────────────── */
-.hw__feat-card {
-  background: var(--hw-card-bg);
-  border: 1px solid var(--hw-card-border);
-  border-radius: 12px;
-  padding: 18px 20px;
-  width: 100%;
-  max-width: 300px;
-  position: relative;
-  cursor: default;
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.35s ease,
-    box-shadow 0.25s ease,
-    opacity 0.55s ease;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+
+  /* SCROLL REVEAL */
+
   opacity: 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+  transform:
+    translateY(24px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-/* Slide-in from sides before visible */
-.hw__col--left .hw__feat-card {
-  transform: translateX(-24px);
-}
 
-.hw__col--right .hw__feat-card {
-  transform: translateX(24px);
-}
+/* =========================================================
+   SCROLL REVEAL VISIBLE
+========================================================= */
 
-/* Staggered entry delays */
-.hw__col .hw__feat-card:nth-child(1) {
-  transition-delay: 0.08s;
-}
-.hw__col .hw__feat-card:nth-child(2) {
-  transition-delay: 0.2s;
-}
-.hw__col .hw__feat-card:nth-child(3) {
-  transition-delay: 0.32s;
-}
-
-/* Visible state */
-.hw__feat-card.hw--visible {
+.hw__bento-card.hw--visible {
   opacity: 1;
-  transform: translateX(0);
+
+  transform:
+    translateY(0);
 }
 
-/* Hover */
-.hw__feat-card:hover {
-  background: var(--hw-card-hover-bg);
-  border-color: var(--hw-card-hover-border);
-  transform: translateY(-4px) !important;
-  box-shadow: 0 8px 28px rgba(26, 92, 154, 0.12);
+
+/* =========================================================
+   CARD 1
+   ROW 1 / COLUMN 1
+========================================================= */
+
+.hw__card-1 {
+  grid-column: 1;
+  grid-row: 1;
+
+  /* =========================
+     MANUAL WIDTH
+     100% = full column
+     95%  = little smaller
+     90%  = smaller
+  ========================= */
+  width: 550px !important;
+
+  /* =========================
+     MANUAL HEIGHT
+  ========================= */
+  height: 400px !important;
+top: -10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      
+      #ffffff 100%
+    );
 }
 
-.hw__feat-icon {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-  display: block;
-  line-height: 1;
+/* =========================================================
+   CARD 1
+   TOP RIGHT IMAGE
+========================================================= */
+
+.hw__card-1-corner-image {
+  position: absolute;
+
+  /*
+    ==========================================
+    MANUAL RIGHT POSITION
+
+    0px   = right edge
+    10px  = move left slightly
+    20px  = move more inside
+
+    NEGATIVE:
+    -10px = move outside to right
+  ==========================================
+  */
+  right: -15px;
+
+
+  /*
+    ==========================================
+    MANUAL TOP POSITION
+
+    0px   = top edge
+    10px  = move down
+    20px  = move further down
+
+    NEGATIVE:
+    -10px = move upward
+  ==========================================
+  */
+  top: -18px;
+
+
+  /*
+    ==========================================
+    MANUAL WIDTH
+
+    100px = small
+    150px = medium
+    200px = large
+    250px = bigger
+    300px = very big
+  ==========================================
+  */
+  width: 420px;
+
+
+  /*
+    KEEP IMAGE RATIO
+  */
+  height: auto;
+
+
+  object-fit: contain;
+
+  object-position: center;
+
+filter:
+  drop-shadow(
+    0 14px 18px
+    rgba(1, 45, 101, 0.28)
+  );
+  /*
+    KEEP IMAGE ABOVE BACKGROUND
+  */
+  z-index: 2;
+
+
+  /*
+    IMAGE SHOULD NOT AFFECT MOUSE
+  */
+  pointer-events: none;
+
+  user-select: none;
+}
+/* =========================================================
+   CARD 1 - LOGO WINDOW
+========================================================= */
+
+.hw__card-1-logo-window {
+  position: absolute;
+
+  /* =========================
+     MANUAL POSITION
+     ========================= */
+
+  right: -15px;   /* move left / right */
+  top: 52px;    /* move up / down */
+
+  /* =========================
+     MANUAL SIZE
+     ========================= */
+
+  width: 390px;
+  height: 88px;
+
+  z-index: 10;
 }
 
-.hw__feat-title {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--hw-accent);
-  margin: 0 0 6px;
-}
 
-.hw__feat-text {
-  font-size: 0.875rem;
-  color: var(--hw-text-secondary);
-  line-height: 1.6;
-  margin: 0;
-  font-weight: 300;
-}
+/* =========================================================
+   GLASS / BLUR CONTAINER
+========================================================= */
 
-/* ─── Center Image ────────────────────────────────────────── */
-.hw__center {
+.hw__card-1-logo-glass {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-}
 
-.hw__img-wrap {
-  width: var(--hw-img-size);
-  height: var(--hw-img-size);
+  overflow: hidden;
+
+  border-radius: 22px 0 0 22px;
+
+  /* BLUR BACKGROUND */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* BORDER + DEPTH */
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  padding: 0 14px;
+  box-sizing: border-box;
+
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
 }
 
-/* ─── Scan-line sweep ─────────────────────────────────────── */
-.hw__img-wrap::before {
+
+/* Optional soft inner shine */
+.hw__card-1-logo-glass::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
-  pointer-events: none;
   border-radius: inherit;
-  // background: linear-gradient(
-  //   to bottom,
-  //   transparent 0%,
-  //   rgba(100, 180, 255, 0.07) 48%,
-  //   rgba(100, 180, 255, 0.13) 50%,
-  //   rgba(100, 180, 255, 0.07) 52%,
-  //   transparent 100%
-  // );
-  // background-size: 100% 200%;
-  animation: hw-scan 5s linear infinite;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  pointer-events: none;
 }
 
-@keyframes hw-scan {
-  0% {
-    background-position: 0% -100%;
-  }
-  100% {
-    background-position: 0% 200%;
-  }
-}
 
-/* ─── Image base styles ───────────────────────────────────── */
-.hw__center-img {
-  width: 140%;
-  height: 140%;
-  object-fit: contain;
-  object-position: center center;
-  display: block;
+/* =========================================================
+   MOVING TRACK
+========================================================= */
+
+.hw__card-1-logo-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
-  /* Transform effect */
-  animation:
-    hw-float 4s ease-in-out infinite,
-    hw-glow-pulse 2s ease-in-out infinite;
-
-  filter: drop-shadow(0 0 18px rgba(56, 145, 250, 0.55))
-    drop-shadow(0 0 50px rgba(56, 145, 250, 0.18)) saturate(1.25)
-    brightness(1.08);
-
-  will-change: transform, filter;
-  transition:
-    filter 0.4s ease,
-    transform 0.4s ease;
+  animation: hw-card-1-logo-scroll 12s linear infinite;
+  animation-play-state: paused; /* default stop */
 }
 
-/* Hover — desktop only */
-@media (hover: hover) and (pointer: fine) {
-  .hw__center-img:hover {
-    animation-play-state: paused;
-    filter: drop-shadow(0 0 30px rgba(56, 145, 250, 0.85))
-      drop-shadow(0 0 70px rgba(100, 180, 255, 0.35)) saturate(1.5)
-      brightness(1.15) contrast(1.05);
-    transform: scale(1.04) translateY(-6px);
-    transition:
-      filter 0.3s ease,
-      transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+
+/* =========================================================
+   CARD 1
+   HOVER ANYWHERE ON CARD = START LOGOS
+========================================================= */
+
+.hw__card-1:hover .hw__card-1-logo-track {
+  animation-play-state: running;
 }
 
-/* ─── Float animation ─────────────────────────────────────── */
-@keyframes hw-float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-10px) rotate(0.4deg);
-  }
-  50% {
-    transform: translateY(-6px) rotate(-0.3deg);
-  }
-  75% {
-    transform: translateY(-13px) rotate(0.2deg);
-  }
-}
+/* =========================================================
+   WHITE LOGO BOXES
+========================================================= */
 
-/* ─── Glow pulse animation ────────────────────────────────── */
-@keyframes hw-glow-pulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 14px rgba(56, 145, 250, 0.45))
-      drop-shadow(0 0 40px rgba(56, 145, 250, 0.12)) saturate(1.2)
-      brightness(1.06);
-  }
-  50% {
-    filter: drop-shadow(0 0 26px rgba(88, 170, 255, 0.75))
-      drop-shadow(0 0 70px rgba(56, 145, 250, 0.28)) saturate(1.35)
-      brightness(1.12);
-  }
-}
+.hw__card-1-logo-box {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 58px;
 
-/* ─── Fallback silhouette ─────────────────────────────────── */
-.hw__circle-fallback {
-  display: none;
-  position: absolute;
-  inset: 0;
+  background: #ffffff;
+  border-radius: 12px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 9px;
+  box-sizing: border-box;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.16);
 }
 
-.hw__circle-fallback svg {
-  width: 55%;
-  height: 55%;
-  opacity: 0.18;
-  fill: var(--hw-accent);
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.hw__card-1-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
 }
 
-/* ─── CTA ─────────────────────────────────────────────────── */
-.hw__cta-wrap {
+
+/* =========================================================
+   RIGHT TO LEFT ANIMATION
+========================================================= */
+
+@keyframes hw-card-1-logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+/* =========================================================
+   CARD 2
+   ROW 1 / COLUMN 2
+========================================================= */
+
+.hw__card-2 {
+  grid-column: 2;
+  grid-row: 1;
+
+  /* MANUAL WIDTH */
+  width: 100% !important;
+
+  /* MANUAL HEIGHT */
+  height: 400px !important;
+  top:-10px;
+right:-70px; 
+  background:
+  (
+    #ffffff 100%
+  );
+}
+
+
+/* =========================================================
+   CARD 3
+   ROW 1 / COLUMN 3
+========================================================= */
+
+.hw__card-3 {
+  grid-column: 3;
+  grid-row: 1;
+
+  /* MANUAL WIDTH */
+  width: 325px !important;
+
+  /* MANUAL HEIGHT */
+  height: 520px !important;
+right:-25px;
+top:-10px;
+  background:
+    linear-gradient(
+      145deg,
+     
+      #ffffff 100%
+    );
+}
+/* =========================================================
+   CARD 3 - TOP RIGHT IMAGE
+========================================================= */
+
+.hw__card-3-corner-image {
+  position: absolute;
+
+  /*
+    IMAGE POSITION
+    + right = move LEFT
+    - right = move RIGHT
+  */
+  right: 5px;
+
+  /*
+    + top = move DOWN
+    - top = move UP
+  */
+  top: 28px;
+
+
+  /*
+    IMAGE SIZE
+    160px = small
+    180px = medium
+    195px = recommended
+    220px = bigger
+  */
+  width: 300px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  user-select: none;
+
+
+}
+
+
+
+/* =========================================================
+   CARD 4
+   ROW 2 / COLUMN 1
+========================================================= */
+
+.hw__card-4 {
+  grid-column: 1;
+  grid-row: 2;
+
+  /* MANUAL WIDTH */
+  width: 500px !important;
+
+  /* MANUAL HEIGHT */
+  height: 360px !important;
+top:-125px;
+left:-24px;
+  background:
+    (
+      
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   CARD 5
+   ROW 2 / COLUMN 2
+========================================================= */
+
+.hw__card-5 {
+  grid-column: 2;
+  grid-row: 2;
+
+  /* MANUAL WIDTH */
+  width: 465px !important;
+
+  /* MANUAL HEIGHT */
+  height: 360px !important;
+top:-125px;
+right:-45px;
+  background:
+    linear-gradient(
+      145deg,
+      #06162f 0%,
+      #08234a 100%
+    );
+}
+
+
+/* =========================================================
+   CARD 6
+   ROW 2 / COLUMN 3
+========================================================= */
+
+.hw__card-6 {
+  grid-column: 3;
+  grid-row: 2;
+
+  /* MANUAL WIDTH */
+  width: 325px !important;
+
+  /* MANUAL HEIGHT */
+  height: 245px !important;
+right:-25px;
+top:-10px;
+  background:
+    linear-gradient(
+      145deg,
+      #071a36 0%,
+      #0a284f 100%
+    );
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.hw__card-image-area {
+  width: 100%;
+
+  /*
+    IMAGE AREA HEIGHT
+
+    55% = smaller image
+    60% = medium
+    62% = recommended
+    68% = larger image
+  */
+  height: 62%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  background: #012d65;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hw__card-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+
+  /*
+    IMAGE DISPLAY
+
+    cover = fills card like reference
+    contain = shows full image
+  */
+  object-fit: cover;
+
+  object-position: center;
+
+
+  transition:
+    transform
+    0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.hw__card-content {
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
   display: flex;
+
+  flex-direction: column;
+
   justify-content: center;
-  margin-top: 48px;
+
+  align-items: flex-start;
+
+  /*
+    MANUAL CONTENT PADDING
+  */
+  padding:
+    20px
+    22px;
+
+  box-sizing: border-box;
+
+  text-align: left;
 }
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.hw__card-content h3 {
+  margin:
+    0
+    0
+    8px;
+
+  color: #ffffff;
+
+  /*
+    MANUAL TITLE SIZE
+  */
+  font-size: 19px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.hw__card-content p {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.70
+    );
+
+  /*
+    MANUAL DESCRIPTION SIZE
+  */
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  font-weight: 400;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   CARD ENTRY DELAYS
+========================================================= */
+
+.hw__card-1 {
+  transition-delay: 0.05s;
+}
+
+.hw__card-2 {
+  transition-delay: 0.10s;
+}
+
+.hw__card-3 {
+  transition-delay: 0.15s;
+}
+
+.hw__card-4 {
+  transition-delay: 0.20s;
+}
+
+.hw__card-5 {
+  transition-delay: 0.25s;
+}
+
+.hw__card-6 {
+  transition-delay: 0.30s;
+}
+
+/* =========================================================
+   CARD 2 - MARKET TICKER AREA
+
+   DOES NOT CHANGE CARD 2 WIDTH / HEIGHT / POSITION
+========================================================= */
+
+.hw__card-2-market-window {
+  position: absolute;
+
+  /* =========================================
+     MANUAL WHOLE TICKER POSITION
+
+     top:
+     + = DOWN
+     - = UP
+
+     left:
+     + = RIGHT
+     - = LEFT
+  ========================================= */
+
+  top: 28px;
+  left: 0px;
+
+  width: 100%;
+
+  height: 145px;
+
+  overflow: hidden;
+
+  z-index: 6;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   EACH ROW
+========================================================= */
+
+.hw__card-2-row {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* ROW 1 POSITION */
+
+.hw__card-2-row--one {
+  top: 0px;
+
+  height: 58px;
+}
+
+
+/* ROW 2 POSITION */
+
+.hw__card-2-row--two {
+  top: 70px;
+
+  height: 58px;
+}
+
+
+/* =========================================================
+   TRACK COMMON
+========================================================= */
+
+.hw__card-2-track {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   ROW 1
+   RIGHT → LEFT
+========================================================= */
+
+.hw__card-2-track--rtl {
+  animation:
+    hw-card-2-right-to-left
+    18s
+    linear
+    infinite;
+
+  /* DEFAULT = FREEZE */
+  animation-play-state: paused;
+}
+
+/* =========================================================
+   ROW 2
+   LEFT → RIGHT
+========================================================= */
+
+.hw__card-2-track--ltr {
+  animation:
+    hw-card-2-left-to-right
+    20s
+    linear
+    infinite;
+
+  /* DEFAULT = FREEZE */
+  animation-play-state: paused;
+}
+/* =========================================================
+   CARD 2
+   HOVER ANYWHERE ON CARD = START BOTH ROWS
+========================================================= */
+
+.hw__card-2:hover
+.hw__card-2-track--rtl,
+
+.hw__card-2:hover
+.hw__card-2-track--ltr {
+  animation-play-state: running;
+}
+/* =========================================================
+   DARK MARKET PILL
+========================================================= */
+
+.hw__market-pill {
+  flex-shrink: 0;
+  min-width: max-content;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding:
+    5px
+    14px
+    5px
+    7px;
+
+  box-sizing: border-box;
+
+
+  /* =========================================
+     PIPS BLUE GLASS
+  ========================================= */
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(1, 45, 101, 0.88) 0%,
+      rgba(1, 45, 101, 0.72) 100%
+    );
+
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+
+  border:
+    1px
+    solid
+    rgba(255, 255, 255, 0.28);
+
+
+  border-radius: 999px;
+
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    0 6px 16px rgba(1, 45, 101, 0.18);
+}
+
+
+/* =========================================================
+   SMALL WHITE CIRCLE FOR EACH LOGO
+========================================================= */
+
+.hw__market-logo-circle {
+  width: 34px;
+
+  height: 34px;
+
+  min-width: 34px;
+
+  min-height: 34px;
+
+  border-radius: 50%;
+
+
+  /* WHITE CIRCLE */
+  background: #ffffff;
+
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+  overflow: hidden;
+
+
+  box-sizing: border-box;
+
+
+  padding: 3px;
+
+
+  box-shadow:
+    0
+    2px
+    8px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+
+/* LOGO INSIDE CIRCLE */
+
+.hw__market-logo-circle img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================================
+   MARKET TEXT
+========================================================= */
+
+.hw__market-label {
+  color:#ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ROW 1 ANIMATION
+   RIGHT → LEFT
+========================================================= */
+
+@keyframes hw-card-2-right-to-left {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(
+        calc(-50% - 6px)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   ROW 2 ANIMATION
+   LEFT → RIGHT
+========================================================= */
+
+@keyframes hw-card-2-left-to-right {
+
+  from {
+    transform:
+      translateX(
+        calc(-50% - 6px)
+      );
+  }
+
+  to {
+    transform:
+      translateX(0);
+  }
+
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.hw__cta-wrap {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 45px;
+}
+
 
 .hw__cta-link {
-  display: inline-block;
   text-decoration: none;
 }
 
-/* ─── Tablet (≤ 960px) ────────────────────────────────────── */
-@media (max-width: 960px) {
-  :root {
-    --hw-img-size: 260px;
+
+/* =========================================================
+   LAPTOP
+   992PX - 1199PX
+
+   STILL 3 COLUMNS × 2 ROWS
+========================================================= */
+
+@media
+(min-width: 992px)
+and
+(max-width: 1199px) {
+
+  .hw__section {
+    padding:
+      75px
+      22px
+      80px;
   }
 
-  .hw__layout {
-    grid-template-columns: 1fr 260px 1fr;
-    gap: 20px;
-    padding: 32px 24px;
+
+  .hw__bento-layout {
+    max-width: 1080px;
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    grid-template-rows:
+      repeat(
+        2,
+        300px
+      );
+
+    gap: 14px;
   }
 
-  .hw__feat-card {
-    max-width: 100%;
+
+  .hw__card-image-area {
+    height: 60%;
+  }
+
+
+  .hw__card-content {
+    padding:
+      16px
+      18px;
+  }
+
+
+  .hw__card-content h3 {
+    font-size: 16px;
+  }
+
+
+  .hw__card-content p {
+    font-size: 10px;
+
+    line-height: 1.45;
   }
 }
 
-/* ─── Mobile (≤ 700px) ────────────────────────────────────── */
-@media (max-width: 700px) {
-  :root {
-    --hw-img-size: 200px;
-  }
+
+/* =========================================================
+   TABLET
+   768PX - 991PX
+
+   2 COLUMNS × 3 ROWS
+========================================================= */
+
+@media
+(min-width: 768px)
+and
+(max-width: 991px) {
 
   .hw__section {
-    padding: 60px 16px 60px;
+    padding:
+      65px
+      18px
+      70px;
   }
 
-  .hw__layout {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "center center"
-      "left   right";
-    gap: 20px;
-    padding: 24px 16px;
+
+  .hw__heading {
+    margin-bottom: 40px;
+  }
+
+
+  .hw__heading h2 {
+    font-size: 38px;
+  }
+
+
+  .hw__bento-layout {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    grid-template-rows:
+      repeat(
+        3,
+        290px
+      );
+
+    gap: 12px;
+  }
+
+
+  /* RESET DESKTOP POSITION */
+
+  .hw__card-1,
+  .hw__card-2,
+  .hw__card-3,
+  .hw__card-4,
+  .hw__card-5,
+  .hw__card-6 {
+    grid-column: auto;
+
+    grid-row: auto;
+  }
+
+
+  .hw__card-image-area {
+    height: 58%;
+  }
+
+
+  .hw__card-content {
+    padding:
+      15px
+      17px;
+  }
+
+
+  .hw__card-content h3 {
+    font-size: 16px;
+  }
+
+
+  .hw__card-content p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   767PX AND BELOW
+
+   1 COLUMN
+========================================================= */
+
+@media
+(max-width: 767px) {
+
+  .hw__section {
+    padding:
+      55px
+      14px
+      60px;
+  }
+
+
+  .hw__heading {
+    margin-bottom: 30px;
+  }
+
+
+  .hw__heading h2 {
+    font-size: 28px;
+
+    line-height: 1.15;
+  }
+
+
+  .hw__heading p {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  .hw__heading-line {
+    margin-top: 14px;
+  }
+
+
+  .hw__bento-layout {
+    display: grid;
+
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      none;
+
+    gap: 12px;
+
+    max-width: 430px;
+  }
+
+
+  /* RESET DESKTOP GRID POSITIONS */
+
+  .hw__card-1,
+  .hw__card-2,
+  .hw__card-3,
+  .hw__card-4,
+  .hw__card-5,
+  .hw__card-6 {
+    grid-column: auto;
+
+    grid-row: auto;
+  }
+
+
+  .hw__bento-card {
+    width: 100%;
+
+    /*
+      MANUAL MOBILE HEIGHT
+
+      240px = smaller
+      260px = medium
+      280px = recommended
+    */
+    height: 270px;
+
+    min-height: 270px;
+
     border-radius: 14px;
   }
 
-  .hw__center {
-    grid-area: center;
-    justify-content: center;
+
+  .hw__card-image-area {
+    height: 58%;
   }
 
-  .hw__col--left {
-    grid-area: left;
-    align-items: stretch;
+
+  .hw__card-content {
+    padding:
+      14px
+      16px;
   }
 
-  .hw__col--right {
-    grid-area: right;
-    align-items: stretch;
+
+  .hw__card-content h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
   }
 
-  /* Reset slide-in for mobile — vertical fade instead */
-  .hw__col--left .hw__feat-card,
-  .hw__col--right .hw__feat-card {
-    transform: translateY(16px);
-    max-width: 100%;
+
+  .hw__card-content p {
+    font-size: 10px;
+
+    line-height: 1.45;
   }
 
-  .hw__feat-card.hw--visible {
-    transform: translateY(0) !important;
-  }
 
-  /* Reduce float travel on mobile so image stays within bounds */
-  .hw__center-img {
-    animation:
-      hw-float-mobile 4s ease-in-out infinite,
-      hw-glow-pulse 2s ease-in-out infinite;
-    /* Constrain oversized image on smaller wrap */
-    width: 110%;
-    height: 110%;
-  }
-
-  .hw__feat-card {
-    padding: 14px;
-  }
-
-  .hw__feat-icon {
-    font-size: 1.1rem;
-  }
-
-  .hw__feat-text {
-    font-size: 0.8rem;
+  .hw__cta-wrap {
+    margin-top: 30px;
   }
 }
+/* =========================================================
+   CARD 4 - RIGHT MIDDLE IMAGE
+   DESKTOP ONLY
+========================================================= */
 
-/* Gentler float for mobile — less travel, no overflow */
-@keyframes hw-float-mobile {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
+@media (min-width: 1200px) {
+
+  .hw__card-4-middle-image {
+    position: absolute;
+
+    /* =========================
+       LEFT / RIGHT
+       bigger right = move LEFT
+       smaller/negative = move RIGHT
+    ========================= */
+    right: 18px;
+
+
+    /* =========================
+       UP / DOWN
+       50% = middle
+       45% = little UP
+       55% = little DOWN
+    ========================= */
+    top: 50%;
+
+
+    /* =========================
+       IMAGE SIZE
+    ========================= */
+    width: 480px;
+
+    height: auto;
+
+    object-fit: contain;
+
+
+    /* =========================
+       MANUAL ROTATION
+
+       -10deg = rotate LEFT
+        0deg  = straight
+        10deg = rotate RIGHT
+    ========================= */
+    transform:
+      translateY(-50%)
+      rotate(-8deg);
+
+
+    transform-origin: center;
+
+    z-index: 2;
+
+    pointer-events: none;
+    user-select: none;
   }
-  25% {
-    transform: translateY(-5px) rotate(0.2deg);
+
+}
+/* =========================================================
+   CARD 4 TEXT - BOTTOM POSITION
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hw__card-4 .hw__card-content {
+    position: absolute;
+
+    /*
+      TEXT UP / DOWN
+
+      smaller bottom = DOWN
+      bigger bottom  = UP
+    */
+    bottom: 28px;
+
+    left: 0px;
+
+    width: 58%;
+
+    height: auto;
+
+    flex: none;
+
+    padding:
+      20px
+      22px;
+
+    box-sizing: border-box;
+
+    z-index: 5;
   }
-  50% {
-    transform: translateY(-3px) rotate(-0.15deg);
+
+
+  .hw__card-4 .hw__card-content h3 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
   }
-  75% {
-    transform: translateY(-7px) rotate(0.1deg);
+
+
+  .hw__card-4 .hw__card-content p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    max-width: 250px;
   }
+
+}
+/* =========================================================
+   CARD 4 TEXT COLOR
+========================================================= */
+
+.hw__card-4 .hw__card-content h3 {
+  color: #012d65;
 }
 
-/* ─── Small mobile (≤ 420px) ─────────────────────────────── */
-@media (max-width: 420px) {
-  :root {
-    --hw-img-size: 180px;
-  }
+.hw__card-4 .hw__card-content p {
+  color: #012d65;
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-  .hw__layout {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "center"
-      "left"
-      "right";
-    gap: 16px;
-  }
-
-  .hw__col--left,
-  .hw__col--right {
-    align-items: stretch;
-  }
+@media
+(max-width: 420px) {
 
   .hw__heading h2 {
-    font-size: 1.55rem;
+    font-size: 24px;
   }
 
-  /* Even more contained float on small phones */
-  .hw__center-img {
-    width: 105%;
-    height: 105%;
+
+  .hw__bento-card {
+    height: 250px;
+
+    min-height: 250px;
+  }
+
+
+  .hw__card-content {
+    padding:
+      12px
+      14px;
+  }
+
+
+  .hw__card-content h3 {
+    font-size: 15px;
+  }
+
+
+  .hw__card-content p {
+    font-size: 9px;
   }
 }
+/* =========================================================
+   CARD 1 TEXT MANUAL CONTROL
+========================================================= */
 
-/* ─── Respect reduced motion ──────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .hw__center-img,
-  .hw__img-wrap::before {
-    animation: none;
+.hw__card-1 .hw__card-content {
+  position: relative;
+
+  /* + = DOWN / - = UP */
+  top: 80px;
+
+  /* + = RIGHT / - = LEFT */
+  left: 0px;
+
+  z-index: 5;
+}
+
+
+/* CARD 1 TITLE */
+
+.hw__card-1 .hw__card-content h3 {
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  margin-bottom: 10px;
+}
+
+
+/* CARD 1 DESCRIPTION */
+
+.hw__card-1 .hw__card-content p {
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  max-width: 340px;
+}
+/* =========================================================
+   CARD 1 TEXT COLOR
+========================================================= */
+
+.hw__card-1 .hw__card-content h3 {
+  color: #012d65;
+}
+
+.hw__card-1 .hw__card-content p {
+  color: #012d65;
+}
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  .hw__bento-card,
+  .hw__card-image {
+    transition: none !important;
   }
-  .hw__center-img {
-    filter: drop-shadow(0 0 18px rgba(56, 145, 250, 0.45)) saturate(1.2)
-      brightness(1.06);
+
+
+  .hw__bento-card {
+    opacity: 1;
+
+    transform: none;
   }
+} 
+/* =========================================================
+   CARD 2 TEXT MANUAL CONTROL
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hw__card-2 .hw__card-content {
+    position: relative;
+
+    /*
+      TEXT UP / DOWN
+
+      + = DOWN
+      - = UP
+
+      Try:
+      60px  = little down
+      80px  = medium
+      100px = lower
+      120px = very low
+    */
+    top: 90px;
+
+
+    /*
+      TEXT LEFT / RIGHT
+
+      + = RIGHT
+      - = LEFT
+    */
+    left: 0px;
+
+
+    z-index: 5;
+  }
+
+
+  /* CARD 2 TITLE */
+
+  .hw__card-2 .hw__card-content h3 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+  }
+
+
+  /* CARD 2 DESCRIPTION */
+
+  .hw__card-2 .hw__card-content p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    max-width: 340px;
+  }
+
+}
+/* =========================================================
+   CARD 2 TEXT COLOR
+========================================================= */
+
+.hw__card-2 .hw__card-content h3 {
+  color: #012d65;
+}
+
+.hw__card-2 .hw__card-content p {
+  color: #012d65;
+}
+/* =========================================================
+   CARD 3 TEXT
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hw__card-3 .hw__card-content {
+    position: absolute;
+
+    /*
+      MUCH SAFER THAN top: 120px
+
+      bottom:
+      smaller = text DOWN
+      bigger  = text UP
+    */
+    bottom: 36px;
+
+    left: 0px;
+
+    width: 100%;
+
+    height: auto;
+
+    flex: none;
+
+    padding:
+      20px
+      22px;
+
+    box-sizing: border-box;
+
+    z-index: 5;
+  }
+
+
+  /* CARD 3 TITLE */
+
+  .hw__card-3 .hw__card-content h3 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin:
+      0
+      0
+      10px;
+
+    color: #012d65;
+  }
+
+
+  /* CARD 3 DESCRIPTION */
+
+  .hw__card-3 .hw__card-content p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    max-width: 260px;
+
+    margin: 0;
+
+    color:
+      #012d65;
+  }
+
 }

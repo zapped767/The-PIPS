@@ -1,5 +1,5 @@
 /* =========================================================
-   COMPLETE SECTION
+   COMPLETE QUALITY SECTION
 ========================================================= */
 
 .quality-section {
@@ -7,12 +7,18 @@
   margin: 0;
   padding: 0;
 
-  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  position: relative;
 }
 
 
 /* =========================================================
-   PART 1 - BLUE HEADER SECTION
+   BLUE HEADER
 ========================================================= */
 
 .quality-header-section {
@@ -20,18 +26,18 @@
 
   background: #012d65;
 
-  /* TOP | LEFT/RIGHT | BOTTOM */
-  padding: 35px 7% 55px;
+  padding:
+    35px
+    7%
+    55px;
 
   box-sizing: border-box;
 
   overflow: hidden;
+
+  position: relative;
 }
 
-
-/* =========================================================
-   HEADER LAYOUT
-========================================================= */
 
 .quality-header-layout {
   width: 100%;
@@ -43,20 +49,20 @@
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 40px;
+
+  position: relative;
 }
 
-
-/* =========================================================
-   LEFT HEADER CONTENT
-========================================================= */
 
 .quality-header-content {
   position: relative;
 
   width: 100%;
+
   max-width: 640px;
 
   text-align: left;
@@ -65,12 +71,11 @@
 }
 
 
-/* =========================================================
-   TRADE WITH CONFIDENCE
-========================================================= */
-
 .quality-header-content h2 {
-  margin: 0 0 18px;
+  margin:
+    0
+    0
+    18px;
 
   color: #ffffff;
 
@@ -84,16 +89,10 @@
 }
 
 
-/* YELLOW "TRADE" */
-
 .trade-yellow {
   color: #f7a901;
 }
 
-
-/* =========================================================
-   HEADER DESCRIPTION
-========================================================= */
 
 .quality-header-content p {
   margin: 0;
@@ -113,7 +112,7 @@
 
 
 /* =========================================================
-   RIGHT SIDE LARGE PIPS
+   LARGE PIPS WATERMARK
 ========================================================= */
 
 .quality-header-watermark {
@@ -121,7 +120,6 @@
 
   flex-shrink: 0;
 
-  /* MANUAL PIPS SIZE */
   font-size: 180px;
 
   font-weight: 800;
@@ -130,25 +128,26 @@
 
   letter-spacing: 4px;
 
-  color: rgba(255, 255, 255, 0.12);
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
 
   text-transform: uppercase;
 
   user-select: none;
 
-
-  /* =========================================
-     MANUAL UP / DOWN
-     + = DOWN
-     - = UP
-  ========================================== */
-
+  /* + DOWN / - UP */
   top: 60px;
 }
 
 
 /* =========================================================
-   PART 2 - WHITE CARDS SECTION
+   DEFAULT CARD SECTION
+   LAPTOP / TABLET / MOBILE BASE
 ========================================================= */
 
 .quality-cards-section {
@@ -156,14 +155,24 @@
 
   background: #ffffff;
 
-  padding: 65px 20px 80px;
+  padding:
+    65px
+    20px
+    80px;
 
   box-sizing: border-box;
 }
 
 
+.quality-sticky-stage {
+  width: 100%;
+
+  position: relative;
+}
+
+
 /* =========================================================
-   GRID
+   DEFAULT GRID
 ========================================================= */
 
 .quality-grid {
@@ -175,60 +184,49 @@
 
   display: grid;
 
-  /* CARD WIDTH STAYS 400PX */
   grid-template-columns:
-    repeat(3, 400px);
+    repeat(
+      3,
+      400px
+    );
 
   justify-content: center;
 
-  /* ROW | COLUMN */
-  gap: 28px 28px;
+  gap:
+    28px
+    28px;
 }
 
 
 /* =========================================================
-   CARD
-   SIZE NOT CHANGED
+   DEFAULT CARD
 ========================================================= */
 
 .quality-premium-card {
   position: relative;
 
-  /* =========================================
-     CARD SIZE
-     KEEPING YOUR CURRENT SIZE
-  ========================================== */
-
   width: 350px;
+
   height: 250px;
 
-
   overflow: hidden;
-
 
   display: flex;
 
   align-items: center;
-  justify-content: center;
 
+  justify-content: center;
 
   padding: 32px;
 
-
-  /* BEFORE HOVER */
-
   background: #ffffff;
 
-
-  /* BLUE BORDER */
-
   border:
-    2px solid
+    2px
+    solid
     #012d65;
 
-
   border-radius: 24px;
-
 
   box-sizing: border-box;
 
@@ -236,21 +234,57 @@
 
   isolation: isolate;
 
-
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    border-color
+    0.3s
+    ease,
+    box-shadow
+    0.3s
+    ease;
 }
 
 
 /* =========================================================
-   HOVER WATER FILL
+   FLIP STRUCTURE DEFAULT
 
-   START:
-   BOTTOM LEFT
+   FRONT IMAGE IS DESKTOP ONLY.
 
-   MOVE:
-   TOWARDS RIGHT TOP
+   Tablet / Mobile continue using old normal card layout.
+========================================================= */
+
+.quality-flip-inner {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+
+.quality-card-front {
+  display: none;
+}
+
+
+.quality-card-back {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+
+/* CARD OBJECT IMAGE HIDDEN BY DEFAULT */
+
+.quality-card-corner-image {
+  display: none;
+}
+
+
+/* =========================================================
+   OLD HOVER WATER EFFECT
+   TABLET / MOBILE
 ========================================================= */
 
 .quality-premium-card::before {
@@ -261,27 +295,17 @@
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
   z-index: 1;
 
-
-  /* =========================================
-     HOVER GRAY COLOR
-  ========================================== */
-
-background:
-  linear-gradient(
-    135deg,
-    
-    
-    #012d65 100%
-  );
-
-
-  /* =========================================
-     START FROM BOTTOM LEFT
-  ========================================== */
+  background:
+    linear-gradient(
+      135deg,
+      #012d65
+      100%
+    );
 
   clip-path:
     circle(
@@ -290,7 +314,6 @@ background:
       0%
       100%
     );
-
 
   transition:
     clip-path
@@ -304,10 +327,6 @@ background:
 }
 
 
-/* =========================================================
-   COMPLETE FILL
-========================================================= */
-
 .quality-premium-card:hover::before {
   clip-path:
     circle(
@@ -319,16 +338,19 @@ background:
 }
 
 
-/* =========================================================
-   CARD HOVER
-========================================================= */
-
 .quality-premium-card:hover {
   border-color: #012d65;
 
   box-shadow:
-    0 18px 38px
-    rgba(1, 45, 101, 0.18);
+    0
+    18px
+    38px
+    rgba(
+      1,
+      45,
+      101,
+      0.18
+    );
 }
 
 
@@ -343,25 +365,19 @@ background:
 
   width: 100%;
 
-
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
 
-
   opacity: 1;
 
   visibility: visible;
-
-
-  transition:
-    opacity 0.20s ease,
-    visibility 0.20s ease;
 }
 
 
@@ -371,55 +387,43 @@ background:
 
 .quality-card-icon {
   width: 68px;
-  height: 68px;
 
+  height: 68px;
 
   display: flex;
 
   align-items: center;
-  justify-content: center;
 
+  justify-content: center;
 
   margin-bottom: 22px;
 
-
   background: #ffffff;
 
-
   border:
-    2px solid
+    2px
+    solid
     #012d65;
 
-
   border-radius: 18px;
-
 
   color: #012d65;
 
   font-size: 27px;
-
-
-  /* NO ROTATION */
-
-  transform: none;
 }
 
 
-/* ICON SVG */
-
 .quality-card-icon svg {
   width: 28px;
+
   height: 28px;
 
   color: #012d65;
-
-  transform: none;
 }
 
 
 /* =========================================================
-   CARD TITLE
-   ONE LINE
+   TITLE
 ========================================================= */
 
 .quality-premium-card h3 {
@@ -427,10 +431,7 @@ background:
 
   color: #012d65;
 
-
-  /* MANUAL FONT SIZE */
   font-size: 21px;
-
 
   line-height: 1.35;
 
@@ -438,20 +439,12 @@ background:
 
   text-align: center;
 
-
-  /* FORCE ONE LINE */
-
   white-space: nowrap;
-
-
-  text-shadow: none;
-
-  transform: none;
 }
 
 
 /* =========================================================
-   SMALL BLUE LINE
+   SMALL LINE
 ========================================================= */
 
 .quality-card-line {
@@ -468,12 +461,7 @@ background:
 
 
 /* =========================================================
-   WHEN HOVER
-
-   HIDE:
-   ICON
-   TITLE
-   LINE
+   OLD HOVER
 ========================================================= */
 
 .quality-premium-card:hover
@@ -485,57 +473,44 @@ background:
 
 
 /* =========================================================
-   HOVER DESCRIPTION
-   HIDDEN BEFORE HOVER
+   DESCRIPTION
 ========================================================= */
 
 .quality-hover-content {
   position: absolute;
 
   top: 50%;
+
   left: 50%;
 
   z-index: 5;
 
-
   width:
-    calc(100% - 70px);
+    calc(
+      100% - 70px
+    );
 
   max-width: 320px;
-
 
   opacity: 0;
 
   visibility: hidden;
 
-
   text-align: center;
-
 
   transform:
     translate(
       -50%,
       -42%
     );
-
-
-  transition:
-    opacity 0.30s ease 0.18s,
-    transform 0.35s ease 0.18s,
-    visibility 0.30s ease 0.18s;
 }
 
-
-/* =========================================================
-   SHOW DESCRIPTION ON HOVER
-========================================================= */
 
 .quality-premium-card:hover
 .quality-hover-content {
   opacity: 1;
 
   visibility: visible;
-
 
   transform:
     translate(
@@ -545,48 +520,33 @@ background:
 }
 
 
-/* =========================================================
-   HOVER DESCRIPTION TEXT
-========================================================= */
-
 .quality-hover-content p {
   margin: 0;
 
   color: #ffffff;
 
-
-  /* MANUAL DESCRIPTION SIZE */
   font-size: 17px;
-
 
   line-height: 1.8;
 
   font-weight: 500;
 
   text-align: center;
-
-  text-shadow: none;
 }
 
 
 /* =========================================================
-   REMOVE SEE MORE
-========================================================= */
-
-.quality-card-more {
-  display: none !important;
-}
-
-
-/* =========================================================
-   TABLET LARGE
+   LARGE TABLET / LAPTOP
 ========================================================= */
 
 @media (max-width: 1300px) {
 
   .quality-grid {
     grid-template-columns:
-      repeat(2, 400px);
+      repeat(
+        2,
+        400px
+      );
   }
 
 
@@ -642,7 +602,10 @@ background:
 
   .quality-grid {
     grid-template-columns:
-      repeat(2, 400px);
+      repeat(
+        2,
+        400px
+      );
 
     gap: 24px;
   }
@@ -655,13 +618,36 @@ background:
 
 @media (max-width: 767px) {
 
-  /* BLUE HEADER */
+  /* =====================================================
+     BLUE HEADER
+  ===================================================== */
 
   .quality-header-section {
+    position: relative;
+
     padding:
-      50px
+      10px
       18px
-      45px;
+      25px;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+  }
+
+
+  .quality-header-watermark {
+    position: absolute;
+
+    right: 18px;
+
+    bottom: 12px;
+
+    top: auto;
+
+    font-size: 58px;
+
+    margin: 0;
   }
 
 
@@ -675,73 +661,1245 @@ background:
   }
 
 
-  .quality-header-watermark {
-    font-size: 64px;
-
-    align-self: flex-end;
-
-    top: 10px;
-  }
-
-
-  /* WHITE CARDS */
+  /* =====================================================
+     WHITE SECTION
+  ===================================================== */
 
   .quality-cards-section {
-    padding:
-      45px
-      16px
-      55px;
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    background: #ffffff !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
   }
 
+
+  .quality-sticky-stage {
+    position: relative !important;
+
+    height: auto !important;
+
+    top: auto !important;
+  }
+
+
+  /* =====================================================
+     MOBILE GRID
+  ===================================================== */
 
   .quality-grid {
-    grid-template-columns: 1fr;
+    display: flex !important;
 
-    gap: 20px;
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    background: #ffffff !important;
+
+    overflow-x: auto !important;
+
+    overflow-y: hidden !important;
+
+    gap: 12px !important;
+
+    padding:
+      18px
+      12px
+      22px
+      12px !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    scroll-snap-type:
+      x
+      mandatory;
+
+    scroll-padding-left: 12px;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width: none;
   }
 
 
-  .quality-premium-card {
-    width: 100%;
+  .quality-grid::-webkit-scrollbar {
+    display: none;
+  }
 
-    height: 265px;
+
+  /* =====================================================
+     MOBILE CARD
+  ===================================================== */
+
+  .quality-premium-card {
+    flex:
+      0
+      0
+      190px !important;
+
+    width:
+      190px !important;
+
+    min-width:
+      190px !important;
+
+    max-width:
+      190px !important;
+
+    height:
+      140px !important;
+
+    min-height:
+      140px !important;
+
+    max-height:
+      140px !important;
+
+    margin:
+      0 !important;
 
     padding:
-      25px
-      20px;
+      12px !important;
+
+    box-sizing:
+      border-box !important;
+
+    scroll-snap-align:
+      start;
+
+    scroll-snap-stop:
+      always;
+
+    transform:
+      none !important;
+
+    opacity:
+      1 !important;
+  }
+
+
+  .quality-flip-inner {
+    transform:
+      none !important;
+
+    width: 100%;
+
+    height: 100%;
+  }
+
+
+  .quality-card-front {
+    display:
+      none !important;
+  }
+
+
+  .quality-card-back {
+    position:
+      relative !important;
+
+    inset:
+      auto !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    transform:
+      none !important;
+
+    backface-visibility:
+      visible !important;
+  }
+
+
+  .quality-card-corner-image {
+    display:
+      none !important;
+  }
+
+
+  /* =====================================================
+     MOBILE CONTENT
+  ===================================================== */
+
+  .quality-normal-content {
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    display:
+      flex !important;
+
+    flex-direction:
+      column !important;
+
+    align-items:
+      center !important;
+
+    justify-content:
+      center !important;
+
+    text-align:
+      center !important;
+
+    padding:
+      0 !important;
   }
 
 
   .quality-card-icon {
-    width: 58px;
-    height: 58px;
+    width:
+      42px !important;
 
-    margin-bottom: 18px;
+    height:
+      42px !important;
+
+    min-width:
+      42px !important;
+
+    min-height:
+      42px !important;
+
+    margin:
+      0
+      0
+      12px
+      0 !important;
   }
 
 
   .quality-card-icon svg {
-    width: 24px;
-    height: 24px;
+    width:
+      19px !important;
+
+    height:
+      19px !important;
   }
 
 
   .quality-premium-card h3 {
-    font-size: 18px;
+    font-size:
+      12px !important;
 
-    white-space: nowrap;
+    line-height:
+      1.25 !important;
+
+    text-align:
+      center !important;
+
+    white-space:
+      normal !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      0
+      4px !important;
   }
 
 
-  .quality-hover-content {
+  .quality-card-line {
     width:
-      calc(100% - 50px);
+      32px !important;
+
+    margin-top:
+      10px !important;
+  }
+}
+
+
+/* =========================================================
+   =========================================================
+   DESKTOP
+
+   MAIN IMAGE
+   → PUSH + SIX SLICES
+   → 3D FLIP
+   → SIX CARDS
+
+   1200PX+
+   =========================================================
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     KEEP YOUR CURRENT SECTION HEIGHT
+  ===================================================== */
+
+  .quality-cards-section {
+    position: relative;
+
+    width: 100%;
+
+    /*
+      DO NOT CHANGE
+      YOUR CURRENT ADJUSTMENT
+    */
+    height:
+      60vh !important;
+
+    margin-top:
+      -28px;
+
+    padding:
+      22px
+      18px !important;
+
+    background:
+      #ffffff !important;
+
+    box-sizing:
+      border-box;
+
+    overflow:
+      visible;
+
+    z-index:
+      5;
+  }
+
+
+  /* =====================================================
+     ONE WHITE STICKY CONTAINER
+  ===================================================== */
+
+  .quality-sticky-stage {
+    position:
+      sticky;
+
+    /*
+      YOUR CURRENT POSITION
+    */
+    top:
+      100px;
+
+    width:
+      calc(
+        100% - 20px
+      );
+
+    max-width:
+      1550px;
+
+    /*
+      YOUR CURRENT HEIGHT
+      DO NOT CHANGE
+    */
+    height:
+      540px !important;
+
+    margin:
+      0
+      auto;
+
+    background:
+      #ffffff !important;
+
+    border-radius:
+      30px;
+
+    overflow:
+      hidden;
+
+    box-sizing:
+      border-box;
+  }
+
+
+  /* =====================================================
+     SIX-SLICE STAGE
+  ===================================================== */
+
+  .quality-grid {
+    position:
+      absolute;
+
+    inset:
+      0;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    max-width:
+      none !important;
+
+    margin:
+      0 !important;
+
+    padding:
+      24px !important;
+
+    display:
+      flex !important;
+
+    flex-direction:
+      row !important;
+
+    flex-wrap:
+      nowrap !important;
+
+    align-items:
+      center !important;
+
+    justify-content:
+      center !important;
+
+    /*
+      IMPORTANT:
+      JS connectedX[]
+      is based on 16px gap.
+    */
+    gap:
+      16px !important;
+
+    overflow:
+      hidden;
+
+    box-sizing:
+      border-box;
+
+    perspective:
+      1800px;
+
+
+    /* =================================================
+       NEW:
+       SMOOTH PUSH-IN PERFORMANCE
+
+       DOES NOT CHANGE YOUR POSITION.
+    ================================================= */
+
+    transform-origin:
+      center center;
+
+    will-change:
+      transform;
+
+
+    z-index:
+      10;
+  }
+
+
+  /* =====================================================
+     EACH CARD
+
+     YOUR CURRENT WIDTH / HEIGHT
+  ===================================================== */
+
+  .quality-premium-card {
+    position:
+      relative !important;
+
+
+    /*
+      CARD WIDTH
+    */
+
+    width:
+      clamp(
+        175px,
+        12vw,
+        230px
+      ) !important;
+
+    min-width:
+      clamp(
+        175px,
+        12vw,
+        230px
+      ) !important;
+
+    max-width:
+      clamp(
+        175px,
+        12vw,
+        230px
+      ) !important;
+
+    flex:
+      0
+      0
+      clamp(
+        175px,
+        12vw,
+        230px
+      ) !important;
+
+
+    /*
+      CARD HEIGHT
+    */
+
+    height:
+      clamp(
+        330px,
+        22vw,
+        420px
+      ) !important;
+
+    min-height:
+      clamp(
+        330px,
+        22vw,
+        420px
+      ) !important;
+
+    max-height:
+      clamp(
+        330px,
+        22vw,
+        420px
+      ) !important;
+
+
+    margin:
+      0 !important;
+
+    padding:
+      0 !important;
+
+    border:
+      none !important;
+
+    border-radius:
+      0;
+
+    background:
+      transparent !important;
+
+    overflow:
+      visible !important;
+
+    box-sizing:
+      border-box;
+
+    perspective:
+      1500px;
+
+    transform-style:
+      preserve-3d;
+
+    transform-origin:
+      center center;
+
+    will-change:
+      transform;
+  }
+
+
+  /* =====================================================
+     REMOVE OLD WATER HOVER
+  ===================================================== */
+
+  .quality-premium-card::before,
+  .quality-premium-card::after {
+    display:
+      none !important;
+  }
+
+
+  /* =====================================================
+     3D FLIP INNER
+  ===================================================== */
+
+  .quality-flip-inner {
+    position:
+      relative;
+
+    width:
+      100%;
+
+    height:
+      100%;
+
+    transform-style:
+      preserve-3d;
+
+    transform-origin:
+      center center;
+
+    will-change:
+      transform;
+  }
+
+
+  /* =====================================================
+     FRONT + BACK COMMON
+  ===================================================== */
+
+  .quality-card-front,
+  .quality-card-back {
+    position:
+      absolute;
+
+    inset:
+      0;
+
+    width:
+      100%;
+
+    height:
+      100%;
+
+    overflow:
+      hidden;
+
+    backface-visibility:
+      hidden;
+
+    -webkit-backface-visibility:
+      hidden;
+  }
+
+
+  /* =====================================================
+     FRONT SIDE
+
+     ONE SINGLE IMAGE DIVIDED INTO
+     SIX SLICES
+  ===================================================== */
+
+  .quality-card-front {
+    display:
+      block !important;
+
+
+    /*
+      YOUR CURRENT MAIN IMAGE HEIGHT
+      DO NOT CHANGE
+    */
+
+    height:
+      650px !important;
+
+
+    /*
+      YOUR CURRENT IMAGE POSITION
+      DO NOT CHANGE
+    */
+
+    top:
+      64%;
+
+
+    bottom:
+      auto;
+
+
+    background-image:
+      var(
+        --quality-main-image
+      );
+
+
+    background-repeat:
+      no-repeat;
+
+
+    background-size:
+      600%
+      100%;
+
+
+    background-color:
+      #ffffff;
+
+
+    transform:
+      translateY(-50%)
+      rotateY(0deg);
+
+
+    z-index:
+      2;
+
+
+    /*
+      WHEN SIX SLICES DIVIDE,
+      CORNERS BECOME ROUNDED.
+    */
+
+    border-radius:
+      calc(
+        24px *
+        var(
+          --separate,
+          0
+        )
+      );
+  }
+
+
+  /* =====================================================
+     OUTER CORNERS
+     WHILE IMAGE IS CONNECTED
+  ===================================================== */
+
+  .quality-premium-card:nth-child(1)
+  .quality-card-front {
+    border-radius:
+      24px
+      calc(
+        24px *
+        var(
+          --separate,
+          0
+        )
+      )
+      calc(
+        24px *
+        var(
+          --separate,
+          0
+        )
+      )
+      24px;
+  }
+
+
+  .quality-premium-card:nth-child(6)
+  .quality-card-front {
+    border-radius:
+      calc(
+        24px *
+        var(
+          --separate,
+          0
+        )
+      )
+      24px
+      24px
+      calc(
+        24px *
+        var(
+          --separate,
+          0
+        )
+      );
+  }
+
+
+  /* =====================================================
+     IMAGE SLICE POSITIONS
+  ===================================================== */
+
+  .quality-premium-card:nth-child(1)
+  .quality-card-front {
+    background-position:
+      0%
+      center;
+  }
+
+
+  .quality-premium-card:nth-child(2)
+  .quality-card-front {
+    background-position:
+      20%
+      center;
+  }
+
+
+  .quality-premium-card:nth-child(3)
+  .quality-card-front {
+    background-position:
+      40%
+      center;
+  }
+
+
+  .quality-premium-card:nth-child(4)
+  .quality-card-front {
+    background-position:
+      60%
+      center;
+  }
+
+
+  .quality-premium-card:nth-child(5)
+  .quality-card-front {
+    background-position:
+      80%
+      center;
+  }
+
+
+  .quality-premium-card:nth-child(6)
+  .quality-card-front {
+    background-position:
+      100%
+      center;
+  }
+
+
+  /* =====================================================
+     BACK SIDE
+  ===================================================== */
+
+  .quality-card-back {
+    display:
+      block;
+
+    transform:
+      rotateY(
+        180deg
+      );
+
+    border-radius:
+      26px;
+
+    z-index:
+      1;
+
+    overflow:
+      hidden;
+  }
+
+
+  /* =====================================================
+     CARD 1 - GOLD
+  ===================================================== */
+
+  .quality-premium-card:nth-child(1)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #513400
+        0%,
+        #e5a500
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     CARD 2 - BLUE
+  ===================================================== */
+
+  .quality-premium-card:nth-child(2)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #07275f
+        0%,
+        #1779f5
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     CARD 3 - RED
+  ===================================================== */
+
+  .quality-premium-card:nth-child(3)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #571519
+        0%,
+        #e33d49
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     CARD 4 - STEEL / TRADING BLUE
+  ===================================================== */
+
+  .quality-premium-card:nth-child(4)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #082b60
+        0%,
+        #4b8bea
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     CARD 5 - PURPLE
+  ===================================================== */
+
+  .quality-premium-card:nth-child(5)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #321363
+        0%,
+        #925eef
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     CARD 6 - GREEN
+  ===================================================== */
+
+  .quality-premium-card:nth-child(6)
+  .quality-card-back {
+    background:
+      linear-gradient(
+        to top,
+        #07502a
+        0%,
+        #0bd15f
+        100%
+      );
+  }
+
+
+  /* =====================================================
+     BACK CARD DARK OVERLAY
+  ===================================================== */
+
+  .quality-card-back::after {
+    content:
+      "";
+
+    position:
+      absolute;
+
+    inset:
+      0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(
+          0,
+          0,
+          0,
+          0
+        )
+        42%,
+        rgba(
+          0,
+          0,
+          0,
+          0.22
+        )
+        100%
+      );
+
+    pointer-events:
+      none;
+
+    z-index:
+      1;
+  }
+
+
+  /* =====================================================
+     HIDE SVG ICONS ON DESKTOP
+  ===================================================== */
+
+  .quality-card-icon {
+    display:
+      none !important;
+  }
+
+
+  /* =====================================================
+     CARD TITLE
+  ===================================================== */
+
+  .quality-normal-content {
+    position:
+      absolute !important;
+
+    left:
+      0;
+
+    top:
+      0;
+
+    width:
+      100% !important;
+
+    height:
+      auto !important;
+
+    padding:
+      26px
+      22px
+      0 !important;
+
+    margin:
+      0 !important;
+
+    display:
+      block !important;
+
+    box-sizing:
+      border-box;
+
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    text-align:
+      left !important;
+
+    z-index:
+      5 !important;
+  }
+
+
+  .quality-premium-card:hover
+  .quality-normal-content {
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+  }
+
+
+  .quality-premium-card h3 {
+    margin:
+      0 !important;
+
+    width:
+      100%;
+
+    max-width:
+      190px;
+
+    color:
+      #ffffff !important;
+
+    font-size:
+      clamp(
+        19px,
+        1.4vw,
+        25px
+      ) !important;
+
+    line-height:
+      1.08 !important;
+
+    font-weight:
+      700;
+
+    text-align:
+      left !important;
+
+    white-space:
+      normal !important;
+
+    text-shadow:
+      none;
+  }
+
+
+  .quality-card-line {
+    display:
+      none !important;
+  }
+
+
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
+
+  .quality-hover-content {
+    position:
+      absolute !important;
+
+    top:
+      118px !important;
+
+    left:
+      22px !important;
+
+    width:
+      calc(
+        100% - 44px
+      ) !important;
+
+    max-width:
+      185px !important;
+
+    margin:
+      0 !important;
+
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    transform:
+      none !important;
+
+    text-align:
+      left !important;
+
+    z-index:
+      5 !important;
+  }
+
+
+  .quality-premium-card:hover
+  .quality-hover-content {
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    transform:
+      none !important;
   }
 
 
   .quality-hover-content p {
-    font-size: 15px;
+    margin:
+      0 !important;
 
-    line-height: 1.7;
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.88
+      ) !important;
+
+    font-size:
+      12px !important;
+
+    line-height:
+      1.5 !important;
+
+    font-weight:
+      500;
+
+    text-align:
+      left !important;
+  }
+
+
+  /* =====================================================
+     BOTTOM RIGHT IMAGE
+
+     YOUR EXISTING VALUES:
+
+     right: -1px;
+     bottom: -16px;
+     width: 220px max
+     height: 264px max
+     rotate: 3.88deg
+  ===================================================== */
+
+  .quality-card-corner-image {
+    display:
+      block !important;
+
+    position:
+      absolute;
+
+    right:
+      -1px;
+
+    bottom:
+      -16px;
+
+    width:
+      clamp(
+        180px,
+        12vw,
+        220px
+      );
+
+    height:
+      clamp(
+        220px,
+        14vw,
+        264px
+      );
+
+    object-fit:
+      contain;
+
+    object-position:
+      right
+      bottom;
+
+    transform:
+      rotate(
+        3.88deg
+      );
+
+    transform-origin:
+      bottom
+      right;
+
+    pointer-events:
+      none;
+
+    user-select:
+      none;
+
+    z-index:
+      2;
+  }
+
+
+  /* =====================================================
+     NO HOVER EFFECT
+     DESKTOP CARDS
+  ===================================================== */
+
+  .quality-premium-card,
+  .quality-premium-card:hover {
+    box-shadow:
+      none !important;
+
+    cursor:
+      default !important;
+  }
+
+
+  .quality-premium-card:hover
+  .quality-card-back {
+    box-shadow:
+      none !important;
   }
 }
