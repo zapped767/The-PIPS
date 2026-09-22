@@ -599,3 +599,514 @@
   }
 }
 //for home banner two end
+/* =========================================================
+   THE PIPS - BLUE APP BANNER
+   ========================================================= */
+
+.pips-app-banner-section {
+  width: 100%;
+  padding: 40px 0 60px;
+  background: #f5f6f8;
+  position: relative;
+  overflow: visible;
+}
+
+.pips-app-banner-section .container {
+  position: relative;
+
+  /* MANUAL OUTER CONTAINER WIDTH */
+  width: 100%;
+  max-width: 1420px !important;
+
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  overflow: visible;
+}
+
+/* =========================================================
+   PIPS BANNER - IMAGE CARD
+
+   MANUAL WIDTH AND HEIGHT CONTROL
+========================================================= */
+
+.pips-app-banner-card {
+  position: relative;
+
+  /* MANUAL CARD WIDTH */
+  width: 100%;
+  max-width: 1370px;
+
+  /* MANUAL CARD HEIGHT */
+  height: 390px;
+  min-height: 390px;
+
+  margin: 0 auto;
+
+  /* ROUNDED CORNERS */
+  border-radius: 22px;
+
+  /* INNER SPACE */
+  padding: 25px 45px;
+
+  /* ONLY YOUR BLUE WORLD MAP IMAGE */
+  background-color: #012d65;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* KEEP OVERLAPPING IMAGES VISIBLE */
+  overflow: visible;
+
+  box-sizing: border-box;
+}
+
+/* REMOVE DARK OVERLAY - SHOW ORIGINAL MAP COLORS */
+
+.pips-app-banner-card::before {
+  display: none !important;
+}
+
+.pips-app-banner-card .row {
+  position: relative;
+  z-index: 2;
+  min-height: 320px;
+}
+
+.pips-app-banner-content {
+  position: relative;
+  z-index: 5;
+  max-width: 580px;
+}
+
+.pips-app-banner-content h1 {
+  font-size: 62px;
+  line-height: 1.08;
+  font-weight: 800;
+  color: #ffffff !important;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.pips-app-banner-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92) !important;
+  margin-bottom: 32px;
+  max-width: 560px;
+  text-align: left;
+}
+
+.pips-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 58px;
+  padding: 0 28px;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #012d65 !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.pips-banner-btn:hover {
+  background: #f7a901;
+  color: #012d65 !important;
+  transform: translateY(-3px);
+}
+
+/* RIGHT IMAGE AREA */
+.pips-app-banner-visual {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  overflow: visible;
+}
+
+/* BIG PHONE IMAGE */
+.pips-banner-phone-main {
+  position: absolute;
+  right: -90px;   /* move more outside right */
+  bottom: -85px;  /* move down */
+  width: 580px;   /* main size */
+  max-width: none;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.30));
+}
+
+/* SMALL PHONE IMAGE */
+.pips-banner-phone-small {
+  position: absolute;
+  right: 145px;   /* manual horizontal position */
+  top: -55px;     /* manual vertical position */
+  width: 235px;   /* overlay phone size */
+  max-width: none;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.22));
+}
+
+/* ANIMATION */
+.banner-content-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.banner-content-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LARGE LAPTOP
+   ========================================================= */
+@media (max-width: 1399px) {
+  .pips-app-banner-content h1 {
+    font-size: 54px;
+  }
+
+  .pips-banner-phone-main {
+    width: 520px;
+    right: -70px;
+    bottom: -70px;
+  }
+
+  .pips-banner-phone-small {
+    width: 210px;
+    right: 120px;
+    top: -40px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+@media (max-width: 1199px) {
+  .pips-app-banner-card {
+    min-height: 400px;
+    padding: 50px 40px;
+  }
+
+  .pips-app-banner-content h1 {
+    font-size: 48px;
+  }
+
+  .pips-app-banner-content p {
+    font-size: 16px;
+  }
+
+  .pips-app-banner-visual {
+    min-height: 320px;
+  }
+
+  .pips-banner-phone-main {
+    width: 460px;
+    right: -55px;
+    bottom: -45px;
+  }
+
+  .pips-banner-phone-small {
+    width: 190px;
+    right: 100px;
+    top: -18px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+@media (max-width: 991px) {
+  .pips-app-banner-card {
+    min-height: auto;
+    padding: 42px 28px 30px;
+  }
+
+  .pips-app-banner-content h1 {
+    font-size: 38px;
+    line-height: 1.12;
+  }
+
+  .pips-app-banner-content p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .pips-app-banner-visual {
+    min-height: 290px;
+    margin-top: 25px;
+  }
+
+  .pips-banner-phone-main {
+    width: 400px;
+    right: -35px;
+    bottom: -35px;
+  }
+
+  .pips-banner-phone-small {
+    width: 160px;
+    right: 90px;
+    top: -12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 767px) {
+  .pips-app-banner-section {
+    padding: 25px 0 40px;
+  }
+
+  .pips-app-banner-card {
+    border-radius: 22px;
+    padding: 30px 20px 20px;
+  }
+
+  .pips-app-banner-card::before {
+    border-radius: 22px;
+  }
+
+  .pips-app-banner-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .pips-app-banner-content h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .pips-app-banner-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pips-banner-btn {
+    min-width: 190px;
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .pips-app-banner-visual {
+    min-height: 260px;
+    margin-top: 20px;
+  }
+
+  .pips-banner-phone-main {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+  }
+
+  .pips-banner-phone-small {
+    width: 115px;
+    right: 10px;
+    top: -10px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+@media (max-width: 480px) {
+  .pips-app-banner-content h1 {
+    font-size: 24px;
+  }
+
+  .pips-banner-phone-main {
+    width: 250px;
+  }
+
+  .pips-banner-phone-small {
+    width: 100px;
+    right: 0;
+    top: -6px;
+  }
+}
+
+/* =========================================================
+   THE PIPS - BANNER ONE TEXT AND MAP FIX
+
+   DESKTOP: 1200PX AND ABOVE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =========================================
+     BACKGROUND IMAGE
+
+     Keep the original blue map visible.
+  ========================================= */
+
+  .pips-app-banner-section .pips-app-banner-card {
+    background-color: #012d65;
+
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+
+  /* =========================================
+     TEXT CONTAINER
+
+     Keep heading and paragraph inside card.
+  ========================================= */
+
+  .pips-app-banner-section .pips-app-banner-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 580px;
+
+    top: 0;
+    left: 0;
+  }
+
+
+  /* =========================================
+     HEADING
+
+     MANUAL SIZE:
+     32px = smaller
+     36px = recommended
+     40px = bigger
+  ========================================= */
+
+  .pips-app-banner-section
+  .pips-app-banner-content h1 {
+    font-size: 36px !important;
+
+    line-height: 1.2 !important;
+
+    letter-spacing: -0.6px;
+
+    margin: 0 0 16px !important;
+
+    color: #ffffff !important;
+
+    text-align: left !important;
+  }
+
+
+  /* =========================================
+     PARAGRAPH
+
+     MANUAL SIZE:
+     12px = smaller
+     14px = recommended
+     16px = bigger
+  ========================================= */
+
+  .pips-app-banner-section
+  .pips-app-banner-content p {
+    font-size: 14px !important;
+
+    line-height: 1.6 !important;
+
+    max-width: 530px;
+
+    margin: 0 0 22px !important;
+
+    color: #ffffff !important;
+
+    text-align: left !important;
+  }
+
+}
+/* =========================================================
+   COMBINED TWO-PHONE IMAGE
+   DESKTOP ONLY — 1200PX AND ABOVE
+
+   MANUAL SIZE AND POSITION
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-app-banner-section
+  .pips-app-banner-visual {
+    position: relative;
+    overflow: visible;
+  }
+
+  .pips-app-banner-section
+  .pips-app-banner-visual
+  .pips-banner-phone-main {
+
+    position: absolute !important;
+
+    /* =========================================
+       1. IMAGE SIZE
+
+       200px = SMALL
+       250px = MEDIUM
+       300px = BIGGER
+    ========================================= */
+
+    width: 430px !important;
+
+    max-width: none !important;
+    height: auto !important;
+
+
+    /* =========================================
+       2. UP / DOWN
+
+       -50px = MOVE UP
+         0px = NORMAL
+        30px = MOVE DOWN
+    ========================================= */
+
+    top: -65px !important;
+    bottom: auto !important;
+
+
+    /* =========================================
+       3. LEFT / RIGHT
+
+       right: 50px  = MOVE LEFT
+       right: 0px   = NORMAL
+       right: -50px = MOVE RIGHT
+    ========================================= */
+
+    right: 0px !important;
+    left: auto !important;
+
+
+    /* KEEP ORIGINAL IMAGE SHAPE */
+
+    object-fit: contain !important;
+    transform: none !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+
+    z-index: 10 !important;
+
+    pointer-events: none;
+    user-select: none;
+  }
+
+}

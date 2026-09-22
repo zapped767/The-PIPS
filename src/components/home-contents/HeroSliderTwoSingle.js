@@ -529,6 +529,298 @@ const HeroSliderTwoSingle = ({ data }) => {
         }
 
 
+/* =========================================================
+   SLIDE 3 - LARGE DESKTOP ONLY
+   1200PX AND ABOVE
+
+   MANUAL CONTROLS:
+   HEADING, PARAGRAPH AND BUTTON
+
+   OTHER VIEWS UNCHANGED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     1. WHOLE TEXT CONTAINER
+
+     Move heading + paragraph TOGETHER.
+
+     LEFT:
+       + = move RIGHT
+       - = move LEFT
+
+     TOP:
+       + = move DOWN
+       - = move UP
+  ===================================================== */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3 {
+
+    position: relative !important;
+
+    /* MANUAL WHOLE TEXT POSITION */
+
+    margin-left: 450px !important;
+
+    top: -60px !important;
+
+    /* CONTENT WIDTH */
+
+    width: 750px !important;
+
+    max-width: 750px !important;
+
+    text-align: left !important;
+  }
+
+
+  /* =====================================================
+     2. HEADING - START SMALL. DREAM BIG.
+
+     MANUAL HEADING SIZE:
+     38px = smaller
+     44px = medium
+     48px = bigger
+
+     HEADING POSITION:
+     left: + RIGHT / - LEFT
+     top:  + DOWN  / - UP
+  ===================================================== */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3 h1 {
+
+    position: relative !important;
+
+    /* MANUAL H1 POSITION */
+
+    left: 0px !important;
+
+    top: 0px !important;
+
+    /* MANUAL H1 FONT SIZE */
+
+    font-size: 44px !important;
+
+    line-height: 1.15 !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -0.5px;
+
+    /* BLACK TEXT */
+
+    color: #000000 !important;
+
+    -webkit-text-fill-color: #000000 !important;
+
+    /* KEEP TITLE IN ONE LINE */
+
+    white-space: nowrap !important;
+
+    width: max-content !important;
+
+    max-width: none !important;
+
+    margin: 0 0 18px !important;
+
+    text-align: left !important;
+
+    text-shadow: none !important;
+  }
+
+
+  /* HEADING SPANS - SAME LINE */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3
+  .slide-3-line {
+
+    display: inline !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* SPACE BETWEEN START SMALL. AND DREAM BIG. */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3
+  .slide-3-line + .slide-3-line::before {
+
+    content: " ";
+
+    white-space: pre;
+  }
+
+
+  /* =====================================================
+     3. PARAGRAPH
+
+     MANUAL P SIZE:
+     16px = smaller
+     18px = medium
+     20px = bigger
+
+     LEFT:
+       + = move RIGHT
+       - = move LEFT
+
+     TOP:
+       + = move DOWN
+       - = move UP
+  ===================================================== */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3 p {
+
+    position: relative !important;
+
+    /* MANUAL PARAGRAPH POSITION */
+
+    left: 0px !important;
+
+    top: 0px !important;
+
+    /* MANUAL PARAGRAPH FONT SIZE */
+
+    font-size: 18px !important;
+
+    line-height: 1.5 !important;
+
+    /* MANUAL PARAGRAPH WIDTH */
+
+    width: 650px !important;
+
+    max-width: 650px !important;
+
+    /* BLACK TEXT */
+
+    color: #000000 !important;
+
+    -webkit-text-fill-color: #000000 !important;
+
+    margin: 0 !important;
+
+    text-align: left !important;
+
+    text-shadow: none !important;
+  }
+
+
+  /* HIDE ORIGINAL PARAGRAPH ON LARGE DESKTOP */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3
+  .slide-3-desktop-paragraph {
+
+    display: none !important;
+  }
+
+
+  /* SHOW YOUR NEW DESKTOP PARAGRAPH */
+
+  .hero-image-slider
+  .hero-slide-content.slide-3
+  .slide-3-large-desktop-paragraph {
+
+    display: inline !important;
+
+    color: #000000 !important;
+  }
+
+
+  /* =====================================================
+     4. REGISTER NOW BUTTON POSITION
+
+     MANUAL BUTTON POSITION:
+
+     LEFT:
+       + = move RIGHT
+       - = move LEFT
+
+     TOP:
+       + = move DOWN
+       - = move UP
+  ===================================================== */
+
+  .hero-image-slider
+  .register-slide-3 {
+
+    position: relative !important;
+
+    /* MANUAL BUTTON POSITION */
+
+    left: 450px !important;
+
+    top: -40px !important;
+
+    width: 100% !important;
+
+    text-align: center !important;
+  }
+
+
+  /* =====================================================
+     5. REGISTER NOW BUTTON SIZE + COLOR
+  ===================================================== */
+
+  .hero-image-slider
+  .register-slide-3
+  .slide__btn.dg__btn {
+
+    /* BLUE BACKGROUND + WHITE TEXT */
+
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: 1.5px solid #012d65 !important;
+
+    /* MANUAL BUTTON SIZE */
+
+    min-width: 200px !important;
+
+    height: 48px !important;
+
+    padding: 0 25px !important;
+
+    /* MANUAL BUTTON TEXT SIZE */
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-decoration: none !important;
+  }
+
+
+  /* BUTTON HOVER */
+
+  .hero-image-slider
+  .register-slide-3
+  .slide__btn.dg__btn:hover {
+
+    background: #035391 !important;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    border-color: #035391 !important;
+  }
+
+}
         /* =========================================================
            SLIDE INDICATORS
         ========================================================= */
@@ -1825,17 +2117,17 @@ const HeroSliderTwoSingle = ({ data }) => {
               <p>
   {slide.id === 3 ? (
     <>
-      <span className="slide-3-desktop-paragraph">
-        {slide.text}
-      </span>
+      {/* EXISTING TABLET + LAPTOP PARAGRAPH */}
+<span className="slide-3-desktop-paragraph">
+  {slide.text}
+</span>
 
-      <span className="slide-3-mobile-paragraph">
-        Whether you're investing $50 or $50,000,<br />
-        The Pips gives you the tools,<br />
-        insights, and support<br />
-        to grow your wealth<br />
-        step by step.
-      </span>
+{/* NEW DESKTOP-ONLY PARAGRAPH */}
+<span className="slide-3-large-desktop-paragraph">
+  Whether you're investing $50 or $50,000, The Pips gives
+  you the tools, insights, and support to grow your wealth
+  step by step.
+</span>
     </>
   ) : (
     slide.text

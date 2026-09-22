@@ -15,7 +15,13 @@ import {
   CartesianGrid,
 } from "recharts";
 
-
+import {
+  Bitcoin,
+  Gem,
+  Coins,
+  Fuel,
+  Cpu,
+} from "lucide-react";
 /* =========================================================
    ASSET CONFIG
 ========================================================= */
@@ -90,8 +96,10 @@ async function fetchWithTimeout(
   url,
   timeoutMs = 10000
 ) {
+
   const controller =
     new AbortController();
+
 
   const timer =
     setTimeout(
@@ -100,27 +108,44 @@ async function fetchWithTimeout(
       timeoutMs
     );
 
-  try {
-    const res =
-      await fetch(url, {
-        signal:
-          controller.signal,
 
-        cache:
-          "no-store",
-      });
+  try {
+
+    const res =
+      await fetch(
+        url,
+        {
+          signal:
+            controller.signal,
+
+          cache:
+            "no-store",
+        }
+      );
+
 
     return res;
+
   } finally {
-    clearTimeout(timer);
+
+    clearTimeout(
+      timer
+    );
   }
 }
 
 
-const sleep = (ms) =>
+const sleep = (
+  ms
+) =>
   new Promise(
-    (resolve) =>
-      setTimeout(resolve, ms)
+    (
+      resolve
+    ) =>
+      setTimeout(
+        resolve,
+        ms
+      )
   );
 
 
@@ -128,32 +153,46 @@ async function withRetry(
   thunk,
   maxAttempts = 3
 ) {
+
   let lastError;
+
 
   for (
     let attempt = 0;
-    attempt < maxAttempts;
+    attempt <
+    maxAttempts;
     attempt++
   ) {
+
     try {
+
       return await thunk();
-    } catch (err) {
-      lastError = err;
+
+    } catch (
+      err
+    ) {
+
+      lastError =
+        err;
+
 
       if (
         attempt <
-        maxAttempts - 1
+        maxAttempts -
+          1
       ) {
+
         await sleep(
           Math.min(
             1000 *
-              2 ** attempt,
+            2 ** attempt,
             8000
           )
         );
       }
     }
   }
+
 
   throw lastError;
 }
@@ -166,8 +205,10 @@ async function withRetry(
 async function fetchBinanceHistory(
   symbol
 ) {
+
   return withRetry(
     async () => {
+
       const url =
         `https://api.binance.com/api/v3/klines` +
         `?symbol=${symbol}` +
@@ -182,7 +223,10 @@ async function fetchBinanceHistory(
         );
 
 
-      if (!res.ok) {
+      if (
+        !res.ok
+      ) {
+
         throw new Error(
           `Binance ${res.status}`
         );
@@ -194,9 +238,13 @@ async function fetchBinanceHistory(
 
 
       return klines.map(
-        (k) => {
+        (
+          k
+        ) => {
+
           const ts =
             k[0];
+
 
           const close =
             parseFloat(
@@ -205,6 +253,7 @@ async function fetchBinanceHistory(
 
 
           return {
+
             time:
               new Date(
                 ts
@@ -225,7 +274,8 @@ async function fetchBinanceHistory(
             value:
               parseFloat(
                 close.toFixed(
-                  close > 1
+                  close >
+                  1
                     ? 2
                     : 6
                 )
@@ -247,8 +297,10 @@ async function fetchBinanceHistory(
 async function fetchYahooChart(
   yahooSymbol
 ) {
+
   return withRetry(
     async () => {
+
       const yahooUrl =
         `https://query1.finance.yahoo.com/v8/finance/chart/${yahooSymbol}` +
         `?interval=5m&range=1d&_=${Date.now()}`;
@@ -267,7 +319,10 @@ async function fetchYahooChart(
         );
 
 
-      if (!res.ok) {
+      if (
+        !res.ok
+      ) {
+
         throw new Error(
           `Yahoo proxy failed: ${res.status}`
         );
@@ -283,8 +338,14 @@ async function fetchYahooChart(
           ?.result?.[0];
 
 
-      if (!result) {
-        console.log(data);
+      if (
+        !result
+      ) {
+
+        console.log(
+          data
+        );
+
 
         throw new Error(
           "Invalid Yahoo response"
@@ -305,22 +366,30 @@ async function fetchYahooChart(
 
       return timestamps
         .map(
-          (ts, i) => {
+          (
+            ts,
+            i
+          ) => {
+
             const close =
               closes[i];
 
 
             if (
-              close == null
+              close ==
+              null
             ) {
+
               return null;
             }
 
 
             return {
+
               time:
                 new Date(
-                  ts * 1000
+                  ts *
+                  1000
                 ).toLocaleTimeString(
                   "en-US",
                   {
@@ -336,12 +405,14 @@ async function fetchYahooChart(
                 ),
 
               timestamp:
-                ts * 1000,
+                ts *
+                1000,
 
               value:
                 parseFloat(
                   close.toFixed(
-                    close > 100
+                    close >
+                    100
                       ? 2
                       : 4
                   )
@@ -350,7 +421,9 @@ async function fetchYahooChart(
           }
         )
 
-        .filter(Boolean);
+        .filter(
+          Boolean
+        );
     },
 
     3
@@ -368,8 +441,11 @@ async function fetchSingleAsset(
   setLoading,
   setErrors
 ) {
+
   setLoading(
-    (prev) => ({
+    (
+      prev
+    ) => ({
       ...prev,
 
       [asset.id]:
@@ -379,7 +455,9 @@ async function fetchSingleAsset(
 
 
   setErrors(
-    (prev) => ({
+    (
+      prev
+    ) => ({
       ...prev,
 
       [asset.id]:
@@ -389,6 +467,7 @@ async function fetchSingleAsset(
 
 
   try {
+
     const data =
       asset.source ===
       "binance-ws"
@@ -403,14 +482,20 @@ async function fetchSingleAsset(
 
 
     setAllData(
-      (prev) => ({
+      (
+        prev
+      ) => ({
         ...prev,
 
         [asset.id]:
           data,
       })
     );
-  } catch (err) {
+
+  } catch (
+    err
+  ) {
+
     console.error(
       `Failed to fetch ${asset.id}:`,
       err
@@ -418,16 +503,22 @@ async function fetchSingleAsset(
 
 
     setErrors(
-      (prev) => ({
+      (
+        prev
+      ) => ({
         ...prev,
 
         [asset.id]:
           "Market Data Unavailable",
       })
     );
+
   } finally {
+
     setLoading(
-      (prev) => ({
+      (
+        prev
+      ) => ({
         ...prev,
 
         [asset.id]:
@@ -448,11 +539,13 @@ const CustomTooltip = ({
   label,
   asset,
 }) => {
+
   if (
     !active ||
     !payload ||
     !payload.length
   ) {
+
     return null;
   }
 
@@ -462,6 +555,7 @@ const CustomTooltip = ({
 
 
   return (
+
     <div
       style={{
         background:
@@ -496,7 +590,9 @@ const CustomTooltip = ({
             4,
         }}
       >
+
         {label}
+
       </div>
 
 
@@ -513,7 +609,9 @@ const CustomTooltip = ({
         }}
       >
 
-        {val >= 1
+        {val >=
+        1
+
           ? `$${val.toLocaleString(
               "en-US",
               {
@@ -527,7 +625,8 @@ const CustomTooltip = ({
 
           : `$${val.toFixed(
               4
-            )}`}
+            )}`
+        }
 
       </div>
 
@@ -545,10 +644,13 @@ const PriceTicker = ({
   asset,
   livePrice,
 }) => {
+
   if (
     !data ||
-    data.length < 2
+    data.length <
+    2
   ) {
+
     return null;
   }
 
@@ -556,7 +658,8 @@ const PriceTicker = ({
   const current =
     livePrice ??
     data[
-      data.length - 1
+      data.length -
+      1
     ]?.value;
 
 
@@ -565,21 +668,29 @@ const PriceTicker = ({
 
 
   const change =
-    current - open;
+    current -
+    open;
 
 
   const pct =
     (
-      (change / open) *
+      (
+        change /
+        open
+      ) *
       100
-    ).toFixed(2);
+    ).toFixed(
+      2
+    );
 
 
   const up =
-    change >= 0;
+    change >=
+    0;
 
 
   return (
+
     <div
       style={{
         textAlign:
@@ -609,7 +720,9 @@ const PriceTicker = ({
         }}
       >
 
-        {current >= 1
+        {current >=
+        1
+
           ? `$${current.toLocaleString(
               "en-US",
               {
@@ -623,7 +736,8 @@ const PriceTicker = ({
 
           : `$${current?.toFixed(
               4
-            )}`}
+            )}`
+        }
 
       </div>
 
@@ -686,13 +800,19 @@ const PriceTicker = ({
           ? "+"
           : ""}
 
-        {change >= 1
-          ? change.toFixed(2)
-          : change.toFixed(4)}
+        {change >=
+        1
+          ? change.toFixed(
+              2
+            )
+          : change.toFixed(
+              4
+            )}
 
         {" "}
 
         (
+
         {up
           ? "+"
           : ""}
@@ -707,27 +827,14 @@ const PriceTicker = ({
 
 
 /* =========================================================
-   MAIN COMPONENT
+   COMPONENT
 ========================================================= */
 
 const LiveChartTwo = () => {
 
-  /* =====================================================
-     HERO SCROLL EFFECT
-  ===================================================== */
 
-  const marketHeroRef =
-    useRef(null);
-const heroProgressRef =
-  useRef(0);
-const heroLockedRef =
-  useRef(false);
-  
-  const [
-    heroTextProgress,
-    setHeroTextProgress,
-  ] = useState(0);
-
+  /* Live Market scrolls normally; this ref is only for the rising text. */
+  const marketHeroRef = useRef(null);
 
   /* =====================================================
      MARKET STATES
@@ -777,25 +884,44 @@ const heroLockedRef =
 
   const activeAsset =
     ASSETS.find(
-      (a) =>
-        a.id === activeId
+      (
+        asset
+      ) =>
+        asset.id ===
+        activeId
     );
 
+/* =========================================================
+   MARKET TAB ICONS
+========================================================= */
+
+const TAB_ICONS = {
+  bitcoin: Bitcoin,
+  ethereum: Gem,
+  gold: Coins,
+  oil: Fuel,
+  nvda: Cpu,
+};
 
   const chartData =
-    allData[activeId] ||
+    allData[
+      activeId
+    ] ||
     [];
 
 
   const livePrice =
     livePrices[
       activeId
-    ] ?? null;
+    ] ??
+    null;
 
 
   const refresh =
     useCallback(
-      (asset) =>
+      (
+        asset
+      ) =>
         fetchSingleAsset(
           asset,
           setAllData,
@@ -807,254 +933,88 @@ const heroLockedRef =
     );
 
 
- /* =========================================================
-   LIVE MARKET TEXT REVEAL
-   LOCK WEBSITE WHILE REVEALING
+  /* =========================================================
+     LIVE MARKET: NORMAL SCROLL + ONE GROUP RISE
+
+     Live Market no longer installs a wheel listener or owns the
+     scrolling lock. Quality's second scroll can finish and the
+     browser continues here normally. All three texts rise together.
+  ========================================================= */
+  useEffect(() => {
+    const section = marketHeroRef.current;
+    const content = section?.querySelector(".live-market-content");
+    if (!section || !content) return undefined;
+
+    /* Remove any old owner left by hot reload of the previous code. */
+    if (window.__PIPS_SCROLL_OWNER__ === "market") {
+      delete window.__PIPS_SCROLL_OWNER__;
+    }
+
+    if (window.innerWidth < 1200) {
+      content.classList.add("is-visible");
+      return undefined;
+    }
+
+    let finished = false;
+    let observer;
+
+    const riseWhenReady = () => {
+      if (finished || window.innerWidth < 1200) return;
+
+      /* Do not animate this section while Quality is still flipping. */
+      if (window.__PIPS_SCROLL_OWNER__ === "quality") return;
+
+      const rect = section.getBoundingClientRect();
+      if (
+        rect.top <= window.innerHeight * 0.66 &&
+        rect.bottom >= window.innerHeight * 0.16
+      ) {
+        content.classList.add("is-visible");
+        finished = true;
+        window.removeEventListener("scroll", riseWhenReady);
+        observer?.disconnect();
+      }
+    };
+
+    window.addEventListener("scroll", riseWhenReady, { passive: true });
+    observer = new IntersectionObserver(riseWhenReady, {
+      threshold: [0, 0.2, 0.5],
+    });
+    observer.observe(section);
+    const firstFrame = requestAnimationFrame(riseWhenReady);
+
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      window.removeEventListener("scroll", riseWhenReady);
+      observer?.disconnect();
+    };
+  }, []);
 
-   DESKTOP ONLY
-========================================================= */
-
-useEffect(() => {
-  const section =
-    marketHeroRef.current;
-
-  if (!section) return;
-
-
-  /* =========================================
-     RESET TEXT WHEN PAGE / CODE LOADS
-  ========================================= */
-
-  heroProgressRef.current = 0;
-  setHeroTextProgress(0);
-
-
-  /* =========================================
-     MANUAL SETTINGS
-  ========================================= */
-
-  /*
-    TEXT REVEAL SPEED
-
-    0.0010 = slower
-    0.0015 = medium
-    0.0020 = recommended
-    0.0025 = faster
-    0.0030 = very fast
-  */
-
-  const REVEAL_SPEED = 0.0020;
-
-
-  /*
-    WHERE PAGE SHOULD LOCK
-
-    Your navbar is fixed at the top.
-
-    100 = higher
-    130 = recommended
-    150 = little lower
-    180 = lower
-  */
-
-/*
-  EXACT POSITION WHERE BLUE SECTION STOPS
-
-  150 = higher
-  170 = recommended for your screenshot
-  190 = lower
-*/
-const LOCK_TOP = 390;
-
-
-  const setProgress = (value) => {
-    const clamped =
-      Math.min(
-        Math.max(value, 0),
-        1
-      );
-
-    heroProgressRef.current =
-      clamped;
-
-    setHeroTextProgress(
-      clamped
-    );
-  };
-
-const handleWheel = (event) => {
-
-  /* DESKTOP ONLY */
-  if (window.innerWidth < 1200) {
-    return;
-  }
-
-
-  const rect =
-    section.getBoundingClientRect();
-
-
-  const progress =
-    heroProgressRef.current;
-
-
-  /*
-    =====================================================
-    SECTION LOCK AREA
-  =====================================================
-  */
-
-  const shouldLock =
-    rect.top <= LOCK_TOP &&
-    rect.bottom > LOCK_TOP;
-
-
-  if (!shouldLock) {
-    return;
-  }
-
-
-  /* =====================================================
-     SCROLL DOWN
-     PAGE DOES NOT MOVE
-     TEXT REVEALS
-  ===================================================== */
-
-  if (
-    event.deltaY > 0 &&
-    progress < 1
-  ) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-
-    const amount =
-      Math.abs(
-        event.deltaY
-      ) *
-      REVEAL_SPEED;
-
-
-    setProgress(
-      progress + amount
-    );
-
-
-    return;
-  }
-
-
-  /* =====================================================
-     SCROLL UP
-     PAGE DOES NOT MOVE
-     REVERSE THE SHADOW / REVEAL
-
-     IMPORTANT:
-     THIS ALSO WORKS WHEN progress === 1
-  ===================================================== */
-
-  if (
-    event.deltaY < 0 &&
-    progress > 0
-  ) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-
-    const amount =
-      Math.abs(
-        event.deltaY
-      ) *
-      REVEAL_SPEED;
-
-
-    setProgress(
-      progress - amount
-    );
-
-
-    return;
-  }
-
-
-  /* =====================================================
-     progress === 1 + SCROLL DOWN
-
-     Animation is complete.
-     Browser may now go to NEXT SECTION.
-  ===================================================== */
-
-  if (
-    event.deltaY > 0 &&
-    progress >= 1
-  ) {
-    return;
-  }
-
-
-  /* =====================================================
-     progress === 0 + SCROLL UP
-
-     Reverse animation is complete.
-     Browser may now go to PREVIOUS SECTION.
-  ===================================================== */
-
-  if (
-    event.deltaY < 0 &&
-    progress <= 0
-  ) {
-    return;
-  }
-};
-
-
-  /*
-    capture:true makes this run before
-    other scroll handlers on the page.
-  */
-
-  const wheelOptions = {
-    passive: false,
-    capture: true,
-  };
-
-
-  window.addEventListener(
-    "wheel",
-    handleWheel,
-    wheelOptions
-  );
-
-
-  return () => {
-    window.removeEventListener(
-      "wheel",
-      handleWheel,
-      wheelOptions
-    );
-  };
-
-}, []);
 
   /* =======================================================
      BINANCE WEBSOCKET
   ======================================================= */
 
   useEffect(() => {
+
     const binanceAssets =
       ASSETS.filter(
-        (a) =>
-          a.source ===
+        (
+          asset
+        ) =>
+          asset.source ===
           "binance-ws"
       );
 
 
     binanceAssets.forEach(
-      (asset) => {
+      (
+        asset
+      ) => {
 
-        refresh(asset);
+        refresh(
+          asset
+        );
 
 
         const streamUrl =
@@ -1081,7 +1041,9 @@ const handleWheel = (event) => {
 
 
             ws.onmessage =
-              (event) => {
+              (
+                event
+              ) => {
 
                 try {
 
@@ -1096,9 +1058,7 @@ const handleWheel = (event) => {
                     "";
 
 
-                  /* ===============================
-                     CURRENT PRICE
-                  =============================== */
+                  /* CURRENT PRICE */
 
                   if (
                     streamName.includes(
@@ -1119,7 +1079,9 @@ const handleWheel = (event) => {
                     ) {
 
                       setLivePrices(
-                        (prev) => ({
+                        (
+                          prev
+                        ) => ({
                           ...prev,
 
                           [asset.id]:
@@ -1130,9 +1092,7 @@ const handleWheel = (event) => {
                   }
 
 
-                  /* ===============================
-                     LIVE CANDLE
-                  =============================== */
+                  /* LIVE CANDLE */
 
                   if (
                     streamName.includes(
@@ -1170,7 +1130,9 @@ const handleWheel = (event) => {
 
 
                     setAllData(
-                      (prev) => {
+                      (
+                        prev
+                      ) => {
 
                         const existing =
                           prev[
@@ -1181,34 +1143,35 @@ const handleWheel = (event) => {
                         if (
                           !existing ||
                           existing.length ===
-                            0
+                          0
                         ) {
+
                           return prev;
                         }
 
 
-                        const newCandle =
-                          {
-                            time,
+                        const newCandle = {
+                          time,
 
-                            timestamp:
-                              ts,
+                          timestamp:
+                            ts,
 
-                            value:
-                              parseFloat(
-                                close.toFixed(
-                                  close > 1
-                                    ? 2
-                                    : 6
-                                )
-                              ),
-                          };
+                          value:
+                            parseFloat(
+                              close.toFixed(
+                                close >
+                                1
+                                  ? 2
+                                  : 6
+                              )
+                            ),
+                        };
 
 
                         const last =
                           existing[
                             existing.length -
-                              1
+                            1
                           ];
 
 
@@ -1220,26 +1183,24 @@ const handleWheel = (event) => {
                           ts
                         ) {
 
-                          updated =
-                            [
-                              ...existing.slice(
-                                0,
-                                -1
-                              ),
+                          updated = [
+                            ...existing.slice(
+                              0,
+                              -1
+                            ),
 
-                              newCandle,
-                            ];
+                            newCandle,
+                          ];
 
                         } else {
 
-                          updated =
-                            [
-                              ...existing.slice(
-                                -59
-                              ),
+                          updated = [
+                            ...existing.slice(
+                              -59
+                            ),
 
-                              newCandle,
-                            ];
+                            newCandle,
+                          ];
                         }
 
 
@@ -1253,14 +1214,19 @@ const handleWheel = (event) => {
                     );
                   }
 
-                } catch (e) {
+                } catch (
+                  e
+                ) {
+
                   // Ignore malformed messages
                 }
               };
 
 
             ws.onerror =
-              (err) => {
+              (
+                err
+              ) => {
 
                 console.warn(
                   `[WS] Error on ${asset.id}:`,
@@ -1270,21 +1236,24 @@ const handleWheel = (event) => {
 
 
             ws.onclose =
-              (e) => {
+              (
+                event
+              ) => {
 
                 console.warn(
-                  `[WS] Closed ${asset.id} (code ${e.code}), reconnecting in 3s…`
+                  `[WS] Closed ${asset.id} (code ${event.code}), reconnecting in 3s…`
                 );
 
 
                 if (
-                  e.code !==
+                  event.code !==
                   1000
                 ) {
 
                   wsRefs.current[
                     asset.id
-                  ] = null;
+                  ] =
+                    null;
 
 
                   setTimeout(
@@ -1297,7 +1266,8 @@ const handleWheel = (event) => {
 
             wsRefs.current[
               asset.id
-            ] = ws;
+            ] =
+              ws;
           };
 
 
@@ -1306,17 +1276,27 @@ const handleWheel = (event) => {
     );
 
 
+    const currentWsRefs =
+      wsRefs.current;
+
+
     return () => {
 
       Object.values(
-        wsRefs.current
+        currentWsRefs
       ).forEach(
-        (ws) => {
+        (
+          ws
+        ) => {
 
           if (
             ws &&
-            ws.readyState ===
-              WebSocket.OPEN
+            (
+              ws.readyState ===
+                WebSocket.OPEN ||
+              ws.readyState ===
+                WebSocket.CONNECTING
+            )
           ) {
 
             ws.close(
@@ -1327,6 +1307,7 @@ const handleWheel = (event) => {
         }
       );
     };
+
   }, [refresh]);
 
 
@@ -1338,8 +1319,10 @@ const handleWheel = (event) => {
 
     const yahooAssets =
       ASSETS.filter(
-        (a) =>
-          a.source ===
+        (
+          asset
+        ) =>
+          asset.source ===
           "yahoo"
       );
 
@@ -1352,7 +1335,9 @@ const handleWheel = (event) => {
 
 
         yahooAssets.forEach(
-          (asset) => {
+          (
+            asset
+          ) => {
 
             setTimeout(
               () =>
@@ -1382,7 +1367,9 @@ const handleWheel = (event) => {
 
 
     return () =>
-      clearInterval(id);
+      clearInterval(
+        id
+      );
 
   }, [refresh]);
 
@@ -1392,21 +1379,31 @@ const handleWheel = (event) => {
   ======================================================= */
 
   const handleAssetChange =
-    (id) => {
+    (
+      id
+    ) => {
 
-      setActiveId(id);
+      setActiveId(
+        id
+      );
 
 
       setAnimKey(
-        (k) =>
-          k + 1
+        (
+          key
+        ) =>
+          key +
+          1
       );
 
 
       const asset =
         ASSETS.find(
-          (a) =>
-            a.id === id
+          (
+            item
+          ) =>
+            item.id ===
+            id
         );
 
 
@@ -1414,117 +1411,11 @@ const handleWheel = (event) => {
         asset.source ===
         "yahoo"
       ) {
-        refresh(asset);
-      }
-    };
 
-
-  /* =========================================================
-     TITLE LETTER CONFIG
-  ========================================================= */
-
-  const titleLineOne =
-    "Trade the world's leading";
-
-
-  const titleLineTwo =
-    "markets with confidence";
-
-
-  const totalTitleCharacters =
-    titleLineOne.length +
-    titleLineTwo.length;
-
-
-  /*
-    -0.7 makes every letter dim at the beginning.
-
-    As user scrolls:
-    Trade → world's → leading → markets → confidence.
-  */
-
-  const revealHead =
-    heroTextProgress *
-      totalTitleCharacters -
-    0.7;
-
-
-  const renderTitleLine =
-    (
-      text,
-      startingIndex
-    ) => {
-
-      return text
-        .split("")
-        .map(
-          (
-            letter,
-            index
-          ) => {
-
-            const globalIndex =
-              startingIndex +
-              index;
-
-
-            const distance =
-              revealHead -
-              globalIndex;
-
-
-            const revealed =
-              distance >= 0;
-
-
-            /*
-              Current leading edge gets stronger glow.
-            */
-
-            const isGlowLetter =
-              revealed &&
-              distance >= 0 &&
-              distance < 2.2;
-
-
-            return (
-              <span
-                key={
-                  `${startingIndex}-${index}`
-                }
-
-                className="live-market-letter"
-
-                style={{
-                  color:
-                    revealed
-                      ? "#ffffff"
-                      : "rgba(255,255,255,0.16)",
-
-                  textShadow:
-                    isGlowLetter
-                      ? `
-                        0 0 8px rgba(255,255,255,0.95),
-                        0 0 18px rgba(255,255,255,0.70),
-                        0 0 34px rgba(255,255,255,0.35)
-                      `
-                      : revealed
-                        ? "0 0 2px rgba(255,255,255,0.10)"
-                        : "none",
-
-                  transition:
-                    "color 0.10s linear, text-shadow 0.10s linear",
-                }}
-              >
-
-                {letter === " "
-                  ? "\u00A0"
-                  : letter}
-
-              </span>
-            );
-          }
+        refresh(
+          asset
         );
+      }
     };
 
 
@@ -1533,10 +1424,6 @@ const handleWheel = (event) => {
   ========================================================= */
 
   const styles = {
-
-    /* =====================================================
-       WHOLE COMPONENT
-    ===================================================== */
 
     wrapper: {
       width:
@@ -1551,20 +1438,10 @@ const handleWheel = (event) => {
       position:
         "relative",
 
-      /*
-        IMPORTANT:
-
-        Must be visible for position: sticky.
-      */
-
       overflow:
         "visible",
     },
 
-
-    /* =====================================================
-       BLUE HERO OUTER
-    ===================================================== */
 
     heroSection: {
       width:
@@ -1577,10 +1454,6 @@ const handleWheel = (event) => {
         "relative",
     },
 
-
-    /* =====================================================
-       BLUE HERO STICKY INNER
-    ===================================================== */
 
     heroSticky: {
       width:
@@ -1644,10 +1517,6 @@ const handleWheel = (event) => {
         0,
     },
 
-
-    /* =====================================================
-       ONLY LIVE MARKET TERMINAL = GOLD
-    ===================================================== */
 
     eyebrow: {
       color:
@@ -1733,10 +1602,6 @@ const handleWheel = (event) => {
     },
 
 
-    /* =====================================================
-       WHITE MARKET SECTION
-    ===================================================== */
-
     marketSection: {
       width:
         "100%",
@@ -1773,10 +1638,6 @@ const handleWheel = (event) => {
     },
 
 
-    /* =====================================================
-       MARKET TABS
-    ===================================================== */
-
     tabBar: {
       display:
         "flex",
@@ -1797,10 +1658,6 @@ const handleWheel = (event) => {
         32,
     },
 
-
-    /* =====================================================
-       CHART CARD
-    ===================================================== */
 
     card: {
       width:
@@ -2110,11 +1967,15 @@ const handleWheel = (event) => {
 
 
   const isCurrentlyLoading =
-    loading[activeId];
+    loading[
+      activeId
+    ];
 
 
   const hasError =
-    errors[activeId];
+    errors[
+      activeId
+    ];
 
 
   /* =========================================================
@@ -2122,6 +1983,7 @@ const handleWheel = (event) => {
   ========================================================= */
 
   return (
+
     <>
 
       <style>{`
@@ -2135,16 +1997,17 @@ const handleWheel = (event) => {
 
           from {
             opacity: 0;
+
             transform:
               translateY(10px);
           }
 
           to {
             opacity: 1;
+
             transform:
               translateY(0);
           }
-
         }
 
 
@@ -2158,7 +2021,6 @@ const handleWheel = (event) => {
           50% {
             opacity: 0.3;
           }
-
         }
 
 
@@ -2319,26 +2181,13 @@ const handleWheel = (event) => {
 
 
         /* =====================================================
-           DESKTOP ONLY
-           STICKY SECTION + LETTER REVEAL
-           1200PX+
+           DESKTOP 1200+
         ===================================================== */
 
         @media (min-width: 1200px) {
 
-          /*
-            ==================================================
-            MANUAL SCROLL SPEED
-
-            160vh = FAST
-            180vh = LITTLE FASTER
-            200vh = RECOMMENDED
-            230vh = SLOW
-            260vh = VERY SLOW
-            ==================================================
-          */
-
           .live-market-hero-section {
+
             height:
               50vh !important;
           }
@@ -2363,36 +2212,20 @@ const handleWheel = (event) => {
               20px !important;
           }
 
-/* =====================================================
-   MOVE ALL LIVE MARKET TEXT UP / DOWN
-===================================================== */
 
-.live-market-hero-sticky > div {
+          /* ===============================================
+             KEEP YOUR CURRENT TEXT POSITION
 
-  /*
-    - value = UP
-    + value = DOWN
+             - = UP
+             + = DOWN
+          =============================================== */
 
-    -10px = little up
-    -20px = up
-    -30px = recommended
-    -40px = more up
-  */
+          .live-market-hero-sticky > div {
 
-  transform:
-    translateY(-290px) !important;
-}
-          /*
-            ==================================================
-            MANUAL DESKTOP TITLE SIZE
+            transform:
+              translateY(-290px) !important;
+          }
 
-            80px  = smaller
-            90px  = medium
-            100px = recommended
-            110px = bigger
-            120px = much bigger
-            ==================================================
-          */
 
           .live-market-scroll-title {
 
@@ -2409,12 +2242,23 @@ const handleWheel = (event) => {
             letter-spacing:
               -3px !important;
           }
+
+
+          /*
+            IMPORTANT:
+            NO SHINE / NO GLOW
+          */
+
+          .live-market-letter {
+
+            text-shadow:
+              none !important;
+          }
         }
 
 
         /* =====================================================
            LAPTOP
-           NO STICKY EFFECT
         ===================================================== */
 
         @media
@@ -2423,6 +2267,7 @@ const handleWheel = (event) => {
         (max-width: 1199px) {
 
           .live-market-hero-section {
+
             height:
               auto !important;
           }
@@ -2476,6 +2321,7 @@ const handleWheel = (event) => {
         (max-width: 991px) {
 
           .live-market-hero-section {
+
             height:
               auto !important;
           }
@@ -2617,11 +2463,1151 @@ const handleWheel = (event) => {
 
 
           .tab-name {
+
             display:
               none;
           }
         }
 
+/* =========================================================
+   MOBILE - LIVE MARKET COMPACT + LEFT ALIGNED
+   767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =====================================================
+     REMOVE BLUE EMPTY SPACE
+  ===================================================== */
+
+  .live-market-hero-section {
+    width: 100%;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: #012d65;
+  }
+
+
+  .live-market-hero-sticky {
+    position: relative !important;
+
+    top: auto !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    /* MANUAL SPACING: TOP | SIDES | BOTTOM */
+    padding: 24px 20px 28px !important;
+
+    display: flex !important;
+
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     MAIN CONTENT CONTAINER
+  ===================================================== */
+
+  .live-market-hero-sticky > div {
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    /* REMOVE OLD DESKTOP POSITION */
+    transform: none !important;
+
+    text-align: left !important;
+  }
+
+
+  .live-market-hero-sticky > div > div {
+    width: 100%;
+
+    text-align: left !important;
+  }
+
+
+  /* =====================================================
+     LIVE MARKET TERMINAL - SMALL GOLD TEXT
+  ===================================================== */
+
+  .live-market-eyebrow {
+    width: 100%;
+
+    /* MANUAL SIZE */
+    font-size: 10px !important;
+
+    letter-spacing: 0.2em !important;
+
+    line-height: 1.4 !important;
+
+    text-align: left !important;
+
+    /* MANUAL GAP BELOW */
+    margin: 0 0 12px !important;
+
+    color: #f7a901;
+  }
+
+
+  /* =====================================================
+     MAIN TITLE - LEFT ALIGNED
+  ===================================================== */
+
+  .live-market-scroll-title {
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    /* MANUAL TITLE SIZE */
+    font-size: 27px !important;
+
+    line-height: 1.16 !important;
+
+    letter-spacing: -0.6px !important;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    margin: 0 0 14px !important;
+
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    /* PREVENT TEXT FROM GETTING CUT OFF */
+    white-space: normal !important;
+
+    overflow-wrap: anywhere;
+
+    box-sizing: border-box;
+  }
+
+
+  /* TITLE LINES - ALLOW WRAPPING ON MOBILE */
+
+  .live-market-title-line {
+    display: block !important;
+
+    width: 100% !important;
+
+    white-space: normal !important;
+
+    overflow-wrap: anywhere;
+
+    text-align: left !important;
+  }
+
+
+  /* LETTERS STAY PURE WHITE ON MOBILE */
+
+  .live-market-letter {
+    color: #ffffff !important;
+
+    text-shadow: none !important;
+
+    filter: none !important;
+  }
+
+
+  /* =====================================================
+     BTC / ETH DESCRIPTION - LEFT ALIGNED
+  ===================================================== */
+
+  .live-market-subtitle {
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    /* MANUAL DESCRIPTION SIZE */
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+
+    letter-spacing: 0 !important;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+
+    overflow-wrap: break-word;
+  }
+
+}
+  
+/* =========================================================
+   MOBILE - LIVE MARKET TEXT SIZE
+========================================================= */
+
+/* LIVE MARKET TERMINAL - SMALL LABEL */
+
+.live-market-eyebrow {
+  /* MANUAL FONT SIZE */
+  font-size: 9px !important;
+
+  line-height: 1.3 !important;
+
+  letter-spacing: 0.15em !important;
+
+  text-align: left !important;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+   TRADE THE WORLD'S LEADING...
+========================================================= */
+
+.live-market-scroll-title {
+  /* MANUAL FONT SIZE */
+  font-size: 22px !important;
+
+  line-height: 1.25 !important;
+
+  letter-spacing: -0.4px !important;
+
+  font-weight: 800;
+
+  text-align: left !important;
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  white-space: normal !important;
+
+  overflow-wrap: normal;
+}
+
+
+/* ALLOW TITLE TO WRAP NATURALLY */
+
+.live-market-title-line {
+  display: block !important;
+
+  white-space: normal !important;
+
+  overflow-wrap: normal;
+
+  text-align: left !important;
+}
+
+
+/* MOBILE DESCRIPTION TEXT */
+
+.live-market-subtitle {
+  font-size: 10px !important;
+
+  line-height: 1.5 !important;
+
+  text-align: left !important;
+}
+  
+/* =========================================================
+   MARKET TERMINAL - MOBILE ONLY
+   767PX AND BELOW
+========================================================= */
+
+.market-mobile-short-label {
+  display: none;
+}
+
+
+@media (max-width: 767px) {
+
+  /* =====================================================
+     1. ALL FIVE BUTTONS IN ONE ROW
+  ===================================================== */
+
+  .market-mobile-tabs {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr)) !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    /* MANUAL SPACE BETWEEN BUTTONS */
+    gap: 4px !important;
+
+    margin: 0 0 18px !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    align-items: stretch !important;
+
+    justify-content: stretch !important;
+  }
+
+
+  /* =====================================================
+     2. SMALL MARKET BUTTONS
+  ===================================================== */
+
+  .market-mobile-tabs .asset-tab {
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    max-width: 100% !important;
+
+    /* MANUAL BUTTON HEIGHT */
+    height: 38px !important;
+
+    min-height: 38px !important;
+
+    padding: 4px 2px !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    /* MANUAL ICON / TEXT GAP */
+    gap: 3px !important;
+
+    background: #012d65;
+
+    border-radius: 7px !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 0 !important;
+
+    white-space: nowrap !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =====================================================
+     3. LUCIDE ICON SIZE
+  ===================================================== */
+
+  .market-mobile-tabs .tab-icon {
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    flex-shrink: 0;
+
+    line-height: 1;
+  }
+
+
+  .market-mobile-tabs .tab-icon svg {
+
+    /* MANUAL ICON SIZE */
+    width: 12px !important;
+
+    height: 12px !important;
+  }
+
+
+  /* =====================================================
+     4. HIDE LONG LABELS ON MOBILE
+  ===================================================== */
+
+  .market-mobile-tabs .market-desktop-label,
+  .market-mobile-tabs .tab-name {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     5. SHOW SHORT MOBILE LABELS
+  ===================================================== */
+
+  .market-mobile-tabs .market-mobile-short-label {
+    display: inline !important;
+
+    font-size: 9px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    line-height: 1 !important;
+  }
+
+
+  /* =====================================================
+     6. REDUCE DARK CHART CARD SIZE
+  ===================================================== */
+
+  .market-mobile-card {
+
+    width: 100% !important;
+
+    /* CARD HEIGHT FOLLOWS ITS CONTENT */
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    /* MANUAL INNER SPACE */
+    padding: 18px 14px 16px !important;
+
+    border-radius: 18px !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =====================================================
+     7. REDUCE SPACE ABOVE THE CHART
+  ===================================================== */
+
+  .market-mobile-card > div:first-child {
+
+    /* CHART HEADER BOTTOM GAP */
+    margin-bottom: 16px !important;
+
+    gap: 10px !important;
+  }
+
+
+  /* =====================================================
+     8. MANUAL CHART HEIGHT
+
+     200px = SHORT
+     230px = RECOMMENDED
+     260px = MEDIUM
+     300px = BIGGER
+
+     CHANGE ONLY THIS VALUE TO RESIZE CHART.
+  ===================================================== */
+
+  .market-mobile-chart {
+
+    height: 250px !important;
+
+    min-height: 0 !important;
+
+    max-height: none !important;
+  }
+
+
+  /* =====================================================
+     9. REDUCE CHART FOOTER SPACE
+  ===================================================== */
+
+  .market-mobile-card > div:last-child {
+
+    margin-top: 14px !important;
+  }
+
+}
+  
+/* =========================================================
+   LIVE MARKET - DESKTOP TEXT SIZE RESTORE
+   DESKTOP ONLY: 1200PX AND ABOVE
+
+   MOBILE / TABLET / LAPTOP UNCHANGED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     1. LIVE MARKET TERMINAL - GOLD LABEL
+  ===================================================== */
+
+  .live-market-hero-section
+  .live-market-eyebrow {
+
+    /* MANUAL LABEL SIZE */
+    font-size: 13px !important;
+
+    line-height: 1.4 !important;
+
+    letter-spacing: 0.34em !important;
+
+    text-align: center !important;
+
+    margin-bottom: 22px !important;
+  }
+
+
+  /* =====================================================
+     2. MAIN TITLE - RESTORE LARGE DESKTOP SIZE
+  ===================================================== */
+
+  .live-market-hero-section
+  #pips-live-market-title {
+
+    /*
+      PREVIOUS DESKTOP SIZE
+
+      Minimum: 78px
+      Responsive: 5.7vw
+      Maximum: 110px
+
+      MANUAL SIZE:
+      Increase 5.7vw for bigger text.
+    */
+
+    font-size:
+      clamp(78px, 5.7vw, 110px) !important;
+
+    line-height: 1.03 !important;
+
+    letter-spacing: -3px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    width: 100% !important;
+
+    max-width: 1500px !important;
+
+    margin: 0 auto 24px !important;
+
+    text-align: center !important;
+
+    /* REMOVE OLD LETTER EFFECTS */
+
+    text-shadow: none !important;
+
+    filter: none !important;
+  }
+
+
+  /* =====================================================
+     3. KEEP TWO TITLE LINES
+  ===================================================== */
+
+  .live-market-hero-section
+  #pips-live-market-title
+  .live-market-title-line {
+
+    display: block !important;
+
+    font-size: inherit !important;
+
+    line-height: inherit !important;
+
+    color: #ffffff !important;
+
+    white-space: nowrap !important;
+
+    text-align: center !important;
+
+    text-shadow: none !important;
+  }
+
+
+  /* =====================================================
+     4. BTC & ETH DESCRIPTION
+  ===================================================== */
+
+  .live-market-hero-section
+  .live-market-subtitle {
+
+    /* MANUAL DESCRIPTION SIZE */
+
+    font-size: 16px !important;
+
+    line-height: 1.6 !important;
+
+    color: rgba(255,255,255,0.78) !important;
+
+    text-align: center !important;
+
+    margin: 0 !important;
+  }
+
+}
+  
+
+/* =========================================================
+   DESKTOP LIVE MARKET - NORMAL FLOW + GROUP RISE
+   FIX: The former 50vh parent had a 100vh sticky child.
+   That mismatch visually overlapped the Quality / Market sections.
+   Mobile/tablet/laptop rules above remain unchanged.
+========================================================= */
+@media (min-width: 1200px) {
+  .live-market-hero-section {
+    height: 50vh !important;
+    min-height: 470px !important;
+  }
+
+  .live-market-hero-section .live-market-hero-sticky {
+    position: relative !important;
+    top: auto !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 35px 20px !important;
+  }
+
+  /* Remove the previous -290px offset on the entire content wrapper. */
+  .live-market-hero-section .live-market-hero-sticky > div {
+    transform: none !important;
+  }
+
+  /* Three elements rise as ONE group, not individual letters. */
+  .live-market-hero-section .live-market-content {
+    opacity: 0;
+    transform: translate3d(0, 36px, 0);
+    transition:
+      opacity 1s ease-out,
+      transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .live-market-hero-section .live-market-content.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .live-market-hero-section #pips-live-market-title {
+    font-size: clamp(78px, 5.7vw, 110px) !important;
+    line-height: 1.03 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .live-market-content {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-market-content {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   LIVE MARKET - TABLET TEXT SIZE
+   768PX TO 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* LIVE MARKET TERMINAL */
+
+  .live-market-hero-section .live-market-eyebrow {
+    font-size: 12px !important;
+
+    line-height: 1.4 !important;
+
+    letter-spacing: 0.2em !important;
+  }
+
+
+  /* TRADE THE WORLD'S LEADING... */
+
+  .live-market-hero-section .live-market-scroll-title {
+    /* MANUAL TABLET TITLE SIZE */
+    font-size: 36px !important;
+
+    line-height: 1.15 !important;
+
+    letter-spacing: -0.8px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* KEEP TITLE LINES AT THE SAME SIZE */
+
+  .live-market-hero-section
+  .live-market-title-line {
+    font-size: inherit !important;
+
+    line-height: inherit !important;
+
+    white-space: normal !important;
+  }
+
+
+  /* BTC & ETH DESCRIPTION */
+
+  .live-market-hero-section .live-market-subtitle {
+    font-size: 13px !important;
+
+    line-height: 1.5 !important;
+  }
+
+}
+
+
+/* =========================================================
+   LIVE MARKET - LAPTOP TEXT SIZE
+   992PX TO 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  /* LIVE MARKET TERMINAL */
+
+  .live-market-hero-section .live-market-eyebrow {
+    font-size: 14px !important;
+
+    line-height: 1.4 !important;
+
+    letter-spacing: 0.25em !important;
+  }
+
+
+  /* TRADE THE WORLD'S LEADING... */
+
+  .live-market-hero-section .live-market-scroll-title {
+    /* MANUAL LAPTOP TITLE SIZE */
+    font-size: 46px !important;
+
+    line-height: 1.12 !important;
+
+    letter-spacing: -1px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* KEEP TITLE LINES AT THE SAME SIZE */
+
+  .live-market-hero-section
+  .live-market-title-line {
+    font-size: inherit !important;
+
+    line-height: inherit !important;
+
+    white-space: normal !important;
+  }
+
+
+  /* BTC & ETH DESCRIPTION */
+
+  .live-market-hero-section .live-market-subtitle {
+    font-size: 15px !important;
+
+    line-height: 1.5 !important;
+  }
+
+}
+  
+/* =========================================================
+   THE PIPS - PREMIUM LIVE MARKET TERMINAL
+
+   WHITE + DEEP BLUE THEME
+
+   ONLY MARKET BUTTONS AND CHART CONTAINER
+   NO CONTENT OR CHART DATA CHANGES
+========================================================= */
+
+
+/* =========================================================
+   1. MARKET BUTTON ROW
+========================================================= */
+
+.market-mobile-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 28px !important;
+}
+
+
+/* =========================================================
+   2. NORMAL MARKET BUTTON
+
+   WHITE BACKGROUND
+   PIPS BLUE TEXT
+========================================================= */
+
+.market-mobile-tabs .asset-tab {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 48px;
+
+  padding: 12px 20px;
+
+  background: #ffffff !important;
+
+  color: #012d65 !important;
+
+  border: 1px solid #d8e4f2 !important;
+
+  border-radius: 13px !important;
+
+  box-shadow:
+    0 3px 8px rgba(1, 45, 101, 0.04),
+    0 8px 22px rgba(1, 45, 101, 0.05) !important;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   3. BUTTON ICON
+========================================================= */
+
+.market-mobile-tabs .asset-tab .tab-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+
+  flex-shrink: 0;
+}
+
+
+.market-mobile-tabs .asset-tab .tab-icon svg {
+  width: 16px;
+  height: 16px;
+
+  stroke-width: 2;
+}
+
+
+/* =========================================================
+   4. SECONDARY BUTTON TEXT
+========================================================= */
+
+.market-mobile-tabs .asset-tab .tab-name {
+  color: inherit;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   5. BUTTON HOVER
+========================================================= */
+
+.market-mobile-tabs .asset-tab:hover {
+  background: #eef4fb !important;
+
+  color: #012d65 !important;
+
+  border-color: #9bb7d8 !important;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(1, 45, 101, 0.10),
+    0 14px 28px rgba(1, 45, 101, 0.06) !important;
+}
+
+
+/* =========================================================
+   6. ACTIVE MARKET BUTTON
+
+   DEEP BLUE BACKGROUND
+   WHITE TEXT
+   SMALL ASSET-COLOR INDICATOR
+========================================================= */
+
+.market-mobile-tabs .asset-tab.active {
+  background: #012d65 !important;
+
+  color: #ffffff !important;
+
+  border-color: #012d65 !important;
+
+  box-shadow:
+    0 5px 12px rgba(1, 45, 101, 0.13),
+    0 12px 26px rgba(1, 45, 101, 0.20) !important;
+
+  transform: translateY(-2px);
+}
+
+
+.market-mobile-tabs .asset-tab.active .tab-icon,
+.market-mobile-tabs .asset-tab.active .tab-name {
+  color: #ffffff !important;
+}
+
+
+/* SMALL COLORED LINE AT BOTTOM OF ACTIVE BUTTON */
+
+.market-mobile-tabs .asset-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 25%;
+  right: 25%;
+
+  bottom: -1px;
+
+  height: 3px;
+
+  border-radius: 999px;
+
+  background: var(--tab-color, #035391);
+}
+
+
+/* KEYBOARD FOCUS */
+
+.market-mobile-tabs .asset-tab:focus-visible {
+  outline: 2px solid #035391;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   7. MAIN CHART CONTAINER
+
+   PREMIUM NAVY BACKGROUND
+========================================================= */
+
+.market-mobile-card {
+  position: relative;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(3, 83, 145, 0.30),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #102d56 0%,
+      #071e42 55%,
+      #061934 100%
+    ) !important;
+
+  border: 1px solid rgba(134, 181, 235, 0.24) !important;
+
+  border-radius: 26px !important;
+
+  box-shadow:
+    0 8px 18px rgba(1, 45, 101, 0.06),
+    0 28px 65px rgba(1, 45, 101, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* SUBTLE CONTAINER HOVER */
+
+.market-mobile-card:hover {
+  border-color: rgba(134, 181, 235, 0.40) !important;
+
+  box-shadow:
+    0 12px 25px rgba(1, 45, 101, 0.08),
+    0 32px 70px rgba(1, 45, 101, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   8. CHART AREA
+
+   DISTINCT INNER PANEL
+========================================================= */
+
+.market-mobile-card .market-mobile-chart {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 18px !important;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   9. MARKET DATA UNAVAILABLE STATE
+
+   PREMIUM, READABLE TEXT
+========================================================= */
+
+.market-mobile-card .market-empty-state {
+  color: #dce8f7 !important;
+
+  text-align: center;
+}
+
+
+.market-mobile-card .market-empty-state p {
+  color: #dce8f7 !important;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* RETRY CONNECTION BUTTON */
+
+.market-mobile-card .market-retry-button {
+  background: #ffffff !important;
+
+  color: #012d65 !important;
+
+  border: 1px solid #ffffff !important;
+
+  border-radius: 10px !important;
+
+  padding: 11px 22px !important;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.10);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.market-mobile-card .market-retry-button:hover {
+  background: #f7a901 !important;
+
+  color: #012d65 !important;
+
+  border-color: #f7a901 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   10. MOBILE ONLY
+
+   KEEP ALL 5 BUTTONS IN ONE ROW
+   KEEP YOUR EXISTING MOBILE CHART HEIGHT
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .market-mobile-tabs {
+    gap: 4px !important;
+
+    margin-bottom: 18px !important;
+  }
+
+
+  .market-mobile-tabs .asset-tab {
+    min-height: 38px !important;
+
+    height: 38px !important;
+
+    padding: 4px 2px !important;
+
+    gap: 3px !important;
+
+    border-radius: 8px !important;
+
+    transform: none !important;
+  }
+
+
+  .market-mobile-tabs .asset-tab .tab-icon svg {
+    width: 12px !important;
+
+    height: 12px !important;
+  }
+
+
+  .market-mobile-card {
+    border-radius: 18px !important;
+  }
+
+
+  .market-mobile-card .market-mobile-chart {
+    border-radius: 12px !important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .market-mobile-tabs .asset-tab,
+  .market-mobile-card,
+  .market-mobile-card .market-retry-button {
+    transition: none !important;
+
+    transform: none !important;
+  }
+
+}
       `}</style>
 
 
@@ -2647,15 +3633,6 @@ const handleWheel = (event) => {
           }
         >
 
-          {/* =================================================
-              STICKY SCREEN
-
-              USER SCROLLS,
-              SCREEN DOES NOT VISUALLY MOVE.
-
-              ONLY LETTERS CHANGE.
-          ================================================= */}
-
           <div
             className="live-market-hero-sticky"
 
@@ -2671,14 +3648,11 @@ const handleWheel = (event) => {
             >
 
               <div
-                style={
-                  styles.header
-                }
-              >
+  className="live-market-content"
+  style={styles.header}
+>
 
-                {/* ===========================================
-                    GOLD LABEL
-                =========================================== */}
+                {/* GOLD LABEL */}
 
                 <div
                   className="live-market-eyebrow"
@@ -2691,56 +3665,31 @@ const handleWheel = (event) => {
                 </div>
 
 
-                {/* ===========================================
-                    SCROLL LETTER REVEAL TITLE
-                =========================================== */}
+ {/* =====================================================
+    NORMAL WHITE TITLE
+    NO LETTER-BY-LETTER REVEAL
+===================================================== */}
 
-                <h1
-                  className="live-market-scroll-title"
+<h1
+  id="pips-live-market-title"
+  className="live-market-scroll-title"
+  style={styles.title}
+>
+  <span
+    className="live-market-title-line"
+    style={styles.titleLine}
+  >
+    Trade the world's leading
+  </span>
 
-                  style={
-                    styles.title
-                  }
-                >
+  <span
+    className="live-market-title-line"
+    style={styles.titleLine}
+  >
+    markets with confidence
+  </span>
+</h1>
 
-                  <span
-                    className="live-market-title-line"
-
-                    style={
-                      styles.titleLine
-                    }
-                  >
-
-                    {renderTitleLine(
-                      titleLineOne,
-                      0
-                    )}
-
-                  </span>
-
-
-                  <span
-                    className="live-market-title-line"
-
-                    style={
-                      styles.titleLine
-                    }
-                  >
-
-                    {renderTitleLine(
-                      titleLineTwo,
-
-                      titleLineOne.length
-                    )}
-
-                  </span>
-
-                </h1>
-
-
-                {/* ===========================================
-                    SUB TITLE
-                =========================================== */}
 
                 <p
                   className="live-market-subtitle"
@@ -2785,22 +3734,23 @@ const handleWheel = (event) => {
             }
           >
 
-            {/* =================================================
-                ASSET TABS
-            ================================================= */}
+            {/* ASSET TABS */}
 
             <div
-              style={
-                styles.tabBar
-              }
+            className="market-mobile-tabs"
+            style={
+              styles.tabBar
+            }
             >
 
               {ASSETS.map(
-                (a) => (
+                (
+                  asset
+                ) => (
 
                   <button
                     key={
-                      a.id
+                      asset.id
                     }
 
                     type="button"
@@ -2808,7 +3758,7 @@ const handleWheel = (event) => {
                     className={
                       `asset-tab${
                         activeId ===
-                        a.id
+                        asset.id
                           ? " active"
                           : ""
                       }`
@@ -2816,39 +3766,64 @@ const handleWheel = (event) => {
 
                     style={{
                       "--tab-color":
-                        a.color,
+                        asset.color,
 
                       "--tab-glow":
-                        a.glow,
+                        asset.glow,
                     }}
 
-                    onClick={() =>
-                      handleAssetChange(
-                        a.id
-                      )
+                    onClick={
+                      () =>
+                        handleAssetChange(
+                          asset.id
+                        )
                     }
                   >
 
-                    <span
-                      className="tab-icon"
-                    >
-                      {a.icon}
-                    </span>
+                   {/* LUCIDE REACT ICON */}
+
+<span className="tab-icon">
+  {React.createElement(
+    TAB_ICONS[asset.id],
+    {
+      size: 14,
+      strokeWidth: 2,
+    }
+  )}
+</span>
 
 
-                    <span>
-                      {a.label}
-                    </span>
+{/* ORIGINAL DESKTOP LABEL */}
+
+<span className="market-desktop-label">
+  {asset.label}
+</span>
 
 
-                    <span
-                      className="tab-name"
-                    >
-                      {a.name}
-                    </span>
+{/* SHORT MOBILE LABEL */}
+
+<span className="market-mobile-short-label">
+
+  {asset.id === "bitcoin"
+    ? "BTC"
+    : asset.id === "ethereum"
+    ? "ETH"
+    : asset.id === "gold"
+    ? "AU"
+    : asset.id === "oil"
+    ? "OIL"
+    : "NVDA"}
+
+</span>
+
+
+{/* DESKTOP ASSET NAME */}
+
+<span className="tab-name">
+  {asset.name}
+</span>
 
                   </button>
-
                 )
               )}
 
@@ -2860,14 +3835,13 @@ const handleWheel = (event) => {
             ================================================= */}
 
             <div
-              style={
-                styles.card
-              }
-            >
+  className="market-mobile-card"
+  style={
+    styles.card
+  }
+>
 
-              {/* =============================================
-                  CHART HEADER
-              ============================================= */}
+              {/* CHART HEADER */}
 
               <div
                 style={
@@ -2886,9 +3860,11 @@ const handleWheel = (event) => {
                       styles.iconCircle
                     }
                   >
+
                     {
                       activeAsset.icon
                     }
+
                   </div>
 
 
@@ -2899,9 +3875,11 @@ const handleWheel = (event) => {
                         styles.assetName
                       }
                     >
+
                       {
                         activeAsset.name
                       }
+
                     </div>
 
 
@@ -2947,356 +3925,374 @@ const handleWheel = (event) => {
               </div>
 
 
-              {/* =============================================
-                  LIVE CHART
-              ============================================= */}
+              {/* =================================================
+                  CHART
+              ================================================= */}
 
-              <div
-                style={
-                  styles.chartWrap
-                }
+             <div
+                  className="market-mobile-chart"
+                  style={
+                    styles.chartWrap
+                  }
 
-                key={
-                  animKey
-                }
-              >
+                  key={
+                    animKey
+                  }
+                >
 
-                {isCurrentlyLoading &&
-                chartData.length ===
-                  0 ? (
-
-                  <div
-                    style={
-                      styles.loadingStyle
-                    }
-                  >
-                    Fetching market data…
-                  </div>
-
-                ) : hasError &&
+                {
+                  isCurrentlyLoading &&
                   chartData.length ===
-                    0 ? (
+                  0
 
-                  <div
-                    style={
-                      styles.errorStyle
-                    }
-                  >
+                    ? (
 
-                    <p>
-                      {hasError}
-                    </p>
+                      <div
+                        style={
+                          styles.loadingStyle
+                        }
+                      >
+                        Fetching market data…
+                      </div>
 
+                    )
 
-                    <button
-                      type="button"
+                    : hasError &&
+                      chartData.length ===
+                      0
 
-                      onClick={() =>
-                        refresh(
-                          activeAsset
-                        )
-                      }
-
-                      style={
-                        styles.retryBtn
-                      }
-                    >
-                      Retry Connection
-                    </button>
-
-                  </div>
-
-                ) : (
-
-                  <>
-
-                    {hasError &&
-                      chartData.length >
-                        0 && (
+                      ? (
 
                         <div
-                          style={{
-                            fontSize:
-                              11,
-
-                            color:
-                              "#f59e0b",
-
-                            fontFamily:
-                              "'IBM Plex Mono', monospace",
-
-                            marginBottom:
-                              8,
-
-                            opacity:
-                              0.8,
-                          }}
+                          style={
+                            styles.errorStyle
+                          }
                         >
 
-                          ⚠ Showing cached data
-
-                          {" · "}
-
-                          refresh failed
-
-                          {" · "}
+                          <p>
+                            {hasError}
+                          </p>
 
 
-                          <span
-                            style={{
-                              cursor:
-                                "pointer",
+                          <button
+                            type="button"
 
-                              textDecoration:
-                                "underline",
-                            }}
+                            onClick={
+                              () =>
+                                refresh(
+                                  activeAsset
+                                )
+                            }
 
-                            onClick={() =>
-                              refresh(
-                                activeAsset
-                              )
+                            style={
+                              styles.retryBtn
                             }
                           >
-                            Retry
-                          </span>
+                            Retry Connection
+                          </button>
 
                         </div>
 
-                      )}
+                      )
+
+                      : (
+
+                        <>
+
+                          {
+                            hasError &&
+                            chartData.length >
+                            0 &&
+                            (
+
+                              <div
+                                style={{
+                                  fontSize:
+                                    11,
+
+                                  color:
+                                    "#f59e0b",
+
+                                  fontFamily:
+                                    "'IBM Plex Mono', monospace",
+
+                                  marginBottom:
+                                    8,
+
+                                  opacity:
+                                    0.8,
+                                }}
+                              >
+
+                                ⚠ Showing cached data
+
+                                {" · "}
+
+                                refresh failed
+
+                                {" · "}
 
 
-                    <ResponsiveContainer
-                      width="100%"
-                      height="100%"
-                    >
+                                <span
+                                  style={{
+                                    cursor:
+                                      "pointer",
 
-                      <AreaChart
-                        data={
-                          chartData
-                        }
+                                    textDecoration:
+                                      "underline",
+                                  }}
 
-                        margin={{
-                          top:
-                            5,
+                                  onClick={
+                                    () =>
+                                      refresh(
+                                        activeAsset
+                                      )
+                                  }
+                                >
+                                  Retry
+                                </span>
 
-                          right:
-                            10,
+                              </div>
+                            )
+                          }
 
-                          left:
-                            10,
 
-                          bottom:
-                            0,
-                        }}
-                      >
-
-                        <defs>
-
-                          <linearGradient
-                            id={`grad-${activeId}`}
-
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
+                          <ResponsiveContainer
+                            width="100%"
+                            height="100%"
                           >
 
-                            <stop
-                              offset="0%"
-
-                              stopColor={
-                                activeAsset.color
+                            <AreaChart
+                              data={
+                                chartData
                               }
 
-                              stopOpacity={
-                                0.25
-                              }
-                            />
+                              margin={{
+                                top:
+                                  5,
+
+                                right:
+                                  10,
+
+                                left:
+                                  10,
+
+                                bottom:
+                                  0,
+                              }}
+                            >
+
+                              <defs>
+
+                                <linearGradient
+                                  id={`grad-${activeId}`}
+
+                                  x1="0"
+                                  y1="0"
+                                  x2="0"
+                                  y2="1"
+                                >
+
+                                  <stop
+                                    offset="0%"
+
+                                    stopColor={
+                                      activeAsset.color
+                                    }
+
+                                    stopOpacity={
+                                      0.25
+                                    }
+                                  />
 
 
-                            <stop
-                              offset="100%"
+                                  <stop
+                                    offset="100%"
 
-                              stopColor={
-                                activeAsset.color
-                              }
+                                    stopColor={
+                                      activeAsset.color
+                                    }
 
-                              stopOpacity={
-                                0
-                              }
-                            />
+                                    stopOpacity={
+                                      0
+                                    }
+                                  />
 
-                          </linearGradient>
+                                </linearGradient>
 
-                        </defs>
-
-
-                        <CartesianGrid
-                          strokeDasharray="1 4"
-
-                          vertical={
-                            false
-                          }
-
-                          stroke="rgba(255,255,255,0.04)"
-                        />
+                              </defs>
 
 
-                        <XAxis
-                          hide
+                              <CartesianGrid
+                                strokeDasharray="1 4"
 
-                          dataKey="time"
+                                vertical={
+                                  false
+                                }
 
-                          stroke="transparent"
-
-                          tick={{
-                            fill:
-                              "#f9f9f999",
-
-                            fontSize:
-                              11,
-                          }}
-
-                          tickLine={
-                            false
-                          }
-
-                          interval="preserveStartEnd"
-                        />
+                                stroke="rgba(255,255,255,0.04)"
+                              />
 
 
-                        <YAxis
-                          domain={[
-                            "auto",
-                            "auto",
-                          ]}
+                              <XAxis
+                                hide
 
-                          stroke="transparent"
+                                dataKey="time"
 
-                          tick={{
-                            fill:
-                              "#f9f9f999",
+                                stroke="transparent"
 
-                            fontSize:
-                              11,
-                          }}
+                                tick={{
+                                  fill:
+                                    "#f9f9f999",
 
-                          tickLine={
-                            false
-                          }
+                                  fontSize:
+                                    11,
+                                }}
 
-                          axisLine={
-                            false
-                          }
+                                tickLine={
+                                  false
+                                }
 
-                          tickFormatter={(
-                            v
-                          ) =>
-
-                            v >= 1000
-
-                              ? `$${(
-                                  v /
-                                  1000
-                                ).toFixed(
-                                  1
-                                )}k`
-
-                              : v >= 1
-
-                                ? `$${v.toFixed(
-                                    0
-                                  )}`
-
-                                : `$${v.toFixed(
-                                    3
-                                  )}`
-
-                          }
-
-                          width={
-                            60
-                          }
-                        />
+                                interval="preserveStartEnd"
+                              />
 
 
-                        <Tooltip
-                          content={
-                            <CustomTooltip
-                              asset={
-                                activeAsset
-                              }
-                            />
-                          }
+                              <YAxis
+                                domain={[
+                                  "auto",
+                                  "auto",
+                                ]}
 
-                          cursor={{
-                            stroke:
-                              activeAsset.color,
+                                stroke="transparent"
 
-                            strokeWidth:
-                              1,
+                                tick={{
+                                  fill:
+                                    "#f9f9f999",
 
-                            strokeDasharray:
-                              "4 4",
+                                  fontSize:
+                                    11,
+                                }}
 
-                            opacity:
-                              0.5,
-                          }}
-                        />
+                                tickLine={
+                                  false
+                                }
+
+                                axisLine={
+                                  false
+                                }
+
+                                tickFormatter={
+                                  (
+                                    value
+                                  ) =>
+
+                                    value >=
+                                    1000
+
+                                      ? `$${(
+                                          value /
+                                          1000
+                                        ).toFixed(
+                                          1
+                                        )}k`
+
+                                      : value >=
+                                        1
+
+                                        ? `$${value.toFixed(
+                                            0
+                                          )}`
+
+                                        : `$${value.toFixed(
+                                            3
+                                          )}`
+                                }
+
+                                width={
+                                  60
+                                }
+                              />
 
 
-                        <Area
-                          type="monotone"
+                              <Tooltip
+                                content={
+                                  <CustomTooltip
+                                    asset={
+                                      activeAsset
+                                    }
+                                  />
+                                }
 
-                          dataKey="value"
+                                cursor={{
+                                  stroke:
+                                    activeAsset.color,
 
-                          stroke={
-                            activeAsset.color
-                          }
+                                  strokeWidth:
+                                    1,
 
-                          strokeWidth={
-                            2
-                          }
+                                  strokeDasharray:
+                                    "4 4",
 
-                          fill={`url(#grad-${activeId})`}
+                                  opacity:
+                                    0.5,
+                                }}
+                              />
 
-                          dot={
-                            false
-                          }
 
-                          activeDot={{
-                            r:
-                              5,
+                              <Area
+                                type="monotone"
 
-                            fill:
-                              activeAsset.color,
+                                dataKey="value"
 
-                            stroke:
-                              "#020818",
+                                stroke={
+                                  activeAsset.color
+                                }
 
-                            strokeWidth:
-                              2,
-                          }}
+                                strokeWidth={
+                                  2
+                                }
 
-                          isAnimationActive={
-                            false
-                          }
-                        />
+                                fill={
+                                  `url(#grad-${activeId})`
+                                }
 
-                      </AreaChart>
+                                dot={
+                                  false
+                                }
 
-                    </ResponsiveContainer>
+                                activeDot={{
+                                  r:
+                                    5,
 
-                  </>
+                                  fill:
+                                    activeAsset.color,
 
-                )}
+                                  stroke:
+                                    "#020818",
+
+                                  strokeWidth:
+                                    2,
+                                }}
+
+                                isAnimationActive={
+                                  false
+                                }
+                              />
+
+                            </AreaChart>
+
+                          </ResponsiveContainer>
+
+                        </>
+                      )
+                }
 
               </div>
 
 
-              {/* =============================================
-                  CHART FOOTER
-              ============================================= */}
+              {/* =================================================
+                  FOOTER
+              ================================================= */}
 
               <div
                 style={
@@ -3317,9 +4313,11 @@ const handleWheel = (event) => {
                   />
 
 
-                  {isWs
-                    ? "WEBSOCKET · LIVE TICKS"
-                    : "POLLING · 60S REFRESH"}
+                  {
+                    isWs
+                      ? "WEBSOCKET · LIVE TICKS"
+                      : "POLLING · 60S REFRESH"
+                  }
 
                 </span>
 
@@ -3329,7 +4327,9 @@ const handleWheel = (event) => {
                     styles.footerTag
                   }
                 >
+
                   {sourceLabel}
+
                 </span>
 
               </div>

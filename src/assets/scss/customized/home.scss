@@ -2056,7 +2056,80 @@ right:-45px;
     );
 }
 
+/* =========================================================
+   CARD 5 - FULL IMAGE
+========================================================= */
 
+.hw__card-5-full-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /* FULL FILL */
+  object-fit: cover;
+
+  /* MANUAL IMAGE POSITION */
+  object-position: center center;
+
+  z-index: 1;
+
+  pointer-events: none;
+  user-select: none;
+
+  /* NO ROTATION */
+  transform: none;
+}
+
+
+/* =========================================================
+   CARD 5 TEXT POSITION - SEPARATE CONTROL
+========================================================= */
+
+.hw__card-5 .hw__card-content {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================================================
+   CARD 5 TITLE
+========================================================= */
+
+.hw__card-5 .hw__card-content h3 {
+  position: relative;
+
+  /* + = DOWN
+     - = UP */
+  top: 130px;
+
+  color: #012d65;
+
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   CARD 5 DESCRIPTION
+========================================================= */
+
+.hw__card-5 .hw__card-content p {
+  position: relative;
+
+  /* + = DOWN
+     - = UP */
+  top: 125px;
+
+  color: #012d65;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  max-width: 320px;
+}
 /* =========================================================
    CARD 6
    ROW 2 / COLUMN 3
@@ -2081,7 +2154,51 @@ top:-10px;
     );
 }
 
+/* =========================================================
+   CARD 6 - FULL IMAGE
+========================================================= */
 
+.hw__card-6-full-image {
+  position: absolute;
+
+  /* FULL CARD */
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /* FILL COMPLETE CARD */
+  object-fit: cover;
+
+  /* =========================================
+     MANUAL IMAGE POSITION
+
+     center center = normal
+
+     center 40% = move visible image UP
+     center 60% = move visible image DOWN
+
+     40% center = move visible image LEFT
+     60% center = move visible image RIGHT
+  ========================================= */
+  object-position: center center;
+
+  z-index: 1;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   CARD 6 TEXT ABOVE IMAGE
+========================================================= */
+
+.hw__card-6 .hw__card-content {
+  position: relative;
+
+  z-index: 5;
+}
 /* =========================================================
    IMAGE AREA
 ========================================================= */
@@ -2107,8 +2224,56 @@ top:-10px;
 
   background: #012d65;
 }
+/* =========================================================
+   CARD 6 TEXT CONTROL
+========================================================= */
+
+.hw__card-6 .hw__card-content {
+  position: relative;
+
+  /* + = DOWN / - = UP */
+  top: 70px;
+
+  z-index: 5;
+}
 
 
+/* TITLE COLOR */
+
+.hw__card-6 .hw__card-content h3 {
+  color: #012d65;
+}
+
+
+/* DESCRIPTION COLOR */
+
+.hw__card-6 .hw__card-content p {
+  color: #012d65;
+}
+/* =========================================================
+   CARD 6 TEXT SIZE
+========================================================= */
+
+.hw__card-6 .hw__card-content h3 {
+  color: #012d65;
+
+  /* TITLE SIZE */
+  font-size: 26px;
+
+  line-height: 1.2;
+}
+
+
+.hw__card-6 .hw__card-content p {
+  color: #012d65;
+
+  /* DESCRIPTION SIZE */
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  max-width: 260px;
+}
 /* =========================================================
    IMAGE
 ========================================================= */
@@ -2391,16 +2556,21 @@ top:-10px;
   animation-play-state: running;
 }
 /* =========================================================
-   DARK MARKET PILL
+   CARD 2 - MOVING MARKET SMALL CONTAINERS
+   SOLID BLUE - NO GLASS / NO TRANSPARENCY
 ========================================================= */
 
 .hw__market-pill {
   flex-shrink: 0;
+
   min-width: max-content;
+
   height: 48px;
 
   display: flex;
+
   align-items: center;
+
   gap: 7px;
 
   padding:
@@ -2413,33 +2583,37 @@ top:-10px;
 
 
   /* =========================================
-     PIPS BLUE GLASS
+     SOLID PIPS BLUE
   ========================================= */
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(1, 45, 101, 0.88) 0%,
-      rgba(1, 45, 101, 0.72) 100%
-    );
+    #012d65;
 
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* REMOVE GLASS EFFECT */
 
+  backdrop-filter:
+    none;
+
+  -webkit-backdrop-filter:
+    none;
+
+
+  /* SIMPLE BORDER */
 
   border:
-    1px
-    solid
-    rgba(255, 255, 255, 0.28);
+    1px solid
+    #012d65;
 
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
+
+  /* REMOVE GLASS SHADOW */
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.30),
-    0 6px 16px rgba(1, 45, 101, 0.18);
+    none;
 }
 
 
@@ -2564,9 +2738,8 @@ top:-10px;
   }
 
 }
-
 /* =========================================================
-   CTA
+   JOIN WITH US BUTTON
 ========================================================= */
 
 .hw__cta-wrap {
@@ -2574,14 +2747,138 @@ top:-10px;
 
   display: flex;
 
+  align-items: center;
+
   justify-content: center;
 
   margin-top: 45px;
+
+  text-align: center;
 }
 
 
+/* =========================================================
+   NORMAL BUTTON
+   WHITE BACKGROUND
+   BLUE TEXT
+========================================================= */
+
 .hw__cta-link {
-  text-decoration: none;
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+
+  /* TEXT CENTER */
+  text-align: center !important;
+
+
+  /* BUTTON SIZE */
+  min-width: 180px;
+
+  padding:
+    14px
+    30px !important;
+
+
+  /* NORMAL COLOR */
+  background:
+    #ffffff !important;
+
+  color:
+    #012d65 !important;
+
+
+  border:
+    2px solid
+    #ffffff !important;
+
+
+  border-radius:
+    999px !important;
+
+
+  text-decoration:
+    none !important;
+
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   YELLOW BACKGROUND
+   BLUE TEXT
+========================================================= */
+
+.hw__cta-link:hover {
+  background:
+    #f7a901 !important;
+
+  color:
+    #012d65 !important;
+
+  border-color:
+    #f7a901 !important;
+
+  text-decoration:
+    none !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD BUTTON OVERLAY / EFFECT
+========================================================= */
+
+.hw__cta-link::before,
+.hw__cta-link::after {
+  display:
+    none !important;
+}
+
+
+/* =========================================================
+   DESKTOP ONLY
+   KEEP BUTTON PERFECTLY CENTERED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hw__cta-wrap {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+
+  .hw__cta-link {
+    margin:
+      0 auto !important;
+
+    text-align:
+      center !important;
+  }
+
 }
 
 
@@ -2863,59 +3160,66 @@ and
    DESKTOP ONLY
 ========================================================= */
 
+/* =========================================================
+   CARD 4 - FULL CARD VIDEO
+   DESKTOP ONLY
+========================================================= */
+
 @media (min-width: 1200px) {
 
-  .hw__card-4-middle-image {
+  .hw__card-4-middle-video {
     position: absolute;
 
-    /* =========================
-       LEFT / RIGHT
-       bigger right = move LEFT
-       smaller/negative = move RIGHT
-    ========================= */
-    right: 18px;
+    /* FULL CARD */
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 100%;
 
-    /* =========================
-       UP / DOWN
-       50% = middle
-       45% = little UP
-       55% = little DOWN
-    ========================= */
-    top: 50%;
+    /* FILL COMPLETE CARD */
+    object-fit: cover;
 
+    /* =========================================
+       MANUAL VIDEO POSITION
 
-    /* =========================
-       IMAGE SIZE
-    ========================= */
-    width: 480px;
+       center center = normal
 
-    height: auto;
+       center 40% = video UP
+       center 60% = video DOWN
 
-    object-fit: contain;
+       40% center = video LEFT
+       60% center = video RIGHT
+    ========================================= */
+    object-position: center center;
 
+    /* NO ROTATION */
+    transform: none;
 
-    /* =========================
-       MANUAL ROTATION
+    /* NO SHADOW */
+    filter: none;
 
-       -10deg = rotate LEFT
-        0deg  = straight
-        10deg = rotate RIGHT
-    ========================= */
-    transform:
-      translateY(-50%)
-      rotate(-8deg);
+    border: none;
+    outline: none;
 
-
-    transform-origin: center;
-
-    z-index: 2;
+    /* VIDEO BEHIND TEXT */
+    z-index: 1;
 
     pointer-events: none;
     user-select: none;
   }
 
+
+  /* TEXT ABOVE VIDEO */
+
+  .hw__card-4 .hw__card-content {
+    position: absolute;
+
+    z-index: 5;
+  }
+
 }
+
 /* =========================================================
    CARD 4 TEXT - BOTTOM POSITION
    DESKTOP ONLY
@@ -3222,4 +3526,2066 @@ and
       #012d65;
   }
 
+}
+
+/* =========================================================
+   THE PIPS - SIX BENTO CARDS
+   MOBILE ONLY - 767PX AND BELOW
+
+   ONE CARD PER ROW
+   NORMAL VERTICAL PAGE SCROLL
+   NO HORIZONTAL CARD SCROLL
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =====================================================
+     1. COMPLETE SECTION
+  ===================================================== */
+
+  .hw__section {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    padding: 35px 14px 45px !important;
+
+    box-sizing: border-box !important;
+
+    overflow-x: clip !important;
+  }
+
+
+  /* =====================================================
+     2. SECTION HEADING
+  ===================================================== */
+
+  .hw__heading {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 auto 24px !important;
+
+    text-align: center;
+  }
+
+
+  .hw__heading h2 {
+
+    font-size: 23px !important;
+
+    line-height: 1.2 !important;
+  }
+
+
+  .hw__heading p {
+
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  /* =====================================================
+     3. MAIN GRID
+
+     IMPORTANT:
+     ONE COLUMN ONLY
+     NO SIDE SCROLL
+  ===================================================== */
+
+  .hw__section .hw__bento-layout {
+
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(0, 1fr) !important;
+
+    grid-template-rows: none !important;
+
+    grid-auto-rows: auto !important;
+
+    width: 100% !important;
+
+    max-width: 430px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    /* MANUAL SPACE BETWEEN CARDS */
+
+    gap: 12px !important;
+
+    justify-items: stretch !important;
+
+    align-items: start !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     4. RESET ALL SIX DESKTOP CARD POSITIONS
+
+     FIXES:
+     550PX WIDTH
+     500PX WIDTH
+     RIGHT: -70PX
+     TOP: -125PX
+     ETC.
+
+     MOBILE ONLY
+  ===================================================== */
+
+  .hw__section .hw__bento-layout
+  > .hw__bento-card {
+
+    position: relative !important;
+
+    grid-column: 1 !important;
+
+    grid-row: auto !important;
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    max-width: 100% !important;
+
+    /* RESET DESKTOP OFFSETS */
+
+    top: auto !important;
+
+    right: auto !important;
+
+    bottom: auto !important;
+
+    left: auto !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    justify-self: stretch !important;
+
+    align-self: start !important;
+
+    /* MANUAL CARD HEIGHT */
+
+    height: var(--mobile-card-height, 280px) !important;
+
+    min-height: var(--mobile-card-height, 280px) !important;
+
+    max-height: none !important;
+
+    border-radius: 16px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     5. INDIVIDUAL CARD HEIGHTS
+
+     CHANGE THESE VALUES MANUALLY.
+
+     Increase a card's height if its content
+     needs more space.
+  ===================================================== */
+
+  .hw__section .hw__card-1 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  .hw__section .hw__card-2 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  .hw__section .hw__card-3 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  .hw__section .hw__card-4 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  .hw__section .hw__card-5 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  .hw__section .hw__card-6 {
+
+    --mobile-card-height: 240px;
+  }
+
+
+  /* =====================================================
+     6. COMMON TEXT
+
+     SMALLER MOBILE TEXT
+     KEEP TEXT INSIDE EACH CARD
+  ===================================================== */
+
+  .hw__section .hw__bento-card
+  .hw__card-content {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-width: 0 !important;
+
+    height: auto !important;
+
+    flex: none !important;
+
+    box-sizing: border-box !important;
+
+    padding: 12px 15px !important;
+
+    z-index: 5;
+  }
+
+
+  .hw__section .hw__bento-card
+  .hw__card-content h3 {
+
+    font-size: 20px !important;
+
+    line-height: 1.2 !important;
+
+    margin: 0 0 6px !important;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .hw__section .hw__bento-card
+  .hw__card-content p {
+
+    font-size: 12px !important;
+
+    line-height: 1.45 !important;
+
+    margin: 0 !important;
+
+    max-width: 100% !important;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =====================================================
+     7. CARD 1 - SMART TRADING
+
+     KEEP CORNER IMAGE AND LOGOS
+     INSIDE THE MOBILE CARD
+  ===================================================== */
+
+  .hw__section .hw__card-1
+  .hw__card-1-corner-image {
+
+    top: 0 !important;
+
+    right: -5px !important;
+
+    left: auto !important;
+
+    /* MANUAL IMAGE SIZE */
+
+    width: 225px !important;
+
+    max-width: 75% !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+  }
+
+
+  .hw__section .hw__card-1
+  .hw__card-1-logo-window {
+
+    position: absolute !important;
+
+    top: 38px !important;
+
+    right: 0 !important;
+
+    left: auto !important;
+
+    width: 75% !important;
+
+    max-width: 270px !important;
+
+    height: 68px !important;
+  }
+
+
+  /* CARD 1 TEXT AT BOTTOM */
+
+  .hw__section .hw__card-1
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+
+  /* =====================================================
+     8. CARD 2 - GLOBAL MARKETS
+
+     KEEP THE EXISTING TWO MOVING
+     MARKET ROWS INSIDE CARD 2.
+
+     ONLY THE OUTER CARDS SCROLL VERTICALLY.
+  ===================================================== */
+
+  .hw__section .hw__card-2
+  .hw__card-2-market-window {
+
+    position: absolute !important;
+
+    top: 18px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    height: 145px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  .hw__section .hw__card-2
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+
+  /* =====================================================
+     9. CARD 3 - 24/7 SUPPORT
+
+     REDUCE IMAGE SIZE WITHOUT DISTORTION
+  ===================================================== */
+
+  .hw__section .hw__card-3
+  .hw__card-3-corner-image {
+
+    position: absolute !important;
+
+    top: 5px !important;
+
+    right: 5px !important;
+
+    left: auto !important;
+
+    width: 205px !important;
+
+    max-width: 65% !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+  }
+
+
+  .hw__section .hw__card-3
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+
+  /* =====================================================
+     10. CARD 4 - VIDEO
+
+     KEEP VIDEO FULL CARD
+     NO ROTATION
+  ===================================================== */
+
+  .hw__section .hw__card-4
+  .hw__card-4-middle-video {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    object-position: center !important;
+
+    transform: none !important;
+
+    z-index: 1;
+  }
+
+
+  .hw__section .hw__card-4
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+
+  /* =====================================================
+     11. CARD 5 - RESPONSIBLE PRACTICES
+
+     RESET OLD DESKTOP TEXT OFFSETS
+  ===================================================== */
+
+  .hw__section .hw__card-5
+  .hw__card-5-full-image {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    transform: none !important;
+  }
+
+
+  .hw__section .hw__card-5
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+
+  .hw__section .hw__card-5
+  .hw__card-content h3,
+
+  .hw__section .hw__card-5
+  .hw__card-content p {
+
+    top: 0 !important;
+
+    left: 0 !important;
+  }
+
+
+  /* =====================================================
+     12. CARD 6 - SATISFACTION
+
+     KEEP FULL BACKGROUND IMAGE
+  ===================================================== */
+
+  .hw__section .hw__card-6
+  .hw__card-6-full-image {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: cover !important;
+  }
+
+
+  .hw__section .hw__card-6
+  .hw__card-content {
+
+    position: absolute !important;
+
+    top: auto !important;
+
+    bottom: 14px !important;
+
+    left: 0 !important;
+
+    right: 0 !important;
+  }
+
+}
+
+/* =========================================================
+   CARD 1 + CARD 2 - MOBILE SIZE AND AUTO SCROLL
+   MOBILE ONLY: 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =====================================================
+     CARD 1 - SCREEN IMAGE
+
+     Reduce image size and move it slightly UP.
+  ===================================================== */
+
+  .hw__section .hw__card-1-corner-image {
+
+    position: absolute !important;
+
+    /* MANUAL UP / DOWN
+       -25px = more UP
+       -15px = little UP
+         0px = normal
+    */
+    top: -15px !important;
+
+    /* MANUAL LEFT / RIGHT
+       Bigger right value = move LEFT
+       Smaller right value = move RIGHT
+    */
+    right: -5px !important;
+
+    left: auto !important;
+
+    /* MANUAL IMAGE SIZE
+       170px = smaller
+       190px = recommended
+       210px = bigger
+    */
+    width: 190px !important;
+
+    max-width: 65% !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+
+    transform: none !important;
+
+    z-index: 2;
+
+    pointer-events: none;
+  }
+
+
+  /* =====================================================
+     CARD 1 - BLURRED LOGO CONTAINER
+
+     Smaller scrolling container.
+  ===================================================== */
+
+  .hw__section .hw__card-1-logo-window {
+
+    position: absolute !important;
+
+    /* MANUAL CONTAINER POSITION */
+    top: 35px !important;
+
+    right: 0px !important;
+
+    left: auto !important;
+
+    /* MANUAL CONTAINER SIZE */
+    width: 65% !important;
+
+    max-width: 230px !important;
+
+    height: 55px !important;
+
+    z-index: 10;
+  }
+
+
+  /* =====================================================
+     CARD 1 - GLASS BACKGROUND
+  ===================================================== */
+
+  .hw__section .hw__card-1-logo-glass {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    padding: 0 8px !important;
+
+    border-radius: 14px 0 0 14px !important;
+
+    /* KEEP LIGHT GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    overflow: hidden !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     CARD 1 - SMALL LOGO BOXES
+  ===================================================== */
+
+  .hw__section .hw__card-1-logo-box {
+
+    flex: 0 0 44px !important;
+
+    width: 44px !important;
+
+    height: 40px !important;
+
+    padding: 5px !important;
+
+    border-radius: 9px !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .hw__section .hw__card-1-logo {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: contain !important;
+  }
+
+
+  /* =====================================================
+     CARD 1 - AUTOMATIC SIDE SCROLL
+
+     Always running on mobile.
+     No hover required.
+
+     12s = normal
+     18s = slower
+      8s = faster
+  ===================================================== */
+
+  .hw__section .hw__card-1-logo-track {
+
+    animation:
+      hw-card-1-logo-scroll
+      12s
+      linear
+      infinite !important;
+
+    animation-play-state: running !important;
+
+    /* Keep existing 12px track gap so
+       the seamless loop stays aligned. */
+    gap: 12px;
+  }
+
+
+  /* =====================================================
+     CARD 2 - COMPLETE MARKET TICKER AREA
+  ===================================================== */
+
+  .hw__section .hw__card-2-market-window {
+
+    position: absolute !important;
+
+    /* MANUAL TOP POSITION */
+    top: 18px !important;
+
+    left: 0 !important;
+
+    width: 100% !important;
+
+    /* REDUCE TICKER AREA HEIGHT */
+    height: 110px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - FIRST MOVING ROW
+  ===================================================== */
+
+  .hw__section .hw__card-2-row--one {
+
+    top: 0 !important;
+
+    height: 45px !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - SECOND MOVING ROW
+  ===================================================== */
+
+  .hw__section .hw__card-2-row--two {
+
+    top: 52px !important;
+
+    height: 45px !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - SMALL CURVED MARKET CONTAINERS
+  ===================================================== */
+
+  .hw__section .hw__market-pill {
+
+    /* MANUAL PILL HEIGHT
+       32px = smaller
+       36px = recommended
+       40px = bigger
+    */
+    height: 36px !important;
+
+    min-width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px !important;
+
+    /* INNER SPACE */
+    padding: 4px 10px 4px 5px !important;
+
+    background: #012d65 !important;
+
+    border: 1px solid #012d65 !important;
+
+    border-radius: 999px !important;
+
+    /* NO TRANSPARENT GLASS EFFECT */
+    backdrop-filter: none !important;
+
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     CARD 2 - SMALL WHITE LOGO CIRCLES
+  ===================================================== */
+
+  .hw__section .hw__market-logo-circle {
+
+    /* MANUAL CIRCLE SIZE */
+    width: 26px !important;
+
+    height: 26px !important;
+
+    min-width: 26px !important;
+
+    min-height: 26px !important;
+
+    padding: 2px !important;
+
+    border-radius: 50%;
+
+    background: #ffffff !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .hw__section .hw__market-logo-circle img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: contain !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - SMALLER MARKET LABEL
+  ===================================================== */
+
+  .hw__section .hw__market-label {
+
+    /* MANUAL TEXT SIZE */
+    font-size: 10px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 600;
+
+    color: #ffffff !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - AUTOMATIC RIGHT TO LEFT
+
+     18s = normal
+     25s = slower
+     12s = faster
+  ===================================================== */
+
+  .hw__section .hw__card-2-track--rtl {
+
+    animation:
+      hw-card-2-right-to-left
+      18s
+      linear
+      infinite !important;
+
+    animation-play-state: running !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - AUTOMATIC LEFT TO RIGHT
+
+     20s = normal
+     28s = slower
+     14s = faster
+  ===================================================== */
+
+  .hw__section .hw__card-2-track--ltr {
+
+    animation:
+      hw-card-2-left-to-right
+      20s
+      linear
+      infinite !important;
+
+    animation-play-state: running !important;
+  }
+
+}
+/* =========================================================
+   CARD 1 - MOBILE BLUR CONTAINER POSITION
+   767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .hw__section .hw__card-1
+  .hw__card-1-logo-window {
+
+    position: absolute !important;
+
+    /* KEEP CURRENT VERTICAL POSITION */
+    top: 35px !important;
+
+    /* KEEP RIGHT EDGE INSIDE CARD */
+    right: 0 !important;
+    left: auto !important;
+
+    /* =========================================
+       MANUAL LEFT-EDGE POSITION
+
+       65% = original width
+       60% = little to the RIGHT
+       55% = more to the RIGHT
+
+       Smaller width moves the left edge right.
+    ========================================= */
+
+    width: 67% !important;
+
+    max-width: none !important;
+
+    height: 55px !important;
+
+    transform: none !important;
+
+    z-index: 10;
+  }
+
+}
+
+
+/* =========================================================
+   THE PIPS - STAY CONNECTED
+
+   WHITE BACKGROUND
+   BLUE TEXT
+   INFINITE LEFT TO RIGHT PAYMENT LOGOS
+   NO VIDEO
+========================================================= */
+
+/* =========================================================
+   1. COMPLETE SECTION
+========================================================= */
+
+.references-section {
+
+  width: 100%;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  /* WHITE BACKGROUND */
+
+  background: #ffffff !important;
+
+  background-image: none !important;
+
+  /* BLUE TEXT */
+
+  color: #012d65;
+
+  font-family: "Poppins", sans-serif;
+
+  text-align: center;
+
+  /* REMOVE OLD BLUE BACKGROUND ANIMATION */
+
+  animation: none !important;
+
+
+  /* =========================================
+     MANUAL SECTION SPACING
+
+     TOP | LEFT/RIGHT | BOTTOM
+
+     Smaller TOP = heading moves UP.
+  ========================================= */
+
+  padding: 35px 0 45px;
+
+}
+
+
+/* =========================================================
+   2. HEADING
+========================================================= */
+
+.references-section .references-header {
+
+  position: relative;
+
+  width: calc(100% - 40px);
+
+  max-width: 1200px;
+
+  margin: 0 auto 35px;
+
+  padding: 0;
+
+  /* =========================================
+     MANUAL HEADER POSITION
+
+     -10px = UP
+       0px = NORMAL
+      10px = DOWN
+  ========================================= */
+
+  top: -5px;
+
+  /* RISING ANIMATION */
+
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  animation: none !important;
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+}
+
+
+/* HEADING BECOMES VISIBLE */
+
+.references-section.is-visible
+.references-header {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   MAIN TITLE - BLUE
+========================================================= */
+
+.references-section .references-header h2 {
+
+  margin: 0 0 12px;
+
+  padding: 0;
+
+  /* MANUAL TITLE SIZE */
+
+  font-size: clamp(30px, 3.2vw, 48px);
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  color: #012d65 !important;
+
+  background: none !important;
+
+  -webkit-text-fill-color: #012d65 !important;
+
+  text-align: center;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION - BLUE
+========================================================= */
+
+.references-section .references-header p {
+
+  margin: 0 auto;
+
+  max-width: 700px;
+
+  /* MANUAL DESCRIPTION SIZE */
+
+  font-size: 17px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  color: #012d65 !important;
+
+  text-align: center;
+
+}
+
+
+/* =========================================================
+   3. INFINITE PAYMENT LOGO VIEWPORT
+
+   IMPORTANT:
+   This container does NOT scroll with the mouse.
+
+   The track moves automatically.
+========================================================= */
+
+.references-section .references-payment-marquee {
+
+  width: 100%;
+
+  max-width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  /* MANUAL TOP / BOTTOM SPACE */
+
+  padding: 12px 0 18px;
+
+}
+
+
+/* =========================================================
+   4. MOVING PAYMENT TRACK
+
+   LEFT TO RIGHT - INFINITE
+
+   MANUAL ANIMATION SPEED:
+
+   15s = FAST
+   25s = MEDIUM
+   35s = RECOMMENDED
+   45s = SLOW
+   60s = VERY SLOW
+========================================================= */
+
+.references-section .references-payment-track {
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  width: max-content;
+
+  /* =========================================
+     MANUAL ANIMATION SPEED
+  ========================================= */
+
+  animation:
+    pips-payment-scroll-right
+    35s
+    linear
+    infinite;
+
+  animation-play-state: running;
+
+  will-change: transform;
+
+}
+
+
+/* =========================================================
+   5. EACH GROUP OF EIGHT PAYMENT LOGOS
+
+   Both groups must have exactly the same width
+   for the animation to loop seamlessly.
+========================================================= */
+
+.references-section .references-payment-group {
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  /* =========================================
+     MANUAL GAP BETWEEN PAYMENT CARDS
+  ========================================= */
+
+  gap: 12px;
+
+  /*
+    Include the same spacing after the last card.
+
+    This also keeps the duplicated groups
+    aligned for the seamless loop.
+  */
+
+  padding-right: 12px;
+
+  flex: 0 0 auto;
+
+  width: max-content;
+
+  box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   6. INDIVIDUAL PAYMENT CARD
+========================================================= */
+
+.references-section .references-payment-card {
+
+  /* =========================================
+     MANUAL PAYMENT CARD SIZE
+
+     Change width, height and flex-basis
+     together when resizing.
+  ========================================= */
+
+  width: 140px;
+
+  height: 80px;
+
+  flex: 0 0 140px;
+
+  min-width: 140px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  /* WHITE PAYMENT CONTAINER */
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8f2;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 6px 18px rgba(1, 45, 101, 0.10);
+
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+/* =========================================================
+   PAYMENT LOGO IMAGE
+========================================================= */
+
+.references-section .references-payment-card img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: 110px;
+
+  max-height: 50px;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  user-select: none;
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   PAYMENT CARD HOVER
+
+   Track continues moving.
+   Only the hovered card gets a small shadow.
+========================================================= */
+
+.references-section .references-payment-card:hover {
+
+  border-color: #012d65;
+
+  box-shadow:
+    0 8px 24px rgba(1, 45, 101, 0.18);
+
+}
+
+
+/* =========================================================
+   7. INFINITE LEFT TO RIGHT ANIMATION
+
+   Starts at the duplicated group,
+   then moves toward the original group.
+
+   Both groups are identical, so the
+   loop restarts without a visible jump.
+========================================================= */
+
+@keyframes pips-payment-scroll-right {
+
+  from {
+
+    transform: translateX(-50%);
+
+  }
+
+  to {
+
+    transform: translateX(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   8. MORE BUTTON
+========================================================= */
+
+.references-section .references-more-wrap {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+}
+
+
+/* NORMAL */
+
+.references-section .references-more-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 30px;
+
+  background: #012d65;
+
+  color: #ffffff;
+
+  border: 1px solid #012d65;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+/* HOVER */
+
+.references-section .references-more-button:hover {
+
+  background: #f7a901;
+
+  color: #012d65;
+
+  border-color: #f7a901;
+
+}
+
+
+/* =========================================================
+   9. MOBILE ONLY - 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* COMPLETE SECTION */
+
+  .references-section {
+
+    padding: 25px 0 35px;
+
+  }
+
+
+  /* HEADER */
+
+  .references-section .references-header {
+
+    width: calc(100% - 32px);
+
+    margin-bottom: 20px;
+
+    top: 0;
+
+  }
+
+
+  /* MOBILE TITLE */
+
+  .references-section .references-header h2 {
+
+    /* MANUAL MOBILE TITLE SIZE */
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+
+  }
+
+
+  /* MOBILE DESCRIPTION */
+
+  .references-section .references-header p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+  }
+
+
+  
+
+/* =========================================================
+   THE PIPS - STAY CONNECTED
+
+   WHITE BACKGROUND
+   BLUE TEXT
+   PAYMENT LOGOS: LEFT TO RIGHT
+   INFINITE LOOP
+
+   VISIBLE AREA:
+   START 5%
+   END 95%
+========================================================= */
+
+
+/* =========================================================
+   1. COMPLETE SECTION
+========================================================= */
+
+.references-section {
+  width: 100%;
+
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  /* BACKGROUND */
+
+  background: #ffffff !important;
+
+  background-image: none !important;
+
+  animation: none !important;
+
+  /* TEXT */
+
+  color: #012d65;
+
+  font-family: "Poppins", sans-serif;
+
+  text-align: center;
+
+  /* =========================================
+     MANUAL SECTION SPACING
+
+     TOP | LEFT/RIGHT | BOTTOM
+  ========================================= */
+
+  padding: 35px 0 45px;
+}
+
+
+/* =========================================================
+   2. HEADING
+========================================================= */
+
+.references-section .references-header {
+  position: relative;
+
+  width: calc(100% - 40px);
+
+  max-width: 1200px;
+
+  margin: 0 auto 35px;
+
+  padding: 0;
+
+  /* =========================================
+     MANUAL HEADER POSITION
+
+     -10px = UP
+       0px = NORMAL
+      10px = DOWN
+  ========================================= */
+
+  top: -5px;
+
+  /* RISING ANIMATION */
+
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  animation: none !important;
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* HEADING RISE FINISHED */
+
+.references-section.is-visible
+.references-header {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MAIN TITLE - BLUE
+========================================================= */
+
+.references-section .references-header h2 {
+  margin: 0 0 12px;
+
+  padding: 0;
+
+  font-size: clamp(30px, 3.2vw, 48px);
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  color: #012d65 !important;
+
+  background: none !important;
+
+  -webkit-text-fill-color: #012d65 !important;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   DESCRIPTION - BLUE
+========================================================= */
+
+.references-section .references-header p {
+  margin: 0 auto;
+
+  max-width: 700px;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  color: #012d65 !important;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   3. PAYMENT MARQUEE
+
+   VISIBLE AREA:
+
+   0% --- 5% ================= 95% --- 100%
+              LOGOS VISIBLE
+
+   Logos fade in and out smoothly.
+========================================================= */
+
+.references-section .references-payment-marquee {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  /* MANUAL TOP / BOTTOM SPACE */
+
+  padding: 12px 0 18px;
+
+
+  /* =========================================
+     MANUAL VISIBLE AREA
+
+     CHANGE THESE VALUES IN BOTH GRADIENTS.
+
+     START: 5%
+     END:   95%
+
+     LOGOS:
+     Fade IN from 5% to 10%.
+     Fully visible from 10% to 90%.
+     Fade OUT from 90% to 95%.
+  ========================================= */
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+
+    transparent 0%,
+    transparent 5%,
+
+    #000000 10%,
+    #000000 90%,
+
+    transparent 95%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+
+    transparent 0%,
+    transparent 5%,
+
+    #000000 10%,
+    #000000 90%,
+
+    transparent 95%,
+    transparent 100%
+  );
+}
+
+
+/* =========================================================
+   4. INFINITE MOVING TRACK
+
+   LEFT TO RIGHT
+
+   MANUAL SPEED:
+
+   25s = FAST
+   35s = MEDIUM
+   55s = RECOMMENDED
+   70s = SLOW
+========================================================= */
+
+.references-section .references-payment-track {
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  width: max-content;
+
+  flex-shrink: 0;
+
+  /* =========================================
+     MANUAL ANIMATION SPEED
+  ========================================= */
+
+  animation:
+    pips-payment-scroll-right
+    55s
+    linear
+    infinite;
+
+  animation-play-state: running;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   5. EACH PAYMENT GROUP
+
+   Both groups must have identical widths.
+========================================================= */
+
+.references-section .references-payment-group {
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  /* MANUAL SPACE BETWEEN LOGOS */
+
+  gap: 12px;
+
+  /* SAME GAP BETWEEN THE TWO GROUPS */
+
+  padding-right: 12px;
+
+  flex: 0 0 auto;
+
+  width: max-content;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   6. PAYMENT CARD
+========================================================= */
+
+.references-section .references-payment-card {
+  /* =========================================
+     MANUAL PAYMENT CARD SIZE
+
+     Change all width values together.
+  ========================================= */
+
+  width: 140px;
+
+  height: 80px;
+
+  flex: 0 0 140px;
+
+  min-width: 140px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8f2;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 6px 18px rgba(1, 45, 101, 0.10);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   PAYMENT LOGO IMAGE
+========================================================= */
+
+.references-section .references-payment-card img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: 110px;
+
+  max-height: 50px;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PAYMENT CARD HOVER
+========================================================= */
+
+.references-section .references-payment-card:hover {
+  border-color: #012d65;
+
+  box-shadow:
+    0 8px 24px rgba(1, 45, 101, 0.18);
+}
+
+
+/* =========================================================
+   7. INFINITE LEFT TO RIGHT ANIMATION
+
+   Two identical groups make the loop seamless.
+
+   DO NOT CHANGE -50% / 0%:
+   These values keep the groups aligned.
+========================================================= */
+
+@keyframes pips-payment-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   8. MORE BUTTON
+========================================================= */
+
+.references-section .references-more-wrap {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+
+/* NORMAL BUTTON */
+
+.references-section .references-more-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 12px 30px;
+
+  background: #012d65;
+
+  color: #ffffff;
+
+  border: 1px solid #012d65;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* HOVER BUTTON */
+
+.references-section .references-more-button:hover {
+  background: #f7a901;
+
+  color: #012d65;
+
+  border-color: #f7a901;
+}
+
+
+/* =========================================================
+   9. MOBILE ONLY - 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* SECTION */
+
+  .references-section {
+    padding: 25px 0 35px;
+  }
+
+
+  /* HEADER */
+
+  .references-section .references-header {
+    width: calc(100% - 32px);
+
+    margin-bottom: 20px;
+
+    top: 0;
+  }
+
+
+  /* MOBILE TITLE */
+
+  .references-section .references-header h2 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+  }
+
+
+  /* MOBILE DESCRIPTION */
+
+  .references-section .references-header p {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  /* MOBILE MARQUEE */
+
+  .references-section .references-payment-marquee {
+    width: 100%;
+
+    padding: 8px 0 12px;
+
+    overflow: hidden;
+  }
+
+
+  /* MOBILE PAYMENT GAP */
+
+  .references-section .references-payment-group {
+    gap: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  /* MOBILE PAYMENT CARD */
+
+  .references-section .references-payment-card {
+    width: 105px;
+
+    height: 64px;
+
+    flex: 0 0 105px;
+
+    min-width: 105px;
+
+    padding: 8px;
+
+    border-radius: 12px;
+  }
+
+
+  /* MOBILE LOGO */
+
+  .references-section .references-payment-card img {
+    max-width: 85px;
+
+    max-height: 42px;
+  }
+
+
+  /* MOBILE ANIMATION SPEED */
+
+  .references-section .references-payment-track {
+    animation-duration: 45s;
+  }
+
+
+  /* MORE BUTTON */
+
+  .references-section .references-more-wrap {
+    margin-top: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   10. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .references-section .references-header {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .references-section .references-payment-track {
+    animation: none;
+
+    transform: translateX(0);
+  }
+
+}
 }

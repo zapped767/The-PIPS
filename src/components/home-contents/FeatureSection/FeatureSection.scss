@@ -160,128 +160,273 @@
 /* =========================================================
    MOBILE ONLY
    767PX AND BELOW
+
+   THREE SEPARATE HORIZONTAL SCROLL CARDS
 ========================================================= */
 
 @media (max-width: 767px) {
 
   /* =====================================================
-     COMPLETE SECTION SPACE
-  ====================================================== */
+     SECTION
+     WHITE BACKGROUND
+  ===================================================== */
 
   .premium-feature-section {
-    /*
-      REDUCE OUTSIDE SPACE
 
-      Change 10px manually if needed.
-    */
-    padding:
-      10px
-      20px;
+    width: 100%;
+
+    background: #ffffff;
+
+    /* MANUAL SECTION SPACING */
+    padding: 15px 0 20px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
   }
 
 
   /* =====================================================
-     MOBILE CONTAINER
-  ====================================================== */
+     HORIZONTAL SCROLL CONTAINER
+  ===================================================== */
 
   .premium-feature-container {
-    grid-template-columns: 1fr;
 
-    /*
-      OPTIONAL:
-      Reduce border thickness manually
-    */
-    border-width: 2px;
+    display: flex;
 
-    border-radius: 18px;
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+
+    align-items: stretch;
+
+    /* FULL MOBILE WIDTH */
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    /* MANUAL SPACE BETWEEN CARDS */
+    gap: 12px;
+
+    /* MANUAL LEFT AND RIGHT SPACE */
+    padding: 8px 20px 16px;
+
+    box-sizing: border-box;
+
+    /* REMOVE OLD OUTER BORDER */
+    border: none;
+
+    border-radius: 0;
+
+    /* ENABLE SIDE SCROLL */
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    /* SMOOTH FINGER SWIPING */
+    -webkit-overflow-scrolling: touch;
+
+    /* SNAP TO EACH CARD */
+    scroll-snap-type: x mandatory;
+
+    scroll-padding-left: 20px;
+
+    /* HIDE SCROLLBAR */
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+  }
+
+
+  .premium-feature-container::-webkit-scrollbar {
+    display: none;
   }
 
 
   /* =====================================================
-     EACH MOBILE FEATURE ROW
-  ====================================================== */
+     EACH INDIVIDUAL RECTANGLE CARD
+  ===================================================== */
 
   .premium-feature-item {
-    /*
-      MOBILE ROW HEIGHT
 
-      80px = smaller
-      90px = recommended
-      100px = bigger
-    */
-    min-height: 90px;
+    position: relative;
 
     /*
-      REDUCE INNER SPACE
+      CARD WIDTH
+
+      64% = first full card + part of second
+      70% = larger first card
+      75% = smaller visible part of second
     */
-    padding:
-      12px
-      14px;
+
+    flex: 0 0 64%;
+
+    width: 64%;
+
+    min-width: 64%;
+
+    max-width: 64%;
 
     /*
-      ICON -> TEXT GAP
+      CARD HEIGHT
 
-      4px = very close
-      7px = recommended
-      10px = more space
+      Change manually:
+      140px = smaller
+      160px = recommended
+      180px = bigger
     */
-    gap: 7px;
+
+    min-height: 160px;
+
+    height: 160px;
+
+    /* INNER SPACE */
+    padding: 18px 12px;
+
+    box-sizing: border-box;
+
+    /* WHITE CARD */
+    background: #ffffff;
+
+    /* SEPARATE RECTANGLE BORDER */
+    border: 1px solid #D9E3EF;
+
+    border-radius: 18px;
+
+    /* CENTER ICON + TITLE */
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    /* NO ROTATION / MOVEMENT */
+    transform: none;
+
+    /* SNAP TO NEXT CARD */
+    scroll-snap-align: start;
+
+    scroll-snap-stop: always;
+
+    /* SUBTLE CARD DEPTH */
+    box-shadow:
+      0 5px 16px rgba(1, 45, 101, 0.07);
+
+    /* OVERRIDE OLD ALTERNATING COLORS */
+    color: #012d65;
+  }
+
+
+  /* REMOVE OLD SEPARATOR */
+
+  .premium-feature-item:not(:last-child) {
+
+    border-right: 1px solid #D9E3EF;
+
+    border-bottom: 1px solid #D9E3EF;
   }
 
 
   /* =====================================================
-     MOBILE ICON
-  ====================================================== */
+     ICON - KEEP YOUR EXISTING ICONS
+  ===================================================== */
 
   .premium-feature-icon {
-    /*
-      ICON CIRCLE SIZE
-    */
-    width: 40px;
 
-    height: 40px;
+    width: 46px;
+
+    height: 46px;
+
+    min-width: 46px;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #EAF0F7;
+
+    color: #012d65;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    transform: none;
   }
 
 
   .premium-feature-icon svg {
-    /*
-      ACTUAL ICON SIZE
-    */
-    width: 20px;
 
-    height: 20px;
+    width: 23px;
+
+    height: 23px;
+
+    color: #012d65;
   }
 
 
   /* =====================================================
-     MOBILE TEXT
-  ====================================================== */
+     CARD TITLE - BLUE
+  ===================================================== */
 
   .premium-feature-item h3 {
-    /*
-      FONT SIZE
 
-      12px = smaller
-      13px = medium
-      14px = recommended
-    */
-    font-size: 14px;
+    position: relative;
 
-    line-height: 1.25;
+    margin: 0;
+
+    padding: 0;
+
+    /* MANUAL TEXT SIZE */
+    font-size: 15px;
+
+    line-height: 1.35;
 
     font-weight: 600;
+
+    color: #012d65;
+
+    text-align: center;
+
+    text-shadow: none;
+
+    white-space: normal;
   }
 
 
   /* =====================================================
-     MOBILE SEPARATOR
-  ====================================================== */
+     MOBILE HOVER / TOUCH
+     KEEP WHITE BACKGROUND + BLUE ICON
+  ===================================================== */
 
-  .premium-feature-item:not(:last-child) {
-    border-right: none;
+  .premium-feature-item:hover {
 
-    border-bottom:
-      1px solid
-      #e5eaf0;
+    background: #ffffff;
+
+    transform: none;
   }
+
+
+  .premium-feature-item:hover
+  .premium-feature-icon {
+
+    background: #EAF0F7;
+
+    color: #012d65;
+
+    transform: none;
+  }
+
 }

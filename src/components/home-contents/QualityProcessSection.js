@@ -97,7 +97,10 @@ const clamp = (
   max = 1
 ) => {
   return Math.min(
-    Math.max(value, min),
+    Math.max(
+      value,
+      min
+    ),
     max
   );
 };
@@ -117,7 +120,7 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     DESKTOP QUALITY ANIMATION CONTROL
+     DESKTOP QUALITY CONTROL
   ========================================================= */
 
   const scrollProgressRef =
@@ -131,16 +134,14 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     2 SCROLL STEP CONTROL
+     STAGES
 
-     STAGE 0
-     FULL IMAGE
+     0 = MAIN IMAGE
 
-     STAGE 1
-     PUSH IN + DIVIDE INTO 6 SLICES
+     1 = PUSH +
+         DIVIDE INTO 6
 
-     STAGE 2
-     SMOOTH FLIP INTO 6 CARDS
+     2 = FLIPPED CARDS
   ========================================================= */
 
   const qualityStageRef =
@@ -176,803 +177,323 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     DESKTOP 2-SCROLL ANIMATION
+     DESKTOP QUALITY: EXACTLY TWO WHEEL GESTURES
+
+     Down: image -> six slices -> flipped cards -> normal page.
+     Up:   cards -> six slices -> full image -> normal page.
+
+     The Live Market section does NOT take the wheel.
+     Your card dimensions and SCSS remain untouched.
   ========================================================= */
 
   useEffect(() => {
+    const section = scrollSectionRef.current;
+    const stage = stickyStageRef.current;
+    if (!section || !stage) return undefined;
 
-    const section =
-      scrollSectionRef.current;
+    const OWNER_KEY = "__PIPS_SCROLL_OWNER__";
 
-    const stage =
-      stickyStageRef.current;
+    /* MANUAL CONTROLS: larger numbers = slower animation. */
+    const FIRST_SCROLL_DURATION = 1150;
+    const SECOND_SCROLL_DURATION = 1750;
+    const GESTURE_IDLE_MS = 260;
+    const ENTRY_ZONE = 180;
 
+    let disposed = false;
+    let desktopMode = window.innerWidth >= 1200;
 
-    if (
-      !section ||
-      !stage
-    ) {
-      return;
-    }
+    const clampProgress = (value) =>
+      Math.min(1, Math.max(0, value));
 
-
-    /* =====================================================
-       EXACT STAGES
-
-       0.0 = full image
-
-       0.5 = pushed/divided 6 slices
-
-       1.0 = flipped cards
-    ===================================================== */
-
-    const STAGE_PROGRESS = [
-      0,
-      0.5,
-      1,
-    ];
-
-
-    /* =====================================================
-       MANUAL SPEED
-
-       Bigger number =
-       slower animation.
-
-       Scroll 1:
-       Full image
-       → push in
-       → divide into six
-
-       Scroll 2:
-       Six pieces
-       → smooth flip
-    ===================================================== */
-
-    const FIRST_SCROLL_DURATION =
-      1250;
-
-    const SECOND_SCROLL_DURATION =
-      1450;
-
-
-    const STAGE_DURATION = [
-      FIRST_SCROLL_DURATION,
-      SECOND_SCROLL_DURATION,
-    ];
-
-
-    /* =====================================================
-       SET PROGRESS
-    ===================================================== */
-
-    const setProgress = (
-      value
-    ) => {
-
-      const next =
-        clamp(value);
-
-
-      scrollProgressRef.current =
-        next;
-
-
-      setScrollProgress(
-        next
-      );
+    const setProgress = (value) => {
+      const next = clampProgress(value);
+      scrollProgressRef.current = next;
+      setScrollProgress(next);
     };
 
-
-    /* =====================================================
-       PREMIUM EASE IN / OUT
-    ===================================================== */
-
-    const easeInOutCubic = (
-      t
-    ) => {
-
-      return t < 0.5
-        ? 4 * t * t * t
-        : 1 -
-            Math.pow(
-              -2 * t + 2,
-              3
-            ) /
-              2;
+    /* Continuous velocity near both endpoints: gentle start and finish. */
+    const smootherstep = (t) => {
+      const x = clampProgress(t);
+      return x * x * x * (x * (x * 6 - 15) + 10);
     };
 
-
-    /* =====================================================
-       ANIMATE TO STAGE
-    ===================================================== */
-
-    const animateToStage = (
-      targetStage
-    ) => {
-
-      if (
-        qualityAnimatingRef.current
-      ) {
-        return;
-      }
-
-
-      const safeStage =
-        Math.max(
-          0,
-          Math.min(
-            2,
-            targetStage
-          )
-        );
-
-
-      const from =
-        scrollProgressRef.current;
-
-
-      const to =
-        STAGE_PROGRESS[
-          safeStage
-        ];
-
-
-      if (
-        from === to
-      ) {
-
-        qualityStageRef.current =
-          safeStage;
-
-        return;
-      }
-
-
-      qualityAnimatingRef.current =
-        true;
-
-
-      const oldStage =
-        qualityStageRef.current;
-
-
-      const durationIndex =
-        safeStage >
-        oldStage
-          ? safeStage - 1
-          : oldStage - 1;
-
-
-      const duration =
-        STAGE_DURATION[
-          Math.max(
-            0,
-            Math.min(
-              1,
-              durationIndex
-            )
-          )
-        ];
-
-
-      let startTime =
-        null;
-
-
-      const animate = (
-        time
-      ) => {
-
-        if (
-          startTime === null
-        ) {
-          startTime =
-            time;
-        }
-
-
-        const elapsed =
-          time -
-          startTime;
-
-
-        const raw =
-          clamp(
-            elapsed /
-              duration
-          );
-
-
-        const eased =
-          easeInOutCubic(
-            raw
-          );
-
-
-        const value =
-          from +
-          (
-            to -
-            from
-          ) *
-            eased;
-
-
-        setProgress(
-          value
-        );
-
-
-        if (
-          raw < 1
-        ) {
-
-          qualityAnimationFrameRef.current =
-            requestAnimationFrame(
-              animate
-            );
-
-        } else {
-
-          setProgress(
-            to
-          );
-
-
-          qualityStageRef.current =
-            safeStage;
-
-
-          qualityAnimatingRef.current =
-            false;
-        }
-      };
-
-
-      qualityAnimationFrameRef.current =
-        requestAnimationFrame(
-          animate
-        );
+    /*
+      Derive the lock from the SECTION document top, not
+      stage.offsetTop. A sticky element's offset/rect can change
+      after it starts sticking and must not move the lock point.
+    */
+    const getLockY = () => {
+      const sectionTop =
+        window.scrollY + section.getBoundingClientRect().top;
+      const paddingTop =
+        parseFloat(window.getComputedStyle(section).paddingTop) || 0;
+      const stickyTop =
+        parseFloat(window.getComputedStyle(stage).top) || 0;
+      return Math.max(0, sectionTop + paddingTop - stickyTop);
     };
 
-
-    /* =====================================================
-       READ YOUR EXISTING STICKY TOP
-
-       SCSS:
-       top: 100px;
-    ===================================================== */
-
-    const getStickyTop =
-      () => {
-
-        const styles =
-          window.getComputedStyle(
-            stage
-          );
-
-
-        const value =
-          parseFloat(
-            styles.top
-          );
-
-
-        return Number.isFinite(
-          value
-        )
-          ? value
-          : 100;
-      };
-
-
-    /* =====================================================
-       LOCK PAGE
-    ===================================================== */
-
-    const lockAt = (
-      scrollY
-    ) => {
-
-      qualityLockedRef.current =
-        true;
-
-
-      qualityLockYRef.current =
-        scrollY;
-    };
-
-
-    /* =====================================================
-       UNLOCK PAGE
-    ===================================================== */
+    const ownsLock = () => window[OWNER_KEY] === "quality";
 
     const unlock = () => {
-
-      qualityLockedRef.current =
-        false;
-
-
-      qualityLockYRef.current =
-        null;
+      qualityLockedRef.current = false;
+      qualityLockYRef.current = null;
+      if (ownsLock()) delete window[OWNER_KEY];
     };
 
+    const lockAt = (y) => {
+      window[OWNER_KEY] = "quality";
+      qualityLockedRef.current = true;
+      qualityLockYRef.current = y;
+      window.scrollTo({ top: y, behavior: "instant" });
+    };
 
-    /* =====================================================
-       ONE WHEEL GESTURE = ONE STAGE
+    /*
+      Every new WHEEL BURST starts exactly one stage. Trackpad/mouse
+      momentum cannot trigger the second stage or prematurely exit.
+    */
+    const markWheelBusy = () => {
+      qualityWheelReadyRef.current = false;
+      if (qualityWheelTimerRef.current !== null) {
+        clearTimeout(qualityWheelTimerRef.current);
+      }
+      qualityWheelTimerRef.current = setTimeout(() => {
+        qualityWheelReadyRef.current = true;
+        qualityWheelTimerRef.current = null;
+      }, GESTURE_IDLE_MS);
+    };
 
-       Helps mouse wheel / trackpad
-       not trigger both stages together.
-    ===================================================== */
+    const finishFrame = () => {
+      if (qualityAnimationFrameRef.current !== null) {
+        cancelAnimationFrame(qualityAnimationFrameRef.current);
+        qualityAnimationFrameRef.current = null;
+      }
+      qualityAnimatingRef.current = false;
+    };
 
-    const waitForNextWheel =
-      () => {
+    const animateToStage = (targetStage) => {
+      if (qualityAnimatingRef.current || disposed) return;
 
-        if (
-          qualityWheelTimerRef.current
-        ) {
+      const target = Math.max(0, Math.min(2, targetStage));
+      const start = scrollProgressRef.current;
+      const destination = target / 2;
 
-          clearTimeout(
-            qualityWheelTimerRef.current
-          );
+      if (Math.abs(start - destination) < 0.00001) {
+        setProgress(destination);
+        qualityStageRef.current = target;
+        return;
+      }
+
+      const duration =
+        Math.max(qualityStageRef.current, target) === 2
+          ? SECOND_SCROLL_DURATION
+          : FIRST_SCROLL_DURATION;
+
+      qualityAnimatingRef.current = true;
+      let startTime = null;
+
+      const frame = (time) => {
+        if (disposed) return;
+        if (startTime === null) startTime = time;
+
+        const elapsed = (time - startTime) / duration;
+        const fraction = clampProgress(elapsed);
+        setProgress(start + (destination - start) * smootherstep(fraction));
+
+        if (fraction < 1) {
+          qualityAnimationFrameRef.current = requestAnimationFrame(frame);
+        } else {
+          qualityAnimationFrameRef.current = null;
+          setProgress(destination);
+          qualityStageRef.current = target;
+          qualityAnimatingRef.current = false;
         }
-
-
-        qualityWheelTimerRef.current =
-          setTimeout(
-            () => {
-
-              qualityWheelReadyRef.current =
-                true;
-
-            },
-            240
-          );
       };
 
+      qualityAnimationFrameRef.current = requestAnimationFrame(frame);
+    };
 
-    /* =====================================================
-       WHEEL HANDLER
-    ===================================================== */
+    const wheelDelta = (event) => {
+      const multiplier =
+        event.deltaMode === 1 ? 16 :
+        event.deltaMode === 2 ? window.innerHeight : 1;
+      return event.deltaY * multiplier;
+    };
 
-    const handleWheel = (
-      event
-    ) => {
+    const consume = (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    };
 
-      /* DESKTOP ONLY */
+    const handleWheel = (event) => {
+      if (window.innerWidth < 1200 || event.ctrlKey) return;
+      if (window[OWNER_KEY] && !ownsLock()) return;
 
-      if (
-        window.innerWidth <
-        1200
-      ) {
+      const delta = wheelDelta(event);
+      if (!delta) return;
 
+      const down = delta > 0;
+      const currentY = window.scrollY;
+      const anchorY = getLockY();
+
+      if (qualityLockedRef.current) {
+        /*
+          While animating, keep the page stationary. Never use an old
+          stage value to start a second or opposite animation.
+        */
+        if (qualityAnimatingRef.current) {
+          consume(event);
+          markWheelBusy();
+          return;
+        }
+
+        const stageIndex = qualityStageRef.current;
+
+        /*
+          Leaving the LAST stage needs a FRESH wheel gesture.
+          Do not catch the trailing wheel events of the flip animation.
+        */
+        if ((down && stageIndex === 2) ||
+            (!down && stageIndex === 0)) {
+          if (!qualityWheelReadyRef.current) {
+            /* Wait for the gesture gate; do not perpetually re-arm it. */
+            consume(event);
+            return;
+          }
+
+          unlock();
+          /* Do NOT preventDefault: the same wheel scrolls the page. */
+          return;
+        }
+
+        consume(event);
+
+        if (qualityLockYRef.current !== null &&
+            Math.abs(window.scrollY - qualityLockYRef.current) > 2) {
+          window.scrollTo({
+            top: qualityLockYRef.current,
+            behavior: "instant",
+          });
+        }
+
+        if (!qualityWheelReadyRef.current) {
+          /* Never get stuck by extending the same cooldown forever. */
+          return;
+        }
+
+        markWheelBusy();
+        animateToStage(stageIndex + (down ? 1 : -1));
+        return;
+      }
+
+      /*
+        Only enter Quality while crossing the fixed anchor.
+        Leaving stage 2 downward NEVER re-locks the same section.
+        Leaving stage 0 upward NEVER re-locks from below.
+      */
+      const crossingDown =
+        down &&
+        qualityStageRef.current === 0 &&
+        ((currentY <= anchorY && currentY + delta >= anchorY) ||
+         (currentY > anchorY && currentY <= anchorY + ENTRY_ZONE));
+
+      const crossingUp =
+        !down &&
+        qualityStageRef.current === 2 &&
+        ((currentY >= anchorY && currentY + delta <= anchorY) ||
+         (currentY < anchorY && currentY >= anchorY - ENTRY_ZONE));
+
+      if (!crossingDown && !crossingUp) return;
+
+      consume(event);
+      lockAt(anchorY);
+      markWheelBusy();
+
+      /* Entering also counts as scroll 1; no extra empty scroll. */
+      animateToStage(1);
+    };
+
+    const syncOffscreenStage = () => {
+      if (qualityLockedRef.current || qualityAnimatingRef.current) return;
+      const anchorY = getLockY();
+
+      /* Handle browser scroll restoration or direct scrollbar jumps. */
+      if (window.scrollY > anchorY + window.innerHeight &&
+          qualityStageRef.current !== 2) {
+        qualityStageRef.current = 2;
+        setProgress(1);
+      } else if (window.scrollY < anchorY - window.innerHeight &&
+                 qualityStageRef.current !== 0) {
+        qualityStageRef.current = 0;
+        setProgress(0);
+      }
+    };
+
+    const handleResize = () => {
+      const isNowDesktop = window.innerWidth >= 1200;
+      setIsDesktop(isNowDesktop);
+
+      if (!isNowDesktop) {
         unlock();
-
-        return;
+        finishFrame();
+        qualityStageRef.current = 0;
+        setProgress(0);
+        qualityWheelReadyRef.current = true;
+      } else if (!desktopMode) {
+        syncOffscreenStage();
       }
-
-
-      const stageRect =
-        stage.getBoundingClientRect();
-
-
-      const stickyTop =
-        getStickyTop();
-
-
-      const directionDown =
-        event.deltaY > 0;
-
-
-      const directionUp =
-        event.deltaY < 0;
-
-
-      const atLockPosition =
-        stageRect.top <=
-          stickyTop + 3 &&
-        stageRect.bottom >
-          stickyTop;
-
-
-      /* =================================================
-         ALREADY LOCKED
-      ================================================= */
-
-      if (
-        qualityLockedRef.current
-      ) {
-
-        const currentStage =
-          qualityStageRef.current;
-
-
-        /* ===============================================
-           STAGE 2 COMPLETE
-
-           NEXT DOWN SCROLL =
-           CONTINUE PAGE
-        =============================================== */
-
-        if (
-          directionDown &&
-          currentStage >= 2 &&
-          !qualityAnimatingRef.current
-        ) {
-
-          unlock();
-
-          return;
-        }
-
-
-        /* ===============================================
-           BACK TO FULL IMAGE
-
-           NEXT UP SCROLL =
-           CONTINUE TO PREVIOUS SECTION
-        =============================================== */
-
-        if (
-          directionUp &&
-          currentStage <= 0 &&
-          !qualityAnimatingRef.current
-        ) {
-
-          unlock();
-
-          return;
-        }
-
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-
-        if (
-          qualityLockYRef.current !==
-          null
-        ) {
-
-          window.scrollTo(
-            0,
-            qualityLockYRef.current
-          );
-        }
-
-
-        waitForNextWheel();
-
-
-        if (
-          !qualityWheelReadyRef.current ||
-          qualityAnimatingRef.current
-        ) {
-          return;
-        }
-
-
-        qualityWheelReadyRef.current =
-          false;
-
-
-        /* ===============================================
-           SCROLL DOWN
-           NEXT STAGE
-        =============================================== */
-
-        if (
-          directionDown
-        ) {
-
-          animateToStage(
-            currentStage +
-              1
-          );
-
-          return;
-        }
-
-
-        /* ===============================================
-           SCROLL UP
-           PREVIOUS STAGE
-        =============================================== */
-
-        if (
-          directionUp
-        ) {
-
-          animateToStage(
-            currentStage -
-              1
-          );
-
-          return;
-        }
-
-
-        return;
-      }
-
-
-      /* =================================================
-         ENTERING SECTION FROM ABOVE
-
-         FIRST SCROLL:
-         IMAGE PUSH + 6 SLICES
-      ================================================= */
-
-      if (
-        directionDown &&
-        qualityStageRef.current <
-          2
-      ) {
-
-        const nextTop =
-          stageRect.top -
-          event.deltaY;
-
-
-        const crossing =
-          stageRect.top >
-            stickyTop &&
-          nextTop <=
-            stickyTop;
-
-
-        if (
-          crossing ||
-          atLockPosition
-        ) {
-
-          event.preventDefault();
-
-          event.stopPropagation();
-
-
-          const exactScrollY =
-            window.scrollY +
-            stageRect.top -
-            stickyTop;
-
-
-          window.scrollTo({
-            top:
-              exactScrollY,
-
-            behavior:
-              "auto",
-          });
-
-
-          lockAt(
-            exactScrollY
-          );
-
-
-          qualityWheelReadyRef.current =
-            false;
-
-
-          waitForNextWheel();
-
-
-          /* =============================================
-             SCROLL 1
-
-             FULL IMAGE
-             ↓
-             PUSH IN
-             ↓
-             DIVIDE INTO 6
-          ============================================= */
-
-          animateToStage(
-            1
-          );
-
-
-          return;
-        }
-      }
-
-
-      /* =================================================
-         RETURNING FROM BELOW
-
-         SAME 2 STAGES IN REVERSE
-      ================================================= */
-
-      if (
-        directionUp &&
-        qualityStageRef.current >
-          0
-      ) {
-
-        const nextTop =
-          stageRect.top -
-          event.deltaY;
-
-
-        const crossing =
-          stageRect.top <
-            stickyTop &&
-          nextTop >=
-            stickyTop;
-
-
-        if (
-          crossing ||
-          atLockPosition
-        ) {
-
-          event.preventDefault();
-
-          event.stopPropagation();
-
-
-          const exactScrollY =
-            window.scrollY +
-            stageRect.top -
-            stickyTop;
-
-
-          window.scrollTo({
-            top:
-              exactScrollY,
-
-            behavior:
-              "auto",
-          });
-
-
-          lockAt(
-            exactScrollY
-          );
-
-
-          qualityWheelReadyRef.current =
-            false;
-
-
-          waitForNextWheel();
-
-
-          animateToStage(
-            qualityStageRef.current -
-              1
-          );
-
-
-          return;
-        }
-      }
+      desktopMode = isNowDesktop;
     };
 
+    /* On refresh below this section, show already-flipped cards. */
+    if (desktopMode && window.scrollY > getLockY() + ENTRY_ZONE) {
+      qualityStageRef.current = 2;
+      setProgress(1);
+    } else {
+      qualityStageRef.current = 0;
+      setProgress(0);
+    }
 
-    /* =====================================================
-       RESIZE
-    ===================================================== */
-
-    const handleResize =
-      () => {
-
-        const desktop =
-          window.innerWidth >=
-          1200;
-
-
-        setIsDesktop(
-          desktop
-        );
-
-
-        if (
-          !desktop
-        ) {
-
-          unlock();
-
-
-          qualityStageRef.current =
-            0;
-
-
-          scrollProgressRef.current =
-            0;
-
-
-          setScrollProgress(
-            0
-          );
-        }
-      };
-
-
-    handleResize();
-
-
-    const wheelOptions = {
-      passive: false,
-      capture: true,
-    };
-
-
-    window.addEventListener(
-      "wheel",
-      handleWheel,
-      wheelOptions
-    );
-
-
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
-
+    const wheelOptions = { passive: false, capture: true };
+    window.addEventListener("wheel", handleWheel, wheelOptions);
+    window.addEventListener("scroll", syncOffscreenStage, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     return () => {
-
-      window.removeEventListener(
-        "wheel",
-        handleWheel,
-        wheelOptions
-      );
-
-
-      window.removeEventListener(
-        "resize",
-        handleResize
-      );
-
-
-      if (
-        qualityAnimationFrameRef.current
-      ) {
-
-        cancelAnimationFrame(
-          qualityAnimationFrameRef.current
-        );
-      }
-
-
-      if (
-        qualityWheelTimerRef.current
-      ) {
-
-        clearTimeout(
-          qualityWheelTimerRef.current
-        );
+      disposed = true;
+      window.removeEventListener("wheel", handleWheel, wheelOptions);
+      window.removeEventListener("scroll", syncOffscreenStage);
+      window.removeEventListener("resize", handleResize);
+      unlock();
+      finishFrame();
+      if (qualityWheelTimerRef.current !== null) {
+        clearTimeout(qualityWheelTimerRef.current);
+        qualityWheelTimerRef.current = null;
       }
     };
-
   }, []);
 
 
   /* =========================================================
-     2 SCROLL ANIMATION TIMELINE
+     TWO-SCROLL TIMELINE
 
      0.00 → 0.50
 
      SCROLL 1:
-     FULL IMAGE
-     ↓
-     PUSH IN
-     ↓
-     DIVIDE INTO 6 SLICES
+     MAIN IMAGE
+        ↓
+     PUSH
+        ↓
+     DIVIDE
 
 
      0.50 → 1.00
 
      SCROLL 2:
      SIX SLICES
-     ↓
-     SMOOTH FLIP
-     ↓
-     SIX FEATURE CARDS
+        ↓
+     FLIP
+        ↓
+     SIX CARDS
   ========================================================= */
 
 
@@ -983,7 +504,7 @@ const QualityProcessSection = () => {
   const firstScrollProgress =
     clamp(
       scrollProgress /
-        0.5
+      0.5
     );
 
 
@@ -995,7 +516,7 @@ const QualityProcessSection = () => {
   const pushInProgress =
     clamp(
       firstScrollProgress /
-        0.30
+      0.30
     );
 
 
@@ -1005,17 +526,13 @@ const QualityProcessSection = () => {
     (
       3 -
       2 *
-        pushInProgress
+      pushInProgress
     );
 
 
   /* =========================================================
      SCROLL 1B
-
-     RELEASE PUSH WHILE
-     DIVIDING INTO SIX
-
-     Final cards return to original size.
+     RELEASE PUSH WHILE DIVIDING
   ========================================================= */
 
   const pushReleaseProgress =
@@ -1024,7 +541,7 @@ const QualityProcessSection = () => {
         firstScrollProgress -
         0.30
       ) /
-        0.70
+      0.70
     );
 
 
@@ -1034,7 +551,7 @@ const QualityProcessSection = () => {
     (
       3 -
       2 *
-        pushReleaseProgress
+      pushReleaseProgress
     );
 
 
@@ -1042,7 +559,7 @@ const QualityProcessSection = () => {
      MANUAL PUSH AMOUNT
 
      0.025 = small
-     0.035 = recommended
+     0.035 = current
      0.050 = stronger
   ========================================================= */
 
@@ -1063,9 +580,7 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     SCROLL 1C
-
-     DIVIDE IMAGE INTO SIX PARTS
+     DIVIDE IMAGE INTO SIX
   ========================================================= */
 
   const separateProgress =
@@ -1074,7 +589,7 @@ const QualityProcessSection = () => {
         firstScrollProgress -
         0.18
       ) /
-        0.82
+      0.82
     );
 
 
@@ -1084,16 +599,13 @@ const QualityProcessSection = () => {
     (
       3 -
       2 *
-        separateProgress
+      separateProgress
     );
 
 
   /* =========================================================
      SCROLL 2
-
      FLIP ONLY
-
-     No flip happens in Scroll 1.
   ========================================================= */
 
   const flipProgress =
@@ -1102,17 +614,14 @@ const QualityProcessSection = () => {
         scrollProgress -
         0.5
       ) /
-        0.5
+      0.5
     );
 
 
   /* =========================================================
-     INITIAL X OFFSETS
+     INITIAL CONNECTED IMAGE OFFSETS
 
-     Desktop CSS gap = 16px.
-
-     These values connect all six slices
-     so initially they appear as one image.
+     KEEP YOUR CURRENT VALUES
   ========================================================= */
 
   const connectedX = [
@@ -1126,8 +635,9 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     FINAL CARD VERTICAL POSITIONS
-     YOUR EXISTING VALUES
+     FINAL Y POSITIONS
+
+     KEEP YOUR CURRENT VALUES
   ========================================================= */
 
   const cardFinalY = [
@@ -1141,8 +651,9 @@ const QualityProcessSection = () => {
 
 
   /* =========================================================
-     FINAL CARD ROTATIONS
-     YOUR EXISTING VALUES
+     FINAL ROTATIONS
+
+     KEEP YOUR CURRENT VALUES
   ========================================================= */
 
   const cardFinalRotation = [
@@ -1166,7 +677,7 @@ const QualityProcessSection = () => {
     >
 
       {/* =====================================================
-          PART 1 - BLUE HEADER
+          BLUE HEADER
       ===================================================== */}
 
       <div
@@ -1216,15 +727,13 @@ const QualityProcessSection = () => {
 
 
       {/* =====================================================
-          PART 2
-
-          FULL IMAGE
-          ↓
-          PUSH + SIX IMAGE SLICES
-          ↓
+          MAIN IMAGE
+            ↓
+          PUSH + DIVIDE
+            ↓
           SMOOTH FLIP
-          ↓
-          SIX FEATURE CARDS
+            ↓
+          SIX CARDS
       ===================================================== */}
 
       <div
@@ -1261,7 +770,7 @@ const QualityProcessSection = () => {
               ) => {
 
                 /* =========================================
-                   IMAGE SLICE SEPARATION
+                   IMAGE SLICE POSITION
                 ========================================= */
 
                 const translateX =
@@ -1289,13 +798,7 @@ const QualityProcessSection = () => {
 
 
                 /* =========================================
-                   SMALL SEQUENTIAL FLIP DELAY
-
-                   Smaller value =
-                   cards flip more together.
-
-                   Bigger value =
-                   stronger wave effect.
+                   SMALL FLIP DELAY
                 ========================================= */
 
                 const flipDelay =
@@ -1317,10 +820,7 @@ const QualityProcessSection = () => {
 
 
                 /* =========================================
-                   SMOOTHERSTEP EASING
-
-                   Very smooth start + finish
-                   for the flip.
+                   SMOOTHERSTEP
                 ========================================= */
 
                 const localFlipEase =
@@ -1331,25 +831,12 @@ const QualityProcessSection = () => {
                     localFlipProgress *
                     (
                       localFlipProgress *
-                        6 -
+                      6 -
                       15
                     ) +
                     10
                   );
 
-
-                /* =========================================
-                   FLIP ANGLE
-
-                   0deg
-                   image slice
-
-                   90deg
-                   side edge
-
-                   180deg
-                   feature card
-                ========================================= */
 
                 const flipAngle =
                   localFlipEase *
@@ -1386,9 +873,7 @@ const QualityProcessSection = () => {
                     }
                   >
 
-                    {/* =====================================
-                        3D FLIP HOLDER
-                    ===================================== */}
+                    {/* 3D HOLDER */}
 
                     <div
                       className="quality-flip-inner"
@@ -1403,9 +888,7 @@ const QualityProcessSection = () => {
                       }
                     >
 
-                      {/* ===================================
-                          FRONT IMAGE SLICE
-                      =================================== */}
+                      {/* FRONT IMAGE SLICE */}
 
                       <div
                         className="quality-card-front"
@@ -1413,17 +896,11 @@ const QualityProcessSection = () => {
                       />
 
 
-                      {/* ===================================
-                          BACK FEATURE CARD
-                      =================================== */}
+                      {/* BACK CARD */}
 
                       <div
                         className="quality-card-back"
                       >
-
-                        {/* ===============================
-                            TITLE
-                        =============================== */}
 
                         <div
                           className="quality-normal-content"
@@ -1448,10 +925,6 @@ const QualityProcessSection = () => {
                         </div>
 
 
-                        {/* ===============================
-                            DESCRIPTION
-                        =============================== */}
-
                         <div
                           className="quality-hover-content"
                         >
@@ -1462,10 +935,6 @@ const QualityProcessSection = () => {
 
                         </div>
 
-
-                        {/* ===============================
-                            BOTTOM RIGHT IMAGE
-                        =============================== */}
 
                         <img
                           src={

@@ -505,17 +505,27 @@ const HowWorks = () => {
   className="hw__bento-card hw__card-4"
 >
 
-  {/* CARD 4 RIGHT-MIDDLE IMAGE */}
-  <img
+ {/* =================================================
+    CARD 4 RIGHT-MIDDLE VIDEO
+================================================= */}
+
+<video
+  className="hw__card-4-middle-video"
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  aria-hidden="true"
+>
+  <source
     src={
       process.env.PUBLIC_URL +
-      "/images/home/homeworks/card-4-middle.png"
+      "/images/home/homeworks/card-4-video.mp4"
     }
-    alt=""
-    aria-hidden="true"
-    className="hw__card-4-middle-image"
+    type="video/mp4"
   />
-
+</video>
 
   {/* CARD 4 CONTENT */}
   <div className="hw__card-content">
@@ -537,50 +547,72 @@ const HowWorks = () => {
             CARD 5
             24/7 SUPPORT
         ================================================= */}
+<article className="hw__bento-card hw__card-5">
 
-        <article
-          className="hw__bento-card hw__card-5"
-        >
+  {/* FULL CARD IMAGE */}
+  <img
+    src={
+      process.env.PUBLIC_URL +
+      "/images/home/homeworks/card-5-full.png"
+    }
+    alt=""
+    aria-hidden="true"
+    className="hw__card-5-full-image"
+  />
 
-          <div className="hw__card-content">
+  {/* TEXT */}
+  <div className="hw__card-content">
 
-            <h3>
-              Responsible Practices
-            </h3>
+    <h3>
+      Responsible Practices
+    </h3>
 
+    <p>
+      Trade with discipline, transparency, and responsible risk awareness.
+    </p>
 
-            <p>
-              Focus on responsible trading with disciplined risk management.
-            </p>
+  </div>
 
-          </div>
-
-        </article>
-
-
-        {/* =================================================
-            CARD 6
-            90% SATISFACTION
-        ================================================= */}
-
-        <article
-          className="hw__bento-card hw__card-6"
-        >
-
-          <div className="hw__card-content">
-
-            <h3>
-              90% Satisfaction
-            </h3>
+</article>
 
 
-            <p>
-              Strong satisfaction rate reflecting deep user trust and results.
-            </p>
+{/* =================================================
+    CARD 6
+    90% SATISFACTION
+================================================= */}
 
-          </div>
+<article
+  className="hw__bento-card hw__card-6"
+>
 
-        </article>
+  {/* FULL CARD IMAGE */}
+
+  <img
+    src={
+      process.env.PUBLIC_URL +
+      "/images/home/homeworks/card-6-full.png"
+    }
+    alt=""
+    aria-hidden="true"
+    className="hw__card-6-full-image"
+  />
+
+
+  {/* TEXT */}
+
+  <div className="hw__card-content">
+
+    <h3>
+      90%
+    </h3>
+
+    <p>
+      Strong satisfaction rate reflecting deep user trust and results.
+    </p>
+
+  </div>
+
+</article>
 
       </div>
 
