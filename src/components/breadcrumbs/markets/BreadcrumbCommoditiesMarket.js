@@ -18,7 +18,7 @@ const BreadcrumbCommoditiesMarket = () => {
 
   return (
     <div
-      className="ht__bradcaump__area_market"
+      className="ht__bradcaump__area_market types-account-hero"
       style={{
         background: `rgba(0,0,0,0) url(${
           isMobile ? mobileImage : desktopImage

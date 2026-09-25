@@ -17,12 +17,15 @@ const BreadcrumbAboutUs = () => {
 
   return (
     <div
-      className="ht__bradcaump__area__about"
-      style={{
-        background: `rgba(0,0,0,0) url(${
-          isMobile ? mobileImage : desktopImage
-        }) no-repeat scroll center center / ${isMobile ? "cover" : "105% 100%"}`,
-      }}
+      className="ht__bradcaump__area__about about-page-hero"
+style={{
+  height: isMobile ? "430px" : "700px",
+  minHeight: isMobile ? "430px" : "650px",
+
+  background: `rgba(0,0,0,0) url(${
+    isMobile ? mobileImage : desktopImage
+  }) no-repeat scroll center center / ${isMobile ? "cover" : "105% 100%"}`,
+}}
     >
       <div className="ht__bradcaump__container__about">
         <div className="container">

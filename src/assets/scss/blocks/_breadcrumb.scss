@@ -163,7 +163,7 @@
 .ht__bradcaump__area_market {
   display: flex;
   color: #ffffff;
-  height: 520px;
+  height: 550px;
   align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: column;
@@ -506,6 +506,9 @@
 
 .ht__bradcaump__area__home__banner__two {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
   canvas {
     position: absolute;
     top: 0;
@@ -514,6 +517,13 @@
     width: 100%;
     height: 100%;
   }
+}
+
+/* OLD PSEUDO SHADOW OFF
+   New shadow is handled by .banner-two-video-overlay below */
+.ht__bradcaump__area__home__banner__two::before,
+.ht__bradcaump__area__home__banner__two::after {
+  display: none !important;
 }
 
 .bradcaump__inner__home__banner__two {
@@ -1110,3 +1120,486 @@
   }
 
 }
+
+/* =========================================================
+   BANNER TWO - BACKGROUND VIDEO
+   ONLY THIS SECTION
+========================================================= */
+
+.banner-two-video-section {
+  position: relative !important;
+
+  width: 100%;
+
+  /* MANUAL SECTION HEIGHT */
+  height: 520px;
+
+  overflow: hidden;
+
+  background: #000000;
+
+  isolation: isolate;
+}
+
+/* BACKGROUND VIDEO */
+
+.banner-two-bg-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* VIDEO POSITION
+     center center = normal
+     center top    = video up
+     center bottom = video down */
+  object-position: center center;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BANNER TWO - PREMIUM SHADOW OVER VIDEO
+
+   SAME STYLE LIKE YOUR REFERENCE:
+   dark top blend + left/right dark edges
+========================================================= */
+
+.banner-two-video-overlay {
+  display: block !important;
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+  /* TOP SHADOW - MOVED UP */
+linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(0, 0, 0, 0.90) 5%,
+  rgba(0, 0, 0, 0.45) 12%,
+  rgba(0, 0, 0, 0.12) 20%,
+  rgba(0, 0, 0, 0) 30%
+),
+
+    /* LEFT SIDE SHADOW */
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 7%,
+      rgba(0, 0, 0, 0.55) 18%,
+      rgba(0, 0, 0, 0.18) 30%,
+      rgba(0, 0, 0, 0) 45%
+    ),
+
+    /* RIGHT SIDE SHADOW */
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 7%,
+      rgba(0, 0, 0, 0.55) 18%,
+      rgba(0, 0, 0, 0.18) 30%,
+      rgba(0, 0, 0, 0) 45%
+    ),
+
+    /* BOTTOM SOFT SHADOW */
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.55) 15%,
+      rgba(0, 0, 0, 0.12) 32%,
+      rgba(0, 0, 0, 0) 50%
+    );
+}
+
+
+/* CONTENT ABOVE VIDEO + SHADOW */
+
+.banner-two-video-section
+.ht__bradcaump__container__home__banner__two {
+  position: relative;
+
+  z-index: 2;
+
+  height: 520px;
+
+  padding-top: 100px;
+}
+
+
+/* TEXT CONTENT */
+
+.banner-two-video-section
+.banner-content-reveal-right {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* H1 */
+
+.banner-two-video-section
+.banner-content-reveal-right h1 {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* PARAGRAPH */
+
+.banner-two-video-section
+.banner-content-reveal-right p {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 3px 12px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* BUTTON */
+
+.banner-two-video-section
+.banner-content-reveal-right
+.slide__btn.dg__btn {
+  background: #012d65 !important;
+
+  color: #ffffff !important;
+
+  border: 1.5px solid #ffffff !important;
+}
+
+
+.banner-two-video-section
+.banner-content-reveal-right
+.slide__btn.dg__btn:hover {
+  background: #f7a901 !important;
+
+  color: #012d65 !important;
+
+  border-color: #f7a901 !important;
+}
+
+
+/* =========================================================
+   TABLET / LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .banner-two-video-section {
+    height: 420px;
+  }
+
+  .banner-two-video-section
+  .ht__bradcaump__container__home__banner__two {
+    height: 420px;
+
+    padding-top: 60px;
+  }
+
+  .banner-two-bg-video {
+    object-position: center center;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .banner-two-video-section {
+    height: 360px;
+  }
+
+  .banner-two-video-section
+  .ht__bradcaump__container__home__banner__two {
+    height: 360px;
+
+    padding-top: 45px;
+  }
+
+  .banner-two-video-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.55) 25%,
+        rgba(0, 0, 0, 0.08) 55%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.25) 28%,
+        rgba(0, 0, 0, 0) 52%
+      ),
+      linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.25) 28%,
+        rgba(0, 0, 0, 0) 52%
+      );
+  }
+
+}/* =========================================================
+   BANNER TWO - BACKGROUND VIDEO
+   ONLY THIS SECTION
+========================================================= */
+
+.banner-two-video-section {
+  position: relative !important;
+
+  width: 100%;
+
+  /* MANUAL SECTION HEIGHT */
+  height: 520px;
+
+  overflow: hidden;
+
+  background: #000000;
+
+  isolation: isolate;
+}
+
+/* BACKGROUND VIDEO */
+
+.banner-two-bg-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* VIDEO POSITION
+     center center = normal
+     center top    = video up
+     center bottom = video down */
+  object-position: center center;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BANNER TWO - PREMIUM SHADOW OVER VIDEO
+
+   SAME STYLE LIKE YOUR REFERENCE:
+   dark top blend + left/right dark edges
+========================================================= */
+
+.banner-two-video-overlay {
+  display: block !important;
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    /* TOP SHADOW - BETWEEN TWO SECTIONS */
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 8%,
+      rgba(0, 0, 0, 0.55) 22%,
+      rgba(0, 0, 0, 0.12) 42%,
+      rgba(0, 0, 0, 0) 58%
+    ),
+
+    /* LEFT SIDE SHADOW */
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 7%,
+      rgba(0, 0, 0, 0.55) 18%,
+      rgba(0, 0, 0, 0.18) 30%,
+      rgba(0, 0, 0, 0) 45%
+    ),
+
+    /* RIGHT SIDE SHADOW */
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 7%,
+      rgba(0, 0, 0, 0.55) 18%,
+      rgba(0, 0, 0, 0.18) 30%,
+      rgba(0, 0, 0, 0) 45%
+    ),
+
+    /* BOTTOM SOFT SHADOW */
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.55) 15%,
+      rgba(0, 0, 0, 0.12) 32%,
+      rgba(0, 0, 0, 0) 50%
+    );
+}
+
+
+/* CONTENT ABOVE VIDEO + SHADOW */
+
+.banner-two-video-section
+.ht__bradcaump__container__home__banner__two {
+  position: relative;
+
+  z-index: 2;
+
+  height: 520px;
+
+  padding-top: 100px;
+}
+
+
+/* TEXT CONTENT */
+
+.banner-two-video-section
+.banner-content-reveal-right {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* H1 */
+
+.banner-two-video-section
+.banner-content-reveal-right h1 {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* PARAGRAPH */
+
+.banner-two-video-section
+.banner-content-reveal-right p {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 3px 12px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* BUTTON */
+
+.banner-two-video-section
+.banner-content-reveal-right
+.slide__btn.dg__btn {
+  background: #012d65 !important;
+
+  color: #ffffff !important;
+
+  border: 1.5px solid #ffffff !important;
+}
+
+
+.banner-two-video-section
+.banner-content-reveal-right
+.slide__btn.dg__btn:hover {
+  background: #f7a901 !important;
+
+  color: #012d65 !important;
+
+  border-color: #f7a901 !important;
+}
+
+
+/* =========================================================
+   TABLET / LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .banner-two-video-section {
+    height: 420px;
+  }
+
+  .banner-two-video-section
+  .ht__bradcaump__container__home__banner__two {
+    height: 420px;
+
+    padding-top: 60px;
+  }
+
+  .banner-two-bg-video {
+    object-position: center center;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .banner-two-video-section {
+    height: 360px;
+  }
+
+  .banner-two-video-section
+  .ht__bradcaump__container__home__banner__two {
+    height: 360px;
+
+    padding-top: 45px;
+  }
+
+  .banner-two-video-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.55) 25%,
+        rgba(0, 0, 0, 0.08) 55%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.25) 28%,
+        rgba(0, 0, 0, 0) 52%
+      ),
+      linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.25) 28%,
+        rgba(0, 0, 0, 0) 52%
+      );
+  }
+
+}
+

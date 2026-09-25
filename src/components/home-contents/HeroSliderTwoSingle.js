@@ -430,72 +430,72 @@ const HeroSliderTwoSingle = ({ data }) => {
           }
 
 
-        .hero-slide-content.slide-3 p {
-          color: #ffffff !important;
+          .hero-slide-content.slide-3 p {
+            color: #ffffff !important;
 
-          margin: 0 !important;
+            margin: 0 !important;
 
-          width: 420px !important;
-          max-width: 420px !important;
+            width: 420px !important;
+            max-width: 420px !important;
 
-          font-size: 14px !important;
+            font-size: 14px !important;
 
-          line-height: 1.45 !important;
+            line-height: 1.45 !important;
 
-          text-align: left !important;
-        }
+            text-align: left !important;
+          }
 
-        /* =====================================================
-   LAPTOP - SLIDE 3 REGISTER
-   RIGHT SIDE / WHITE BUTTON
-===================================================== */
+          /* =====================================================
+             LAPTOP - SLIDE 3 REGISTER
+             RIGHT SIDE / WHITE BUTTON
+          ===================================================== */
 
-.register-slide-3 {
-  position: relative !important;
+          .register-slide-3 {
+            position: relative !important;
 
-  /* + = RIGHT / - = LEFT */
-  left: 245px !important;
+            /* + = RIGHT / - = LEFT */
+            left: 245px !important;
 
-  /* - = UP / + = DOWN */
-  top: -100px !important;
+            /* - = UP / + = DOWN */
+            top: -100px !important;
 
-  width: 100% !important;
+            width: 100% !important;
 
-  text-align: center !important;
-}
-
-
-.register-slide-3 .slide__btn {
-  background: #ffffff !important;
-
-  color: #012d65 !important;
-
-  border: 1.5px solid #ffffff !important;
-
-  width: 150px !important;
-  min-width: 150px !important;
-
-  height: 42px !important;
-  min-height: 42px !important;
-
-  padding: 0 12px !important;
-
-  font-size: 12px !important;
-
-  display: inline-flex !important;
-
-  align-items: center !important;
-  justify-content: center !important;
-}
+            text-align: center !important;
+          }
 
 
-.register-slide-3 .slide__btn:hover {
-  background: #f7a901 !important;
+          .register-slide-3 .slide__btn {
+            background: #ffffff !important;
 
-  border-color: #f7a901 !important;
+            color: #012d65 !important;
 
-  color: #ffffff !important;
-}
+            border: 1.5px solid #ffffff !important;
+
+            width: 150px !important;
+            min-width: 150px !important;
+
+            height: 42px !important;
+            min-height: 42px !important;
+
+            padding: 0 12px !important;
+
+            font-size: 12px !important;
+
+            display: inline-flex !important;
+
+            align-items: center !important;
+            justify-content: center !important;
+          }
+
+
+          .register-slide-3 .slide__btn:hover {
+            background: #f7a901 !important;
+
+            border-color: #f7a901 !important;
+
+            color: #ffffff !important;
+          }
 
 
           /* =====================================================
@@ -529,298 +529,6 @@ const HeroSliderTwoSingle = ({ data }) => {
         }
 
 
-/* =========================================================
-   SLIDE 3 - LARGE DESKTOP ONLY
-   1200PX AND ABOVE
-
-   MANUAL CONTROLS:
-   HEADING, PARAGRAPH AND BUTTON
-
-   OTHER VIEWS UNCHANGED
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  /* =====================================================
-     1. WHOLE TEXT CONTAINER
-
-     Move heading + paragraph TOGETHER.
-
-     LEFT:
-       + = move RIGHT
-       - = move LEFT
-
-     TOP:
-       + = move DOWN
-       - = move UP
-  ===================================================== */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3 {
-
-    position: relative !important;
-
-    /* MANUAL WHOLE TEXT POSITION */
-
-    margin-left: 450px !important;
-
-    top: -60px !important;
-
-    /* CONTENT WIDTH */
-
-    width: 750px !important;
-
-    max-width: 750px !important;
-
-    text-align: left !important;
-  }
-
-
-  /* =====================================================
-     2. HEADING - START SMALL. DREAM BIG.
-
-     MANUAL HEADING SIZE:
-     38px = smaller
-     44px = medium
-     48px = bigger
-
-     HEADING POSITION:
-     left: + RIGHT / - LEFT
-     top:  + DOWN  / - UP
-  ===================================================== */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3 h1 {
-
-    position: relative !important;
-
-    /* MANUAL H1 POSITION */
-
-    left: 0px !important;
-
-    top: 0px !important;
-
-    /* MANUAL H1 FONT SIZE */
-
-    font-size: 44px !important;
-
-    line-height: 1.15 !important;
-
-    font-weight: 700 !important;
-
-    letter-spacing: -0.5px;
-
-    /* BLACK TEXT */
-
-    color: #000000 !important;
-
-    -webkit-text-fill-color: #000000 !important;
-
-    /* KEEP TITLE IN ONE LINE */
-
-    white-space: nowrap !important;
-
-    width: max-content !important;
-
-    max-width: none !important;
-
-    margin: 0 0 18px !important;
-
-    text-align: left !important;
-
-    text-shadow: none !important;
-  }
-
-
-  /* HEADING SPANS - SAME LINE */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3
-  .slide-3-line {
-
-    display: inline !important;
-
-    white-space: nowrap !important;
-  }
-
-
-  /* SPACE BETWEEN START SMALL. AND DREAM BIG. */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3
-  .slide-3-line + .slide-3-line::before {
-
-    content: " ";
-
-    white-space: pre;
-  }
-
-
-  /* =====================================================
-     3. PARAGRAPH
-
-     MANUAL P SIZE:
-     16px = smaller
-     18px = medium
-     20px = bigger
-
-     LEFT:
-       + = move RIGHT
-       - = move LEFT
-
-     TOP:
-       + = move DOWN
-       - = move UP
-  ===================================================== */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3 p {
-
-    position: relative !important;
-
-    /* MANUAL PARAGRAPH POSITION */
-
-    left: 0px !important;
-
-    top: 0px !important;
-
-    /* MANUAL PARAGRAPH FONT SIZE */
-
-    font-size: 18px !important;
-
-    line-height: 1.5 !important;
-
-    /* MANUAL PARAGRAPH WIDTH */
-
-    width: 650px !important;
-
-    max-width: 650px !important;
-
-    /* BLACK TEXT */
-
-    color: #000000 !important;
-
-    -webkit-text-fill-color: #000000 !important;
-
-    margin: 0 !important;
-
-    text-align: left !important;
-
-    text-shadow: none !important;
-  }
-
-
-  /* HIDE ORIGINAL PARAGRAPH ON LARGE DESKTOP */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3
-  .slide-3-desktop-paragraph {
-
-    display: none !important;
-  }
-
-
-  /* SHOW YOUR NEW DESKTOP PARAGRAPH */
-
-  .hero-image-slider
-  .hero-slide-content.slide-3
-  .slide-3-large-desktop-paragraph {
-
-    display: inline !important;
-
-    color: #000000 !important;
-  }
-
-
-  /* =====================================================
-     4. REGISTER NOW BUTTON POSITION
-
-     MANUAL BUTTON POSITION:
-
-     LEFT:
-       + = move RIGHT
-       - = move LEFT
-
-     TOP:
-       + = move DOWN
-       - = move UP
-  ===================================================== */
-
-  .hero-image-slider
-  .register-slide-3 {
-
-    position: relative !important;
-
-    /* MANUAL BUTTON POSITION */
-
-    left: 450px !important;
-
-    top: -40px !important;
-
-    width: 100% !important;
-
-    text-align: center !important;
-  }
-
-
-  /* =====================================================
-     5. REGISTER NOW BUTTON SIZE + COLOR
-  ===================================================== */
-
-  .hero-image-slider
-  .register-slide-3
-  .slide__btn.dg__btn {
-
-    /* BLUE BACKGROUND + WHITE TEXT */
-
-    background: #012d65 !important;
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    border: 1.5px solid #012d65 !important;
-
-    /* MANUAL BUTTON SIZE */
-
-    min-width: 200px !important;
-
-    height: 48px !important;
-
-    padding: 0 25px !important;
-
-    /* MANUAL BUTTON TEXT SIZE */
-
-    font-size: 14px !important;
-
-    font-weight: 700 !important;
-
-    display: inline-flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    text-decoration: none !important;
-  }
-
-
-  /* BUTTON HOVER */
-
-  .hero-image-slider
-  .register-slide-3
-  .slide__btn.dg__btn:hover {
-
-    background: #035391 !important;
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    border-color: #035391 !important;
-  }
-
-}
         /* =========================================================
            SLIDE INDICATORS
         ========================================================= */
@@ -1008,21 +716,28 @@ const HeroSliderTwoSingle = ({ data }) => {
             line-height: 1 !important;
           }
 
-/* =====================================================
+          /* =====================================================
    TABLET - SLIDE 3 ONLY
-   WHITE TEXT + RIGHT SIDE
+   768PX - 991PX ONLY
+
+   TEXT UP + LEFT ALIGN
+   BUTTON BLUE
+   OTHER VIEWS NOT AFFECTED
 ===================================================== */
 
 .hero-slide-content.slide-3 {
   margin-left: 0 !important;
 
-  /* LEFT / RIGHT
-     bigger value = more right
-  */
+  /* TEXT LEFT / RIGHT
+     bigger value = move RIGHT
+     smaller value = move LEFT */
   left: 360px !important;
 
-  /* UP / DOWN */
-  top: -15px !important;
+  /* TEXT UP / DOWN
+     -95px = up
+     -70px = little down
+     -40px = more down */
+  top: -95px !important;
 
   width: 360px !important;
   max-width: 360px !important;
@@ -1031,8 +746,12 @@ const HeroSliderTwoSingle = ({ data }) => {
 }
 
 
-.hero-slide-content.slide-3 h1 {
-  color: #ffffff !important;
+/* H1 LEFT ALIGN */
+
+.hero-slide-content.slide-3 h1,
+.hero-slide-content.slide-3 h1 span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 
   font-size: 32px !important;
 
@@ -1041,11 +760,17 @@ const HeroSliderTwoSingle = ({ data }) => {
   margin-bottom: 8px !important;
 
   text-align: left !important;
+
+  text-shadow: none !important;
 }
 
 
-.hero-slide-content.slide-3 p {
-  color: #ffffff !important;
+/* P LEFT ALIGN */
+
+.hero-slide-content.slide-3 p,
+.hero-slide-content.slide-3 p span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 
   font-size: 14px !important;
 
@@ -1056,28 +781,70 @@ const HeroSliderTwoSingle = ({ data }) => {
 
   margin: 0 !important;
 
-  text-align: right !important;
+  text-align: left !important;
+
+  text-shadow: none !important;
 }
 
+
+/* SHOW ONLY NORMAL TABLET PARAGRAPH */
+
+.hero-slide-content.slide-3
+.slide-3-desktop-paragraph {
+  display: inline !important;
+}
+
+.hero-slide-content.slide-3
+.slide-3-large-desktop-paragraph {
+  display: none !important;
+}
+
+
 /* =====================================================
-   TABLET - SLIDE 3 REGISTER
+   TABLET - SLIDE 3 REGISTER BUTTON
 ===================================================== */
 
 .register-slide-3 {
   position: relative !important;
 
-  /* LEFT / RIGHT */
+  /* BUTTON LEFT / RIGHT */
   left: 250px !important;
 
   /* BUTTON UP / DOWN
-     smaller negative = more down
-  */
-  top: 10px !important;
+     -30px = up
+       0px = normal
+      20px = down */
+  top: -95px !important;
 
   width: 100% !important;
 
   text-align: center !important;
 }
+
+
+/* BUTTON BLUE + WHITE TEXT */
+
+.register-slide-3 .slide__btn {
+  background: #012d65 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  border: 1.5px solid #012d65 !important;
+
+  text-decoration: none !important;
+}
+
+
+.register-slide-3 .slide__btn:hover {
+  background: #035391 !important;
+
+  border-color: #035391 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
           /* =====================================================
              TABLET - SLIDE 4
           ====================================================== */
@@ -1234,19 +1001,19 @@ const HeroSliderTwoSingle = ({ data }) => {
              LAPTOP - SLIDE 2 REGISTER
           ====================================================== */
 
-        .register-slide-2 {
-          position: relative !important;
+          .register-slide-2 {
+            position: relative !important;
 
-          /* LEFT / RIGHT */
-          left: -245px !important;
+            /* LEFT / RIGHT */
+            left: -245px !important;
 
-          /* UP / DOWN */
-          top: -65px !important;
+            /* UP / DOWN */
+            top: -65px !important;
 
-          width: 100% !important;
+            width: 100% !important;
 
-          text-align: center !important;
-        }
+            text-align: center !important;
+          }
 
 
           .register-slide-2
@@ -1270,57 +1037,127 @@ const HeroSliderTwoSingle = ({ data }) => {
           }
 
 
-          /* =====================================================
-             LAPTOP - SLIDE 3
-          ====================================================== */
+        /* =====================================================
+   LAPTOP - SLIDE 3 ONLY
+   992PX - 1199PX ONLY
 
-          .hero-slide-content.slide-3 {
-            /* + = RIGHT / - = LEFT */
-            margin-left: 350px !important;
+   TEXT UP + LEFT ALIGN
+   BUTTON BLUE
+   OTHER VIEWS NOT AFFECTED
+====================================================== */
 
-            /* - = UP / + = DOWN */
-            top: -100px !important;
+.hero-slide-content.slide-3 {
+  /* TEXT LEFT / RIGHT
+     bigger value = move RIGHT
+     smaller value = move LEFT */
+  margin-left: 350px !important;
 
-            width: 500px !important;
-            max-width: 500px !important;
+  /* TEXT UP / DOWN
+     -130px = more up
+     -110px = recommended
+     -80px  = down */
+  top: -200px !important;
 
-            text-align: left !important;
-          }
+  width: 500px !important;
+  max-width: 500px !important;
 
+  text-align: left !important;
+}
 
-          .hero-slide-content.slide-3 h1 {
-            color: #ffffff !important;
+.hero-slide-content.slide-3 h1,
+.hero-slide-content.slide-3 h1 span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 
-            font-size: 42px !important;
+  font-size: 45px !important;
 
-            line-height: 1.05 !important;
+  line-height: 1.05 !important;
 
-            font-weight: 700 !important;
+  margin-bottom: 8px !important;
 
-            margin-bottom: 12px !important;
+  text-align: left !important;
 
-            text-align: left !important;
-          }
+  text-shadow: none !important;
+}
 
+.hero-slide-content.slide-3 p,
+.hero-slide-content.slide-3 p span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 
-          .hero-slide-content.slide-3 p {
-            margin: 0 !important;
+  font-size: 14px !important;
 
-            width: 380px !important;
-            max-width: 380px !important;
+  line-height: 1.45 !important;
 
-            font-size: 13px !important;
+  width: 330px !important;
+  max-width: 330px !important;
 
-            line-height: 1.45 !important;
+  margin: 0 !important;
 
-            text-align: left !important;
-          }
-          /* SLIDE 3 TITLE - EXACTLY TWO LINES */
-          .hero-slide-content.slide-3 .slide-3-line {
-            display: block !important;
+  text-align: left !important;
 
-            white-space: nowrap !important;
-          }
+  text-shadow: none !important;
+}
+
+/* SLIDE 3 TITLE - EXACTLY TWO LINES */
+.hero-slide-content.slide-3 .slide-3-line {
+  display: block !important;
+
+  white-space: nowrap !important;
+}
+
+/* SHOW ONLY NORMAL LAPTOP PARAGRAPH */
+
+.hero-slide-content.slide-3
+.slide-3-desktop-paragraph {
+  display: inline !important;
+}
+
+.hero-slide-content.slide-3
+.slide-3-large-desktop-paragraph {
+  display: none !important;
+}
+
+/* =====================================================
+   LAPTOP - SLIDE 3 REGISTER BUTTON
+====================================================== */
+
+.register-slide-3 {
+  position: relative !important;
+
+  /* BUTTON LEFT / RIGHT */
+  left: 245px !important;
+
+  /* BUTTON UP / DOWN
+     -120px = up
+     -90px  = recommended
+     -60px  = down */
+  top: -150px !important;
+
+  width: 100% !important;
+
+  text-align: center !important;
+}
+
+.register-slide-3 .slide__btn {
+  background: #012d65 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  border: 1.5px solid #012d65 !important;
+
+  text-decoration: none !important;
+}
+
+.register-slide-3 .slide__btn:hover {
+  background: #035391 !important;
+
+  border-color: #035391 !important;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
 
           /* =====================================================
              LAPTOP - SLIDE 4
@@ -1588,6 +1425,44 @@ const HeroSliderTwoSingle = ({ data }) => {
             background: transparent !important;
           }
 
+          /* =====================================================
+             MOBILE SLIDE 3 IMAGE ONLY
+             ZOOM OUT COIN IMAGE
+
+             340px = smaller
+             360px = recommended
+             390px = bigger
+          ===================================================== */
+
+          .mobile-hero-media-3 {
+            width: 100% !important;
+
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+
+            /* -90px = more up
+               -65px = recommended
+               -40px = down */
+            margin-top: -65px !important;
+          }
+
+          .mobile-hero-media-3 img {
+            width: 100% !important;
+
+            height: 400px !important;
+
+            object-fit: contain !important;
+
+            object-position: center center !important;
+
+            background: #ffffff !important;
+
+            /* REAL IMAGE ZOOM */
+            transform: scale(1.50) !important;
+
+            transform-origin: center center !important;
+          }
+
 
           /* =====================================================
              MOBILE - SLIDE 2 VIDEO ONLY
@@ -1687,14 +1562,15 @@ const HeroSliderTwoSingle = ({ data }) => {
             height: 4px !important;
           }
         }
-/* MOBILE VERSION HIDDEN BY DEFAULT */
-.slide-3-mobile-paragraph {
-  display: none;
-}
 
-.slide-3-desktop-paragraph {
-  display: inline;
-}
+        /* MOBILE VERSION HIDDEN BY DEFAULT */
+        .slide-3-mobile-paragraph {
+          display: none;
+        }
+
+        .slide-3-desktop-paragraph {
+          display: inline;
+        }
 
         /* =========================================================
            MOBILE CUSTOM SLIDE SETTINGS ONLY
@@ -1750,92 +1626,111 @@ const HeroSliderTwoSingle = ({ data }) => {
           }
 
 
-            /* =====================================================
-              MOBILE SLIDE 2
-            ===================================================== */
-
-            .hero-slide-content.slide-2 {
-              /* TEXT UP / DOWN */
-              top: 100px !important;
-
-              /* WHOLE TEXT LEFT / RIGHT */
-              left: -10px !important;
-
-              text-align: center !important;
-            }
-
-            .hero-slide-content.slide-2 h1 {
-              color: #000000 !important;
-
-              /* MANUAL H1 SIZE */
-              font-size: 20px !important;
-
-              line-height: 1.1 !important;
-
-              text-align: left !important;
-            }
-
-            .hero-slide-content.slide-2 p {
-              color: #000000 !important;
-
-              /* MANUAL P SIZE */
-              font-size: 12px !important;
-
-              line-height: 1.3 !important;
-
-              text-align: left !important;
-            }
-
-
-            /* SLIDE 2 MOBILE BUTTON */
-
-            .register-slide-2 {
-              /* + = RIGHT / - = LEFT */
-              left: 0px !important;
-
-              /* BUTTON POSITION
-                -55px = current
-                -40px = DOWN
-                -25px = MORE DOWN
-              */
-              transform: translateY(-35px) !important;
-            }
-
-
           /* =====================================================
-            MOBILE SLIDE 3
+             MOBILE SLIDE 2
           ===================================================== */
 
-          .hero-slide-content.slide-3 {
-            /* TEXT DOWN */
-            top: 65px !important;
+          .hero-slide-content.slide-2 {
+            /* TEXT UP / DOWN */
+            top: 100px !important;
 
-            /* TEXT LEFT / RIGHT */
-            left: 20px !important;
+            /* WHOLE TEXT LEFT / RIGHT */
+            left: -10px !important;
 
-            text-align: right !important;
+            text-align: center !important;
           }
 
-          .hero-slide-content.slide-3 h1 {
-            color: #ffffff !important;
+          .hero-slide-content.slide-2 h1 {
+            color: #000000 !important;
 
             /* MANUAL H1 SIZE */
-            font-size: 17px !important;
+            font-size: 20px !important;
 
             line-height: 1.1 !important;
 
-            text-align: right !important;
+            text-align: left !important;
           }
 
-          .hero-slide-content.slide-3 p {
-            color: #ffffff !important;
-          
+          .hero-slide-content.slide-2 p {
+            color: #000000 !important;
+
             /* MANUAL P SIZE */
-            font-size: 10px !important;
+            font-size: 12px !important;
 
             line-height: 1.3 !important;
 
-            text-align:right !important;
+            text-align: left !important;
+          }
+
+
+          /* SLIDE 2 MOBILE BUTTON */
+
+          .register-slide-2 {
+            /* + = RIGHT / - = LEFT */
+            left: 0px !important;
+
+            /* BUTTON POSITION
+              -55px = current
+              -40px = DOWN
+              -25px = MORE DOWN
+            */
+            transform: translateY(-35px) !important;
+          }
+
+
+          /* =====================================================
+             MOBILE SLIDE 3
+             TEXT VISIBLE + MANUAL POSITION
+          ===================================================== */
+
+          .hero-slide-content.slide-3 {
+            position: relative !important;
+
+            /* TEXT UP / DOWN
+               bigger value = text DOWN
+               smaller value = text UP */
+            top: 100px !important;
+
+            /* TEXT LEFT / RIGHT
+               + = RIGHT
+               - = LEFT */
+            left: -20px !important;
+
+            text-align: left !important;
+
+            z-index: 20 !important;
+          }
+
+          .hero-slide-content.slide-3 h1 {
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+
+            /* MANUAL H1 SIZE */
+            font-size: 22px !important;
+
+            line-height: 1.15 !important;
+
+            text-align: left !important;
+
+            text-shadow: none !important;
+          }
+
+          .hero-slide-content.slide-3 p {
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000 !important;
+
+            /* MANUAL P SIZE */
+            font-size: 11px !important;
+
+            line-height: 1.35 !important;
+
+            text-align: left !important;
+
+            max-width: 285px !important;
+
+            margin: 0 !important;
+
+            text-shadow: none !important;
           }
 
 
@@ -1845,9 +1740,15 @@ const HeroSliderTwoSingle = ({ data }) => {
             /* BUTTON LEFT / RIGHT */
             left: 0px !important;
 
-            /* BUTTON DOWN */
-            transform: translateY(-40px) !important;
+            /* BUTTON UP / DOWN
+               -60px = UP
+               -30px = little down
+                0px  = more down */
+            transform: translateY(-25px) !important;
+
+            z-index: 25 !important;
           }
+
           /* SLIDE 3 - MOBILE PARAGRAPH EXACTLY 5 LINES */
 
           .slide-3-desktop-paragraph {
@@ -1859,113 +1760,124 @@ const HeroSliderTwoSingle = ({ data }) => {
           }
 
           /* =====================================================
-          MOBILE SLIDE 3 REGISTER BUTTON ONLY
-        ===================================================== */
+             MOBILE SLIDE 3 REGISTER BUTTON ONLY
+          ===================================================== */
 
-        .register-slide-3 .slide__btn {
-          background: #ffffff !important;
+          .register-slide-3 .slide__btn {
+            background: #012d65 !important;
 
-          color: #012d65 !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
 
-          
-        }
+            border: 1.5px solid #012d65 !important;
 
-        .register-slide-3 .slide__btn:hover {
-          background: #f7a901 !important;
+            text-decoration: none !important;
+          }
 
-          border-color: #f7a901 !important;
+          .register-slide-3 .slide__btn:hover {
+            background: #f7a901 !important;
 
-          color: #ffffff !important;
-        }
+            border-color: #f7a901 !important;
+
+            color: #ffffff !important;
+          }
+
           /* =====================================================
-   MOBILE SLIDE 4 ONLY
-===================================================== */
+             MOBILE SLIDE 4 ONLY
+          ===================================================== */
 
-.hero-slide-content.slide-4 {
+          .hero-slide-content.slide-4 {
 
-  /* ==================================
-     WHOLE TEXT UP / DOWN
-     + value = DOWN
-     smaller value = UP
-  ================================== */
-  top: 95px !important;
+            /* ==================================
+               WHOLE TEXT UP / DOWN
+               + value = DOWN
+               smaller value = UP
+            ================================== */
+            top: 95px !important;
 
-  /* ==================================
-     WHOLE TEXT LEFT / RIGHT
-     - value = LEFT
-     + value = RIGHT
-  ================================== */
-  left: -10px !important;
+            /* ==================================
+               WHOLE TEXT LEFT / RIGHT
+               - value = LEFT
+               + value = RIGHT
+            ================================== */
+            left: -10px !important;
 
-  text-align: left !important;
-}
-
-
-/* ==================================
-   SLIDE 4 H1
-================================== */
-
-.hero-slide-content.slide-4 h1 {
-  color: #000000 !important;
-
-  /* MANUAL H1 SIZE */
-  font-size: 20px !important;
-
-  line-height: 1.1 !important;
-
-  font-weight: 700 !important;
-
-  text-align: left !important;
-
-  margin-bottom: 8px !important;
-}
+            text-align: left !important;
+          }
 
 
-/* ==================================
-   SLIDE 4 PARAGRAPH
-================================== */
+          /* ==================================
+             SLIDE 4 H1
+          ================================== */
 
-.hero-slide-content.slide-4 p {
-  color: #000000 !important;
+          .hero-slide-content.slide-4 h1 {
+            color: #000000 !important;
 
-  /* MANUAL PARAGRAPH SIZE */
-  font-size: 12px !important;
+            /* MANUAL H1 SIZE */
+            font-size: 20px !important;
 
-  line-height: 1.35 !important;
+            line-height: 1.1 !important;
 
-  text-align: left !important;
+            font-weight: 700 !important;
 
-  /* IMPORTANT - REMOVE CENTER ALIGNMENT */
-  margin: 0 !important;
+            text-align: left !important;
 
-  width: 280px !important;
-  max-width: 280px !important;
-}
+            margin-bottom: 8px !important;
+          }
 
 
-/* ==================================
-   SLIDE 4 MOBILE BUTTON POSITION
-================================== */
+          /* ==================================
+             SLIDE 4 PARAGRAPH
+          ================================== */
 
-.register-slide-4 {
+          .hero-slide-content.slide-4 p {
+            color: #000000 !important;
 
-  /* BUTTON LEFT / RIGHT */
-  left: 0px !important;
+            /* MANUAL PARAGRAPH SIZE */
+            font-size: 12px !important;
 
-  /*
-    BUTTON UP / DOWN
+            line-height: 1.35 !important;
 
-    -55px = UP
-    -40px = little down
-    -30px = more down
-    -15px = further down
-     0px  = much further down
-  */
-  transform: translateY(-50px) !important;
-}
-/* =========================================================
+            text-align: left !important;
+
+            /* IMPORTANT - REMOVE CENTER ALIGNMENT */
+            margin: 0 !important;
+
+            width: 280px !important;
+            max-width: 280px !important;
+          }
+
+
+          /* ==================================
+             SLIDE 4 MOBILE BUTTON POSITION
+          ================================== */
+
+          .register-slide-4 {
+
+            /* BUTTON LEFT / RIGHT */
+            left: 0px !important;
+
+            /*
+              BUTTON UP / DOWN
+
+              -55px = UP
+              -40px = little down
+              -30px = more down
+              -15px = further down
+               0px  = much further down
+            */
+            transform: translateY(-50px) !important;
+          }
+        }
+
+      /* =========================================================
    DESKTOP ONLY - SLIDE 3
    1200PX AND ABOVE
+
+   TEXT BLACK
+   BUTTON BLUE + WHITE TEXT
+
+   MOBILE / TABLET / LAPTOP NOT AFFECTED
 ========================================================= */
 
 @media (min-width: 1200px) {
@@ -1986,8 +1898,10 @@ const HeroSliderTwoSingle = ({ data }) => {
     text-align: left !important;
   }
 
-  .hero-slide-content.slide-3 h1 {
-    color: #ffffff !important;
+  .hero-slide-content.slide-3 h1,
+  .hero-slide-content.slide-3 h1 span {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
 
     /* INCREASE TITLE SIZE */
     font-size: 58px !important;
@@ -1999,6 +1913,8 @@ const HeroSliderTwoSingle = ({ data }) => {
     margin-bottom: 18px !important;
 
     text-align: left !important;
+
+    text-shadow: none !important;
   }
 
   /* EXACTLY TWO LINES */
@@ -2008,8 +1924,10 @@ const HeroSliderTwoSingle = ({ data }) => {
     white-space: nowrap !important;
   }
 
-  .hero-slide-content.slide-3 p {
-    color: #ffffff !important;
+  .hero-slide-content.slide-3 p,
+  .hero-slide-content.slide-3 p span {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
 
     font-size: 17px !important;
 
@@ -2021,12 +1939,14 @@ const HeroSliderTwoSingle = ({ data }) => {
     margin: 0 !important;
 
     text-align: left !important;
+
+    text-shadow: none !important;
   }
 
 
   /* =====================================================
      SLIDE 3 REGISTER - RIGHT SIDE
-  ====================================================== */
+  ===================================================== */
 
   .register-slide-3 {
     position: relative !important;
@@ -2043,24 +1963,52 @@ const HeroSliderTwoSingle = ({ data }) => {
   }
 
   .register-slide-3 .slide__btn {
-    background: #ffffff !important;
+    background: #012d65 !important;
 
-    color: #012d65 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
-    border: 1.5px solid #ffffff !important;
+    border: 1.5px solid #012d65 !important;
 
     min-width: 200px !important;
+
+    text-decoration: none !important;
   }
 
   .register-slide-3 .slide__btn:hover {
-    background: #f7a901 !important;
+    background: #035391 !important;
 
-    border-color: #f7a901 !important;
+    border-color: #035391 !important;
 
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 }
-  
+
+        /* =========================================================
+           PREMIUM FEATURE SECTION
+           DESKTOP ONLY
+
+           Hide in:
+           Mobile  = below 768px
+           Tablet  = 768px - 991px
+           Laptop  = 992px - 1199px
+
+           Show only:
+           Desktop = 1200px and above
+        ========================================================= */
+
+        @media (max-width: 1199px) {
+          .premium-feature-section {
+            display: none !important;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .premium-feature-section {
+            display: block !important;
+          }
+        }
       `}</style>
 
 
@@ -2089,50 +2037,50 @@ const HeroSliderTwoSingle = ({ data }) => {
             >
 
               <h1>
-  {slide.id === 2 ? (
-    <>
-      <span className="slide-2-line">
-        Real Markets.
-      </span>
+                {slide.id === 2 ? (
+                  <>
+                    <span className="slide-2-line">
+                      Real Markets.
+                    </span>
 
-      <span className="slide-2-line">
-        Real Results.
-      </span>
-    </>
-  ) : slide.id === 3 ? (
-    <>
-      <span className="slide-3-line">
-        Start Small.
-      </span>
+                    <span className="slide-2-line">
+                      Real Results.
+                    </span>
+                  </>
+                ) : slide.id === 3 ? (
+                  <>
+                    <span className="slide-3-line">
+                      Start Small.
+                    </span>
 
-      <span className="slide-3-line">
-        Dream Big.
-      </span>
-    </>
-  ) : (
-    slide.title
-  )}
-</h1>
+                    <span className="slide-3-line">
+                      Dream Big.
+                    </span>
+                  </>
+                ) : (
+                  slide.title
+                )}
+              </h1>
 
               <p>
-  {slide.id === 3 ? (
-    <>
-      {/* EXISTING TABLET + LAPTOP PARAGRAPH */}
-<span className="slide-3-desktop-paragraph">
-  {slide.text}
-</span>
+                {slide.id === 3 ? (
+                  <>
+                    {/* EXISTING TABLET + LAPTOP PARAGRAPH */}
+                    <span className="slide-3-desktop-paragraph">
+                      {slide.text}
+                    </span>
 
-{/* NEW DESKTOP-ONLY PARAGRAPH */}
-<span className="slide-3-large-desktop-paragraph">
-  Whether you're investing $50 or $50,000, The Pips gives
-  you the tools, insights, and support to grow your wealth
-  step by step.
-</span>
-    </>
-  ) : (
-    slide.text
-  )}
-</p>
+                    {/* NEW DESKTOP-ONLY PARAGRAPH */}
+                    <span className="slide-3-large-desktop-paragraph">
+                      Whether you're investing $50 or $50,000, The Pips gives
+                      you the tools, insights, and support to grow your wealth
+                      step by step.
+                    </span>
+                  </>
+                ) : (
+                  slide.text
+                )}
+              </p>
 
             </div>
 

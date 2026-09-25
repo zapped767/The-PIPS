@@ -31,15 +31,23 @@ const BrandLogoTwo = () => {
   //   }
   // };
   return (
-    <div
-      className="slideb d-flex align__center poss--relative"
-      style={{
-        // backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/12.jpg"})`,
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/12.png"})`,
-        backgroundRepeat: `no-repeat`,
-        backgroundSize: `cover`,
-      }}
-    >
+
+
+<div
+  className="slideb d-flex align__center poss--relative"
+  style={{
+    background: "#ffffff",
+    backgroundImage: "none",
+
+    // MANUAL HEIGHT CONTROL
+    height: "0px",
+    minHeight: "0",
+
+    // REMOVE EXTRA SPACE
+    padding: "0",
+    margin: "0",
+  }}
+>
       {/* <div
 //       className="slide d-flex align__center poss--relative"
 //       style={{

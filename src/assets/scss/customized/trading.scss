@@ -1525,3 +1525,1049 @@
     }
   }
 }
+/* =========================================================
+   TYPES OF ACCOUNTS HERO BULL IMAGE
+   DESKTOP ONLY
+
+   Increase / reduce height manually
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .types-account-hero {
+    /* MANUAL HEIGHT
+       520px = current
+       600px = little bigger
+       650px = bigger
+       700px = very big
+    */
+    height: 650px !important;
+
+    min-height: 650px !important;
+
+    background-size: 105% 100% !important;
+  }
+
+  .types-account-hero .ht__bradcaump__container_market {
+    height: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+  }
+}
+/* =========================================================
+   ABOUT PAGE HERO HEIGHT
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .about-page-hero {
+    height: 700px !important;
+    min-height: 700px !important;
+
+    background-size: 105% 100% !important;
+    background-position: center center !important;
+  }
+
+  .about-page-hero .ht__bradcaump__container__about {
+    height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    padding-top: 0 !important;
+  }
+}
+/* =========================================================
+   THE PIPS - TYPES OF ACCOUNTS
+   PREMIUM TRADING CONDITIONS SECTION
+
+   One container:
+   Left image / Right details card
+========================================================= */
+
+.pips-account-conditions-section {
+  /* MANUAL SECTION SPACE */
+  padding: 70px 20px 80px;
+
+  background: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.pips-account-conditions-container {
+  /* MANUAL CONTAINER SIZE */
+  max-width: 1200px;
+  min-height: 560px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+
+  padding: 42px;
+
+  // border-radius: 28px;
+
+  background:
+   (
+      #012d65 100%
+    );
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* LEFT IMAGE SIDE */
+.pips-account-conditions-visual {
+  position: relative;
+
+  min-height: 470px;
+
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    );
+
+  // border: 1px solid rgba(255, 255, 255, 0.20);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pips-account-visual-glow {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  left: -130px;
+  top: -130px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+.pips-account-conditions-image {
+  /* MANUAL IMAGE SIZE */
+  width: 360px;
+  max-width: 85%;
+
+  height: auto;
+
+  opacity: 0.25;
+
+  filter:
+    brightness(0)
+    invert(1);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.pips-account-visual-content {
+  position: absolute;
+
+  left: 42px;
+  right: 42px;
+  bottom: 42px;
+
+  z-index: 3;
+}
+
+.pips-account-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #f7a901;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.pips-account-visual-content h2 {
+  margin: 0 0 16px;
+
+  color: #ffffff !important;
+
+  font-size: 42px;
+  font-weight: 800;
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+}
+
+.pips-account-visual-content p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.82) !important;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* RIGHT CARD */
+.pips-account-conditions-card {
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  padding: 42px;
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pips-account-card-header {
+  margin-bottom: 32px;
+}
+
+.pips-account-card-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(1, 45, 101, 0.08);
+
+  color: #012d65;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pips-account-card-header h2 {
+  margin: 0 0 10px;
+
+  color: #071a36 !important;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.pips-account-card-header p {
+  margin: 0;
+
+  color: #64748b !important;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* DETAILS */
+.pips-account-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  margin-bottom: 35px;
+}
+
+.pips-account-detail-item {
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: #f6f9fd;
+
+  border: 1px solid #e4edf8;
+}
+
+.pips-account-detail-item span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #8a97aa;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pips-account-detail-item strong {
+  display: block;
+
+  color: #012d65;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+/* BUTTON */
+.pips-account-button-wrap {
+  margin-top: auto;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pips-account-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+  height: 50px;
+
+  padding: 0 28px;
+
+  border-radius: 10px;
+
+  background: #012d65 !important;
+  color: #ffffff !important;
+
+  border: 1.5px solid #012d65 !important;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  text-decoration: none !important;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pips-account-register-button:hover {
+  background: #f7a901 !important;
+  color: #012d65 !important;
+
+  border-color: #f7a901 !important;
+
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .pips-account-conditions-section {
+    padding: 55px 18px 65px;
+  }
+
+  .pips-account-conditions-container {
+    grid-template-columns: 1fr;
+
+    padding: 28px;
+
+    min-height: auto;
+  }
+
+  .pips-account-conditions-visual {
+    min-height: 330px;
+  }
+
+  .pips-account-visual-content h2 {
+    font-size: 34px;
+  }
+
+  .pips-account-conditions-card {
+    padding: 32px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .pips-account-conditions-section {
+    padding: 40px 14px 50px;
+  }
+
+  .pips-account-conditions-container {
+    padding: 18px;
+
+    border-radius: 22px;
+
+    gap: 20px;
+  }
+
+  .pips-account-conditions-visual {
+    min-height: 280px;
+
+    border-radius: 18px;
+  }
+
+  .pips-account-conditions-image {
+    width: 260px;
+  }
+
+  .pips-account-visual-content {
+    left: 22px;
+    right: 22px;
+    bottom: 24px;
+  }
+
+  .pips-account-visual-content h2 {
+    font-size: 28px;
+  }
+
+  .pips-account-visual-content p {
+    font-size: 13px;
+  }
+
+  .pips-account-conditions-card {
+    padding: 24px;
+
+    border-radius: 18px;
+  }
+
+  .pips-account-card-header h2 {
+    font-size: 26px;
+  }
+
+  .pips-account-card-header p {
+    font-size: 13px;
+  }
+
+  .pips-account-details-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .pips-account-detail-item {
+    padding: 15px;
+  }
+
+  .pips-account-button-wrap {
+    justify-content: center;
+  }
+
+  .pips-account-register-button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   TYPES OF ACCOUNTS - LEFT FULL IMAGE
+========================================================= */
+
+.pips-account-conditions-visual {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 470px !important;
+
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  border-radius: 24px !important;
+
+  background: #ffffff !important;
+
+  display: block !important;
+}
+
+/* FULL LEFT IMAGE */
+.pips-account-left-full-image {
+  position: absolute !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: cover !important;
+
+  /* MANUAL IMAGE POSITION */
+  object-position: center center !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* REMOVE OLD EFFECT */
+.pips-account-visual-glow {
+  display: none !important;
+}
+
+.pips-account-conditions-image {
+  display: none !important;
+}
+
+
+/* TABLET */
+@media (max-width: 991px) {
+  .pips-account-conditions-visual {
+    min-height: 500px !important;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .pips-account-conditions-visual {
+    min-height: 480px !important;
+  }
+}
+/* =========================================================
+   TYPES OF ACCOUNTS - PREMIUM ACCOUNT CARDS
+========================================================= */
+
+.account-plans-section {
+  width: 100%;
+  padding: 80px 20px 90px;
+
+  background: #012d65;
+}
+
+.account-plans-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.account-plans-heading {
+  max-width: 720px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+// .account-plans-heading > span {
+//   display: inline-block;
+
+//   margin-bottom: 12px;
+
+//   color: #035391;
+
+//   font-size: 13px;
+//   font-weight: 700;
+
+//   letter-spacing: 0.12em;
+
+//   text-transform: uppercase;
+// }
+
+.account-plans-heading h2 {
+  margin: 0 0 16px;
+
+  color: #012d65;
+
+  font-size: 42px;
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+.account-plans-heading p {
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  color: #012d65;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.account-plans-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+.account-plan-card {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  /* CARD BACKGROUND */
+  background: #ffffff !important;
+
+  /* NO CURVE */
+  border-radius: 0 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 18px 45px rgba(1, 45, 101, 0.18);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.account-plan-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    #ffffff;
+
+  box-shadow:
+    0 30px 75px
+    rgba(1, 45, 101, 0.22);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.account-plan-content {
+  flex: 1;
+
+  padding: 34px 32px 30px;
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.account-plan-top-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 26px;
+}
+
+.account-plan-tier {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 38px;
+
+  padding: 0 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7a901,
+      #ffd866
+    );
+
+  color: #012d65;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 7px 22px
+    rgba(247, 169, 1, 0.25);
+}
+
+// .account-plan-tier span {
+//   margin-left: 5px;
+
+//   font-weight: 700;
+// }
+
+
+/* =========================================================
+   SMALL ICON
+========================================================= */
+
+// .account-plan-icon {
+//   width: 40px;
+//   height: 40px;
+
+//   display: flex;
+
+//   align-items: flex-end;
+//   justify-content: center;
+
+//   gap: 3px;
+
+//   padding-bottom: 10px;
+
+//   border-radius: 50%;
+
+//   background:
+//     rgba(3, 83, 145, 0.18);
+// }
+
+// .account-plan-icon span {
+//   display: block;
+
+//   width: 4px;
+
+//   background: #035391;
+
+//   border-radius: 3px;
+// }
+
+// .account-plan-icon span:nth-child(1) {
+//   height: 7px;
+// }
+
+// .account-plan-icon span:nth-child(2) {
+//   height: 12px;
+// }
+
+// .account-plan-icon span:nth-child(3) {
+//   height: 18px;
+// }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.account-plan-title {
+  margin: 0 0 12px;
+
+  color: #012d65 !important;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.account-plan-tagline {
+  min-height: 50px;
+
+  margin: 0 0 24px;
+
+  color:
+    #012d65 !important;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   ACCESS ROW
+========================================================= */
+
+.account-plan-market {
+  margin-bottom: 24px;
+
+  font-size: 14px;
+}
+
+.account-plan-market span {
+  color:
+    #012d65;
+
+  margin-right: 6px;
+}
+
+.account-plan-market strong {
+  color: #012d65;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.account-plan-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.account-plan-feature {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color:
+    #012d65;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+.account-check {
+  flex-shrink: 0;
+
+  color: #f7a901;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.account-plan-button {
+  width: 100%;
+
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: auto;
+
+  background: #012d65;
+
+  color: #ffffff !important;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  text-decoration: none !important;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.account-plan-button:hover {
+  background: #f7a901;
+
+  color: #012d65 !important;
+}
+
+.account-plan-arrow {
+  font-size: 28px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.account-plan-button:hover
+.account-plan-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SECOND ROW - CENTER 2 CARDS
+========================================================= */
+
+@media (min-width: 992px) {
+
+  /* SECOND ROW - 2 CARDS CENTERED */
+
+  .account-plan-card--4 {
+    grid-column: 1 / 2;
+    transform: translateX(50%);
+  }
+
+  .account-plan-card--5 {
+    grid-column: 2 / 3;
+    transform: translateX(50%);
+  }
+
+  .account-plan-card--4:hover,
+  .account-plan-card--5:hover {
+    transform:
+      translateX(50%)
+      translateY(-8px);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+  min-width: 768px
+) and (
+  max-width: 991px
+) {
+
+  .account-plans-section {
+    padding:
+      60px
+      20px
+      70px;
+  }
+
+  .account-plans-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .account-plan-card {
+    min-height: 455px;
+  }
+
+  .account-plan-content {
+    padding:
+      28px
+      25px
+      26px;
+  }
+
+  .account-plan-title {
+    font-size: 27px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .account-plans-section {
+    padding:
+      45px
+      14px
+      55px;
+  }
+
+  .account-plans-heading {
+    margin-bottom: 32px;
+  }
+
+  .account-plans-heading h2 {
+    font-size: 30px;
+  }
+
+  .account-plans-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+.account-plan-card {
+  min-height: auto;
+
+  border-radius: 0 !important;
+}
+  .account-plan-content {
+    padding:
+      26px
+      22px
+      25px;
+  }
+
+  .account-plan-title {
+    font-size: 26px;
+  }
+
+  .account-plan-tagline {
+    min-height: 0;
+  }
+
+  .account-plan-tier {
+    padding: 0 13px;
+
+    font-size: 10px;
+  }
+
+  .account-plan-button {
+    height: 58px;
+  }
+
+}
+/* =========================================================
+   ACCOUNT CARDS SECTION
+   BLUE BACKGROUND - BOTTOM CURVE ONLY
+========================================================= */
+
+.account-plans-section {
+  /* ONLY BOTTOM CORNERS */
+  border-radius: 0 0 45px 45px !important;
+
+  overflow: hidden !important;
+}

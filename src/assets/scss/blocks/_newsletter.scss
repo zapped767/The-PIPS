@@ -1,322 +1,581 @@
-/*---------------------
-    Newsletter Styles
------------------------*/
 
-// .newsletter__container {
-//   padding: 90px 0px 15px 0px;
+/* ============================================================
+   THE PIPS - PREMIUM SUBSCRIBE SECTION
 
-//   text-align: center;
+   BRAND COLORS:
+   WHITE:     #FFFFFF
+   DEEP BLUE: #012D65
+   BLUE:      #035391
+   BLACK:     #080A0F
 
-//   background: #fff none repeat scroll 0 0;
-//   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-// }
-
-// .newsletter__area {
-//   position: absolute;
-//   right: 0;
-//   left: 0;
-
-//   margin: -60px auto auto;
-// }
-
-// .newsletter__inner {
-//   h2 {
-//     font-size: 24px;
-//     font-weight: 700;
-//     // line-height: 28px;
-
-//     // margin-bottom: 30px;
-//   }
-//   .input__box {
-//     width: 600px;
-//     margin: auto;
-//     .mc-form {
-//       position: relative;
-//       svg {
-//         font-size: 18px;
-
-//         position: absolute;
-//         top: 50%;
-//         left: 20px;
-
-//         content: "\f159";
-//         -webkit-transform: translateY(-50%);
-//         transform: translateY(-50%);
-
-//         color: #012d65;
-//       }
-//     }
-//     input {
-//       width: 100%;
-//       height: 50px;
-//       padding: 0 178px 0 60px;
-
-//       border: 1px solid #e5e7ea;
-//       border-radius: 4px;
-//       outline: medium none;
-//     }
-//     button {
-//       &.submit__btn {
-//         font-size: 16px;
-
-//         position: absolute;
-//         top: 50%;
-//         right: 6px;
-
-//         height: 40px;
-//         padding: 0 42px;
-
-//         transition: all 0.5s ease 0s;
-//         -webkit-transform: translateY(-50%);
-//         transform: translateY(-50%);
-//         text-transform: uppercase;
-
-//         color: #fff;
-//         border: 0 none;
-//         border-radius: 4px;
-//         background: #0b0801 none repeat scroll 0 0;
-//         &:hover {
-//           background: #f7a901;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .newsletter__area.space-between {
-//   padding: 0 115px;
-// }
-
-// /* Responsive Css*/
-
-// @media #{$lg-layout} {
-// }
-
-// @media #{$md-layout} {
-// }
-
-// @media #{$sm-layout} {
-//   .newsletter__inner .input__box {
-//     width: 462px;
-//   }
-// }
-
-// @media #{$xs-layout} {
-//   .newsletter__inner .input__box {
-//     width: 351px;
-//   }
-//   .newsletter__inner .input__box button.submit__btn {
-//     font-size: 14px;
-
-//     padding: 0 20px;
-//   }
-//   .newsletter__inner .input__box input {
-//     padding: 0 126px 0 43px;
-//   }
-//   .newsletter__inner .input__box::after {
-//     left: 17px;
-//   }
-// }
-
-// @media #{$xxs-layout} {
-//   .newsletter__inner {
-//     .mc-form {
-//       text-align: center;
-//     }
-//   }
-
-//   .newsletter__inner h2 {
-//     font-size: 21px;
-
-//     margin-bottom: -190px;
-//   }
-//   .newsletter__inner .input__box button.submit__btn {
-//     position: inherit;
-//     top: inherit;
-//     right: 0;
-
-//     margin-top: 22px;
-
-//     -webkit-transform: inherit;
-//     transform: inherit;
-//   }
-//   .newsletter__inner .input__box .mc-form svg {
-//     top: 15%;
-//     left: 7px;
-
-//     transform: none;
-//   }
-//   .newsletter__inner .input__box {
-//     width: 256px;
-
-//     text-align: left;
-//   }
-//   .newsletter__inner .input__box input {
-//     padding: 0 28px;
-//   }
-// }
+   ============================================================ */
 
 
+/* ============================================================
+   1. REMOVE OLD NEWSLETTER LAYOUT INTERFERENCE
 
-.newsletter__container {
-  margin: -36px 0px 0px 0px;
-  padding: 30px 0px 25px 0px;
-  text-align: center;
-  background: #fff none repeat scroll 0 0;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+   These rules apply only when the old newsletter
+   wrapper contains the new Subscribe component.
+   ============================================================ */
+
+.newsletter__area:has(.tp-subscribe-cta) {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #ffffff !important;
+  background-image: none !important;
+
+  box-shadow: none !important;
 }
 
-.newsletter__area {
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin: -60px auto auto;
+.newsletter__container:has(.tp-subscribe-cta) {
+  position: relative !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #ffffff !important;
+  background-image: none !important;
+
+  box-shadow: none !important;
 }
 
-.newsletter__inner h2 {
-  font-size: 24px;
-  font-weight: 700;
-}
 
-.newsletter__inner .input__box {
-  width: 600px;
-  margin: auto;
-}
+/* ============================================================
+   2. MANUAL ADJUSTMENT VALUES
 
-.newsletter__inner .input__box .mc-form {
+   CHANGE THESE VALUES TO ADJUST YOUR DESIGN
+   ============================================================ */
+
+.tp-subscribe-cta {
+
+  /* SECTION BACKGROUND */
+
+  --tp-section-bg: #ffffff;
+
+  /* BLUE CARD BACKGROUND */
+
+  --tp-card-bg: #012d65;
+
+  /* SECTION SPACING */
+
+  --tp-section-padding-top: 20px;
+  --tp-section-padding-bottom: 20px;
+
+  /* CARD WIDTH */
+
+  --tp-card-max-width: 1100px;
+
+  /* CARD INTERNAL SPACING */
+
+  --tp-card-padding-top: 48px;
+  --tp-card-padding-right: 45px;
+  --tp-card-padding-bottom: 48px;
+  --tp-card-padding-left: 45px;
+
+  /* CARD CORNER */
+
+  --tp-card-radius: 20px;
+
+  /* SMALL TOP TEXT */
+
+  --tp-small-text-size: 12px;
+  --tp-small-text-color: #a6d2fa;
+  --tp-small-text-bottom-gap: 18px;
+
+  /* MAIN HEADING */
+
+  --tp-heading-size: 42px;
+  --tp-heading-line-height: 1.2;
+  --tp-heading-bottom-gap: 18px;
+
+  /* DESCRIPTION */
+
+  --tp-description-size: 15px;
+  --tp-description-line-height: 1.7;
+  --tp-description-bottom-gap: 28px;
+
+  /* BUTTON */
+
+  --tp-button-font-size: 13px;
+
+  --tp-button-padding-top: 14px;
+  --tp-button-padding-right: 28px;
+  --tp-button-padding-bottom: 14px;
+  --tp-button-padding-left: 28px;
+
+  --tp-button-radius: 8px;
+
+  /* ============================================================
+     SECTION LAYOUT
+     ============================================================ */
+
   position: relative;
-}
 
-.newsletter__inner .input__box .mc-form svg {
-  font-size: 18px;
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  color: #012d65;
-}
+  display: block;
 
-.newsletter__inner .input__box input {
   width: 100%;
-  height: 50px;
-  padding: 0 178px 0 60px;
-  border: 1px solid #e5e7ea;
-  border-radius: 4px;
-  outline: none;
+  height: auto;
+
+  min-height: 0;
+
+  margin: 0 !important;
+
+  padding:
+    var(--tp-section-padding-top)
+    20px
+    var(--tp-section-padding-bottom) !important;
+
+  background: var(--tp-section-bg) !important;
+  background-image: none !important;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  font-family: "Poppins", sans-serif;
 }
 
-.newsletter__inner .input__box button.submit__btn {
-  font-size: 16px;
-  position: absolute;
-  top: 50%;
-  right: 6px;
-  height: 40px;
-  padding: 0 42px;
+.tp-subscribe-cta *,
+.tp-subscribe-cta *::before,
+.tp-subscribe-cta *::after {
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   3. MAIN CONTAINER
+   ============================================================ */
+
+.tp-subscribe-cta > .container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1320px;
+
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+
+/* ============================================================
+   4. PREMIUM BLUE CARD
+   ============================================================ */
+
+.tp-subscribe-cta__box {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: var(--tp-card-max-width);
+
+  height: auto;
+  min-height: 0;
+
+  margin: 0 auto !important;
+
+  padding:
+    var(--tp-card-padding-top)
+    var(--tp-card-padding-right)
+    var(--tp-card-padding-bottom)
+    var(--tp-card-padding-left) !important;
+
+  background: var(--tp-card-bg) !important;
+  background-image: none !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: var(--tp-card-radius);
+
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   5. SUBSCRIBE FOR LATEST UPDATES
+   ============================================================ */
+
+.tp-subscribe-cta__eyebrow {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 var(--tp-small-text-bottom-gap) !important;
+
+  color: var(--tp-small-text-color) !important;
+
+  font-size: var(--tp-small-text-size) !important;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.12em;
+
   text-transform: uppercase;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  background: #0b0801;
-  transform: translateY(-50%);
-  transition: all 0.5s ease;
+
+  text-align: center;
 }
 
-.newsletter__inner .input__box button.submit__btn:hover {
-  background: #f7a901;
+
+/* ============================================================
+   6. YOUR TRADING JOURNEY STARTS HERE
+   ============================================================ */
+
+.tp-subscribe-cta__title {
+  display: block;
+
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto var(--tp-heading-bottom-gap) !important;
+
+  color: #ffffff !important;
+
+  font-size: var(--tp-heading-size) !important;
+  font-weight: 700 !important;
+
+  line-height: var(--tp-heading-line-height) !important;
+
+  letter-spacing: -0.8px;
+
+  text-align: center !important;
+
+  text-transform: none !important;
+
+  overflow-wrap: break-word;
 }
 
-.newsletter__area.space-between {
-  padding: 0 115px;
+
+/* ============================================================
+   7. DESCRIPTION
+   ============================================================ */
+
+.tp-subscribe-cta__desc {
+  display: block;
+
+  width: 100%;
+  max-width: 750px;
+
+  margin: 0 auto var(--tp-description-bottom-gap) !important;
+
+  color: #dce5ef !important;
+
+  font-size: var(--tp-description-size) !important;
+  font-weight: 400;
+
+  line-height: var(--tp-description-line-height) !important;
+
+  text-align: center !important;
 }
 
-/* ========== Responsive CSS ========== */
 
-/* Large Devices (Desktops) */
-@media (max-width: 1200px) {
-  .newsletter__container {
-    padding: 25px 0 20px 0;
-  }
-  .newsletter__inner .input__box {
-    width: 520px;
-  }
+/* ============================================================
+   8. REGISTER NOW BUTTON
+   ============================================================ */
+
+.tp-subscribe-cta__button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  min-height: 48px;
+
+  margin: 0 auto !important;
+
+  padding:
+    var(--tp-button-padding-top)
+    var(--tp-button-padding-right)
+    var(--tp-button-padding-bottom)
+    var(--tp-button-padding-left) !important;
+
+  background: #ffffff !important;
+
+  color: #012d65 !important;
+
+  border: 1px solid #ffffff;
+  border-radius: var(--tp-button-radius);
+
+  font-family: inherit;
+
+  font-size: var(--tp-button-font-size) !important;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-align: center;
+  text-decoration: none !important;
+
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* Medium Devices (Tablets) */
-@media (max-width: 992px) {
-  .newsletter__container {
-    padding: 22px 0 18px 0;
-  }
-  .newsletter__inner .input__box {
-    width: 480px;
-  }
+.tp-subscribe-cta__button span {
+  color: inherit !important;
 }
 
-/* Small Devices (Large Phones) */
-@media (max-width: 768px) { 
-  .newsletter__container {
-    padding: 35px 2px 25px 2px;
-  }
 
-  .newsletter__inner .input__box {
-    width: 462px;
-  }
+/* BUTTON ARROW */
+
+.tp-subscribe-cta__arrow {
+  font-size: 18px;
+  line-height: 1;
 }
 
-/* Extra Small Devices (Phones) */
-@media (max-width: 576px) {
-  .newsletter__container {
-    padding: 18px 0 25px 0;
-  }
-  .newsletter__inner .input__box {
-    width: 351px;
-  }
 
-  .newsletter__inner .input__box button.submit__btn {
-    font-size: 14px;
-    padding: 0 20px;
-  }
+/* BUTTON HOVER */
 
-  .newsletter__inner .input__box input {
-    padding: 0 126px 0 43px;
-  }
+.tp-subscribe-cta__button:hover,
+.tp-subscribe-cta__button:focus-visible {
+  background: #035391 !important;
+
+  color: #ffffff !important;
+
+  border-color: #035391;
+
+  text-decoration: none !important;
+
+  transform: translateY(-3px);
 }
 
-/* Extra Extra Small Devices (Very small phones) */
-@media (max-width: 400px) {
-  .newsletter__container {
-    padding: 220px 0 25px 0;
+
+/* ============================================================
+   9. TABLET VIEW
+   ============================================================ */
+
+@media (max-width: 991px) {
+
+  .tp-subscribe-cta {
+    --tp-section-padding-top: 45px;
+    --tp-section-padding-bottom: 45px;
+
+    --tp-card-padding-top: 38px;
+    --tp-card-padding-right: 28px;
+    --tp-card-padding-bottom: 38px;
+    --tp-card-padding-left: 28px;
+
+    --tp-heading-size: 34px;
+
+    --tp-description-size: 14px;
   }
 
-  .newsletter__inner .mc-form {
-    text-align: center;
-  }
-
-  .newsletter__inner h2 {
-    font-size: 21px;
-    margin-bottom: -190px;
-  }
-
-  .newsletter__inner .input__box button.submit__btn {
-    position: inherit;
-    top: inherit;
-    right: 0;
-    margin-top: 22px;
-    transform: inherit;
-  }
-
-  .newsletter__inner .input__box .mc-form svg {
-    top: 15%;
-    left: 7px;
-    transform: none;
-  }
-
-  .newsletter__inner .input__box {
-    width: 256px;
-    text-align: left;
-  }
-
-  .newsletter__inner .input__box input {
-    padding: 0 28px;
-  }
 }
 
+
+/* ============================================================
+   10. MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .tp-subscribe-cta {
+
+    /* MANUAL MOBILE SECTION SPACING */
+
+    --tp-section-padding-top: 30px;
+    --tp-section-padding-bottom: 30px;
+
+    /* MANUAL MOBILE CARD SPACING */
+
+    --tp-card-padding-top: 30px;
+    --tp-card-padding-right: 20px;
+    --tp-card-padding-bottom: 30px;
+    --tp-card-padding-left: 20px;
+
+    /* MOBILE CARD CORNER */
+
+    --tp-card-radius: 16px;
+
+    /* MOBILE SMALL TEXT */
+
+    --tp-small-text-size: 10px;
+    --tp-small-text-bottom-gap: 12px;
+
+    /* MOBILE HEADING */
+
+    --tp-heading-size: 25px;
+    --tp-heading-line-height: 1.22;
+    --tp-heading-bottom-gap: 15px;
+
+    /* MOBILE DESCRIPTION */
+
+    --tp-description-size: 13px;
+    --tp-description-line-height: 1.6;
+    --tp-description-bottom-gap: 22px;
+
+    /* MOBILE BUTTON */
+
+    --tp-button-font-size: 12px;
+
+    --tp-button-padding-top: 12px;
+    --tp-button-padding-right: 20px;
+    --tp-button-padding-bottom: 12px;
+    --tp-button-padding-left: 20px;
+  }
+
+  .tp-subscribe-cta {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .tp-subscribe-cta > .container {
+    padding: 0 !important;
+  }
+
+}
+
+
+/* ============================================================
+   11. VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+  .tp-subscribe-cta {
+    --tp-card-padding-top: 25px;
+    --tp-card-padding-right: 17px;
+    --tp-card-padding-bottom: 25px;
+    --tp-card-padding-left: 17px;
+
+    --tp-heading-size: 22px;
+
+    --tp-description-size: 12px;
+
+    --tp-small-text-size: 9px;
+  }
+
+}
+
+
+/* ============================================================
+   12. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tp-subscribe-cta__button {
+    transition: none !important;
+  }
+
+}
+/* =========================================================
+   FOOTER PAYMENT METHODS
+   MOBILE ONLY - ONE ROW AUTO SCROLL
+========================================================= */
+
+/* Desktop / normal view keep duplicate hidden */
+#pipsfx-footer .pipsfx-payments__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+#pipsfx-footer .pipsfx-payments__group--duplicate {
+  display: none;
+}
+
+
+/* MOBILE ONLY */
+@media (max-width: 767px) {
+
+  #pipsfx-footer .pipsfx-payments {
+    width: 100%;
+    overflow: hidden !important;
+  }
+
+  #pipsfx-footer .pipsfx-payments__scroll {
+    width: 100%;
+    overflow: hidden !important;
+  }
+
+  #pipsfx-footer .pipsfx-payments__images {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+
+    width: max-content !important;
+
+    gap: 0 !important;
+
+    animation:
+      pipsfx-mobile-payment-scroll
+      24s
+      linear
+      infinite;
+
+    will-change: transform;
+  }
+
+  #pipsfx-footer .pipsfx-payments__group,
+  #pipsfx-footer .pipsfx-payments__group--duplicate {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+
+    gap: 8px !important;
+    padding-right: 8px !important;
+
+    flex: 0 0 auto !important;
+    width: max-content !important;
+  }
+
+  #pipsfx-footer .pipsfx-payment-item {
+    width: 58px !important;
+    height: 36px !important;
+
+    min-width: 58px !important;
+    flex: 0 0 58px !important;
+
+    padding: 5px !important;
+  }
+
+  #pipsfx-footer .pipsfx-payment-item img {
+    max-width: 46px !important;
+    max-height: 26px !important;
+  }
+
+}
+
+
+/* MOBILE PAYMENT AUTO MOVE */
+@keyframes pipsfx-mobile-payment-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
