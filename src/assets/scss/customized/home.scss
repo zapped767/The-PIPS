@@ -3999,70 +3999,119 @@ and
 /* =========================================================
    CARD 3 TEXT
    DESKTOP ONLY
+   MANUAL TOP / LEFT / RIGHT
 ========================================================= */
 
 @media (min-width: 1200px) {
 
-  .hw__card-3 .hw__card-content {
-    position: absolute;
+  .hw__section
+  .hw__card-3
+  .hw__card-content {
 
-    /*
-      MUCH SAFER THAN top: 120px
+    position: absolute !important;
 
-      bottom:
-      smaller = text DOWN
-      bigger  = text UP
-    */
-    bottom: 36px;
+    /* =====================================
+       UP / DOWN
 
-    left: 0px;
+       smaller top = move UP
+       bigger top  = move DOWN
 
-    width: 100%;
+       20px  = very top
+       50px  = little down
+       100px = more down
+       150px = much more down
+    ===================================== */
+    top: 20px !important;
 
-    height: auto;
 
-    flex: none;
+    /* =====================================
+       LEFT / RIGHT
 
-    padding:
-      20px
-      22px;
+       0px   = left side
+       20px  = little RIGHT
+       40px  = more RIGHT
+       -10px = LEFT
+    ===================================== */
+    left: 80px !important;
 
-    box-sizing: border-box;
 
-    z-index: 5;
+    bottom: auto !important;
+    right: auto !important;
+
+    width: 280px !important;
+
+    height: auto !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 5 !important;
   }
 
 
-  /* CARD 3 TITLE */
+  /* =========================================================
+   CARD 3 TITLE - MANUAL POSITION
+========================================================= */
 
-  .hw__card-3 .hw__card-content h3 {
-    font-size: 24px;
+.hw__section
+.hw__card-3
+.hw__card-content h3 {
 
-    line-height: 1.2;
+  position: relative !important;
 
-    margin:
-      0
-      0
-      10px;
+  /* UP / DOWN
+     negative = UP
+     positive = DOWN
+  */
+  top: 0px !important;
 
-    color: #012d65;
-  }
+  /* LEFT / RIGHT
+     negative = LEFT
+     positive = RIGHT
+  */
+  left: 155px !important;
+
+  font-size: 30px !important;
+  line-height: 1.2 !important;
+
+  margin: 0 0 10px !important;
+
+  color: #012d65 !important;
+}
 
 
-  /* CARD 3 DESCRIPTION */
+/* =========================================================
+   CARD 3 PARAGRAPH - MANUAL POSITION
+========================================================= */
 
-  .hw__card-3 .hw__card-content p {
-    font-size: 14px;
+.hw__section
+.hw__card-3
+.hw__card-content p {
 
-    line-height: 1.5;
+  position: relative !important;
 
-    max-width: 260px;
+  /* UP / DOWN
+     negative = UP
+     positive = DOWN
+  */
+  top: 0px !important;
 
-    margin: 0;
+  /* LEFT / RIGHT
+     negative = LEFT
+     positive = RIGHT
+  */
+  left: 0px !important;
 
-    color:
-      #012d65;
-  }
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+
+  max-width: 260px !important;
+
+  margin: 0 !important;
+
+  color: #012d65 !important;
+}
 
 }
 
@@ -9858,4 +9907,239 @@ and
   -webkit-text-fill-color: #012d65 !important;
 
   border-color: #f7a901 !important;
+}
+/* =========================================================
+   CARD 3 PHONE IMAGE
+   DESKTOP ONLY - MANUAL SIZE + POSITION
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hw__section
+  .hw__card-3
+  .hw__card-3-corner-image {
+
+    position: absolute !important;
+
+    /* =====================================
+       IMAGE SIZE
+       300px = current
+       350px = bigger
+       400px = much bigger
+       450px = very big
+    ===================================== */
+    width: 420px !important;
+
+    height: auto !important;
+
+    max-width: none !important;
+
+
+    /* =====================================
+       LEFT / RIGHT
+
+       right: positive = move LEFT
+       right: negative = move RIGHT
+
+       50px  = more LEFT
+       20px  = little LEFT
+       0px   = normal
+       -20px = little RIGHT
+       -50px = more RIGHT
+    ===================================== */
+    right: -25px !important;
+
+    left: auto !important;
+
+
+    /* =====================================
+       UP / DOWN
+
+       top: positive = DOWN
+       top: negative = UP
+
+       0px   = top
+       30px  = little DOWN
+       70px  = more DOWN
+       -20px = UP
+    ===================================== */
+    top: 139px !important;
+
+
+    object-fit: contain !important;
+
+    z-index: 2 !important;
+
+    pointer-events: none !important;
+  }
+
+}
+/* =========================================================
+   ACCOUNT CARDS
+   DESKTOP LOCKED SCROLL
+   REMOVE LONG WHITE SPACE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-scroll-accounts-section {
+
+    /* =====================================
+       MANUAL BLUE SECTION HEIGHT
+
+       460px = smaller
+       500px = recommended
+       540px = taller
+    ===================================== */
+
+    --account-scroll-height: 500px;
+
+
+    position: relative !important;
+
+    width: 100% !important;
+
+    height:
+      var(--account-scroll-height)
+      !important;
+
+    min-height:
+      var(--account-scroll-height)
+      !important;
+
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background:
+      #012d65 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     REMOVE OLD STICKY 100VH
+  ===================================================== */
+
+  .pips-scroll-accounts-sticky {
+
+    position: relative !important;
+
+    top: auto !important;
+
+    width: 100% !important;
+
+    height:
+      var(--account-scroll-height)
+      !important;
+
+    min-height:
+      var(--account-scroll-height)
+      !important;
+
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    background:
+      #012d65 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     VIEWPORT
+  ===================================================== */
+
+  .pips-scroll-accounts-viewport {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    overflow: hidden !important;
+
+    position: relative !important;
+  }
+
+
+  /* =====================================================
+     TRACK
+  ===================================================== */
+
+  .pips-scroll-accounts-track {
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    gap: 28px !important;
+
+    width: max-content !important;
+
+    /*
+      JS controls transform.
+      DO NOT add !important here.
+    */
+    transform:
+      translate3d(0, 0, 0);
+
+    will-change: transform;
+  }
+
+}
+/* =========================================================
+   MOBILE ONLY
+   REMOVE WHITE SPACE ABOVE "CHOOSE THE RIGHT TRADING ACCOUNT"
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* REMOVE OLD NEWSLETTER TITLE */
+  .newsletter__area
+  .newsletter__inner > h2 {
+    display: none !important;
+
+    height: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* REMOVE EXTRA WRAPPER SPACE */
+  .newsletter__area,
+  .newsletter__container,
+  .newsletter__inner {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+
+  /* MANUAL SPACE ABOVE BLUE CTA CARD */
+  .tp-subscribe-cta {
+
+    /* CHANGE THIS */
+    --tp-section-padding-top: 10px !important;
+
+    /* bottom can stay */
+    --tp-section-padding-bottom: 20px !important;
+  }
+
 }

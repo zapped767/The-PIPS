@@ -12,7 +12,7 @@ const BreadcrumbDemoTradingAccount = () => {
   }, []);
 
   const desktopImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side.jpg";
+    process.env.PUBLIC_URL + "/images/about/bull_right_side.png";
   const mobileImage =
     process.env.PUBLIC_URL + "/images/about/bull_right_side_mobile.jpg";
 

@@ -1,40 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
 const BreadcrumbDepositsAndWithdrawals = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const desktopImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side.jpg";
-  const mobileImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side_mobile.jpg";
+    process.env.PUBLIC_URL + "/images/about/bull_right_side.png";
 
   return (
     <div
-      className="ht__bradcaump__area_market"
+      className="ht__bradcaump__area_market pips-desktop-bull-all-devices deposits-withdrawals-hero"
       style={{
-        background: `rgba(0,0,0,0) url(${
-          isMobile ? mobileImage : desktopImage
-        }) no-repeat scroll center center / ${isMobile ? "cover" : "105% 100%"}`,
+        backgroundImage: `url(${desktopImage})`,
       }}
     >
       <div className="ht__bradcaump__container_market">
         <div className="container">
           <div className="row">
             <div className="col-lg-9">
-              <h1>Your money, when you want it </h1>
+              <h1>Your money, when you want it</h1>
+
               <p>
                 Stay in control with 24/7 access to your funds. Get requests
                 approved automatically using secure local and global payment
                 methods.
               </p>
+
               <div>
                 <a
                   className="slide__btn dg__btn"

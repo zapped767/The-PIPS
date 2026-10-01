@@ -1602,4 +1602,889 @@ linear-gradient(
   }
 
 }
+/* =========================================================
+   TYPES OF ACCOUNTS HERO
+   MOBILE ONLY - MANUAL CONTROLS
+========================================================= */
 
+@media (max-width: 767px) {
+
+  .ht__bradcaump__area_market {
+
+    /* ===============================
+       MANUAL HEIGHT
+       420px = bigger
+       380px = recommended
+       340px = smaller
+    =============================== */
+    --toa-mobile-hero-height: 380px;
+
+    /* TEXT */
+    --toa-mobile-title-size: 25px;
+    --toa-mobile-desc-size: 13px;
+
+    /* BUTTON */
+    --toa-mobile-btn-font: 12px;
+    --toa-mobile-btn-height: 42px;
+
+    height: var(--toa-mobile-hero-height) !important;
+    min-height: var(--toa-mobile-hero-height) !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+
+  /* CONTENT */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market {
+    padding-top: 0 !important;
+    padding-left: 28px !important;
+    padding-right: 20px !important;
+
+    width: 100% !important;
+  }
+
+
+  /* TITLE */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market h1 {
+    font-size: var(--toa-mobile-title-size) !important;
+    line-height: 1.15 !important;
+
+    margin-bottom: 12px !important;
+  }
+
+
+  /* DESCRIPTION */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market p {
+    font-size: var(--toa-mobile-desc-size) !important;
+    line-height: 1.5 !important;
+
+    margin-bottom: 22px !important;
+
+    max-width: 260px !important;
+  }
+
+
+  /* START NOW */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn {
+    min-width: 130px !important;
+    height: var(--toa-mobile-btn-height) !important;
+
+    padding: 0 20px !important;
+
+    font-size: var(--toa-mobile-btn-font) !important;
+  }
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO
+   MOBILE ONLY - SMALLER + MOVE LEFT
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* CONTENT WRAPPER - MOVE LEFT */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market {
+    padding-left: 18px !important;   /* smaller = more left */
+    padding-right: 12px !important;
+
+    text-align: left !important;
+  }
+
+  /* TITLE */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market h1 {
+    font-size: 22px !important;      /* reduce title */
+    line-height: 1.15 !important;
+
+    margin-bottom: 8px !important;
+
+    text-align: left !important;
+  }
+
+  /* DESCRIPTION */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market p {
+    font-size: 12px !important;      /* reduce description */
+    line-height: 1.45 !important;
+
+    margin-bottom: 16px !important;
+
+    max-width: 230px !important;
+
+    text-align: left !important;
+  }
+
+  /* START NOW BUTTON */
+  .ht__bradcaump__area_market
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn {
+    min-width: 115px !important;
+
+    height: 38px !important;
+
+    padding: 0 16px !important;
+
+    font-size: 11px !important;
+
+    margin-left: 0 !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+/* =========================================================
+   COMMODITIES HERO
+   SAME DESKTOP IMAGE ON ALL DEVICES
+
+   Desktop image:
+   /images/about/bull_right_side.png
+========================================================= */
+
+.commodities-market-hero {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+
+  /*
+    IMPORTANT:
+    100% 100% = show complete desktop image
+    without mobile cropping
+  */
+  background-size: 100% 100% !important;
+}
+
+
+/* =========================================================
+   DESKTOP - 1200PX AND ABOVE
+========================================================= */
+
+@media (min-width: 1200px) {
+  .commodities-market-hero {
+    height: 550px !important;
+    min-height: 550px !important;
+
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP - 992PX TO 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .commodities-market-hero {
+    height: 500px !important;
+    min-height: 500px !important;
+
+    /* KEEP COMPLETE DESKTOP IMAGE */
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market {
+    padding-left: 55px !important;
+    padding-top: 50px !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market h1 {
+    font-size: 40px !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market p {
+    max-width: 540px !important;
+    font-size: 14px !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET - 768PX TO 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .commodities-market-hero {
+    height: 440px !important;
+    min-height: 440px !important;
+
+    /* SAME FULL DESKTOP IMAGE */
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market {
+    padding-left: 35px !important;
+    padding-right: 25px !important;
+    padding-top: 20px !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market h1 {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market p {
+    max-width: 420px !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE - 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+  .commodities-market-hero {
+
+    /* =========================================
+       MANUAL MOBILE HEIGHT
+       300px = smaller
+       340px = recommended
+       380px = bigger
+    ========================================= */
+    --commodities-mobile-height: 340px;
+
+    height: var(--commodities-mobile-height) !important;
+    min-height: var(--commodities-mobile-height) !important;
+
+    /*
+      THIS IS THE IMPORTANT FIX.
+
+      Do NOT use:
+      background-size: cover;
+
+      100% 100% keeps the complete desktop
+      bull image visible on mobile.
+    */
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+
+  /* CONTENT */
+  .commodities-market-hero
+  .ht__bradcaump__container_market {
+    width: 100% !important;
+
+    padding-left: 18px !important;
+    padding-right: 16px !important;
+    padding-top: 0 !important;
+  }
+
+
+  /* HEADING */
+  .commodities-market-hero
+  .ht__bradcaump__container_market h1 {
+    max-width: 210px !important;
+
+    margin-bottom: 8px !important;
+
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* PARAGRAPH */
+  .commodities-market-hero
+  .ht__bradcaump__container_market p {
+    max-width: 220px !important;
+
+    margin-bottom: 15px !important;
+
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* BUTTON */
+  .commodities-market-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn {
+    min-width: 155px !important;
+    height: 38px !important;
+
+    padding: 0 14px !important;
+
+    font-size: 10px !important;
+
+    margin-left: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE - 420PX AND BELOW
+========================================================= */
+
+@media (max-width: 420px) {
+  .commodities-market-hero {
+    --commodities-mobile-height: 320px;
+
+    background-size: 100% 100% !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market h1 {
+    font-size: 20px !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market p {
+    max-width: 205px !important;
+    font-size: 10px !important;
+  }
+
+  .commodities-market-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn {
+    min-width: 145px !important;
+    height: 36px !important;
+
+    font-size: 9px !important;
+  }
+}
+/* =========================================================
+   PARTNERS / CONTACT / ABOUT HERO
+   SAME DESKTOP BULL IMAGE ON ALL DEVICES
+
+   IMAGE:
+   /images/about/bull_right_side.png
+========================================================= */
+
+.pips-bull-responsive-hero {
+  width: 100% !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+
+  /* SHOW COMPLETE DESKTOP IMAGE */
+  background-size: 100% 100% !important;
+}
+
+
+/* =========================================================
+   DESKTOP - 1200PX+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-bull-responsive-hero {
+    /* MANUAL DESKTOP HEIGHT */
+    height: 550px !important;
+    min-height: 550px !important;
+
+    background-size: 100% 100% !important;
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP - 992PX TO 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .pips-bull-responsive-hero {
+    /* MANUAL LAPTOP HEIGHT */
+    height: 500px !important;
+    min-height: 500px !important;
+
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+
+  /* ABOUT + PARTNERS CONTENT */
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__about {
+    padding-left: 55px !important;
+    padding-top: 40px !important;
+  }
+
+  /* CONTACT CONTENT */
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__contact {
+    padding-left: 55px !important;
+    padding-top: 40px !important;
+  }
+
+  .pips-bull-responsive-hero h1 {
+    font-size: 40px !important;
+  }
+
+  .pips-bull-responsive-hero p {
+    max-width: 540px !important;
+    font-size: 14px !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET - 768PX TO 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-bull-responsive-hero {
+    /* MANUAL TABLET HEIGHT */
+    height: 440px !important;
+    min-height: 440px !important;
+
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__about,
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__contact {
+    padding-left: 35px !important;
+    padding-right: 25px !important;
+    padding-top: 0 !important;
+  }
+
+  .pips-bull-responsive-hero h1 {
+    font-size: 31px !important;
+    line-height: 1.15 !important;
+
+    margin-bottom: 10px !important;
+  }
+
+  .pips-bull-responsive-hero p {
+    max-width: 420px !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE - 767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-bull-responsive-hero {
+
+    /* =========================================
+       MANUAL MOBILE HEIGHT
+
+       300px = smaller
+       340px = recommended
+       380px = bigger
+    ========================================= */
+    --common-bull-mobile-height: 340px;
+
+    /* TEXT */
+    --common-bull-title-size: 21px;
+    --common-bull-desc-size: 11px;
+
+    height: var(--common-bull-mobile-height) !important;
+    min-height: var(--common-bull-mobile-height) !important;
+
+    /*
+      KEEP COMPLETE DESKTOP IMAGE.
+      DON'T USE COVER.
+    */
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+
+  /* CONTENT */
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__about,
+  .pips-bull-responsive-hero
+  .ht__bradcaump__container__contact {
+    width: 100% !important;
+
+    padding-left: 18px !important;
+    padding-right: 16px !important;
+    padding-top: 0 !important;
+  }
+
+
+  /* TITLE */
+  .pips-bull-responsive-hero h1 {
+    max-width: 230px !important;
+
+    margin-bottom: 8px !important;
+
+    font-size: var(--common-bull-title-size) !important;
+    line-height: 1.15 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* DESCRIPTION */
+  .pips-bull-responsive-hero p {
+    max-width: 225px !important;
+
+    margin-bottom: 14px !important;
+
+    font-size: var(--common-bull-desc-size) !important;
+    line-height: 1.45 !important;
+
+    text-align: left !important;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE - 420PX AND BELOW
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .pips-bull-responsive-hero {
+    /* MANUAL SMALL MOBILE HEIGHT */
+    --common-bull-mobile-height: 320px;
+
+    --common-bull-title-size: 20px;
+    --common-bull-desc-size: 10px;
+
+    background-size: 100% 100% !important;
+  }
+
+}
+/* =========================================================
+   SAME DESKTOP BULL IMAGE ON ALL DEVICES
+
+   Used for:
+   Forex
+   MetaTrader 5
+   Deposits & Withdrawals
+   Types of Accounts
+
+   IMAGE:
+   /images/about/bull_right_side.png
+========================================================= */
+
+.pips-desktop-bull-all-devices {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+
+  /*
+    IMPORTANT:
+    Keeps the COMPLETE desktop image visible.
+
+    Do not use "cover" here because mobile will crop the bull.
+  */
+  background-size: 100% 100% !important;
+}
+
+
+/* DESKTOP */
+@media (min-width: 1200px) {
+  .pips-desktop-bull-all-devices {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* LAPTOP */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pips-desktop-bull-all-devices {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991px) {
+  .pips-desktop-bull-all-devices {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .pips-desktop-bull-all-devices {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+}
+/* =========================================================
+   BULL HERO IMAGE - MANUAL SIZE + POSITION CONTROLS
+========================================================= */
+
+.pips-desktop-bull-all-devices {
+
+  /* =========================================
+     MANUAL CONTROLS
+  ========================================= */
+
+  /* COMPLETE BANNER HEIGHT */
+  --bull-hero-height: 500px;
+
+  /* BACKGROUND IMAGE HEIGHT */
+  --bull-image-height: 500px;
+
+  /*
+    IMAGE LEFT / RIGHT
+
+    -100px = move LEFT
+     -50px = move LEFT little
+       0px = center
+      50px = move RIGHT
+     100px = move RIGHT more
+  */
+  --bull-image-x: -45px;
+
+  /*
+    IMAGE UP / DOWN
+
+    -100px = move UP
+     -50px = move UP little
+       0px = center
+      50px = move DOWN
+     100px = move DOWN more
+  */
+  --bull-image-y: 0px;
+
+
+  height: var(--bull-hero-height) !important;
+  min-height: var(--bull-hero-height) !important;
+
+  background-repeat: no-repeat !important;
+
+  /* IMAGE HEIGHT - WIDTH CHANGES AUTOMATICALLY */
+  background-size:
+    auto
+    var(--bull-image-height) !important;
+
+  /* MANUAL IMAGE POSITION */
+  background-position:
+    calc(50% + var(--bull-image-x))
+    calc(50% + var(--bull-image-y)) !important;
+}
+/* =========================================================
+   BULL IMAGE
+   MANUAL SIZE + POSITION
+   EACH DEVICE SEPARATELY
+
+   X:
+   - value = LEFT
+   + value = RIGHT
+
+   Y:
+   - value = UP
+   + value = DOWN
+========================================================= */
+
+
+/* =========================================================
+   1. DESKTOP
+   1200PX AND ABOVE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-desktop-bull-all-devices {
+
+    /* COMPLETE BANNER HEIGHT */
+    --bull-hero-height: 550px;
+
+    /* BULL IMAGE HEIGHT */
+    --bull-image-height: 550px;
+
+    /* LEFT / RIGHT
+       -50px = LEFT
+        0px  = CENTER
+        50px = RIGHT
+    */
+    --bull-image-x: 0px;
+
+    /* UP / DOWN
+       -50px = UP
+        0px  = CENTER
+        50px = DOWN
+    */
+    --bull-image-y: 0px;
+
+
+    height: var(--bull-hero-height) !important;
+    min-height: var(--bull-hero-height) !important;
+
+    background-repeat: no-repeat !important;
+
+    /* CHANGE IMAGE HEIGHT */
+    background-size:
+      auto
+      var(--bull-image-height) !important;
+
+    /* MOVE IMAGE */
+    background-position:
+      calc(50% + var(--bull-image-x))
+      calc(50% + var(--bull-image-y)) !important;
+  }
+
+}
+
+
+/* =========================================================
+   2. LAPTOP
+   992PX - 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .pips-desktop-bull-all-devices {
+
+    /* BANNER HEIGHT */
+    --bull-hero-height: 480px;
+
+    /* IMAGE HEIGHT */
+    --bull-image-height: 480px;
+
+    /* LEFT / RIGHT */
+    --bull-image-x: 0px;
+
+    /* UP / DOWN */
+    --bull-image-y: 0px;
+
+
+    height: var(--bull-hero-height) !important;
+    min-height: var(--bull-hero-height) !important;
+
+    background-repeat: no-repeat !important;
+
+    background-size:
+      auto
+      var(--bull-image-height) !important;
+
+    background-position:
+      calc(50% + var(--bull-image-x))
+      calc(50% + var(--bull-image-y)) !important;
+  }
+
+}
+
+
+/* =========================================================
+   3. TABLET
+   768PX - 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-desktop-bull-all-devices {
+
+    /* BANNER HEIGHT */
+    --bull-hero-height: 480px;
+
+    /* IMAGE HEIGHT */
+    --bull-image-height: 420px;
+
+    /* LEFT / RIGHT */
+    --bull-image-x: 0px;
+
+    /* UP / DOWN */
+    --bull-image-y: 70px;
+
+
+    height: var(--bull-hero-height) !important;
+    min-height: var(--bull-hero-height) !important;
+
+    background-repeat: no-repeat !important;
+
+    background-size:
+      auto
+      var(--bull-image-height) !important;
+
+    background-position:
+      calc(50% + var(--bull-image-x))
+      calc(50% + var(--bull-image-y)) !important;
+  }
+
+}
+
+
+/* =========================================================
+   4. MOBILE
+   767PX AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-desktop-bull-all-devices {
+
+    /* BANNER HEIGHT */
+    --bull-hero-height: 340px;
+
+    /* IMAGE HEIGHT */
+    --bull-image-height: 320px;
+
+    /* LEFT / RIGHT */
+    --bull-image-x: 20px;
+
+    /* UP / DOWN */
+    --bull-image-y: 0px;
+
+
+    height: var(--bull-hero-height) !important;
+    min-height: var(--bull-hero-height) !important;
+
+    background-repeat: no-repeat !important;
+
+    background-size:
+      auto
+      var(--bull-image-height) !important;
+
+    background-position:
+      calc(50% + var(--bull-image-x))
+      calc(50% + var(--bull-image-y)) !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   TABLET ONLY - HIDE LEFT IMAGE
+   768PX - 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* HIDE account-left-bg.png AREA */
+  .pips-account-conditions-visual {
+    display: none !important;
+  }
+
+  /* MAKE TRADING CONDITIONS CARD FULL WIDTH */
+  .pips-account-conditions-container {
+    grid-template-columns: 1fr !important;
+  }
+
+}

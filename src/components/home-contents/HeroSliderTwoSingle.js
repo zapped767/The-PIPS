@@ -2009,6 +2009,140 @@ const HeroSliderTwoSingle = ({ data }) => {
             display: block !important;
           }
         }
+          /* =========================================================
+   DESKTOP ONLY - SLIDE 3
+   TEXT LEFT SIDE + WHITE
+
+   ONLY 1200PX AND ABOVE
+   TABLET / LAPTOP / MOBILE UNCHANGED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     WHOLE SLIDE 3 TEXT POSITION
+  ===================================================== */
+
+  .hero-slide-content.slide-3 {
+    position: relative !important;
+
+    /*
+      LEFT / RIGHT
+
+      -450px = more LEFT
+      -350px = recommended
+      -250px = little LEFT
+         0px = center
+    */
+    margin-left: 700px !important;
+
+    /*
+      UP / DOWN
+
+      -100px = UP
+       -60px = recommended
+       -20px = DOWN
+    */
+    top: -140px !important;
+
+    width: 620px !important;
+    max-width: 620px !important;
+
+    text-align: left !important;
+  }
+
+
+  /* =====================================================
+     H1 - WHITE
+  ===================================================== */
+
+  .hero-slide-content.slide-3 h1,
+  .hero-slide-content.slide-3 h1 span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    font-size: 58px !important;
+    line-height: 1.05 !important;
+    font-weight: 700 !important;
+
+    margin-bottom: 18px !important;
+
+    text-align: left !important;
+
+    text-shadow:
+      0 3px 15px rgba(0, 0, 0, 0.35) !important;
+  }
+
+
+  /* KEEP START SMALL / DREAM BIG TWO LINES */
+  .hero-slide-content.slide-3 .slide-3-line {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     PARAGRAPH - WHITE
+  ===================================================== */
+
+  .hero-slide-content.slide-3 p,
+  .hero-slide-content.slide-3 p span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+
+    width: 500px !important;
+    max-width: 500px !important;
+
+    margin: 0 !important;
+
+    text-align: left !important;
+
+    text-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.35) !important;
+  }
+}
+  /* =========================================================
+   DESKTOP ONLY - SLIDE 3 REGISTER BUTTON
+   MOVE TO LEFT
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .register-slide-3 {
+    position: relative !important;
+
+    /*
+      LEFT / RIGHT
+
+      -450px = more LEFT
+      -350px = recommended
+      -250px = little LEFT
+         0px = center
+    */
+    left: 950px !important;
+
+    /*
+      UP / DOWN
+
+      -80px = UP
+      -40px = recommended
+        0px = DOWN
+    */
+    top: -80px !important;
+
+    width: 100% !important;
+
+    text-align: left !important;
+  }
+
+
+  .register-slide-3 .slide__btn {
+    margin-left: 0 !important;
+  }
+}
       `}</style>
 
 

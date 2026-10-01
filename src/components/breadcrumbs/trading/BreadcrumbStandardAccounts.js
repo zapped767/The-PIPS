@@ -1,28 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
 const BreadcrumbStandardAccounts = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const desktopImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side.png";
-  const mobileImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side_mobile.jpg";
+    process.env.PUBLIC_URL + "/images/home/hero-slide-23.png";
 
   return (
     <div
-      className="ht__bradcaump__area_market"
+      className="ht__bradcaump__area_market pips-desktop-bull-all-devices standard-accounts-hero"
       style={{
-        background: `rgba(0,0,0,0) url(${
-          isMobile ? mobileImage : desktopImage
-        }) no-repeat scroll center center / ${isMobile ? "cover" : "105% 100%"}`,
+        backgroundImage: `url(${desktopImage})`,
       }}
     >
       <div className="ht__bradcaump__container_market">
@@ -30,7 +17,11 @@ const BreadcrumbStandardAccounts = () => {
           <div className="row">
             <div>
               <h1>Types of Accounts</h1>
-              <p>Simple. Powerful. Built for every Trader.</p>
+
+              <p>
+                Simple. Powerful. Built for every Trader.
+              </p>
+
               <div>
                 <a
                   className="slide__btn dg__btn"
@@ -45,6 +36,28 @@ const BreadcrumbStandardAccounts = () => {
           </div>
         </div>
       </div>
+
+      {/* AUTO MOVING THE PIPS */}
+      <div className="pips-hero-marquee" aria-hidden="true">
+        <div className="pips-hero-marquee-track">
+
+          <div className="pips-hero-marquee-group">
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+          </div>
+
+          <div className="pips-hero-marquee-group">
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+            <span>THE PIPS</span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   );
 };

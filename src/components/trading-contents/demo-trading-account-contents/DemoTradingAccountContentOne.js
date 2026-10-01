@@ -1,7 +1,7 @@
 const DemoTradingAccountContentOne = () => {
   const accountTypes = [
     {
-      title: "Risk-free practice",
+      title: "Risk-free Practice",
       description:
         "Learn to trade without financial risk, refining strategies and learning from mistakes.",
       image:
@@ -10,7 +10,7 @@ const DemoTradingAccountContentOne = () => {
     },
 
     {
-      title: "Skill development",
+      title: "Skill Development",
       description:
         "Hone trading abilities, from market analysis to decision-making.",
       image:
@@ -18,16 +18,16 @@ const DemoTradingAccountContentOne = () => {
         "/images/trading/demo_trading_account/demo_acc_2.png",
     },
     {
-      title: "Platform orientation",
+      title: "Platform Orientation",
       description: "Get comfortable with trading platform tools and features.",
       image:
         process.env.PUBLIC_URL +
         "/images/trading/demo_trading_account/demo_acc_3.png",
     },
     {
-      title: "Strategy testing",
+      title: "Strategy Testing",
       description:
-        "Experiment with various strategies in real  market conditions.",
+        "Experiment with various strategies in real market conditions.",
       image:
         process.env.PUBLIC_URL +
         "/images/trading/demo_trading_account/demo_acc_4.png",
@@ -37,11 +37,9 @@ const DemoTradingAccountContentOne = () => {
   return (
     <div className="quality-section-trading">
       <div className="quality-header-trading">
-        <h1>Benefits of using an Pips demo trading account</h1>
+        <h1>Benefits Of Using An Pips Demo Trading Account</h1>
         <p>
-          Our demo trading account can be your “secret weapon” to test out
-          strategies and hone your skills with zero risk. Here’s how you’ll
-          benefit
+         Our Demo Trading Account Can Be Your “Secret Weapon” To Test Out Strategies And Hone Your Skills With Zero Risk. Here’s How You’ll Benefit
         </p>
       </div>
 

@@ -1,37 +1,23 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const BreadcrumbAboutUs = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const desktopImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side.jpg";
-  const mobileImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side_mobile.jpg";
+    process.env.PUBLIC_URL + "/images/about/bull_right_side.png";
 
   return (
     <div
-      className="ht__bradcaump__area__about about-page-hero"
-style={{
-  height: isMobile ? "430px" : "700px",
-  minHeight: isMobile ? "430px" : "650px",
-
-  background: `rgba(0,0,0,0) url(${
-    isMobile ? mobileImage : desktopImage
-  }) no-repeat scroll center center / ${isMobile ? "cover" : "105% 100%"}`,
-}}
+      className="ht__bradcaump__area__about about-page-hero pips-bull-responsive-hero"
+      style={{
+        backgroundImage: `url(${desktopImage})`,
+      }}
     >
       <div className="ht__bradcaump__container__about">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <h1>We are the Pips</h1>
+
               <p>
                 Making financial markets simple and accessible for everyone,
                 from beginners to pros.

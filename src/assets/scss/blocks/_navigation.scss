@@ -917,3 +917,123 @@
   border-color: #f7a901 !important;
   color: #ffffff !important;
 }
+/* =========================================================
+   PIPS NAVBAR BACKGROUND BEHAVIOUR
+   HOME + TYPES OF ACCOUNTS
+========================================================= */
+
+
+/* =========================================================
+   SMOOTH CHANGE
+========================================================= */
+
+.header--absolute {
+  transition:
+    background-color 0.35s ease,
+    backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+
+
+/* =========================================================
+   HOME PAGE
+   NOT SCROLLED
+   WHITE GLASS / BLUR
+========================================================= */
+
+body:has(.dg__slider__area.slider--2)
+.header--absolute:not(.stick) {
+
+  background:
+    rgba(255, 255, 255, 0.58) !important;
+
+  backdrop-filter:
+    blur(18px)
+    saturate(135%) !important;
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(135%) !important;
+
+  box-shadow:
+    0 1px 0
+    rgba(255, 255, 255, 0.30) !important;
+}
+
+
+/* =========================================================
+   HOME PAGE
+   AFTER SCROLL
+========================================================= */
+
+body:has(.dg__slider__area.slider--2)
+.header--absolute.stick {
+
+  background:
+    #ffffff !important;
+
+  backdrop-filter:
+    none !important;
+
+  -webkit-backdrop-filter:
+    none !important;
+
+  box-shadow:
+    0 6px 24px
+    rgba(1, 45, 101, 0.08) !important;
+}
+
+
+/* =========================================================
+   TYPES OF ACCOUNTS PAGE
+   NOT SCROLLED
+   COMPLETELY TRANSPARENT
+========================================================= */
+
+body:has(.standard-accounts-hero)
+.header--absolute:not(.stick) {
+
+  background:
+    transparent !important;
+
+  background-color:
+    transparent !important;
+
+  backdrop-filter:
+    none !important;
+
+  -webkit-backdrop-filter:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  border-bottom:
+    none !important;
+}
+
+
+/* =========================================================
+   TYPES OF ACCOUNTS PAGE
+   AFTER SCROLL
+========================================================= */
+
+body:has(.standard-accounts-hero)
+.header--absolute.stick {
+
+  background:
+    #ffffff !important;
+
+  background-color:
+    #ffffff !important;
+
+  backdrop-filter:
+    none !important;
+
+  -webkit-backdrop-filter:
+    none !important;
+
+  box-shadow:
+    0 6px 24px
+    rgba(1, 45, 101, 0.08) !important;
+}

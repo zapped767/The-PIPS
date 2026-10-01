@@ -468,23 +468,22 @@ const HowWorks = () => {
   className="hw__bento-card hw__card-3"
 >
 
-  {/* CARD 3 TOP-RIGHT IMAGE */}
-  <img
-    src={
-      process.env.PUBLIC_URL +
-      "/images/home/homeworks/card-3-corner.png"
-    }
-    alt=""
-    aria-hidden="true"
-    className="hw__card-3-corner-image"
-  />
+  {/* CARD 3 PHONE IMAGE */}
+<img
+  src={
+    process.env.PUBLIC_URL +
+    "/images/home/homeworks/card-3-phone.png"
+  }
+  alt="PIPS mobile support"
+  className="hw__card-3-corner-image"
+/>
 
 
   {/* CARD 3 CONTENT */}
   <div className="hw__card-content">
 
     <h3>
-      24/7 Support
+      24/7
     </h3>
 
     <p>

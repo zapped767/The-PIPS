@@ -1526,34 +1526,74 @@
   }
 }
 /* =========================================================
-   TYPES OF ACCOUNTS HERO BULL IMAGE
-   DESKTOP ONLY
-
-   Increase / reduce height manually
+   TYPES OF ACCOUNTS
+   hero-slide-23.png
+   DESKTOP ONLY - MANUAL CONTROLS
 ========================================================= */
 
 @media (min-width: 1200px) {
 
-  .types-account-hero {
-    /* MANUAL HEIGHT
-       520px = current
-       600px = little bigger
-       650px = bigger
-       700px = very big
-    */
-    height: 650px !important;
+  .standard-accounts-hero {
 
-    min-height: 650px !important;
+    /* =====================================
+       WHOLE SECTION HEIGHT
+       smaller = shorter hero section
+    ===================================== */
+    --hero23-banner-height: 600px;
 
-    background-size: 105% 100% !important;
-  }
 
-  .types-account-hero .ht__bradcaump__container_market {
-    height: 100% !important;
+    /* =====================================
+       IMAGE WIDTH
 
-    display: flex !important;
+       95%  = narrower
+       100% = normal
+       105% = little wider
+       110% = more wider
+    ===================================== */
+    --hero23-image-width: 100%;
 
-    align-items: center !important;
+
+    /* =====================================
+       IMAGE HEIGHT
+
+       90%  = much shorter
+       95%  = shorter
+       100% = normal
+       105% = taller
+    ===================================== */
+    --hero23-image-height: 96%;
+
+
+    /* =====================================
+       LEFT / RIGHT
+
+       negative = LEFT
+       positive = RIGHT
+    ===================================== */
+    --hero23-image-x: 0px;
+
+
+    /* =====================================
+       UP / DOWN
+
+       negative = UP
+       positive = DOWN
+    ===================================== */
+    --hero23-image-y: 0px;
+
+
+    height: var(--hero23-banner-height) !important;
+    min-height: var(--hero23-banner-height) !important;
+
+    background-size:
+      var(--hero23-image-width)
+      var(--hero23-image-height) !important;
+
+    background-position:
+      calc(50% + var(--hero23-image-x))
+      calc(50% + var(--hero23-image-y)) !important;
+
+    background-repeat: no-repeat !important;
   }
 }
 /* =========================================================
@@ -2570,4 +2610,5033 @@
   border-radius: 0 0 45px 45px !important;
 
   overflow: hidden !important;
+}
+/* =========================================================
+   TRADING CONDITIONS
+   MOBILE ONLY - MANUAL SIZE CONTROLS
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-account-conditions-section {
+
+    /* ==================================
+       MANUAL CONTROLS
+    ================================== */
+
+    /* LEFT IMAGE HEIGHT */
+    --account-mobile-image-height: 330px;
+
+    /* RIGHT CARD TEXT */
+    --account-mobile-title-size: 23px;
+    --account-mobile-desc-size: 12px;
+
+    /* DETAIL BOX */
+    --account-mobile-label-size: 10px;
+    --account-mobile-value-size: 13px;
+  }
+
+
+  /* ===============================
+     LEFT IMAGE
+  =============================== */
+
+  .pips-account-conditions-visual {
+    height: var(--account-mobile-image-height) !important;
+    min-height: var(--account-mobile-image-height) !important;
+    max-height: var(--account-mobile-image-height) !important;
+  }
+
+  .pips-account-left-full-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    /* MANUAL IMAGE POSITION */
+    object-position: center center !important;
+  }
+
+
+  /* ===============================
+     TRADING CONDITIONS CARD
+  =============================== */
+
+  .pips-account-conditions-card {
+    padding: 22px !important;
+  }
+
+
+  .pips-account-card-header {
+    margin-bottom: 22px !important;
+  }
+
+
+  /* BADGE */
+  .pips-account-card-badge {
+    font-size: 10px !important;
+
+    padding: 7px 12px !important;
+
+    margin-bottom: 14px !important;
+  }
+
+
+  /* TITLE */
+  .pips-account-card-header h2 {
+    font-size: var(--account-mobile-title-size) !important;
+
+    line-height: 1.15 !important;
+
+    margin-bottom: 8px !important;
+  }
+
+
+  /* DESCRIPTION */
+  .pips-account-card-header p {
+    font-size: var(--account-mobile-desc-size) !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  /* DETAIL BOX */
+  .pips-account-detail-item {
+    padding: 14px !important;
+  }
+
+
+  /* LABEL */
+  .pips-account-detail-item span {
+    font-size: var(--account-mobile-label-size) !important;
+
+    margin-bottom: 6px !important;
+  }
+
+
+  /* VALUE */
+  .pips-account-detail-item strong {
+    font-size: var(--account-mobile-value-size) !important;
+
+    line-height: 1.35 !important;
+  }
+
+
+  /* SPACE BETWEEN BOXES */
+  .pips-account-details-grid {
+    gap: 10px !important;
+  }
+}
+/* =========================================================
+   TRADING CONDITIONS
+   TABLET ONLY - REMOVE account-left-bg IMAGE COMPLETELY
+
+   768px - 1024px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* HIDE COMPLETE LEFT IMAGE WRAPPER */
+  .pips-account-conditions-section
+  .pips-account-conditions-visual {
+    display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: none !important;
+    background-image: none !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* HIDE IMAGE ITSELF */
+  .pips-account-conditions-section
+  .pips-account-left-full-image {
+    display: none !important;
+  }
+
+
+  /* EXTRA SAFETY - HIDE BY FILE NAME */
+  .pips-account-conditions-section
+  img[src*="account-left-bg"] {
+    display: none !important;
+  }
+
+
+  /* REMOVE LEFT COLUMN */
+  .pips-account-conditions-section
+  .pips-account-conditions-container {
+    grid-template-columns: 1fr !important;
+  }
+
+
+  /* TRADING CONDITIONS CARD FULL WIDTH */
+  .pips-account-conditions-section
+  .pips-account-conditions-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+/* =========================================================
+   ACCOUNT CARDS
+   TABLET ONLY - HORIZONTAL SIDE SCROLL
+   768PX - 1024PX
+
+   DESKTOP  = UNCHANGED
+   LAPTOP   = UNCHANGED
+   MOBILE   = UNCHANGED
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* =========================================
+     MANUAL TABLET CONTROLS
+  ========================================= */
+
+  .account-plans-section {
+    --tab-account-card-width: 420px; /* card width */
+    --tab-account-card-gap: 22px;    /* gap between cards */
+    --tab-account-side-space: 25px;  /* left/right spacing */
+  }
+
+
+  /* =========================================
+     OUTER CONTAINER
+  ========================================= */
+
+  .account-plans-container {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =========================================
+     HORIZONTAL SCROLL ROW
+  ========================================= */
+
+  .account-plans-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    gap: var(--tab-account-card-gap) !important;
+
+    width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    padding-left: var(--tab-account-side-space) !important;
+    padding-right: var(--tab-account-side-space) !important;
+    padding-bottom: 15px !important;
+
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+
+    justify-content: flex-start !important;
+  }
+
+
+  /* =========================================
+     EACH CARD
+  ========================================= */
+
+  .account-plan-card {
+    flex: 0 0 var(--tab-account-card-width) !important;
+
+    width: var(--tab-account-card-width) !important;
+    min-width: var(--tab-account-card-width) !important;
+    max-width: var(--tab-account-card-width) !important;
+
+    scroll-snap-align: start;
+
+    /* REMOVE DESKTOP GRID POSITION */
+    grid-column: auto !important;
+
+    /* REMOVE CARD 4 / 5 DESKTOP MOVEMENT */
+    transform: none !important;
+  }
+
+
+  /* CARD 4 */
+  .account-plan-card--4 {
+    grid-column: auto !important;
+    transform: none !important;
+  }
+
+
+  /* CARD 5 */
+  .account-plan-card--5 {
+    grid-column: auto !important;
+    transform: none !important;
+  }
+
+
+  /* KEEP HOVER FROM MOVING CARDS SIDEWAYS */
+  .account-plan-card--4:hover,
+  .account-plan-card--5:hover {
+    transform: translateY(-8px) !important;
+  }
+
+}
+/* =========================================================
+   DEMO TRADING ACCOUNT - BENEFITS SECTION
+   DESKTOP ONLY
+   1200PX AND ABOVE
+
+   TABLET / MOBILE / LAPTOP BELOW 1200PX = UNCHANGED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     COMPLETE SECTION
+  ===================================================== */
+
+  .quality-section-trading {
+    /* MANUAL TOP / BOTTOM SPACE */
+    padding: 65px 30px 85px !important;
+
+    min-height: auto !important;
+
+    background: #ffffff !important;
+  }
+
+
+  /* =====================================================
+     HEADER AREA
+  ===================================================== */
+
+  .quality-section-trading
+  .quality-header-trading {
+    /* INCREASE THIS IF YOU NEED MORE WIDTH */
+    max-width: 1700px !important;
+    width: 100% !important;
+
+    margin: 0 auto 50px !important;
+
+    text-align: center !important;
+  }
+
+
+  /* =====================================================
+     MAIN HEADING
+     ONE LINE
+  ===================================================== */
+
+  .quality-section-trading
+  .quality-header-trading h1 {
+    /* MANUAL HEADING SIZE */
+    font-size: 56px !important;
+
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+
+    color: #111111 !important;
+
+    margin: 0 0 18px !important;
+
+    /* KEEP IN ONE LINE */
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     DESCRIPTION
+     ONE LINE
+  ===================================================== */
+
+  .quality-section-trading
+  .quality-header-trading p {
+    /* MANUAL DESCRIPTION SIZE */
+    font-size: 17px !important;
+
+    line-height: 1.5 !important;
+
+    color: #666666 !important;
+
+    margin: 0 auto !important;
+
+    max-width: none !important;
+    width: 100% !important;
+
+    /* KEEP IN ONE LINE */
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     4 CARDS - ONE ROW
+  ===================================================== */
+
+  .quality-section-trading
+  .image-cards-container {
+    display: grid !important;
+
+    /* 4 CARDS IN ONE ROW */
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    /* MANUAL GAP */
+    gap: 20px !important;
+
+    width: 100% !important;
+
+    /* MANUAL COMPLETE CARDS WIDTH */
+    max-width: 1680px !important;
+
+    margin: 0 auto !important;
+
+    flex-wrap: nowrap !important;
+  }
+
+
+  /* =====================================================
+     EACH CARD
+  ===================================================== */
+
+  .quality-section-trading
+  .image-trading-card {
+    width: 100% !important;
+    max-width: none !important;
+
+    /* MANUAL CARD HEIGHT */
+    height: 430px !important;
+
+    /* MANUAL INNER SPACE */
+    padding: 26px !important;
+
+    box-sizing: border-box !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    border-radius: 10px !important;
+  }
+
+
+  /* =====================================================
+     CARD TITLE
+  ===================================================== */
+
+  .quality-section-trading
+  .image-trading-card
+  .card-title {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* =====================================================
+     CARD DESCRIPTION
+  ===================================================== */
+
+  .quality-section-trading
+  .image-trading-card
+  .card-description {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+}
+/* =========================================================
+   DEMO BENEFITS
+   FIRST BLUE IMAGE - ORIGINAL COLOR
+   WHITE TEXT
+========================================================= */
+
+.quality-section-trading
+.image-cards-container
+.image-trading-card:first-child {
+
+  /* REMOVE FADE / OVERLAY */
+  background-blend-mode: normal !important;
+  background-color: transparent !important;
+
+  /* KEEP ORIGINAL IMAGE COLOR */
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+/* TITLE WHITE */
+.quality-section-trading
+.image-cards-container
+.image-trading-card:first-child
+.card-title {
+  color: #ffffff !important;
+}
+
+
+/* DESCRIPTION WHITE */
+.quality-section-trading
+.image-cards-container
+.image-trading-card:first-child
+.card-description {
+  color: #ffffff !important;
+}
+/* =========================================================
+   TYPES OF ACCOUNTS
+   3D COVERFLOW CARD SLIDER
+
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .account-coverflow-wrapper {
+
+    /* =====================================
+       MANUAL CONTROLS
+    ===================================== */
+
+    /* WHOLE SLIDER WIDTH */
+    --coverflow-width: 1500px;
+
+    /* CARD WIDTH */
+    --coverflow-card-width: 390px;
+
+    /* CARD HEIGHT */
+    --coverflow-card-height: 480px;
+
+    /* TOP / BOTTOM SPACE */
+    --coverflow-padding-top: 45px;
+    --coverflow-padding-bottom: 70px;
+
+
+    width: 100% !important;
+
+    max-width: var(--coverflow-width) !important;
+
+    margin: 0 auto !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* SWIPER OUTER AREA */
+  .account-coverflow-wrapper
+  .swiper-container {
+
+    width: 100% !important;
+
+    padding-top:
+      var(--coverflow-padding-top) !important;
+
+    padding-bottom:
+      var(--coverflow-padding-bottom) !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* EACH SLIDE */
+  .account-coverflow-wrapper
+  .swiper-slide {
+
+    width:
+      var(--coverflow-card-width) !important;
+
+    height: auto !important;
+
+    display: flex !important;
+
+    align-items: stretch !important;
+
+    justify-content: center !important;
+
+    transition:
+      opacity 0.8s ease,
+      filter 0.8s ease !important;
+  }
+
+
+  /* SIDE CARDS */
+  .account-coverflow-wrapper
+  .swiper-slide {
+
+    opacity: 0.72;
+
+    filter:
+      brightness(0.86);
+  }
+
+
+  /* CENTER CARD */
+  .account-coverflow-wrapper
+  .swiper-slide-active {
+
+    opacity: 1 !important;
+
+    filter:
+      brightness(1) !important;
+
+    z-index: 20 !important;
+  }
+
+
+  /* CARD */
+  .account-coverflow-wrapper
+  .account-plan-card {
+
+    width: 100% !important;
+
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    min-height:
+      var(--coverflow-card-height) !important;
+
+    height:
+      var(--coverflow-card-height) !important;
+
+    grid-column: auto !important;
+
+    transform: none !important;
+
+    box-shadow:
+      0 18px 45px
+      rgba(0, 0, 0, 0.16) !important;
+  }
+
+
+  /* CENTER CARD PREMIUM SHADOW */
+  .account-coverflow-wrapper
+  .swiper-slide-active
+  .account-plan-card {
+
+    box-shadow:
+      0 35px 80px
+      rgba(0, 0, 0, 0.28) !important;
+  }
+
+
+  /* REMOVE OLD BLACK / VIP POSITION */
+  .account-coverflow-wrapper
+  .account-plan-card--4,
+
+  .account-coverflow-wrapper
+  .account-plan-card--5 {
+
+    grid-column: auto !important;
+
+    transform: none !important;
+  }
+
+
+  /* CARD HOVER */
+  .account-coverflow-wrapper
+  .account-plan-card:hover {
+
+    transform:
+      translateY(-8px) !important;
+  }
+
+
+  /* 3D SHADOW GENERATED BY SWIPER */
+  .account-coverflow-wrapper
+  .swiper-slide-shadow-left,
+
+  .account-coverflow-wrapper
+  .swiper-slide-shadow-right {
+
+    background:
+      rgba(1, 45, 101, 0.18) !important;
+  }
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO
+   DESKTOP ONLY
+   TEXT RIGHT SIDE + BLUE BUTTON
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* MOVE COMPLETE CONTENT TO RIGHT SIDE */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market {
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+
+    /* MANUAL RIGHT SIDE SPACE */
+    padding-right: 120px !important;
+
+    padding-left: 0 !important;
+  }
+
+
+  /* INNER CONTAINER */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+
+  /* ROW */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .row {
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: flex-end !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* CONTENT BLOCK */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .row > div {
+    width: 520px !important;
+
+    text-align: left !important;
+  }
+
+
+  /* H1 */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market h1 {
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* PARAGRAPH */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market p {
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* START NOW BUTTON */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn {
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border-color: #012d65 !important;
+  }
+
+
+  /* REMOVE OLD BUTTON OVERLAY IF ANY */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn::before,
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn::after {
+    display: none !important;
+  }
+
+
+  /* HOVER */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market
+  .slide__btn.dg__btn:hover {
+    background: #f7a901 !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    border-color: #f7a901 !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   REMOVE LEFT IMAGE + REMOVE BLUE OUTER BACKGROUND
+   KEEP ONLY WHITE CONTENT CARD
+========================================================= */
+
+.pips-account-conditions-section {
+  background: #ffffff !important;
+
+  /* MANUAL TOP / BOTTOM SPACE */
+  padding: 70px 20px 80px !important;
+}
+
+
+/* =========================================================
+   OUTER CONTAINER
+========================================================= */
+
+.pips-account-conditions-container {
+
+  /* MANUAL WHITE CARD WIDTH */
+  max-width: 850px !important;
+
+  width: 100% !important;
+
+  min-height: auto !important;
+
+  margin: 0 auto !important;
+
+  /* ONLY ONE COLUMN */
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+
+  /* REMOVE BLUE BACKGROUND */
+  background: transparent !important;
+  background-image: none !important;
+
+  /* REMOVE OLD BLUE CONTAINER SPACE */
+  padding: 0 !important;
+  gap: 0 !important;
+
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   REMOVE LEFT IMAGE COMPLETELY
+========================================================= */
+
+.pips-account-conditions-visual {
+  display: none !important;
+}
+
+.pips-account-left-full-image {
+  display: none !important;
+}
+
+.pips-account-conditions-image {
+  display: none !important;
+}
+
+.pips-account-visual-glow {
+  display: none !important;
+}
+
+
+/* =========================================================
+   WHITE TRADING CONDITIONS CARD
+========================================================= */
+
+.pips-account-conditions-card {
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  background: #ffffff !important;
+
+  /* MANUAL INNER SPACE */
+  padding: 45px !important;
+
+  /* KEEP PREMIUM WHITE CONTAINER */
+  border-radius: 24px !important;
+
+  box-shadow:
+    0 18px 55px
+    rgba(1, 45, 101, 0.12) !important;
+}
+/* =========================================================
+   TRADING CONDITIONS
+   DESKTOP ONLY - MANUAL WIDTH + LEFT/RIGHT POSITION
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-account-conditions-container {
+
+    /* =====================================
+       MANUAL WIDTH
+       700px = smaller
+       850px = medium
+       950px = bigger
+       1100px = very wide
+    ===================================== */
+    --conditions-width: 600px;
+
+
+    /* =====================================
+       MANUAL LEFT / RIGHT MOVE
+
+       negative = LEFT
+       positive = RIGHT
+
+       -200px = more left
+       -100px = little left
+          0px = center
+        100px = right
+    ===================================== */
+    --conditions-move-x: -400px;
+
+
+    width: var(--conditions-width) !important;
+    max-width: var(--conditions-width) !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    transform:
+      translateX(var(--conditions-move-x)) !important;
+  }
+
+
+  /* WHITE CARD FILLS CONTAINER */
+  .pips-account-conditions-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   LEFT WHITE CARD + RIGHT GOLD COINS IMAGE
+   DESKTOP ONLY
+
+   RIGHT IMAGE HAS:
+   NO CONTAINER
+   NO BACKGROUND
+   NO BORDER
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-account-conditions-section {
+
+    background: #ffffff !important;
+
+    /* MANUAL SECTION SPACE */
+    padding: 70px 20px 90px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     COMPLETE LAYOUT
+  ===================================================== */
+
+  .pips-account-new-layout {
+
+    /* COMPLETE SECTION WIDTH */
+    --conditions-layout-width: 1350px;
+
+
+    /* LEFT WHITE CARD WIDTH */
+    --conditions-card-width: 820px;
+
+
+    /* =========================================
+       RIGHT IMAGE MANUAL CONTROLS
+    ========================================= */
+
+    /* IMAGE WIDTH */
+    --coins-image-width: 430px;
+
+
+    /* LEFT / RIGHT
+
+       negative = LEFT
+       positive = RIGHT
+
+       -100px = more left
+        -50px = little left
+          0px = normal
+         50px = right
+        100px = more right
+    */
+    --coins-image-x: 20px;
+
+
+    /* UP / DOWN
+
+       negative = UP
+       positive = DOWN
+
+       -100px = up
+        -50px = little up
+          0px = normal
+         50px = down
+        100px = more down
+    */
+    --coins-image-y: 0px;
+
+
+    /* SHADOW */
+    --coins-shadow-x: 0px;
+    --coins-shadow-y: 25px;
+    --coins-shadow-blur: 35px;
+    --coins-shadow-opacity: 0.28;
+
+
+    width: 100% !important;
+
+    max-width:
+      var(--conditions-layout-width) !important;
+
+    margin: 0 auto !important;
+
+
+    display: grid !important;
+
+    grid-template-columns:
+      var(--conditions-card-width)
+      1fr !important;
+
+    align-items: center !important;
+
+    gap: 45px !important;
+  }
+
+
+  /* =====================================================
+     LEFT WHITE CARD
+  ===================================================== */
+
+  .pips-account-left-card {
+
+    width: 100% !important;
+    max-width: none !important;
+
+    background: #ffffff !important;
+
+    padding: 45px !important;
+
+    border-radius: 24px !important;
+
+    box-shadow:
+      0 18px 55px
+      rgba(1, 45, 101, 0.12) !important;
+
+    transform: none !important;
+  }
+
+
+  /* =====================================================
+     RIGHT IMAGE AREA
+     TRANSPARENT - NO CONTAINER
+  ===================================================== */
+
+  .pips-conditions-coins-area {
+
+    width: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+
+    /* IMPORTANT */
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     RIGHT GOLD COINS IMAGE
+  ===================================================== */
+
+  .pips-conditions-coins-image {
+
+    width:
+      var(--coins-image-width) !important;
+
+    max-width: none !important;
+
+    height: auto !important;
+
+
+    /* MANUAL IMAGE MOVEMENT */
+    transform:
+      translate(
+        var(--coins-image-x),
+        var(--coins-image-y)
+      ) !important;
+
+
+    /* SHADOW AROUND TRANSPARENT PNG */
+    filter:
+      drop-shadow(
+        var(--coins-shadow-x)
+        var(--coins-shadow-y)
+        var(--coins-shadow-blur)
+        rgba(
+          0,
+          0,
+          0,
+          var(--coins-shadow-opacity)
+        )
+      ) !important;
+
+
+    background: transparent !important;
+
+    border: none !important;
+
+    object-fit: contain !important;
+
+    display: block !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   WHITE CARD LEFT + GOLD IMAGE RIGHT
+========================================================= */
+
+.pips-conditions-new-layout {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 70px;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   LEFT WHITE CARD
+========================================================= */
+
+.pips-conditions-new-layout
+.pips-account-conditions-card {
+
+  /* MANUAL CARD WIDTH */
+  width: 820px;
+  max-width: 820px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   RIGHT GOLD IMAGE
+   NO CONTAINER
+========================================================= */
+
+.pips-conditions-gold-image {
+
+  /* MANUAL IMAGE SIZE */
+  width: 430px;
+  height: auto;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  /* PREMIUM SHADOW */
+  filter:
+    drop-shadow(
+      0 28px 25px rgba(0, 0, 0, 0.20)
+    )
+    drop-shadow(
+      0 8px 12px rgba(247, 169, 1, 0.18)
+    );
+
+  /* MANUAL POSITION */
+  position: relative;
+
+  /*
+    LEFT / RIGHT
+
+    negative = LEFT
+    positive = RIGHT
+  */
+  left: 0px;
+
+  /*
+    UP / DOWN
+
+    negative = UP
+    positive = DOWN
+  */
+  top: 0px;
+}
+/* =========================================================
+   PIPS ACCOUNT PLANS
+   IMAGE 1 STYLE
+========================================================= */
+
+.pips-premium-plans-section {
+  width: 100%;
+
+  padding: 80px 25px 100px;
+
+  background: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+.pips-premium-plans-grid {
+
+  /* MANUAL COMPLETE WIDTH */
+  max-width: 1320px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 26px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.pips-premium-plan-card {
+  position: relative;
+
+  /* MANUAL CARD HEIGHT */
+  min-height: 390px;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #012d65 0%,
+      #031b3b 55%,
+      #035391 100%
+    );
+
+  box-shadow:
+    0 20px 55px
+    rgba(1, 45, 101, 0.16);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.pips-premium-plan-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 30px 70px
+    rgba(1, 45, 101, 0.24);
+}
+
+
+/* =========================================================
+   DIFFERENT PREMIUM BACKGROUNDS
+========================================================= */
+
+.pips-premium-plan-card--1 {
+  background:
+    linear-gradient(
+      135deg,
+      #071525,
+      #012d65
+    );
+}
+
+
+.pips-premium-plan-card--2 {
+  background:
+    linear-gradient(
+      135deg,
+      #012d65,
+      #035391
+    );
+}
+
+
+.pips-premium-plan-card--3 {
+  background:
+    linear-gradient(
+      135deg,
+      #035391,
+      #012d65
+    );
+}
+
+
+.pips-premium-plan-card--4 {
+  background:
+    linear-gradient(
+      135deg,
+      #071525,
+      #012d65 70%,
+      #035391
+    );
+}
+
+
+.pips-premium-plan-card--5 {
+  background:
+    linear-gradient(
+      135deg,
+      #012d65,
+      #071525
+    );
+}
+
+
+/* =========================================================
+   VIP ELITE - CENTER LAST CARD
+========================================================= */
+
+@media (min-width: 992px) {
+
+  .pips-premium-plan-card--5 {
+    grid-column: 1 / 3;
+
+    width: calc(50% - 13px);
+
+    justify-self: center;
+  }
+
+}
+
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
+.pips-plan-top {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.pips-plan-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+
+.pips-plan-account-name {
+  color: #ffffff;
+
+  font-size: 29px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MAIN 2 COLUMN CONTENT
+========================================================= */
+
+.pips-plan-main {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.pips-plan-left {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.pips-plan-badge {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #f7a901;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.pips-plan-left h3 {
+  margin: 0 0 13px;
+
+  color: #ffffff !important;
+
+  font-size: 23px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+
+.pips-plan-left p {
+  margin: 0 0 25px;
+
+  max-width: 290px;
+
+  color:
+    rgba(255, 255, 255, 0.75) !important;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.pips-plan-register {
+  margin-top: auto;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 125px;
+
+  height: 42px;
+
+  padding: 0 24px;
+
+  background: #ffffff;
+
+  color: #012d65 !important;
+
+  border-radius: 25px;
+
+  text-decoration: none !important;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.pips-plan-register:hover {
+  background: #f7a901;
+
+  color: #012d65 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT FEATURES BOX
+========================================================= */
+
+.pips-plan-features-box {
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+.pips-plan-features-title {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.pips-plan-feature {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.pips-plan-feature:last-child {
+  margin-bottom: 0;
+}
+
+
+.pips-plan-check {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  color: #012d65;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.pips-plan-decoration {
+  position: absolute;
+
+  width: 330px;
+  height: 220px;
+
+  left: -70px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(247, 169, 1, 0.22),
+      transparent 68%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-premium-plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  .pips-premium-plan-card--5 {
+    width: 100%;
+    grid-column: auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-premium-plans-section {
+    padding: 55px 15px 70px;
+  }
+
+  .pips-premium-plans-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .pips-premium-plan-card {
+    min-height: auto;
+
+    padding: 24px;
+
+    border-radius: 18px;
+  }
+
+  .pips-plan-main {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .pips-plan-account-name {
+    font-size: 23px;
+  }
+
+  .pips-plan-left h3 {
+    font-size: 21px;
+  }
+
+  .pips-plan-features-box {
+    padding: 16px;
+  }
+
+}
+/* =========================================================
+   THE PIPS
+   5 ACCOUNT CARDS
+   PINNED HORIZONTAL SCROLL
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     WHOLE SCROLL SECTION
+
+     IMPORTANT:
+     JS automatically controls its height.
+  ===================================================== */
+
+  .pips-scroll-accounts-section {
+
+  position: relative;
+
+  width: 100%;
+
+  /* IMPORTANT:
+     outer long scroll area = WHITE
+  */
+  background: #ffffff;
+}
+
+
+.pips-scroll-accounts-sticky {
+
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+
+
+  /* =====================================
+     MANUAL BLUE AREA HEIGHT
+
+     500px = smaller
+     540px = recommended
+     580px = bigger
+     620px = more
+  ===================================== */
+
+  height: 540px;
+
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  /* ONLY VISIBLE AREA BLUE */
+  background: #ffffff !important;
+}
+
+
+  /* =====================================================
+     VISIBLE WINDOW
+  ===================================================== */
+
+  .pips-scroll-accounts-viewport {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+
+  /* =====================================================
+     HORIZONTAL TRACK
+
+     ALL 5 CARDS IN ONE ROW
+  ===================================================== */
+
+  .pips-scroll-accounts-track {
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    align-items: stretch;
+
+    gap: 28px;
+
+    width: max-content;
+
+    will-change: transform;
+
+    transform:
+      translate3d(100vw, 0, 0);
+  }
+
+
+  /* =====================================================
+     EACH ACCOUNT CARD
+
+     MANUAL CARD SIZE HERE
+  ===================================================== */
+
+/* =========================================================
+   ACCOUNT CARDS
+   DESKTOP ONLY
+   EXACT SAME WIDTH + SAME HEIGHT
+   NO CARD HOVER
+========================================================= */
+
+.pips-scroll-plan-card {
+
+  /* ==============================
+     MANUAL CARD WIDTH
+  ============================== */
+
+  width: 560px !important;
+  min-width: 560px !important;
+  max-width: 560px !important;
+
+  flex: 0 0 560px !important;
+
+
+  /* ==============================
+     MANUAL CARD HEIGHT
+  ============================== */
+
+  height: 390px !important;
+  min-height: 390px !important;
+  max-height: 390px !important;
+
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+
+  background:
+    linear-gradient(
+      135deg,
+      #071525 0%,
+      #012d65 55%,
+      #035391 100%
+    );
+
+
+  /* NORMAL SHADOW ONLY */
+  box-shadow:
+    0 20px 45px
+    rgba(0, 0, 0, 0.18);
+
+
+  /* REMOVE HOVER ANIMATION */
+  transition: none !important;
+  transform: none !important;
+}
+
+
+/* REMOVE CARD HOVER COMPLETELY */
+.pips-scroll-plan-card:hover {
+
+  transform: none !important;
+
+  box-shadow:
+    0 20px 45px
+    rgba(0, 0, 0, 0.18) !important;
+}
+
+  /* =====================================================
+     DIFFERENT CARD BACKGROUNDS
+  ===================================================== */
+
+  .pips-scroll-plan-card--1 {
+
+    background:
+      linear-gradient(
+        135deg,
+        #071525,
+        #012d65
+      );
+  }
+
+
+  .pips-scroll-plan-card--2 {
+
+    background:
+      linear-gradient(
+        135deg,
+        #012d65,
+        #035391
+      );
+  }
+
+
+  .pips-scroll-plan-card--3 {
+
+    background:
+      linear-gradient(
+        135deg,
+        #035391,
+        #012d65
+      );
+  }
+
+
+  .pips-scroll-plan-card--4 {
+
+    background:
+      linear-gradient(
+        135deg,
+        #061426,
+        #012d65 65%,
+        #035391
+      );
+  }
+
+
+  .pips-scroll-plan-card--5 {
+
+    background:
+      linear-gradient(
+        135deg,
+        #012d65,
+        #061426
+      );
+  }
+
+
+  /* =====================================================
+     TOP
+  ===================================================== */
+
+  .pips-scroll-plan-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+    z-index: 2;
+  }
+
+
+  .pips-scroll-plan-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.15
+      );
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    backdrop-filter:
+      blur(10px);
+  }
+
+
+  .pips-scroll-plan-name {
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 500;
+  }
+
+
+  /* =====================================================
+     BODY
+  ===================================================== */
+
+  .pips-scroll-plan-body {
+
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 24px;
+
+    position: relative;
+
+    z-index: 2;
+  }
+
+
+  /* =====================================================
+     LEFT
+  ===================================================== */
+
+  .pips-scroll-plan-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .pips-scroll-plan-badge {
+
+    margin-bottom: 12px;
+
+    color: #f7a901;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+  }
+
+
+  .pips-scroll-plan-left h3 {
+
+    margin:
+      0
+      0
+      13px;
+
+    color:
+      #ffffff !important;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+  }
+
+
+  .pips-scroll-plan-left p {
+
+    margin:
+      0
+      0
+      25px;
+
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.72
+      ) !important;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+
+  /* =====================================================
+     REGISTER BUTTON
+  ===================================================== */
+
+  .pips-scroll-plan-button {
+
+    margin-top: auto;
+
+    min-width: 125px;
+
+    min-height: 42px;
+
+    padding:
+      0
+      24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background: #ffffff;
+
+    color:
+      #012d65 !important;
+
+    text-decoration:
+      none !important;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+      0.3s ease;
+  }
+
+
+  .pips-scroll-plan-button:hover {
+
+    background: #f7a901;
+
+    color:
+      #012d65 !important;
+  }
+
+
+  /* =====================================================
+     FEATURES BOX
+  ===================================================== */
+
+  .pips-scroll-plan-features {
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.11
+      );
+
+    border:
+      1px
+      solid
+      rgba(
+        255,
+        255,
+        255,
+        0.16
+      );
+
+    backdrop-filter:
+      blur(12px);
+
+    -webkit-backdrop-filter:
+      blur(12px);
+  }
+
+
+  .pips-scroll-features-title {
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.72
+      );
+
+    font-size: 12px;
+
+    font-weight: 700;
+  }
+
+
+  .pips-scroll-feature {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+  }
+
+
+  .pips-scroll-feature:last-child {
+
+    margin-bottom: 0;
+  }
+
+
+  .pips-scroll-feature span {
+
+    width: 18px;
+
+    height: 18px;
+
+    min-width: 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.65
+      );
+
+    color: #012d65;
+
+    font-size: 10px;
+
+    font-weight: 900;
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP / TABLET / MOBILE
+
+   NO PINNING
+   NO HORIZONTAL SCROLL EFFECT
+   KEEP SIMPLE NORMAL CARDS
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .pips-scroll-accounts-section {
+
+    height: auto !important;
+
+    padding:
+      60px
+      20px;
+
+    background: #012d65;
+  }
+
+
+  .pips-scroll-accounts-sticky {
+
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    overflow: visible;
+  }
+
+
+  .pips-scroll-accounts-viewport {
+
+    overflow: visible;
+  }
+
+
+  .pips-scroll-accounts-track {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 22px;
+
+    transform:
+      none !important;
+  }
+
+
+  .pips-scroll-plan-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 390px;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background:
+      linear-gradient(
+        135deg,
+        #012d65,
+        #035391
+      );
+
+    color: #ffffff;
+  }
+
+
+  .pips-scroll-plan-body {
+
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-scroll-accounts-section {
+
+    padding:
+      50px
+      15px;
+  }
+
+
+  .pips-scroll-accounts-track {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 18px;
+  }
+
+
+  .pips-scroll-plan-card {
+
+    min-height: auto;
+
+    padding: 23px;
+  }
+
+
+  .pips-scroll-plan-body {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .pips-scroll-plan-name {
+
+    font-size: 22px;
+  }
+
+
+  .pips-scroll-plan-left h3 {
+
+    font-size: 20px;
+  }
+
+} 
+/* =========================================================
+   BLACK CARD - CARD 4
+   DESKTOP ONLY
+   MANUAL FEATURE BOX HEIGHT + REGISTER POSITION
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =========================================
+     CARD 4 - FEATURES / BLUR BOX
+  ========================================= */
+
+  .pips-scroll-plan-card--4
+  .pips-scroll-plan-features {
+
+    /* IMPORTANT:
+       stops the box stretching full height
+    */
+    align-self: flex-start !important;
+
+    /* MANUAL HEIGHT
+       160px = smaller
+       180px = recommended
+       200px = bigger
+    */
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+
+    box-sizing: border-box !important;
+
+    /* MANUAL BLUR */
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+
+  /* =========================================
+     CARD 4 - REGISTER BUTTON
+  ========================================= */
+
+  .pips-scroll-plan-card--4
+  .pips-scroll-plan-button {
+
+    position: relative !important;
+
+    /* UP / DOWN
+       negative = UP
+       positive = DOWN
+    */
+    top: -15px !important;
+
+    /* LEFT / RIGHT
+       negative = LEFT
+       positive = RIGHT
+    */
+    left: 0px !important;
+  }
+
+} 
+/* =========================================================
+   CARDS 1, 2, 3, 5
+   DESKTOP ONLY
+   REDUCE INSIDE BLUR / FEATURES BOX HEIGHT
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* CARD 1 - ESSENTIAL */
+  .pips-scroll-plan-card--1
+  .pips-scroll-plan-features {
+
+    align-self: flex-start !important;
+
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+
+    box-sizing: border-box !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+
+  /* CARD 2 - PRIME */
+  .pips-scroll-plan-card--2
+  .pips-scroll-plan-features {
+
+    align-self: flex-start !important;
+
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+
+    box-sizing: border-box !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+
+  /* CARD 3 - PRESTIGE */
+  .pips-scroll-plan-card--3
+  .pips-scroll-plan-features {
+
+    align-self: flex-start !important;
+
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+
+    box-sizing: border-box !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+
+  /* CARD 5 - VIP ELITE */
+  .pips-scroll-plan-card--5
+  .pips-scroll-plan-features {
+
+    align-self: flex-start !important;
+
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+
+    box-sizing: border-box !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+} 
+
+/* =========================================================
+   TRADING CONDITIONS
+   RESTORE PREVIOUS LOOK
+   LEFT IMAGE + RIGHT CONTENT
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-account-conditions-section {
+    background: #ffffff !important;
+
+    padding: 70px 20px 80px !important;
+  }
+
+
+  /* COMPLETE BLUE CONTAINER */
+  .pips-account-conditions-container {
+
+    /* MANUAL COMPLETE WIDTH */
+    width: 1200px !important;
+    max-width: 1200px !important;
+
+    min-height: 560px !important;
+      
+    margin: 0 auto !important;
+
+
+    /* LEFT + RIGHT */
+    display: grid !important;
+
+    grid-template-columns:
+      1fr
+      1fr !important;
+
+
+    /* IMPORTANT:
+       NO SPACE BETWEEN BOTH CONTAINERS
+    */
+    gap: 0 !important;
+
+
+    /* BLUE OUTER BACKGROUND */
+    background: #012d65 !important;
+
+    padding: 35px !important;
+
+/* LET IMAGE COME OUTSIDE */
+overflow: visible !important;
+
+/* KEEP MAIN BLUE CONTAINER CURVE */
+border-radius: 28px !important;
+  }
+
+
+  /* =====================================================
+     LEFT IMAGE
+  ===================================================== */
+
+  .pips-account-conditions-visual {
+
+    display: block !important;
+
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-height: 490px !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+   /* LET PHONE / IMAGE COME OUT */
+overflow: visible !important;
+
+    background: transparent !important;
+
+
+    /* NO GAP ON RIGHT */
+    border-radius:
+      22px 0 0 22px !important;
+  }
+
+.pips-account-left-full-image {
+
+  display: block !important;
+
+  position: absolute !important;
+
+
+  /* =====================================
+     MANUAL IMAGE SIZE
+
+     500px = smaller
+     600px = medium
+     700px = bigger
+     800px = very big
+  ===================================== */
+
+  width: 960px !important;
+
+  height: auto !important;
+
+  max-width: none !important;
+
+
+  /* =====================================
+     LEFT / RIGHT
+
+     negative = LEFT
+     positive = RIGHT
+  ===================================== */
+
+  left: -310px !important;
+
+
+  /* =====================================
+     UP / DOWN
+
+     negative = UP
+     positive = DOWN
+  ===================================== */
+
+  top: -50px !important;
+
+
+  object-fit: contain !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  z-index: 5 !important;
+
+  pointer-events: none !important;
+}
+
+
+  /* =====================================================
+     RIGHT WHITE CARD
+  ===================================================== */
+
+  .pips-account-conditions-card {
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    background: #ffffff !important;
+
+    padding: 42px !important;
+
+
+    /* NO GAP ON LEFT */
+    border-radius:
+      22px 22px 22px 22px !important;
+
+    box-shadow: none !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   DESKTOP ONLY
+   MANUAL WHOLE CONTAINER POSITION + SIZE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .pips-account-conditions-container {
+
+    /* =====================================
+       CONTAINER WIDTH
+    ===================================== */
+    --conditions-width: 1200px;
+
+
+    /* =====================================
+       LEFT / RIGHT
+
+       positive = RIGHT
+       negative = LEFT
+
+       100px  = move right
+       200px  = more right
+       -100px = move left
+    ===================================== */
+    --conditions-x: 50px;
+
+
+    /* =====================================
+       UP / DOWN
+
+       positive = DOWN
+       negative = UP
+
+       50px  = down
+       100px = more down
+       -50px = up
+    ===================================== */
+    --conditions-y: 0px;
+
+
+    width: var(--conditions-width) !important;
+    max-width: var(--conditions-width) !important;
+
+    transform:
+      translate(
+        var(--conditions-x),
+        var(--conditions-y)
+      ) !important;
+  }
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS PAGE
+   DESKTOP FULL SCREEN SECTIONS
+   + GLASS ACCOUNT CARDS
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================================
+     MANUAL HEADER HEIGHT
+
+     Change this only if your navbar height changes
+  ===================================================== */
+
+  :root {
+    --pips-page-header-height: 70px;
+  }
+
+
+  /* =====================================================
+     SECTION 1
+     TYPES OF ACCOUNTS HERO
+     ONE FULL SCREEN
+  ===================================================== */
+
+  .standard-accounts-hero {
+
+    /*
+      Full visible screen below navbar
+    */
+    height:
+      calc(
+        100vh - var(--pips-page-header-height)
+      ) !important;
+
+    min-height:
+      calc(
+        100vh - var(--pips-page-header-height)
+      ) !important;
+
+
+    /* KEEP YOUR CURRENT IMAGE CONTROLS */
+
+    background-size:
+      var(--hero23-image-width)
+      var(--hero23-image-height) !important;
+
+    background-position:
+      calc(50% + var(--hero23-image-x))
+      calc(50% + var(--hero23-image-y)) !important;
+
+    background-repeat:
+      no-repeat !important;
+
+    box-sizing:
+      border-box !important;
+  }
+
+
+  .standard-accounts-hero
+  .ht__bradcaump__container_market {
+
+    height: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+  }
+
+
+  /* =====================================================
+     SECTION 2
+     TRADING CONDITIONS
+     ONE FULL SCREEN
+  ===================================================== */
+
+  .pips-account-conditions-section {
+
+    width: 100% !important;
+
+    height:
+      calc(
+        100vh - var(--pips-page-header-height)
+      ) !important;
+
+    min-height:
+      calc(
+        100vh - var(--pips-page-header-height)
+      ) !important;
+
+
+    /* CENTER YOUR BLUE CONTAINER */
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+
+    /* REMOVE OLD LARGE TOP/BOTTOM SPACING */
+    padding: 20px !important;
+
+    box-sizing:
+      border-box !important;
+
+    background:
+      #ffffff !important;
+  }
+
+
+  /* KEEP YOUR IMAGE + CONTENT CONTAINER */
+  .pips-account-conditions-container {
+
+    /* MANUAL WIDTH */
+    width: 1200px !important;
+
+    max-width: 1200px !important;
+
+
+    /*
+      MANUAL HEIGHT
+      560px recommended
+      600px bigger
+      650px bigger
+    */
+    min-height: 560px !important;
+
+
+    margin: 0 auto !important;
+  }
+
+
+  /* =====================================================
+     SECTION 3
+     ACCOUNT CARDS
+
+     KEEP CURRENT CARD SIZE / SCROLL
+     CHANGE ONLY BACKGROUND TO GLASS BLUR
+  ===================================================== */
+
+  .pips-scroll-plan-card,
+  .pips-scroll-plan-card--1,
+  .pips-scroll-plan-card--2,
+  .pips-scroll-plan-card--3,
+  .pips-scroll-plan-card--4,
+  .pips-scroll-plan-card--5 {
+
+    /*
+      TRANSPARENT BLUE GLASS
+
+      0.88 = less transparent
+      0.78 = recommended
+      0.65 = more transparent
+    */
+    background:
+      linear-gradient(
+        135deg,
+        rgba(1, 45, 101, 0.82),
+        rgba(3, 83, 145, 0.72)
+      ) !important;
+
+
+    /* GLASS BLUR */
+    backdrop-filter:
+      blur(18px) !important;
+
+    -webkit-backdrop-filter:
+      blur(18px) !important;
+
+
+    /* GLASS EDGE */
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.18) !important;
+
+
+    /* KEEP PREMIUM SHADOW */
+    box-shadow:
+      0 20px 45px
+      rgba(1, 45, 101, 0.16) !important;
+
+
+    /* NO HOVER MOVEMENT */
+    transform:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+
+  /* NO CARD HOVER EFFECT */
+  .pips-scroll-plan-card:hover {
+
+    transform:
+      none !important;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(1, 45, 101, 0.82),
+        rgba(3, 83, 145, 0.72)
+      ) !important;
+
+    box-shadow:
+      0 20px 45px
+      rgba(1, 45, 101, 0.16) !important;
+  }
+
+} 
+/* =========================================================
+   LEFT IMAGE MANUAL CONTROL
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* LEFT IMAGE WRAPPER */
+  .pips-account-left-image {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  /* LEFT IMAGE */
+  .pips-account-left-image img {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    object-fit: contain !important;
+
+    /* =========================
+       ZOOM CONTROL
+       1     = normal
+       0.95  = little zoom out
+       0.90  = more zoom out
+       1.05  = little zoom in
+    ========================== */
+    transform: scale(0.92) !important;
+
+    transform-origin: center center !important;
+  }
+}
+/* =========================================================
+   TYPES OF ACCOUNTS
+   RESPONSIVE FINAL OVERRIDE
+
+   DESKTOP 1200px+ = DO NOT TOUCH
+
+   LAPTOP = 992px - 1199px
+   TABLET = 768px - 991px
+   MOBILE = 0px - 767px
+========================================================= */
+
+
+/* =========================================================
+   LAPTOP
+   992PX - 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  /* =====================================================
+     TRADING CONDITIONS SECTION
+  ===================================================== */
+
+  .pips-account-conditions-section {
+    height: auto !important;
+    min-height: auto !important;
+
+    padding: 45px 24px !important;
+
+    background: #ffffff !important;
+  }
+
+
+  .pips-account-conditions-container {
+    width: calc(100% - 40px) !important;
+    max-width: 1050px !important;
+
+    min-height: 500px !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+
+    /* MANUAL LEFT / RIGHT WIDTH */
+    grid-template-columns:
+      46% 54% !important;
+
+    gap: 0 !important;
+
+    padding: 24px !important;
+
+    background: #012d65 !important;
+
+    border-radius: 26px !important;
+
+    overflow: visible !important;
+
+    transform: none !important;
+  }
+
+
+  /* LEFT IMAGE */
+
+  .pips-account-conditions-visual {
+    display: block !important;
+
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-height: 450px !important;
+
+    background: transparent !important;
+
+    border-radius: 22px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* IMPORTANT:
+     override old image hide rules
+  */
+  .pips-account-conditions-section
+  img.pips-account-left-full-image {
+    display: block !important;
+
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    /* MANUAL LAPTOP IMAGE SIZE */
+    width: 108% !important;
+    height: 108% !important;
+
+    max-width: none !important;
+
+    object-fit: contain !important;
+
+    object-position: center center !important;
+
+    transform:
+      translate(-50%, -50%) !important;
+  }
+
+
+  /* RIGHT WHITE CARD */
+
+  .pips-account-conditions-card {
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 30px !important;
+
+    background: #ffffff !important;
+
+    border-radius: 22px !important;
+
+    box-shadow: none !important;
+  }
+
+
+  .pips-account-card-header h2 {
+    font-size: 30px !important;
+  }
+
+
+  .pips-account-card-header p {
+    font-size: 14px !important;
+  }
+
+
+  .pips-account-details-grid {
+    grid-template-columns:
+      1fr 1fr !important;
+
+    gap: 12px !important;
+  }
+
+
+  .pips-account-detail-item {
+    padding: 15px !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   768PX - 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-account-conditions-section {
+    height: auto !important;
+    min-height: auto !important;
+
+    padding: 35px 18px 45px !important;
+
+    background: #ffffff !important;
+  }
+
+
+  .pips-account-conditions-container {
+    width: calc(100% - 24px) !important;
+    max-width: 820px !important;
+
+    min-height: auto !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+
+    /* IMAGE ABOVE / CONTENT BELOW */
+    grid-template-columns:
+      1fr !important;
+
+    gap: 16px !important;
+
+    padding: 18px !important;
+
+    background: #012d65 !important;
+
+    border-radius: 24px !important;
+
+    overflow: hidden !important;
+
+    transform: none !important;
+  }
+
+
+  /* SHOW IMAGE AGAIN */
+
+  .pips-account-conditions-visual {
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 390px !important;
+    min-height: 390px !important;
+    max-height: 390px !important;
+
+    position: relative !important;
+
+    border-radius: 20px !important;
+
+    overflow: hidden !important;
+
+    background: #012d65 !important;
+  }
+
+
+  .pips-account-conditions-section
+  img.pips-account-left-full-image {
+    display: block !important;
+
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: contain !important;
+
+    object-position:
+      center center !important;
+
+    transform:
+      translate(-50%, -50%) !important;
+  }
+
+
+  .pips-account-conditions-card {
+    width: 100% !important;
+
+    height: auto !important;
+
+    padding: 28px !important;
+
+    background: #ffffff !important;
+
+    /* ALL 4 CORNERS CURVED */
+    border-radius: 20px !important;
+
+    box-shadow: none !important;
+  }
+
+
+  .pips-account-card-header {
+    margin-bottom: 24px !important;
+  }
+
+
+  .pips-account-card-header h2 {
+    font-size: 28px !important;
+  }
+
+
+  .pips-account-card-header p {
+    font-size: 14px !important;
+  }
+
+
+  .pips-account-details-grid {
+    grid-template-columns:
+      1fr 1fr !important;
+
+    gap: 12px !important;
+
+    margin-bottom: 25px !important;
+  }
+
+
+  .pips-account-detail-item {
+    padding: 14px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   0PX - 767PX
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-account-conditions-section {
+    height: auto !important;
+    min-height: auto !important;
+
+    padding: 25px 10px 35px !important;
+
+    background: #ffffff !important;
+  }
+
+
+  .pips-account-conditions-container {
+    width: calc(100% - 12px) !important;
+
+    max-width: 100% !important;
+
+    min-height: auto !important;
+
+    margin: 0 auto !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap: 12px !important;
+
+    padding: 10px !important;
+
+    background: #012d65 !important;
+
+    border-radius: 20px !important;
+
+    overflow: hidden !important;
+
+    transform: none !important;
+  }
+
+
+  /* MOBILE IMAGE */
+
+  .pips-account-conditions-visual {
+    display: block !important;
+
+    width: 100% !important;
+
+    /* MANUAL MOBILE IMAGE HEIGHT */
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+
+    position: relative !important;
+
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+
+    background: #012d65 !important;
+  }
+
+
+  .pips-account-conditions-section
+  img.pips-account-left-full-image {
+    display: block !important;
+
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: contain !important;
+
+    object-position:
+      center center !important;
+
+    transform:
+      translate(-50%, -50%) !important;
+  }
+
+
+  /* MOBILE RIGHT CARD */
+
+  .pips-account-conditions-card {
+    width: 100% !important;
+
+    height: auto !important;
+
+    padding: 18px !important;
+
+    background: #ffffff !important;
+
+    border-radius: 18px !important;
+
+    box-shadow: none !important;
+  }
+
+
+  .pips-account-card-header {
+    margin-bottom: 18px !important;
+  }
+
+
+  .pips-account-card-badge {
+    font-size: 10px !important;
+
+    padding:
+      6px 10px !important;
+
+    margin-bottom: 12px !important;
+  }
+
+
+  .pips-account-card-header h2 {
+    font-size: 24px !important;
+
+    margin-bottom: 7px !important;
+  }
+
+
+  .pips-account-card-header p {
+    font-size: 12px !important;
+  }
+
+
+  /* ONE CONDITION PER ROW */
+
+  .pips-account-details-grid {
+    grid-template-columns:
+      1fr !important;
+
+    gap: 9px !important;
+
+    margin-bottom: 18px !important;
+  }
+
+
+  .pips-account-detail-item {
+    padding: 12px !important;
+
+    border-radius: 12px !important;
+  }
+
+
+  .pips-account-detail-item span {
+    font-size: 10px !important;
+
+    margin-bottom: 5px !important;
+  }
+
+
+  .pips-account-detail-item strong {
+    font-size: 13px !important;
+  }
+
+
+  .pips-account-register-button {
+    width: 100% !important;
+
+    height: 44px !important;
+
+    font-size: 12px !important;
+  }
+
+}
+
+
+/* =========================================================
+   ACCOUNT CARDS
+   LAPTOP + TABLET + MOBILE
+
+   HORIZONTAL SIDE SCROLL
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  /* WHITE SECTION BACKGROUND */
+
+  .pips-scroll-accounts-section {
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    padding:
+      45px
+      0
+      50px !important;
+
+    background:
+      #ffffff !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* REMOVE PINNING */
+
+  .pips-scroll-accounts-sticky {
+    position: relative !important;
+
+    top: auto !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    background:
+      #ffffff !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* =====================================================
+     SIDE SCROLL WINDOW
+  ===================================================== */
+
+  .pips-scroll-accounts-viewport {
+    width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    padding:
+      10px
+      24px
+      22px !important;
+
+    box-sizing: border-box !important;
+
+    scroll-snap-type:
+      x mandatory;
+
+    scroll-behavior:
+      smooth;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width:
+      none;
+  }
+
+
+  .pips-scroll-accounts-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* =====================================================
+     ALL 5 CARDS IN ONE ROW
+  ===================================================== */
+
+  .pips-scroll-accounts-track {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: stretch !important;
+
+    width: max-content !important;
+
+    gap: 18px !important;
+
+    transform:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+
+  /* =====================================================
+     LAPTOP CARD SIZE
+  ===================================================== */
+
+  .pips-scroll-plan-card {
+    flex:
+      0 0 460px !important;
+
+    width:
+      460px !important;
+
+    min-width:
+      460px !important;
+
+    max-width:
+      460px !important;
+
+
+    height:
+      340px !important;
+
+    min-height:
+      340px !important;
+
+    max-height:
+      340px !important;
+
+
+    padding:
+      24px !important;
+
+    box-sizing:
+      border-box !important;
+
+    border-radius:
+      22px !important;
+
+
+    /* =====================================
+       YOUR PIPS COLORS
+       GLASS LINEAR GRADIENT
+    ===================================== */
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(1, 45, 101, 0.94) 0%,
+        rgba(3, 83, 145, 0.88) 100%
+      ) !important;
+
+
+    backdrop-filter:
+      blur(14px) !important;
+
+    -webkit-backdrop-filter:
+      blur(14px) !important;
+
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.24) !important;
+
+
+    box-shadow:
+      0 14px 35px
+      rgba(1, 45, 101, 0.14) !important;
+
+
+    scroll-snap-align:
+      start;
+
+    scroll-snap-stop:
+      always;
+
+
+    /* REMOVE HOVER */
+    transform:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+
+  .pips-scroll-plan-card:hover {
+    transform:
+      none !important;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(1, 45, 101, 0.94) 0%,
+        rgba(3, 83, 145, 0.88) 100%
+      ) !important;
+
+    box-shadow:
+      0 14px 35px
+      rgba(1, 45, 101, 0.14) !important;
+  }
+
+
+  /* =====================================================
+     INSIDE FEATURE CONTAINER = TRANSPARENT
+  ===================================================== */
+
+  .pips-scroll-plan-features {
+    align-self:
+      flex-start !important;
+
+    height:
+      auto !important;
+
+    min-height:
+      0 !important;
+
+    max-height:
+      none !important;
+
+
+    /* TRANSPARENT */
+    background:
+      transparent !important;
+
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.30) !important;
+
+
+    backdrop-filter:
+      none !important;
+
+    -webkit-backdrop-filter:
+      none !important;
+
+
+    padding:
+      14px !important;
+
+    border-radius:
+      14px !important;
+  }
+
+
+  .pips-scroll-plan-name,
+  .pips-scroll-plan-left h3,
+  .pips-scroll-plan-left p,
+  .pips-scroll-features-title,
+  .pips-scroll-feature {
+    color:
+      #ffffff !important;
+  }
+
+
+  .pips-scroll-plan-badge {
+    color:
+      #ffffff !important;
+  }
+
+
+  .pips-scroll-plan-body {
+    display: grid !important;
+
+    grid-template-columns:
+      1fr 1fr !important;
+
+    gap:
+      16px !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET ACCOUNT CARDS
+   768PX - 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-scroll-accounts-viewport {
+    padding-left:
+      20px !important;
+
+    padding-right:
+      20px !important;
+  }
+
+
+  .pips-scroll-accounts-track {
+    gap:
+      16px !important;
+  }
+
+
+  .pips-scroll-plan-card {
+    /* MANUAL TABLET CARD WIDTH */
+    flex:
+      0 0 400px !important;
+
+    width:
+      400px !important;
+
+    min-width:
+      400px !important;
+
+    max-width:
+      400px !important;
+
+
+    /* MANUAL TABLET HEIGHT */
+    height:
+      330px !important;
+
+    min-height:
+      330px !important;
+
+    max-height:
+      330px !important;
+
+
+    padding:
+      21px !important;
+  }
+
+
+  .pips-scroll-plan-name {
+    font-size:
+      24px !important;
+  }
+
+
+  .pips-scroll-plan-left h3 {
+    font-size:
+      18px !important;
+  }
+
+
+  .pips-scroll-plan-left p {
+    font-size:
+      12px !important;
+  }
+
+
+  .pips-scroll-plan-body {
+    gap:
+      13px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE ACCOUNT CARDS
+   SIDE SCROLL + SMALLER CARDS
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .pips-scroll-accounts-section {
+    padding:
+      30px
+      0
+      38px !important;
+  }
+
+
+  .pips-scroll-accounts-viewport {
+    padding:
+      8px
+      14px
+      18px !important;
+
+    scroll-padding-left:
+      14px;
+  }
+
+
+  .pips-scroll-accounts-track {
+    gap:
+      12px !important;
+  }
+
+
+  /* SMALL MOBILE CARDS */
+
+  .pips-scroll-plan-card {
+    /* =====================================
+       MANUAL MOBILE WIDTH
+
+       270px = smaller
+       290px = recommended
+       310px = bigger
+    ===================================== */
+
+    flex:
+      0 0 290px !important;
+
+    width:
+      290px !important;
+
+    min-width:
+      290px !important;
+
+    max-width:
+      290px !important;
+
+
+    /* =====================================
+       MANUAL MOBILE HEIGHT
+    ===================================== */
+
+    height:
+      405px !important;
+
+    min-height:
+      405px !important;
+
+    max-height:
+      405px !important;
+
+
+    padding:
+      18px !important;
+
+    border-radius:
+      18px !important;
+  }
+
+
+  .pips-scroll-plan-top {
+    margin-bottom:
+      14px !important;
+  }
+
+
+  .pips-scroll-plan-icon {
+    width:
+      40px !important;
+
+    height:
+      40px !important;
+
+    font-size:
+      16px !important;
+  }
+
+
+  .pips-scroll-plan-name {
+    font-size:
+      20px !important;
+  }
+
+
+  /* MOBILE = CONTENT STACKED */
+
+  .pips-scroll-plan-body {
+    display: grid !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap:
+      12px !important;
+  }
+
+
+  .pips-scroll-plan-badge {
+    font-size:
+      10px !important;
+
+    margin-bottom:
+      7px !important;
+  }
+
+
+  .pips-scroll-plan-left h3 {
+    font-size:
+      17px !important;
+
+    margin-bottom:
+      7px !important;
+  }
+
+
+  .pips-scroll-plan-left p {
+    font-size:
+      11px !important;
+
+    line-height:
+      1.45 !important;
+
+    margin-bottom:
+      10px !important;
+  }
+
+
+  /* SMALL TRANSPARENT FEATURES BOX */
+
+  .pips-scroll-plan-features {
+    padding:
+      10px !important;
+
+    border-radius:
+      11px !important;
+  }
+
+
+  .pips-scroll-features-title {
+    font-size:
+      9px !important;
+
+    margin-bottom:
+      8px !important;
+  }
+
+
+  .pips-scroll-feature {
+    font-size:
+      10px !important;
+
+    margin-bottom:
+      7px !important;
+
+    gap:
+      7px !important;
+  }
+
+
+  .pips-scroll-feature span {
+    width:
+      15px !important;
+
+    height:
+      15px !important;
+
+    min-width:
+      15px !important;
+
+    font-size:
+      8px !important;
+  }
+
+
+  .pips-scroll-plan-button {
+    min-width:
+      100px !important;
+
+    min-height:
+      35px !important;
+
+    padding:
+      0
+      17px !important;
+
+    font-size:
+      11px !important;
+  }
+
+}
+/* =========================================================
+   ACCOUNT LEFT IMAGE
+   SHOW DESKTOP ONLY
+========================================================= */
+
+/* DESKTOP - SHOW IMAGE */
+@media (min-width: 1200px) {
+
+  .pips-account-conditions-visual {
+    display: block !important;
+  }
+
+  .pips-account-left-full-image {
+    display: block !important;
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP + TABLET + MOBILE
+   HIDE LEFT IMAGE COMPLETELY
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  /* HIDE LEFT IMAGE AREA */
+  .pips-account-conditions-visual {
+    display: none !important;
+  }
+
+  /* HIDE IMAGE */
+  .pips-account-left-full-image {
+    display: none !important;
+  }
+
+
+  /* MAKE RIGHT CONTENT FULL WIDTH */
+  .pips-account-conditions-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pips-account-conditions-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO TEXT
+   LAPTOP + TABLET + MOBILE ONLY
+   DESKTOP UNTOUCHED
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  /* H1 */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market h1 {
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+  }
+
+
+  /* PARAGRAPH */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market p {
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+  }
+
+
+  /* START NOW BUTTON */
+  .standard-accounts-hero
+  .slide__btn.dg__btn {
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border-color: #012d65 !important;
+  }
+
+}
+/* =========================================================
+   ACCOUNT CARDS
+   MOBILE ONLY
+   SMALLER CARD + HORIZONTAL PEEK
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =====================================
+     WHOLE SECTION
+  ===================================== */
+
+  .pips-scroll-accounts-section {
+    width: 100% !important;
+
+    padding: 20px 0 30px !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+  }
+
+
+  .pips-scroll-accounts-sticky {
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================
+     SCROLL WINDOW
+  ===================================== */
+
+  .pips-scroll-accounts-viewport {
+    width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+
+    box-sizing: border-box !important;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+
+  .pips-scroll-accounts-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* =====================================
+     CARDS IN ONE HORIZONTAL ROW
+  ===================================== */
+
+  .pips-scroll-accounts-track {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    width: max-content !important;
+
+    gap: 12px !important;
+
+    transform: none !important;
+
+    padding: 0 !important;
+  }
+
+
+  /* =====================================
+     CARD SIZE
+
+     82vw = first card full
+            + little part of next card
+
+     78vw = show more of next card
+     86vw = show less of next card
+  ===================================== */
+
+  .pips-scroll-plan-card {
+    width: 82vw !important;
+    min-width: 82vw !important;
+    max-width: 82vw !important;
+
+    flex: 0 0 82vw !important;
+
+    min-height: 0 !important;
+    height: auto !important;
+
+    padding: 14px !important;
+
+    border-radius: 18px !important;
+
+    scroll-snap-align: start;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =====================================
+     TOP ROW
+  ===================================== */
+
+  .pips-scroll-plan-top {
+    margin-bottom: 10px !important;
+  }
+
+
+  .pips-scroll-plan-icon {
+    width: 34px !important;
+    height: 34px !important;
+
+    font-size: 14px !important;
+  }
+
+
+  .pips-scroll-plan-name {
+    font-size: 16px !important;
+
+    line-height: 1.2 !important;
+  }
+
+
+  /* =====================================
+     CARD BODY
+  ===================================== */
+
+  .pips-scroll-plan-body {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 12px !important;
+  }
+
+
+  .pips-scroll-plan-badge {
+    font-size: 9px !important;
+
+    margin-bottom: 6px !important;
+  }
+
+
+  .pips-scroll-plan-left h3 {
+    font-size: 16px !important;
+
+    line-height: 1.18 !important;
+
+    margin: 0 0 7px !important;
+  }
+
+
+  .pips-scroll-plan-left p {
+    font-size: 10px !important;
+
+    line-height: 1.4 !important;
+
+    margin: 0 0 10px !important;
+  }
+
+
+  /* =====================================
+     REGISTER BUTTON
+     FORCE BUTTON TO SHOW
+  ===================================== */
+
+  .pips-scroll-plan-button {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100px !important;
+    min-width: 100px !important;
+
+    height: 32px !important;
+    min-height: 32px !important;
+
+    padding: 0 12px !important;
+
+    margin: 0 !important;
+
+    position: relative !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #012d65 !important;
+
+    -webkit-text-fill-color: #012d65 !important;
+
+    border-radius: 18px !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+  }
+
+
+  /* =====================================
+     FEATURES / BLUR BOX
+  ===================================== */
+
+  .pips-scroll-plan-features {
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 10px !important;
+
+    border-radius: 12px !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  .pips-scroll-features-title {
+    font-size: 9px !important;
+
+    margin-bottom: 8px !important;
+  }
+
+
+  .pips-scroll-feature {
+    font-size: 9px !important;
+
+    line-height: 1.3 !important;
+
+    gap: 6px !important;
+
+    margin-bottom: 7px !important;
+  }
+
+
+  .pips-scroll-feature span {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+
+    font-size: 8px !important;
+  }
+
+}
+/* =========================================================
+   TRADING CONDITIONS
+   MOBILE ONLY - REDUCE TOTAL HEIGHT
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* OUTER SECTION SPACE */
+  .pips-account-conditions-section {
+    padding: 10px 8px 15px !important;
+  }
+
+
+  /* BLUE BORDER / OUTER CONTAINER */
+  .pips-account-conditions-container {
+    padding: 8px !important;
+    gap: 0 !important;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    border-radius: 18px !important;
+  }
+
+
+  /* WHITE CARD */
+  .pips-account-conditions-card {
+    padding: 16px !important;
+
+    min-height: auto !important;
+    height: auto !important;
+
+    border-radius: 14px !important;
+  }
+
+
+  /* HEADER AREA */
+  .pips-account-card-header {
+    margin-bottom: 14px !important;
+  }
+
+
+  /* PREMIUM CONDITIONS BADGE */
+  .pips-account-card-badge {
+    padding: 6px 10px !important;
+    margin-bottom: 10px !important;
+
+    font-size: 10px !important;
+  }
+
+
+  /* TRADING CONDITIONS TITLE */
+  .pips-account-card-header h2 {
+    font-size: 23px !important;
+    line-height: 1.1 !important;
+
+    margin-bottom: 7px !important;
+  }
+
+
+  /* DESCRIPTION */
+  .pips-account-card-header p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+
+  /* SIX DETAILS */
+  .pips-account-details-grid {
+    gap: 7px !important;
+    margin-bottom: 12px !important;
+  }
+
+
+  .pips-account-detail-item {
+    padding: 10px 11px !important;
+
+    border-radius: 11px !important;
+  }
+
+
+  .pips-account-detail-item span {
+    font-size: 10px !important;
+
+    margin-bottom: 4px !important;
+  }
+
+
+  .pips-account-detail-item strong {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+
+
+  /* REGISTER */
+  .pips-account-register-button {
+    width: 100% !important;
+
+    height: 38px !important;
+    min-height: 38px !important;
+
+    padding: 0 15px !important;
+
+    font-size: 10px !important;
+  }
+
+}
+/* =========================================================
+   ACCOUNT CARD REGISTER BUTTON
+   TABLET + LAPTOP ONLY
+   768px - 1199px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  /* LEFT CONTENT */
+  .pips-scroll-plan-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+
+  /* REGISTER BUTTON */
+  .pips-scroll-plan-button {
+
+    position: static !important;
+
+    /* ==============================
+       MANUAL UP / DOWN
+       smaller = closer to text
+       bigger = more down
+    ============================== */
+    margin-top: -26px !important;
+
+
+    /* BUTTON SIZE */
+    min-width: 120px !important;
+    width: auto !important;
+
+    min-height: 38px !important;
+    height: 38px !important;
+
+    padding: 0 20px !important;
+
+
+    /* STYLE */
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+
+    color: #012d65 !important;
+
+    border: none !important;
+
+    border-radius: 22px !important;
+
+    text-decoration: none !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+
+    line-height: 1 !important;
+
+    /* REMOVE OLD POSITION */
+    top: auto !important;
+    left: auto !important;
+
+    transform: none !important;
+  }
+
+
+  .pips-scroll-plan-button:hover {
+    background: #f7a901 !important;
+    color: #012d65 !important;
+  }
+
+}
+/* =========================================================
+   ACCOUNT CARDS
+   TABLET REGISTER BUTTON
+   768px - 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .pips-scroll-plan-left {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+
+  .pips-scroll-plan-button {
+
+    /* BUTTON STYLE */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+    color: #012d65 !important;
+
+    min-width: 115px !important;
+    height: 38px !important;
+
+    padding: 0 20px !important;
+
+    border-radius: 24px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+
+
+    /* =====================================
+       MANUAL POSITION - TABLET
+
+       LEFT / RIGHT
+       negative = LEFT
+       positive = RIGHT
+    ===================================== */
+    position: relative !important;
+
+    left: 0px !important;
+
+
+    /* =====================================
+       UP / DOWN
+
+       negative = UP
+       positive = DOWN
+    ===================================== */
+    top: -10px !important;
+
+
+    margin-top: -5px !important;
+  }
+
+} 
+/* =========================================================
+   ACCOUNT CARDS
+   LAPTOP REGISTER BUTTON
+   992px - 1199px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .pips-scroll-plan-left {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+
+  .pips-scroll-plan-button {
+
+    /* BUTTON STYLE */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+    color: #012d65 !important;
+
+    min-width: 125px !important;
+    height: 40px !important;
+
+    padding: 0 22px !important;
+
+    border-radius: 25px !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+
+
+    /* =====================================
+       MANUAL POSITION - LAPTOP
+
+       negative left = LEFT
+       positive left = RIGHT
+    ===================================== */
+    position: relative !important;
+
+    left: 210px !important;
+
+
+    /* =====================================
+       UP / DOWN
+
+       negative = UP
+       positive = DOWN
+    ===================================== */
+    top: -50px !important;
+
+
+    margin-top: -25px !important;
+  }
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO IMAGE
+   DESKTOP ONLY - MANUAL SIZE / POSITION
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .standard-accounts-hero {
+
+    /* =====================================
+       WHOLE SECTION HEIGHT
+
+       650px = current
+       700px = taller
+       750px = more taller
+    ===================================== */
+    --hero23-banner-height: 700px;
+
+
+    /* =====================================
+       IMAGE WIDTH
+
+       smaller % = ZOOM OUT / NARROWER
+       bigger %  = ZOOM IN / WIDER
+
+       108% = current
+       100% = little zoom out
+       96%  = more zoom out
+       92%  = much more zoom out
+    ===================================== */
+    --hero23-image-width: 101%;
+
+
+    /* =====================================
+       IMAGE HEIGHT
+
+       bigger % = increase image height
+       smaller % = reduce image height
+
+       100% = normal
+       105% = little taller
+       110% = taller
+       115% = more taller
+    ===================================== */
+    --hero23-image-height: 103%;
+
+
+    /* =====================================
+       LEFT / RIGHT
+
+       negative = LEFT
+       positive = RIGHT
+    ===================================== */
+    --hero23-image-x: 0px;
+
+
+    /* =====================================
+       UP / DOWN
+
+       negative = UP
+       positive = DOWN
+    ===================================== */
+    --hero23-image-y: 0px;
+  }
+
+}
+/* =========================================================
+   NAVBAR - REMOVE BLUR
+========================================================= */
+
+.header--absolute,
+.dg__header,
+.dg__header.space-right-left,
+.dg__header.space-right-left-header--white {
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  filter: none !important;
+
+  background: none !important;
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO TEXT
+   DESKTOP ONLY - MANUAL POSITION + SIZE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* WHOLE TEXT BLOCK */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market {
+
+    position: relative !important;
+
+    /* =====================================
+       LEFT / RIGHT
+
+       positive = RIGHT
+       negative = LEFT
+    ===================================== */
+    left: -350px !important;
+
+
+    /* =====================================
+       UP / DOWN
+
+       positive = DOWN
+       negative = UP
+    ===================================== */
+    top: -240px !important;
+  }
+
+
+  /* H1 */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market h1 {
+
+    font-size: 78px !important;
+    line-height: 1.1 !important;
+
+    color: #012d65 !important;
+
+    margin-bottom: 18px !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    left: -210px !important;
+    
+  }
+
+
+  /* PARAGRAPH */
+  .standard-accounts-hero
+  .ht__bradcaump__container_market p {
+
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+
+    color: #012d65 !important;
+
+    margin-bottom: 26px !important;
+    margin-left: -100px !important;
+  }
+
+
+/* =========================================================
+   START NOW BUTTON
+   DESKTOP ONLY - MANUAL POSITION
+========================================================= */
+
+.standard-accounts-hero
+.ht__bradcaump__container_market
+.slide__btn.dg__btn {
+
+  font-size: 30px !important;
+
+  padding: 14px 34px !important;
+
+  background: #012d65 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  border-color: #012d65 !important;
+
+
+  /* REQUIRED FOR MANUAL MOVEMENT */
+  position: relative !important;
+
+
+  /* =====================================
+     LEFT / RIGHT
+
+     negative = LEFT
+     positive = RIGHT
+  ===================================== */
+
+  left: -610px !important;
+
+
+  /* =====================================
+     UP / DOWN
+
+     negative = UP
+     positive = DOWN
+  ===================================== */
+
+  top: 450px !important;
+
+
+  /* REMOVE OLD POSITION */
+  margin-left: 0 !important;
+}
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS - START NOW BUTTON
+   DESKTOP ONLY
+   CENTER TEXT INSIDE BUTTON
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .standard-accounts-hero
+  .slide__btn.dg__btn {
+
+    /* MANUAL BUTTON SIZE */
+    width: 250px !important;
+    height: 90px !important;
+
+    /* CENTER TEXT */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    /* REMOVE PADDING PUSHING TEXT */
+    padding: 0 !important;
+
+    line-height: 1 !important;
+
+    box-sizing: border-box !important;
+  }
+
+}
+/* =========================================================
+   TYPES OF ACCOUNTS HERO
+   AUTO MOVING "THE PIPS"
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .standard-accounts-hero {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     MARQUEE WINDOW
+  ===================================================== */
+
+  .pips-hero-marquee {
+
+    position: absolute !important;
+
+    /* =====================================
+       MANUAL UP / DOWN
+
+       smaller bottom = DOWN
+       bigger bottom  = UP
+    ===================================== */
+    bottom: 10px !important;
+
+
+    /* =====================================
+       MANUAL LEFT / RIGHT AREA
+    ===================================== */
+    left: 714px !important;
+    right: 0 !important;
+
+
+    height: 145px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    overflow: hidden !important;
+
+    z-index: 8 !important;
+
+    pointer-events: none !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     MOVING TRACK
+  ===================================================== */
+
+  .pips-hero-marquee-track {
+
+    display: flex !important;
+
+    width: max-content !important;
+
+    flex-shrink: 0 !important;
+
+    animation:
+      pipsHeroMarqueeMove
+      16s
+      linear
+      infinite !important;
+
+    will-change: transform;
+  }
+
+
+  .pips-hero-marquee-group {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    flex-shrink: 0 !important;
+
+    gap: 70px !important;
+
+    padding-right: 70px !important;
+  }
+
+
+  /* =====================================================
+     THE PIPS TEXT
+  ===================================================== */
+
+  .pips-hero-marquee-group span {
+
+    display: inline-block !important;
+
+    color: #012d65 !important;
+
+    font-size: 92px !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1 !important;
+
+    letter-spacing: -3px !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* =====================================================
+     RIGHT -> LEFT INFINITE LOOP
+  ===================================================== */
+
+  @keyframes pipsHeroMarqueeMove {
+
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+
+  }
+
+}
+
+
+/* HIDE ON LAPTOP / TABLET / MOBILE */
+@media (max-width: 1199px) {
+
+  .pips-hero-marquee {
+    display: none !important;
+  }
+
 }
