@@ -5,7 +5,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
 const MobileWidgets = () => {
   return (
     <div className="mobile-widget-area">

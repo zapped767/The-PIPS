@@ -1,0 +1,721 @@
+diff --git a/src/App.js b/src/App.js
+index 050adaf..09414ea 100644
+--- a/src/App.js
++++ b/src/App.js
+@@ -159,7 +159,7 @@ function App() {
+             path={`${process.env.PUBLIC_URL + "/markets/crypto-market"}`}
+             component={CryptoMarket}
+           />
+-          //Platforms
++          {/* Platforms */}
+           <Route
+             path={`${process.env.PUBLIC_URL + "/platforms/pips-terminal"}`}
+             component={PipsTerminal}
+@@ -188,7 +188,7 @@ function App() {
+             path={`${process.env.PUBLIC_URL + "/platforms/meta-trader-4-Mobile"}`}
+             component={MetaTrader4Mobile}
+           />
+-          //Resources
++          {/* Resources */}
+           <Route
+             path={`${process.env.PUBLIC_URL + "/resources/analytical-tools"}`}
+             component={AnalyticalTools}
+@@ -221,7 +221,7 @@ function App() {
+             path={`${process.env.PUBLIC_URL + "/resources/vps-hosting"}`}
+             component={VPSHosting}
+           />
+-          //Trading
++          {/* Trading */}
+           <Route
+             path={`${process.env.PUBLIC_URL + "/trading/types-of-accounts"}`}
+             component={StandardAccounts}
+diff --git a/src/assets/scss/customized/_responsive-layout.scss b/src/assets/scss/customized/_responsive-layout.scss
+new file mode 100644
+index 0000000..677afcd
+--- /dev/null
++++ b/src/assets/scss/customized/_responsive-layout.scss
+@@ -0,0 +1,190 @@
++// Keep hero geometry relative to its container, not to one monitor's pixels.
++// Scoped selectors supersede the legacy per-slide !important offsets.
++@media (min-width: 768px) {
++  .slider--2 .pips-responsive-slider {
++    height: auto !important;
++    min-height: clamp(580px, 47vw, 900px) !important;
++    padding: clamp(125px, 14vw, 210px) 0 65px !important;
++    background-size: cover;
++    background-position: center;
++
++    > .container {
++      width: 100%;
++      max-width: 1500px;
++      padding-inline: clamp(28px, 6vw, 100px);
++    }
++
++    > .container > .row {
++      margin: 0;
++      display: flex;
++      flex-direction: column;
++      align-items: stretch;
++    }
++
++    > .container > .row > div {
++      width: 100%;
++      max-width: 100%;
++      padding-inline: 0;
++    }
++
++    .hero-slide-content {
++      position: relative !important;
++      inset: auto !important;
++      margin: 0 !important;
++      padding: 0 !important;
++      width: 52% !important;
++      max-width: 650px !important;
++      min-width: 0;
++    }
++
++    .hero-slide-content.slide-3 {
++      margin-left: auto !important;
++    }
++
++    .hero-slide-content h1,
++    .hero-slide-content h1 span {
++      font-size: clamp(30px, 3.3vw, 62px) !important;
++      line-height: 1.1 !important;
++      white-space: normal !important;
++      width: auto !important;
++      max-width: 100% !important;
++      margin: 0 0 16px !important;
++      overflow-wrap: break-word;
++    }
++
++    .hero-slide-content p,
++    .hero-slide-content p span {
++      width: auto !important;
++      max-width: 100% !important;
++      font-size: clamp(14px, 1.1vw, 20px) !important;
++      line-height: 1.5 !important;
++      margin: 0 !important;
++    }
++
++    .slide-3-large-desktop-paragraph {
++      display: none !important;
++    }
++
++    .hero-register-wrapper {
++      position: static !important;
++      inset: auto !important;
++      margin: 48px 0 0 !important;
++      transform: none !important;
++      text-align: center !important;
++    }
++
++    .hero-register-wrapper .slide__btn {
++      position: static !important;
++      margin: 0 !important;
++    }
++  }
++
++  .standard-accounts-hero.pips-responsive-accounts {
++    position: relative !important;
++    height: clamp(540px, 46vw, 920px) !important;
++    min-height: 0 !important;
++    padding: 0 !important;
++    background-size: 101% 103% !important;
++    background-position: center !important;
++    overflow: hidden !important;
++
++    .ht__bradcaump__container_market {
++      position: absolute !important;
++      inset: 0 !important;
++      width: 100% !important;
++      height: 100% !important;
++      padding: 0 !important;
++      margin: 0 !important;
++      display: block !important;
++    }
++
++    .container, .row, .row > div {
++      position: static !important;
++      width: 100% !important;
++      max-width: none !important;
++      margin: 0 !important;
++      padding: 0 !important;
++    }
++
++    h1 {
++      position: absolute !important;
++      top: max(110px, 15%) !important;
++      left: 34% !important;
++      right: 3%;
++      margin: 0 !important;
++      font-size: clamp(32px, 4.1vw, 78px) !important;
++      line-height: 1.1 !important;
++      white-space: normal !important;
++      text-align: center !important;
++    }
++
++    p {
++      position: absolute !important;
++      top: calc(max(110px, 15%) + clamp(44px, 5.3vw, 100px)) !important;
++      left: 34% !important;
++      right: 3%;
++      margin: 0 !important;
++      font-size: clamp(14px, 1.1vw, 20px) !important;
++      line-height: 1.5 !important;
++      text-align: center !important;
++    }
++
++    .ht__bradcaump__container_market .slide__btn.dg__btn {
++      position: absolute !important;
++      top: auto !important;
++      left: 16% !important;
++      bottom: 7%;
++      margin: 0 !important;
++      width: clamp(120px, 13vw, 250px) !important;
++      min-width: 0 !important;
++      height: clamp(44px, 4.7vw, 90px) !important;
++      padding: 0 !important;
++      font-size: clamp(15px, 1.6vw, 30px) !important;
++      display: inline-flex !important;
++      align-items: center !important;
++      justify-content: center !important;
++    }
++
++    .pips-hero-marquee {
++      left: 38% !important;
++      bottom: 1% !important;
++      height: 16% !important;
++    }
++
++    .pips-hero-marquee-group span {
++      font-size: clamp(40px, 4.8vw, 92px) !important;
++    }
++  }
++
++  // Fixed-height sections must grow when text is taller than a laptop viewport.
++  .pips-account-conditions-section {
++    height: auto !important;
++    min-height: 0 !important;
++  }
++
++  .pips-account-conditions-container {
++    width: 100% !important;
++    max-width: 1200px !important;
++  }
++}
++
++// On narrower screens, reserve a text band above the artwork instead of
++// stretching the coins vertically or placing the subtitle over them.
++@media (min-width: 768px) and (max-width: 1199px) {
++  .standard-accounts-hero.pips-responsive-accounts {
++    height: calc(200px + 56.28vw) !important;
++    background-size: 100% auto !important;
++    background-position: center bottom !important;
++
++    h1, p { left: 5% !important; right: 5%; }
++    h1 { top: 110px !important; font-size: clamp(32px, 4vw, 46px) !important; }
++    p { top: 170px !important; }
++
++    .ht__bradcaump__container_market .slide__btn.dg__btn {
++      background: #012d65 !important;
++      color: #fff !important;
++      -webkit-text-fill-color: #fff !important;
++      border-color: #012d65 !important;
++    }
++  }
++}
+diff --git a/src/assets/scss/style.scss b/src/assets/scss/style.scss
+index cfb5887..889370c 100644
+--- a/src/assets/scss/style.scss
++++ b/src/assets/scss/style.scss
+@@ -46,3 +46,5 @@
+ @import "customized/markets";
+ @import "customized/trading";
+ @import "customized/partners";
++
++@import "customized/responsive-layout";
+diff --git a/src/components/about-contents/AboutContent.js b/src/components/about-contents/AboutContent.js
+index 681b90a..e1a878d 100644
+--- a/src/components/about-contents/AboutContent.js
++++ b/src/components/about-contents/AboutContent.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const AboutContent = () => {
+diff --git a/src/components/about-contents/AboutContentThree.js b/src/components/about-contents/AboutContentThree.js
+index 1e1dc1b..beb7723 100644
+--- a/src/components/about-contents/AboutContentThree.js
++++ b/src/components/about-contents/AboutContentThree.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const AboutContentThree = () => {
+diff --git a/src/components/about-contents/AboutContentTwo.js b/src/components/about-contents/AboutContentTwo.js
+index 247acda..10d88d5 100644
+--- a/src/components/about-contents/AboutContentTwo.js
++++ b/src/components/about-contents/AboutContentTwo.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ 
+ const AboutContentTwo = () => {
+   return (
+diff --git a/src/components/breadcrumbs/markets/BreadcrumbIndicesMarket.js b/src/components/breadcrumbs/markets/BreadcrumbIndicesMarket.js
+index 530f701..a6862d4 100644
+--- a/src/components/breadcrumbs/markets/BreadcrumbIndicesMarket.js
++++ b/src/components/breadcrumbs/markets/BreadcrumbIndicesMarket.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbIndicesMarket = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/markets/BreadcrumbStockMarket.js b/src/components/breadcrumbs/markets/BreadcrumbStockMarket.js
+index 87b6c6d..3c3e441 100644
+--- a/src/components/breadcrumbs/markets/BreadcrumbStockMarket.js
++++ b/src/components/breadcrumbs/markets/BreadcrumbStockMarket.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbStockMarket = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/platforms/BreadcrumbPipsTerminal.js b/src/components/breadcrumbs/platforms/BreadcrumbPipsTerminal.js
+index 6e2b912..35ad884 100644
+--- a/src/components/breadcrumbs/platforms/BreadcrumbPipsTerminal.js
++++ b/src/components/breadcrumbs/platforms/BreadcrumbPipsTerminal.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbPipsTerminal = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/platforms/BreadcrumbPipsTradeApp.js b/src/components/breadcrumbs/platforms/BreadcrumbPipsTradeApp.js
+index 50418aa..1eb0e53 100644
+--- a/src/components/breadcrumbs/platforms/BreadcrumbPipsTradeApp.js
++++ b/src/components/breadcrumbs/platforms/BreadcrumbPipsTradeApp.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbPipsTradeApp = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/resources/BreadcrumbAnalyticalTools.js b/src/components/breadcrumbs/resources/BreadcrumbAnalyticalTools.js
+index 330603e..80ec027 100644
+--- a/src/components/breadcrumbs/resources/BreadcrumbAnalyticalTools.js
++++ b/src/components/breadcrumbs/resources/BreadcrumbAnalyticalTools.js
+@@ -1,6 +1,6 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbAnalyticalTools = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/resources/BreadcrumbCurrencyConverter.js b/src/components/breadcrumbs/resources/BreadcrumbCurrencyConverter.js
+index e0f3668..77f2b73 100644
+--- a/src/components/breadcrumbs/resources/BreadcrumbCurrencyConverter.js
++++ b/src/components/breadcrumbs/resources/BreadcrumbCurrencyConverter.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbCurrencyConverter = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/resources/BreadcrumbEconomicCalendar.js b/src/components/breadcrumbs/resources/BreadcrumbEconomicCalendar.js
+index c6e7486..847b30a 100644
+--- a/src/components/breadcrumbs/resources/BreadcrumbEconomicCalendar.js
++++ b/src/components/breadcrumbs/resources/BreadcrumbEconomicCalendar.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbEconomicCalendar = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/resources/BreadcrumbTradingCalculator.js b/src/components/breadcrumbs/resources/BreadcrumbTradingCalculator.js
+index ce3abbc..b4ac05a 100644
+--- a/src/components/breadcrumbs/resources/BreadcrumbTradingCalculator.js
++++ b/src/components/breadcrumbs/resources/BreadcrumbTradingCalculator.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbVPSHosting = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/trading/BreadcrumbClientProtection.js b/src/components/breadcrumbs/trading/BreadcrumbClientProtection.js
+index acbc1e4..623cbe9 100644
+--- a/src/components/breadcrumbs/trading/BreadcrumbClientProtection.js
++++ b/src/components/breadcrumbs/trading/BreadcrumbClientProtection.js
+@@ -1,6 +1,6 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbClientProtection = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/trading/BreadcrumbDemoTradingAccount.js b/src/components/breadcrumbs/trading/BreadcrumbDemoTradingAccount.js
+index 59a8144..06ad046 100644
+--- a/src/components/breadcrumbs/trading/BreadcrumbDemoTradingAccount.js
++++ b/src/components/breadcrumbs/trading/BreadcrumbDemoTradingAccount.js
+@@ -1,7 +1,7 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+ 
+-import { Link } from "react-router-dom";
++
+ const BreadcrumbDemoTradingAccount = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/components/breadcrumbs/trading/BreadcrumbStandardAccounts.js b/src/components/breadcrumbs/trading/BreadcrumbStandardAccounts.js
+index 68ab187..92b5634 100644
+--- a/src/components/breadcrumbs/trading/BreadcrumbStandardAccounts.js
++++ b/src/components/breadcrumbs/trading/BreadcrumbStandardAccounts.js
+@@ -7,7 +7,7 @@ const BreadcrumbStandardAccounts = () => {
+ 
+   return (
+     <div
+-      className="ht__bradcaump__area_market pips-desktop-bull-all-devices standard-accounts-hero"
++      className="ht__bradcaump__area_market pips-desktop-bull-all-devices standard-accounts-hero pips-responsive-accounts"
+       style={{
+         backgroundImage: `url(${desktopImage})`,
+       }}
+diff --git a/src/components/header/sub-components/MobileWidgets.js b/src/components/header/sub-components/MobileWidgets.js
+index 8165258..e26f28c 100644
+--- a/src/components/header/sub-components/MobileWidgets.js
++++ b/src/components/header/sub-components/MobileWidgets.js
+@@ -5,7 +5,7 @@ import {
+   Phone,
+   Mail,
+ } from "lucide-react";
+-import { Link } from "react-router-dom";
++
+ const MobileWidgets = () => {
+   return (
+     <div className="mobile-widget-area">
+diff --git a/src/components/home-contents/FeatureSection/FeatureSection.js b/src/components/home-contents/FeatureSection/FeatureSection.js
+index dafc14f..621810c 100644
+--- a/src/components/home-contents/FeatureSection/FeatureSection.js
++++ b/src/components/home-contents/FeatureSection/FeatureSection.js
+@@ -1,4 +1,4 @@
+-import React from "react";
++
+ 
+ const FeatureSection = () => {
+   return null;
+diff --git a/src/components/home-contents/HeroSliderTwoSingle.js b/src/components/home-contents/HeroSliderTwoSingle.js
+index ee7db3f..b6de092 100644
+--- a/src/components/home-contents/HeroSliderTwoSingle.js
++++ b/src/components/home-contents/HeroSliderTwoSingle.js
+@@ -75,7 +75,7 @@ const HeroSliderTwoSingle = ({ data }) => {
+ 
+   return (
+     <div
+-      className={`slide d-flex align__center poss--relative hero-image-slider ${
++      className={`slide d-flex align__center poss--relative hero-image-slider pips-responsive-slider ${
+         isVideoSlide ? "hero-video-slide" : "hero-image-slide"
+       }`}
+       style={{
+diff --git a/src/components/how-works/HowWorks.js b/src/components/how-works/HowWorks.js
+index b6f399c..8f83189 100644
+--- a/src/components/how-works/HowWorks.js
++++ b/src/components/how-works/HowWorks.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ 
+ const HowWorks = () => {
+   return (
+diff --git a/src/components/market-contents/crypto-market-contents/CryptoMarketContentThree.js b/src/components/market-contents/crypto-market-contents/CryptoMarketContentThree.js
+index 2fe5027..8927307 100644
+--- a/src/components/market-contents/crypto-market-contents/CryptoMarketContentThree.js
++++ b/src/components/market-contents/crypto-market-contents/CryptoMarketContentThree.js
+@@ -1,4 +1,4 @@
+-import TopicThree from "../crypto-market-contents/TopicThree";
++
+ 
+ const CryptoMarketContentThree = () => {
+   return (
+diff --git a/src/components/market-contents/forex-market-contents/TopicThree.js b/src/components/market-contents/forex-market-contents/TopicThree.js
+index 33dcad4..5be68fb 100644
+--- a/src/components/market-contents/forex-market-contents/TopicThree.js
++++ b/src/components/market-contents/forex-market-contents/TopicThree.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ 
+ const TopicThree = () => {
+   return (
+diff --git a/src/components/market-contents/indices-market-contents/IndicesMarketContentOne.js b/src/components/market-contents/indices-market-contents/IndicesMarketContentOne.js
+index b8c9f65..910d56f 100644
+--- a/src/components/market-contents/indices-market-contents/IndicesMarketContentOne.js
++++ b/src/components/market-contents/indices-market-contents/IndicesMarketContentOne.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ import TopicOne from "../../market-contents/indices-market-contents/TopicOne";
+ 
+ const IndicesMarketContentOne = () => {
+diff --git a/src/components/market-contents/indices-market-contents/IndicesMarketContentThree.js b/src/components/market-contents/indices-market-contents/IndicesMarketContentThree.js
+index c9b9a6b..223a797 100644
+--- a/src/components/market-contents/indices-market-contents/IndicesMarketContentThree.js
++++ b/src/components/market-contents/indices-market-contents/IndicesMarketContentThree.js
+@@ -1,4 +1,4 @@
+-import TopicThree from "./TopicThree";
++
+ 
+ const IndicesMarketContentThree = () => {
+   return (
+diff --git a/src/components/market-contents/indices-market-contents/TopicOne.js b/src/components/market-contents/indices-market-contents/TopicOne.js
+index 0675178..0680aac 100644
+--- a/src/components/market-contents/indices-market-contents/TopicOne.js
++++ b/src/components/market-contents/indices-market-contents/TopicOne.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ 
+ const TopicOne = () => {
+   return (
+diff --git a/src/components/market-contents/stock-market-contents/StockMarketContentFour.js b/src/components/market-contents/stock-market-contents/StockMarketContentFour.js
+index d295ec5..c81ffca 100644
+--- a/src/components/market-contents/stock-market-contents/StockMarketContentFour.js
++++ b/src/components/market-contents/stock-market-contents/StockMarketContentFour.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const StockMarketContentFour = () => {
+diff --git a/src/components/partners-contents/PartnersContentTwo.js b/src/components/partners-contents/PartnersContentTwo.js
+index df6eac1..85304aa 100644
+--- a/src/components/partners-contents/PartnersContentTwo.js
++++ b/src/components/partners-contents/PartnersContentTwo.js
+@@ -6,7 +6,6 @@ import {
+   BarChart2Icon,
+   SmartphoneIcon,
+   CreditCardIcon,
+-  DollarSign, // Used for calendar/payments representation
+ } from "lucide-react";
+ 
+ const DynamicContent = ({ bgImage }) => (
+diff --git a/src/components/platform-contents/meta-trader-4-contents/MetaTrader4ContentFive.js b/src/components/platform-contents/meta-trader-4-contents/MetaTrader4ContentFive.js
+index d258a5d..bdc343e 100644
+--- a/src/components/platform-contents/meta-trader-4-contents/MetaTrader4ContentFive.js
++++ b/src/components/platform-contents/meta-trader-4-contents/MetaTrader4ContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/meta-trader-4-contents/TopicTwo";
++
+ 
+ const MetaTrader4ContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/meta-trader-4-mobile-contents/MetaTrader4MobileContentFive.js b/src/components/platform-contents/meta-trader-4-mobile-contents/MetaTrader4MobileContentFive.js
+index b675520..25b83ed 100644
+--- a/src/components/platform-contents/meta-trader-4-mobile-contents/MetaTrader4MobileContentFive.js
++++ b/src/components/platform-contents/meta-trader-4-mobile-contents/MetaTrader4MobileContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/meta-trader-4-mobile-contents/TopicTwo";
++
+ 
+ const MetaTrader4MobileContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/meta-trader-5-contents/MetaTrader5ContentFive.js b/src/components/platform-contents/meta-trader-5-contents/MetaTrader5ContentFive.js
+index dd0ab4f..8364f16 100644
+--- a/src/components/platform-contents/meta-trader-5-contents/MetaTrader5ContentFive.js
++++ b/src/components/platform-contents/meta-trader-5-contents/MetaTrader5ContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/meta-trader-5-contents/TopicTwo";
++
+ 
+ const MetaTrader5ContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentFive.js b/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentFive.js
+index cff3dda..9d65d02 100644
+--- a/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentFive.js
++++ b/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/meta-trader-5-mobile-contents/TopicTwo";
++
+ 
+ const MetaTrader5MobileContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentOne.js b/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentOne.js
+index 90e0c81..fed6853 100644
+--- a/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentOne.js
++++ b/src/components/platform-contents/meta-trader-5-mobile-contents/MetaTrader5MobileContentOne.js
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { Link } from "react-router-dom";
++
+ import TopicOne from "../meta-trader-5-mobile-contents/TopicOne";
+ 
+ const MetaTrader5MobileContentOne = () => {
+diff --git a/src/components/platform-contents/meta-trader-web-terminal-contents/MetaTraderWebTerminalContentFive.js b/src/components/platform-contents/meta-trader-web-terminal-contents/MetaTraderWebTerminalContentFive.js
+index fa5f95b..895e412 100644
+--- a/src/components/platform-contents/meta-trader-web-terminal-contents/MetaTraderWebTerminalContentFive.js
++++ b/src/components/platform-contents/meta-trader-web-terminal-contents/MetaTraderWebTerminalContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/meta-trader-web-terminal-contents/TopicTwo";
++
+ 
+ const MetaTraderWebTerminalContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/pips-terminal-contents/PipsTerminalContentFive.js b/src/components/platform-contents/pips-terminal-contents/PipsTerminalContentFive.js
+index cdc4090..cf56b9e 100644
+--- a/src/components/platform-contents/pips-terminal-contents/PipsTerminalContentFive.js
++++ b/src/components/platform-contents/pips-terminal-contents/PipsTerminalContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/pips-terminal-contents/TopicTwo";
++
+ 
+ const PipsTerminalContentFive = () => {
+   return (
+diff --git a/src/components/platform-contents/pips-trade-app-contents/PipsTradeAppContentFive.js b/src/components/platform-contents/pips-trade-app-contents/PipsTradeAppContentFive.js
+index 6c365d6..ae5a99e 100644
+--- a/src/components/platform-contents/pips-trade-app-contents/PipsTradeAppContentFive.js
++++ b/src/components/platform-contents/pips-trade-app-contents/PipsTradeAppContentFive.js
+@@ -1,4 +1,4 @@
+-import TopicTwo from "../../../components/platform-contents/pips-trade-app-contents/TopicTwo";
++
+ 
+ const PipsTradeAppContentFive = () => {
+   return (
+diff --git a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentOne.js b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentOne.js
+index 5ff05a7..276658b 100644
+--- a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentOne.js
++++ b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentOne.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import TopicOne from "../../resource-contents/analytical-tools-contents/TopicOne";
+ import { useEffect, useState } from "react";
+ 
+diff --git a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentThree.js b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentThree.js
+index a8d51e6..a31326e 100644
+--- a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentThree.js
++++ b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentThree.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const AnalyticalToolsContentThree = () => {
+diff --git a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentTwo.js b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentTwo.js
+index d511a4b..0f7c5a8 100644
+--- a/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentTwo.js
++++ b/src/components/resource-contents/analytical-tools-contents/AnalyticalToolsContentTwo.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const AnalyticalToolsContentTwo = () => {
+diff --git a/src/components/resource-contents/the-pips-insights-contents/ThePipsInsightsContentTwo.js b/src/components/resource-contents/the-pips-insights-contents/ThePipsInsightsContentTwo.js
+index 55c4b03..37e4401 100644
+--- a/src/components/resource-contents/the-pips-insights-contents/ThePipsInsightsContentTwo.js
++++ b/src/components/resource-contents/the-pips-insights-contents/ThePipsInsightsContentTwo.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const ThePipsInsightsContentTwo = () => {
+diff --git a/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentOne.js b/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentOne.js
+index 3e86566..d9608fc 100644
+--- a/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentOne.js
++++ b/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentOne.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import TopicOne from "../../resource-contents/trading-calculator-contents/TopicOne";
+ import { useEffect, useState, useCallback } from "react";
+ 
+@@ -353,7 +353,6 @@ function calculate({
+ // ─────────────────────────────────────────────────────────────────────────────
+ 
+ const TradingCalculatorContentOne = () => {
+-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+   const [activeTab, setActiveTab] = useState("Forex");
+   const [accountType, setAccountType] = useState("Standard");
+@@ -364,11 +363,6 @@ const TradingCalculatorContentOne = () => {
+   const [results, setResults] = useState(null);
+   const [calculated, setCalculated] = useState(false);
+ 
+-  useEffect(() => {
+-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+-    window.addEventListener("resize", handleResize);
+-    return () => window.removeEventListener("resize", handleResize);
+-  }, []);
+ 
+   // Reset instrument when tab changes
+   useEffect(() => {
+diff --git a/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentThree.js b/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentThree.js
+index 3cc43c4..86ace76 100644
+--- a/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentThree.js
++++ b/src/components/resource-contents/trading-calculator-contents/TradingCalculatorContentThree.js
+@@ -1,4 +1,4 @@
+-import { Link } from "react-router-dom";
++
+ import { useEffect, useState } from "react";
+ 
+ const TradingCalculatorContentThree = () => {
+diff --git a/src/components/trading-contents/demo-trading-account-contents/DemoTradingAccountContentTwo.js b/src/components/trading-contents/demo-trading-account-contents/DemoTradingAccountContentTwo.js
+index ca3d609..c49d85f 100644
+--- a/src/components/trading-contents/demo-trading-account-contents/DemoTradingAccountContentTwo.js
++++ b/src/components/trading-contents/demo-trading-account-contents/DemoTradingAccountContentTwo.js
+@@ -1,6 +1,6 @@
+ import React, { useEffect, useState } from "react";
+ import PropTypes from "prop-types";
+-import { Link } from "react-router-dom";
++
+ const DemoTradingAccountContentTwo = () => {
+   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ 
+diff --git a/src/pages/Login.js b/src/pages/Login.js
+index 67bb18a..db1cecc 100644
+--- a/src/pages/Login.js
++++ b/src/pages/Login.js
+@@ -1,8 +1,8 @@
+ import React, { Fragment } from "react";
+ import MetaTags from "react-meta-tags";
+ import { Link } from "react-router-dom";
+-import LayoutTwo from "../layouts/LayoutTwo";
+-import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
++
++
+ import Logo from "../components/header/Logo";
+ 
+ const Login = () => {

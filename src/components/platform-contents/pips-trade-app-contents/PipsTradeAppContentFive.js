@@ -1,4 +1,4 @@
-import TopicTwo from "../../../components/platform-contents/pips-trade-app-contents/TopicTwo";
+
 
 const PipsTradeAppContentFive = () => {
   return (

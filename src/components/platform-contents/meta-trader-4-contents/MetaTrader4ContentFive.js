@@ -1,4 +1,4 @@
-import TopicTwo from "../../../components/platform-contents/meta-trader-4-contents/TopicTwo";
+
 
 const MetaTrader4ContentFive = () => {
   return (

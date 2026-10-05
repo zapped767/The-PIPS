@@ -485,9 +485,7 @@
   margin-right: 5px;
 }
 
-.lang-text {
-  /* No additional styles needed, inherits from button */
-}
+
 
 /* Dropdown Menu Styles */
 .language-dropdown-menu {
@@ -633,34 +631,57 @@
     padding: 0 !important;
     margin: 0 !important;
   }
+/* =========================================================
+   HOME PAGE — MOBILE NAVBAR
+   TOP = BLUR ONLY
+   SCROLL = WHITE
+========================================================= */
 
-  /* Hamburger button */
-  .mobile-aside-button {
-    width: 40px !important;
-    height: 40px !important;
+@media (max-width: 767px) {
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
+  /* NOT SCROLLED — BLUR ONLY */
+  body:has(.dg__slider__area.slider--2)
+  .header--absolute:not(.stick):not(.sticky) {
     background: transparent !important;
-    border: none !important;
+    background-color: transparent !important;
 
-    color: #ffffff !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
 
-    line-height: 1 !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
   }
 
-  .mobile-aside-button svg {
-    width: 27px !important;
-    height: 27px !important;
-    color: #ffffff !important;
-    fill: #ffffff !important;
+  /* AFTER SCROLL — WHITE */
+  body:has(.dg__slider__area.slider--2)
+  .header--absolute.stick,
+
+  body:has(.dg__slider__area.slider--2)
+  .header--absolute.sticky {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow:
+      0 5px 20px rgba(1, 45, 101, 0.08) !important;
   }
 
+  /* HAMBURGER ALWAYS BLUE */
+  body:has(.dg__slider__area.slider--2)
+  .mobile-aside-button,
+
+  body:has(.dg__slider__area.slider--2)
+  .mobile-aside-button svg,
+
+  body:has(.dg__slider__area.slider--2)
+  .mobile-aside-button svg * {
+    color: #012d65 !important;
+    fill: #012d65 !important;
+    stroke: #012d65 !important;
+  }
+}
   /* Hero starts immediately after navbar */
   .dg__slider__area.slider--2 {
     margin-top: 64px !important;
@@ -1036,4 +1057,137 @@ body:has(.standard-accounts-hero)
   box-shadow:
     0 6px 24px
     rgba(1, 45, 101, 0.08) !important;
+}
+
+/* =========================================================
+   PIPS MOBILE NAVBAR
+   FINAL MOBILE-ONLY SCROLL BEHAVIOUR
+   <= 767px
+
+   TOP:
+   transparent light-blue glass / blur
+
+   SCROLLED:
+   solid white
+
+   Desktop / tablet are untouched.
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =====================================================
+     1. NOT SCROLLED
+     LIGHT BLUE GLASS / BLUR
+  ===================================================== */
+
+  .header--absolute:not(.sticky):not(.stick) {
+    background: rgba(147, 174, 207, 0.72) !important;
+
+    backdrop-filter:
+      blur(16px)
+      saturate(125%) !important;
+
+    -webkit-backdrop-filter:
+      blur(16px)
+      saturate(125%) !important;
+
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.22) !important;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+
+  /* =====================================================
+     2. AFTER SCROLL
+     SOLID WHITE
+     
+     Supports BOTH possible classes:
+     .sticky
+     .stick
+  ===================================================== */
+
+  .header--absolute.sticky,
+  .header--absolute.stick {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow:
+      0 5px 20px rgba(1, 45, 101, 0.08) !important;
+
+    border-bottom:
+      1px solid rgba(1, 45, 101, 0.05) !important;
+  }
+
+
+  /* =====================================================
+     3. SAME LOGO BEFORE + AFTER SCROLL
+  ===================================================== */
+
+  .header--absolute .logo .logo-img,
+  .header--absolute.sticky .logo .logo-img,
+  .header--absolute.stick .logo .logo-img {
+    width: 72px !important; /* MANUAL LOGO SIZE */
+
+    max-width: 72px !important;
+
+    height: auto !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    filter: none !important;
+  }
+
+
+  /* =====================================================
+     4. HAMBURGER — ALWAYS PIPS BLUE
+  ===================================================== */
+
+  .header--absolute .mobile-aside-button,
+  .header--absolute.sticky .mobile-aside-button,
+  .header--absolute.stick .mobile-aside-button {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #012d65 !important;
+
+    background: transparent !important;
+    border: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+
+  .header--absolute .mobile-aside-button svg,
+  .header--absolute.sticky .mobile-aside-button svg,
+  .header--absolute.stick .mobile-aside-button svg {
+    width: 26px !important;
+    height: 26px !important;
+
+    color: #012d65 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+
+  .header--absolute .mobile-aside-button svg path,
+  .header--absolute .mobile-aside-button svg line,
+  .header--absolute.sticky .mobile-aside-button svg path,
+  .header--absolute.sticky .mobile-aside-button svg line,
+  .header--absolute.stick .mobile-aside-button svg path,
+  .header--absolute.stick .mobile-aside-button svg line {
+    stroke: #012d65 !important;
+  }
 }

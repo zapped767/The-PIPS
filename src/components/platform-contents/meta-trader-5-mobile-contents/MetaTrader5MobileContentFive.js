@@ -1,4 +1,4 @@
-import TopicTwo from "../../../components/platform-contents/meta-trader-5-mobile-contents/TopicTwo";
+
 
 const MetaTrader5MobileContentFive = () => {
   return (

@@ -6,7 +6,6 @@ import {
   BarChart2Icon,
   SmartphoneIcon,
   CreditCardIcon,
-  DollarSign, // Used for calendar/payments representation
 } from "lucide-react";
 
 const DynamicContent = ({ bgImage }) => (

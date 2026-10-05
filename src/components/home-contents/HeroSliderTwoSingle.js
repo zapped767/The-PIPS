@@ -75,7 +75,7 @@ const HeroSliderTwoSingle = ({ data }) => {
 
   return (
     <div
-      className={`slide d-flex align__center poss--relative hero-image-slider ${
+      className={`slide d-flex align__center poss--relative hero-image-slider pips-responsive-slider ${
         isVideoSlide ? "hero-video-slide" : "hero-image-slide"
       }`}
       style={{

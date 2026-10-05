@@ -6,6 +6,7 @@
     "animate.css": "4.1.1",
     "bootstrap": "5.3.8",
     "framer-motion": "12.23.12",
+    "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
     "motion-dom": "12.23.12",
     "motion-utils": "12.23.6",

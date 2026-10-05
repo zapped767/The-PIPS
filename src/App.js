@@ -159,7 +159,7 @@ function App() {
             path={`${process.env.PUBLIC_URL + "/markets/crypto-market"}`}
             component={CryptoMarket}
           />
-          //Platforms
+          {/* Platforms */}
           <Route
             path={`${process.env.PUBLIC_URL + "/platforms/pips-terminal"}`}
             component={PipsTerminal}
@@ -188,7 +188,7 @@ function App() {
             path={`${process.env.PUBLIC_URL + "/platforms/meta-trader-4-Mobile"}`}
             component={MetaTrader4Mobile}
           />
-          //Resources
+          {/* Resources */}
           <Route
             path={`${process.env.PUBLIC_URL + "/resources/analytical-tools"}`}
             component={AnalyticalTools}
@@ -221,7 +221,7 @@ function App() {
             path={`${process.env.PUBLIC_URL + "/resources/vps-hosting"}`}
             component={VPSHosting}
           />
-          //Trading
+          {/* Trading */}
           <Route
             path={`${process.env.PUBLIC_URL + "/trading/types-of-accounts"}`}
             component={StandardAccounts}

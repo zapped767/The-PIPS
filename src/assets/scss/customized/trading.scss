@@ -30,11 +30,11 @@
 .cards-container {
   display: flex;
   background-color: #f6f6f6;
-  // border-radius: 20px;
+  /* border-radius: 20px;*/
   padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
   justify-content: center;
   gap: 30px;
-  // flex-wrap: wrap;
+  /* flex-wrap: wrap;*/
   width: 100%;
   max-width: 1200px;
 }
@@ -87,7 +87,7 @@
   transition: box-shadow 0.3s ease;
 
   /* --- ALIGNMENT --- */
-  // display: flex;
+  /* display: flex;*/
   flex-direction: column;
   justify-content: center; /* Centers content vertically in the square */
 }
@@ -481,12 +481,12 @@
   }
 }
 
-// /* ---------- Base / Desktop ---------- */
+/* *//* ---------- Base / Desktop ---------- *//**/
 .how__work__trading {
   padding: 138px 0;
   position: relative;
-  // margin-left: 70px; /* keep desktop offset */
-  // display: flex;
+  /* margin-left: 70px; *//* keep desktop offset *//**/
+  /* display: flex;*/
   align-items: center; /* vertically center columns on desktop */
   gap: 40px;
 
@@ -518,7 +518,7 @@
   .thumb-right {
     flex: 1 1 50%;
     display: flex;
-    // justify-content: center;
+    /* justify-content: center;*/
     flex-direction: row-reverse;
 
     img {
@@ -1211,7 +1211,7 @@
   }
 }
 
-//OrderExecutionContentFour Start
+/*OrderExecutionContentFour Start*/
 /* Main Section Wrapper */
 .et-section {
   width: 100%;
@@ -1387,9 +1387,9 @@
   object-fit: cover;
   display: block;
 }
-//OrderExecutionContentFour End
+/*OrderExecutionContentFour End*/
 
-//OrderExecutionContentOne Start
+/*OrderExecutionContentOne Start*/
 /* Main Section Container */
 .ceo-quote-section {
   width: 100%;
@@ -1493,7 +1493,7 @@
   }
 }
 
-//OrderExecutionContentOne End
+/*OrderExecutionContentOne End*/
 
 /* ── Very small (≤ 360px) ── */
 @media (max-width: 360px) {
@@ -1523,77 +1523,6 @@
       font-size: 14px;
       padding: 8px 20px;
     }
-  }
-}
-/* =========================================================
-   TYPES OF ACCOUNTS
-   hero-slide-23.png
-   DESKTOP ONLY - MANUAL CONTROLS
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  .standard-accounts-hero {
-
-    /* =====================================
-       WHOLE SECTION HEIGHT
-       smaller = shorter hero section
-    ===================================== */
-    --hero23-banner-height: 600px;
-
-
-    /* =====================================
-       IMAGE WIDTH
-
-       95%  = narrower
-       100% = normal
-       105% = little wider
-       110% = more wider
-    ===================================== */
-    --hero23-image-width: 100%;
-
-
-    /* =====================================
-       IMAGE HEIGHT
-
-       90%  = much shorter
-       95%  = shorter
-       100% = normal
-       105% = taller
-    ===================================== */
-    --hero23-image-height: 96%;
-
-
-    /* =====================================
-       LEFT / RIGHT
-
-       negative = LEFT
-       positive = RIGHT
-    ===================================== */
-    --hero23-image-x: 0px;
-
-
-    /* =====================================
-       UP / DOWN
-
-       negative = UP
-       positive = DOWN
-    ===================================== */
-    --hero23-image-y: 0px;
-
-
-    height: var(--hero23-banner-height) !important;
-    min-height: var(--hero23-banner-height) !important;
-
-    background-size:
-      var(--hero23-image-width)
-      var(--hero23-image-height) !important;
-
-    background-position:
-      calc(50% + var(--hero23-image-x))
-      calc(50% + var(--hero23-image-y)) !important;
-
-    background-repeat: no-repeat !important;
   }
 }
 /* =========================================================
@@ -1650,7 +1579,7 @@
 
   padding: 42px;
 
-  // border-radius: 28px;
+  /* border-radius: 28px;*/
 
   background:
    (
@@ -1681,7 +1610,7 @@
       rgba(255, 255, 255, 0.04)
     );
 
-  // border: 1px solid rgba(255, 255, 255, 0.20);
+  /* border: 1px solid rgba(255, 255, 255, 0.20);*/
 
   overflow: hidden;
 
@@ -2120,20 +2049,20 @@
   text-align: center;
 }
 
-// .account-plans-heading > span {
-//   display: inline-block;
+/* .account-plans-heading > span {*/
+/*   display: inline-block;*/
 
-//   margin-bottom: 12px;
+/*   margin-bottom: 12px;*/
 
-//   color: #035391;
+/*   color: #035391;*/
 
-//   font-size: 13px;
-//   font-weight: 700;
+/*   font-size: 13px;*/
+/*   font-weight: 700;*/
 
-//   letter-spacing: 0.12em;
+/*   letter-spacing: 0.12em;*/
 
-//   text-transform: uppercase;
-// }
+/*   text-transform: uppercase;*/
+/* }*/
 
 .account-plans-heading h2 {
   margin: 0 0 16px;
@@ -2269,57 +2198,57 @@
     rgba(247, 169, 1, 0.25);
 }
 
-// .account-plan-tier span {
-//   margin-left: 5px;
+/* .account-plan-tier span {*/
+/*   margin-left: 5px;*/
 
-//   font-weight: 700;
-// }
+/*   font-weight: 700;*/
+/* }*/
 
 
 /* =========================================================
    SMALL ICON
 ========================================================= */
 
-// .account-plan-icon {
-//   width: 40px;
-//   height: 40px;
+/* .account-plan-icon {*/
+/*   width: 40px;*/
+/*   height: 40px;*/
 
-//   display: flex;
+/*   display: flex;*/
 
-//   align-items: flex-end;
-//   justify-content: center;
+/*   align-items: flex-end;*/
+/*   justify-content: center;*/
 
-//   gap: 3px;
+/*   gap: 3px;*/
 
-//   padding-bottom: 10px;
+/*   padding-bottom: 10px;*/
 
-//   border-radius: 50%;
+/*   border-radius: 50%;*/
 
-//   background:
-//     rgba(3, 83, 145, 0.18);
-// }
+/*   background:*/
+/*     rgba(3, 83, 145, 0.18);*/
+/* }*/
 
-// .account-plan-icon span {
-//   display: block;
+/* .account-plan-icon span {*/
+/*   display: block;*/
 
-//   width: 4px;
+/*   width: 4px;*/
 
-//   background: #035391;
+/*   background: #035391;*/
 
-//   border-radius: 3px;
-// }
+/*   border-radius: 3px;*/
+/* }*/
 
-// .account-plan-icon span:nth-child(1) {
-//   height: 7px;
-// }
+/* .account-plan-icon span:nth-child(1) {*/
+/*   height: 7px;*/
+/* }*/
 
-// .account-plan-icon span:nth-child(2) {
-//   height: 12px;
-// }
+/* .account-plan-icon span:nth-child(2) {*/
+/*   height: 12px;*/
+/* }*/
 
-// .account-plan-icon span:nth-child(3) {
-//   height: 18px;
-// }
+/* .account-plan-icon span:nth-child(3) {*/
+/*   height: 18px;*/
+/* }*/
 
 
 /* =========================================================
@@ -3261,119 +3190,6 @@
 
 }
 /* =========================================================
-   TYPES OF ACCOUNTS HERO
-   DESKTOP ONLY
-   TEXT RIGHT SIDE + BLUE BUTTON
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  /* MOVE COMPLETE CONTENT TO RIGHT SIDE */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market {
-    width: 100% !important;
-
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-
-    /* MANUAL RIGHT SIDE SPACE */
-    padding-right: 120px !important;
-
-    padding-left: 0 !important;
-  }
-
-
-  /* INNER CONTAINER */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .container {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-
-  /* ROW */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .row {
-    width: 100% !important;
-
-    display: flex !important;
-    justify-content: flex-end !important;
-
-    margin: 0 !important;
-  }
-
-
-  /* CONTENT BLOCK */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .row > div {
-    width: 520px !important;
-
-    text-align: left !important;
-  }
-
-
-  /* H1 */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market h1 {
-    color: #012d65 !important;
-    -webkit-text-fill-color: #012d65 !important;
-
-    text-align: left !important;
-  }
-
-
-  /* PARAGRAPH */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market p {
-    color: #012d65 !important;
-    -webkit-text-fill-color: #012d65 !important;
-
-    text-align: left !important;
-  }
-
-
-  /* START NOW BUTTON */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .slide__btn.dg__btn {
-    background: #012d65 !important;
-
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-
-    border-color: #012d65 !important;
-  }
-
-
-  /* REMOVE OLD BUTTON OVERLAY IF ANY */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .slide__btn.dg__btn::before,
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .slide__btn.dg__btn::after {
-    display: none !important;
-  }
-
-
-  /* HOVER */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market
-  .slide__btn.dg__btn:hover {
-    background: #f7a901 !important;
-
-    color: #012d65 !important;
-    -webkit-text-fill-color: #012d65 !important;
-
-    border-color: #f7a901 !important;
-  }
-
-}
-/* =========================================================
    TRADING CONDITIONS
    REMOVE LEFT IMAGE + REMOVE BLUE OUTER BACKGROUND
    KEEP ONLY WHITE CONTENT CARD
@@ -4297,6 +4113,414 @@
    DESKTOP ONLY
 ========================================================= */
 
+/* =========================================================
+   ACCOUNT CARDS — SHARED SIZE
+
+   Change width and height here for ALL five cards.
+========================================================= */
+
+.pips-scroll-accounts-track {
+  --accounts-card-width: 560px;
+  --accounts-card-height: 640px;
+}
+
+/* This selector takes priority over the older card size rules. */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card {
+  /* Default settings */
+  --card-image: none;
+  --card-overlay: rgba(1, 20, 45, 0.12);
+
+  --card-text-color: #ffffff;
+  --card-title-color: #ffffff;
+
+  --card-button-background: #ffffff;
+  --card-button-color: #012d65;
+
+  --card-features-background: rgba(1, 45, 101, 0.12);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 0px;
+
+  /* Equal width */
+  width: var(--accounts-card-width) !important;
+  min-width: var(--accounts-card-width) !important;
+  max-width: var(--accounts-card-width) !important;
+  flex: 0 0 var(--accounts-card-width) !important;
+
+  /* Equal height */
+  height: var(--accounts-card-height) !important;
+  min-height: var(--accounts-card-height) !important;
+  max-height: var(--accounts-card-height) !important;
+
+  position: relative;
+  box-sizing: border-box;
+
+  /* Allows access to content if enlarged text exceeds the card. */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding:
+    var(--card-padding-top)
+    var(--card-padding-right)
+    var(--card-padding-bottom)
+    var(--card-padding-left) !important;
+
+  /* Rounded corners */
+border-radius: var(--card-radius, 32px) !important;
+
+/* No shadow */
+box-shadow: none !important;
+filter: none !important;
+
+/* Background image */
+background:
+  linear-gradient(
+    var(--card-overlay),
+    var(--card-overlay)
+  ),
+  var(--card-image),
+  var(--card-fill, #012d65) !important;
+
+/* First value = overlay size; second value = image size */
+background-size:
+  100% 100%,
+  var(--card-image-size, contain) !important;
+
+background-position:
+  center,
+  var(--card-background-x) var(--card-background-y) !important;
+
+background-repeat: no-repeat !important;
+
+&:hover {
+  box-shadow: none !important;
+  filter: none !important;
+}
+}
+
+/* =========================================================
+   CARD 1 — CUSTOMIZE HERE
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card--1 {
+  --card-image: url("/images/accounts/account-1.png");
+  --card-overlay: transparent;
+
+  --card-text-color: #012d65;
+  --card-title-color: #012d65;
+
+  --card-button-background: #012d65;
+  --card-button-color: #ffffff;
+
+  --card-features-background: rgba(1, 45, 101, 0.18);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 150px;
+
+  --card-fill: #012d65;
+  --card-image-size: 135%;
+
+  --features-x: 0px;
+  --features-y: 0px;
+
+  --features-padding-top: 20px;
+  --features-padding-right: 18px;
+  --features-padding-bottom: 20px;
+  --features-padding-left: 18px;
+
+  --features-title-gap: 20px;
+  --features-row-gap: 18px;
+
+  --card-column-gap: 24px;
+
+  --register-x: 8px;
+  --register-y: 0px;
+  --register-gap-above: 28px;
+
+  --card-gap-after: 0px;
+}
+
+/* =========================================================
+   CARD 2 — CUSTOMIZE HERE
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card--2 {
+  --card-image: url("/images/accounts/account-2.png");
+  --card-overlay: rgba(1, 20, 45, 0);
+
+  --card-text-color: #012d65;
+  --card-title-color: #012d65;
+
+  --card-button-background: #012d65;
+  --card-button-color: #ffffff;
+  --card-features-background: rgba(255, 255, 255, 0.55);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 0px;
+    --card-radius: 32px;
+  --card-fill: #ffffff;
+  --card-image-size: 135%;
+  --card-overlay: transparent;
+
+  --features-x: 0px;
+  --features-y: 0px;
+
+  --features-padding-top: 20px;
+  --features-padding-right: 18px;
+  --features-padding-bottom: 20px;
+  --features-padding-left: 18px;
+
+  --features-title-gap: 20px;
+  --features-row-gap: 18px;
+  --card-column-gap: 24px;
+
+  --register-x: 0px;
+  --register-y: 0px;
+  --register-gap-above: 28px;
+
+  --card-gap-after: 0px;
+}
+
+/* =========================================================
+   CARD 3 — CUSTOMIZE HERE
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card--3 {
+  --card-image: url("/images/accounts/account-3.png");
+  --card-overlay: rgba(1, 20, 45, 0.12);
+
+  --card-text-color: #ffffff;
+  --card-title-color: #ffffff;
+
+  --card-button-background: #ffffff;
+  --card-button-color: #012d65;
+  --card-features-background: rgba(1, 45, 101, 0.18);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 0px;
+    --card-radius: 32px;
+  --card-fill: #012d65;
+  --card-image-size: 135%;
+  --card-overlay: transparent;
+
+  --features-x: 0px;
+  --features-y: 0px;
+
+  --features-padding-top: 20px;
+  --features-padding-right: 18px;
+  --features-padding-bottom: 20px;
+  --features-padding-left: 18px;
+
+  --features-title-gap: 20px;
+  --features-row-gap: 18px;
+  --card-column-gap: 24px;
+
+  --register-x: 0px;
+  --register-y: 0px;
+  --register-gap-above: 28px;
+
+  --card-gap-after: 0px;
+}
+
+/* =========================================================
+   CARD 4 — CUSTOMIZE HERE
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card--4 {
+  --card-image: url("/images/accounts/account-4.png");
+  --card-overlay: rgba(1, 20, 45, 0);
+
+  --card-text-color: #012d65;
+  --card-title-color: #012d65;
+
+  --card-button-background: #012d65;
+  --card-button-color: #ffffff;
+  --card-features-background: rgba(255, 255, 255, 0.55);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 0px;
+    --card-radius: 32px;
+  --card-fill: #ffffff;
+  --card-image-size: 135%;
+  --card-overlay: transparent;
+
+  --features-x: 0px;
+  --features-y: 0px;
+
+  --features-padding-top: 20px;
+  --features-padding-right: 18px;
+  --features-padding-bottom: 20px;
+  --features-padding-left: 18px;
+
+  --features-title-gap: 20px;
+  --features-row-gap: 18px;
+  --card-column-gap: 24px;
+
+  --register-x: 0px;
+  --register-y: 0px;
+  --register-gap-above: 28px;
+
+  --card-gap-after: 0px;
+}
+
+/* =========================================================
+   CARD 5 — CUSTOMIZE HERE
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card--5 {
+  --card-image: url("/images/accounts/account-5.png");
+  --card-overlay: rgba(1, 20, 45, 0.12);
+
+  --card-text-color: #ffffff;
+  --card-title-color: #ffffff;
+
+  --card-button-background: #ffffff;
+  --card-button-color: #012d65;
+  --card-features-background: rgba(1, 45, 101, 0.18);
+
+  --card-background-x: 50%;
+  --card-background-y: 50%;
+
+  --card-padding-top: 32px;
+  --card-padding-right: 30px;
+  --card-padding-bottom: 32px;
+  --card-padding-left: 30px;
+
+  --card-content-x: 0px;
+  --card-content-y: 0px;
+    --card-radius: 32px;
+  --card-fill: #012d65;
+  --card-image-size: 135%;
+  --card-overlay: transparent;
+
+  --features-x: 0px;
+  --features-y: 0px;
+
+  --features-padding-top: 20px;
+  --features-padding-right: 18px;
+  --features-padding-bottom: 20px;
+  --features-padding-left: 18px;
+
+  --features-title-gap: 20px;
+  --features-row-gap: 18px;
+  --card-column-gap: 24px;
+
+  --register-x: 0px;
+  --register-y: 0px;
+  --register-gap-above: 28px;
+
+  --card-gap-after: 0px;
+}
+
+/* =========================================================
+   APPLY EACH CARD'S TEXT AND POSITION SETTINGS
+========================================================= */
+
+.pips-scroll-accounts-track > .pips-scroll-plan-card {
+  .pips-scroll-plan-top,
+  .pips-scroll-plan-body {
+    position: relative;
+    left: var(--card-content-x);
+    top: var(--card-content-y);
+  }
+
+  .pips-scroll-plan-name,
+  .pips-scroll-plan-left h3 {
+    color: var(--card-title-color) !important;
+    -webkit-text-fill-color: var(--card-title-color) !important;
+  }
+
+  .pips-scroll-plan-left p,
+  .pips-scroll-features-title,
+  .pips-scroll-feature {
+    color: var(--card-text-color) !important;
+    -webkit-text-fill-color: var(--card-text-color) !important;
+  }
+
+  .pips-scroll-plan-features {
+    background: var(--card-features-background) !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .pips-scroll-plan-button {
+    background: var(--card-button-background) !important;
+    color: var(--card-button-color) !important;
+    -webkit-text-fill-color: var(--card-button-color) !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE WIDTHS — ALL FIVE CARDS REMAIN EQUAL
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pips-scroll-accounts-track {
+    --accounts-card-width: 460px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .pips-scroll-accounts-track {
+    --accounts-card-width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pips-scroll-accounts-track {
+    --accounts-card-width: 82vw;
+  }
+
+  .pips-scroll-accounts-track > .pips-scroll-plan-card {
+    --card-padding-top: 24px;
+    --card-padding-right: 18px;
+    --card-padding-bottom: 24px;
+    --card-padding-left: 18px;
+  }
+}
+
 @media (min-width: 1200px) {
 
   /* =====================================================
@@ -4337,8 +4561,6 @@
      620px = more
   ===================================== */
 
-  height: 540px;
-
 
   display: flex;
 
@@ -4348,6 +4570,10 @@
 
   /* ONLY VISIBLE AREA BLUE */
   background: #ffffff !important;
+  height: auto;
+  min-height: 620px;
+  padding-block: 40px;
+  box-sizing: border-box;
 }
 
 
@@ -4403,132 +4629,21 @@
    DESKTOP ONLY
    EXACT SAME WIDTH + SAME HEIGHT
    NO CARD HOVER
-========================================================= */
-
-.pips-scroll-plan-card {
-
-  /* ==============================
-     MANUAL CARD WIDTH
-  ============================== */
-
+========================================================= */.pips-scroll-plan-card {
   width: 560px !important;
   min-width: 560px !important;
   max-width: 560px !important;
-
   flex: 0 0 560px !important;
-
-
-  /* ==============================
-     MANUAL CARD HEIGHT
-  ============================== */
-
-  height: 390px !important;
-  min-height: 390px !important;
-  max-height: 390px !important;
-
-
-  position: relative;
-
-  overflow: hidden;
-
   padding: 30px;
-
   border-radius: 24px;
-
-  box-sizing: border-box;
-
-  color: #ffffff;
-
-
-  background:
-    linear-gradient(
-      135deg,
-      #071525 0%,
-      #012d65 55%,
-      #035391 100%
-    );
-
-
-  /* NORMAL SHADOW ONLY */
-  box-shadow:
-    0 20px 45px
-    rgba(0, 0, 0, 0.18);
-
-
-  /* REMOVE HOVER ANIMATION */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
   transition: none !important;
   transform: none !important;
-}
-
-
-/* REMOVE CARD HOVER COMPLETELY */
-.pips-scroll-plan-card:hover {
-
-  transform: none !important;
-
-  box-shadow:
-    0 20px 45px
-    rgba(0, 0, 0, 0.18) !important;
 }
 
   /* =====================================================
      DIFFERENT CARD BACKGROUNDS
   ===================================================== */
-
-  .pips-scroll-plan-card--1 {
-
-    background:
-      linear-gradient(
-        135deg,
-        #071525,
-        #012d65
-      );
-  }
-
-
-  .pips-scroll-plan-card--2 {
-
-    background:
-      linear-gradient(
-        135deg,
-        #012d65,
-        #035391
-      );
-  }
-
-
-  .pips-scroll-plan-card--3 {
-
-    background:
-      linear-gradient(
-        135deg,
-        #035391,
-        #012d65
-      );
-  }
-
-
-  .pips-scroll-plan-card--4 {
-
-    background:
-      linear-gradient(
-        135deg,
-        #061426,
-        #012d65 65%,
-        #035391
-      );
-  }
-
-
-  .pips-scroll-plan-card--5 {
-
-    background:
-      linear-gradient(
-        135deg,
-        #012d65,
-        #061426
-      );
-  }
 
 
   /* =====================================================
@@ -4908,18 +5023,9 @@
 
     min-width: 0;
 
-    min-height: 390px;
-
     padding: 28px;
 
     border-radius: 20px;
-
-    background:
-      linear-gradient(
-        135deg,
-        #012d65,
-        #035391
-      );
 
     color: #ffffff;
   }
@@ -4963,8 +5069,6 @@
 
 
   .pips-scroll-plan-card {
-
-    min-height: auto;
 
     padding: 23px;
   }
@@ -5361,57 +5465,6 @@ overflow: visible !important;
 
 
   /* =====================================================
-     SECTION 1
-     TYPES OF ACCOUNTS HERO
-     ONE FULL SCREEN
-  ===================================================== */
-
-  .standard-accounts-hero {
-
-    /*
-      Full visible screen below navbar
-    */
-    height:
-      calc(
-        100vh - var(--pips-page-header-height)
-      ) !important;
-
-    min-height:
-      calc(
-        100vh - var(--pips-page-header-height)
-      ) !important;
-
-
-    /* KEEP YOUR CURRENT IMAGE CONTROLS */
-
-    background-size:
-      var(--hero23-image-width)
-      var(--hero23-image-height) !important;
-
-    background-position:
-      calc(50% + var(--hero23-image-x))
-      calc(50% + var(--hero23-image-y)) !important;
-
-    background-repeat:
-      no-repeat !important;
-
-    box-sizing:
-      border-box !important;
-  }
-
-
-  .standard-accounts-hero
-  .ht__bradcaump__container_market {
-
-    height: 100% !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-  }
-
-
-  /* =====================================================
      SECTION 2
      TRADING CONDITIONS
      ONE FULL SCREEN
@@ -5495,12 +5548,6 @@ overflow: visible !important;
       0.78 = recommended
       0.65 = more transparent
     */
-    background:
-      linear-gradient(
-        135deg,
-        rgba(1, 45, 101, 0.82),
-        rgba(3, 83, 145, 0.72)
-      ) !important;
 
 
     /* GLASS BLUR */
@@ -5537,13 +5584,6 @@ overflow: visible !important;
 
     transform:
       none !important;
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(1, 45, 101, 0.82),
-        rgba(3, 83, 145, 0.72)
-      ) !important;
 
     box-shadow:
       0 20px 45px
@@ -6176,16 +6216,6 @@ overflow: visible !important;
       460px !important;
 
 
-    height:
-      340px !important;
-
-    min-height:
-      340px !important;
-
-    max-height:
-      340px !important;
-
-
     padding:
       24px !important;
 
@@ -6200,13 +6230,6 @@ overflow: visible !important;
        YOUR PIPS COLORS
        GLASS LINEAR GRADIENT
     ===================================== */
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(1, 45, 101, 0.94) 0%,
-        rgba(3, 83, 145, 0.88) 100%
-      ) !important;
 
 
     backdrop-filter:
@@ -6245,13 +6268,6 @@ overflow: visible !important;
   .pips-scroll-plan-card:hover {
     transform:
       none !important;
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(1, 45, 101, 0.94) 0%,
-        rgba(3, 83, 145, 0.88) 100%
-      ) !important;
 
     box-shadow:
       0 14px 35px
@@ -6369,14 +6385,6 @@ overflow: visible !important;
 
 
     /* MANUAL TABLET HEIGHT */
-    height:
-      330px !important;
-
-    min-height:
-      330px !important;
-
-    max-height:
-      330px !important;
 
 
     padding:
@@ -6469,15 +6477,6 @@ overflow: visible !important;
     /* =====================================
        MANUAL MOBILE HEIGHT
     ===================================== */
-
-    height:
-      405px !important;
-
-    min-height:
-      405px !important;
-
-    max-height:
-      405px !important;
 
 
     padding:
@@ -6667,42 +6666,6 @@ overflow: visible !important;
 
 }
 /* =========================================================
-   TYPES OF ACCOUNTS HERO TEXT
-   LAPTOP + TABLET + MOBILE ONLY
-   DESKTOP UNTOUCHED
-========================================================= */
-
-@media (max-width: 1199px) {
-
-  /* H1 */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market h1 {
-    color: #012d65 !important;
-    -webkit-text-fill-color: #012d65 !important;
-  }
-
-
-  /* PARAGRAPH */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market p {
-    color: #012d65 !important;
-    -webkit-text-fill-color: #012d65 !important;
-  }
-
-
-  /* START NOW BUTTON */
-  .standard-accounts-hero
-  .slide__btn.dg__btn {
-    background: #012d65 !important;
-
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-
-    border-color: #012d65 !important;
-  }
-
-}
-/* =========================================================
    ACCOUNT CARDS
    MOBILE ONLY
    SMALLER CARD + HORIZONTAL PEEK
@@ -6801,9 +6764,6 @@ overflow: visible !important;
     max-width: 82vw !important;
 
     flex: 0 0 82vw !important;
-
-    min-height: 0 !important;
-    height: auto !important;
 
     padding: 14px !important;
 
@@ -7278,72 +7238,6 @@ overflow: visible !important;
 
 }
 /* =========================================================
-   TYPES OF ACCOUNTS HERO IMAGE
-   DESKTOP ONLY - MANUAL SIZE / POSITION
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  .standard-accounts-hero {
-
-    /* =====================================
-       WHOLE SECTION HEIGHT
-
-       650px = current
-       700px = taller
-       750px = more taller
-    ===================================== */
-    --hero23-banner-height: 700px;
-
-
-    /* =====================================
-       IMAGE WIDTH
-
-       smaller % = ZOOM OUT / NARROWER
-       bigger %  = ZOOM IN / WIDER
-
-       108% = current
-       100% = little zoom out
-       96%  = more zoom out
-       92%  = much more zoom out
-    ===================================== */
-    --hero23-image-width: 101%;
-
-
-    /* =====================================
-       IMAGE HEIGHT
-
-       bigger % = increase image height
-       smaller % = reduce image height
-
-       100% = normal
-       105% = little taller
-       110% = taller
-       115% = more taller
-    ===================================== */
-    --hero23-image-height: 103%;
-
-
-    /* =====================================
-       LEFT / RIGHT
-
-       negative = LEFT
-       positive = RIGHT
-    ===================================== */
-    --hero23-image-x: 0px;
-
-
-    /* =====================================
-       UP / DOWN
-
-       negative = UP
-       positive = DOWN
-    ===================================== */
-    --hero23-image-y: 0px;
-  }
-
-}
-/* =========================================================
    NAVBAR - REMOVE BLUR
 ========================================================= */
 
@@ -7359,284 +7253,637 @@ overflow: visible !important;
 
   background: none !important;
 }
-/* =========================================================
-   TYPES OF ACCOUNTS HERO TEXT
-   DESKTOP ONLY - MANUAL POSITION + SIZE
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  /* WHOLE TEXT BLOCK */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market {
-
-    position: relative !important;
-
-    /* =====================================
-       LEFT / RIGHT
-
-       positive = RIGHT
-       negative = LEFT
-    ===================================== */
-    left: -350px !important;
-
-
-    /* =====================================
-       UP / DOWN
-
-       positive = DOWN
-       negative = UP
-    ===================================== */
-    top: -240px !important;
-  }
-
-
-  /* H1 */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market h1 {
-
-    font-size: 78px !important;
-    line-height: 1.1 !important;
-
-    color: #012d65 !important;
-
-    margin-bottom: 18px !important;
-    white-space: nowrap !important;
-    position: relative !important;
-    left: -210px !important;
-    
-  }
-
-
-  /* PARAGRAPH */
-  .standard-accounts-hero
-  .ht__bradcaump__container_market p {
-
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-
-    color: #012d65 !important;
-
-    margin-bottom: 26px !important;
-    margin-left: -100px !important;
-  }
-
 
 /* =========================================================
-   START NOW BUTTON
-   DESKTOP ONLY - MANUAL POSITION
+   TYPES OF ACCOUNTS — FULL SCREEN HERO
+   Centered content + curved bottom corners
 ========================================================= */
 
-.standard-accounts-hero
-.ht__bradcaump__container_market
-.slide__btn.dg__btn {
+.pips-accounts-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
 
-  font-size: 30px !important;
+  &,
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: border-box;
+  }
 
-  padding: 14px 34px !important;
+  /* BACKGROUND IMAGE */
 
-  background: #012d65 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
+  &__surface {
+    display: grid;
+    align-items: center;
 
-  border-color: #012d65 !important;
+    width: 100%;
+    height: auto;
 
+    /* Full-screen height on desktop, tablet and mobile */
+    min-height: 100vh;
+    min-height: 100svh;
 
-  /* REQUIRED FOR MANUAL MOVEMENT */
-  position: relative !important;
+    /* Keep content clear of the fixed navbar */
+    padding: 140px 0 80px;
 
+    background-color: #012d65;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
 
-  /* =====================================
-     LEFT / RIGHT
+    /* Curved bottom corners */
+    border-radius:
+      0
+      0
+      clamp(32px, 5vw, 90px)
+      clamp(32px, 5vw, 90px);
 
-     negative = LEFT
-     positive = RIGHT
-  ===================================== */
+    overflow: hidden;
+  }
 
-  left: -610px !important;
+  /* CENTERED CONTENT */
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  /* =====================================
-     UP / DOWN
+    width: calc(100% - 96px);
+    max-width: 1280px;
 
-     negative = UP
-     positive = DOWN
-  ===================================== */
+    margin: 0 auto;
+    padding: 0;
 
-  top: 450px !important;
+    text-align: center;
+  }
 
+  /* TYPES OF ACCOUNTS */
 
-  /* REMOVE OLD POSITION */
-  margin-left: 0 !important;
+  &__title {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 0 20px;
+    padding: 0;
+
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+
+    font-size: clamp(40px, 4.2vw, 76px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+
+    text-align: center;
+    text-transform: none;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* SUBTITLE */
+
+  &__subtitle {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 0 32px;
+    padding: 0;
+
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 400;
+    line-height: 1.6;
+
+    text-align: center;
+  }
+
+  /* START NOW BUTTON */
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    min-width: 180px;
+    min-height: 54px;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 14px 28px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #012d65;
+    -webkit-text-fill-color: #012d65;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #eaf3ff;
+      color: #012d65;
+      -webkit-text-fill-color: #012d65;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 5px;
+    }
+  }
 }
 
-}
 /* =========================================================
-   TYPES OF ACCOUNTS - START NOW BUTTON
-   DESKTOP ONLY
-   CENTER TEXT INSIDE BUTTON
+   NAVBAR — TYPES OF ACCOUNTS PAGE ONLY
 ========================================================= */
 
-@media (min-width: 1200px) {
+body:has(.pips-accounts-banner) {
+  .dg__header.header--absolute {
+    position: fixed !important;
 
-  .standard-accounts-hero
-  .slide__btn.dg__btn {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 
-    /* MANUAL BUTTON SIZE */
-    width: 250px !important;
-    height: 90px !important;
+    width: 100%;
+    margin-top: 0 !important;
 
-    /* CENTER TEXT */
-    display: inline-flex !important;
+    z-index: 1000;
+    filter: none !important;
+
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease !important;
+
+    /* At the top: homepage-style glass blur */
+
+    &:not(.stick) {
+      background: rgba(255, 255, 255, 0.58) !important;
+
+      backdrop-filter: blur(18px) saturate(135%) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+
+    /* After scrolling: solid white */
+
+    &.stick {
+      background: #ffffff !important;
+
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+
+      box-shadow:
+        0 6px 24px rgba(1, 45, 101, 0.08) !important;
+    }
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+  .pips-accounts-banner {
+    &__content {
+      width: calc(100% - 64px);
+    }
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .pips-accounts-banner {
+    &__surface {
+      padding: 120px 0 56px;
+    }
+
+    &__content {
+      width: calc(100% - 40px);
+    }
+
+    &__title {
+      margin-bottom: 16px;
+      font-size: clamp(32px, 8vw, 44px);
+    }
+
+    &__subtitle {
+      margin-bottom: 26px;
+      font-size: 16px;
+    }
+
+    &__button {
+      min-width: 156px;
+      min-height: 48px;
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pips-accounts-banner__button {
+    transition: none;
+  }
+
+  body:has(.pips-accounts-banner)
+  .dg__header.header--absolute {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   FINAL ACCOUNT CARD CURVE
+   IMAGE + COMPLETE CONTAINER
+   KEEP THIS AS LAST CODE IN trading.scss
+========================================================= */
+
+article.pips-scroll-plan-card {
+  border-radius: 36px !important;
+
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+
+  background-clip: padding-box !important;
+
+  /* Force browser to clip image/background to radius */
+  clip-path: inset(0 round 36px) !important;
+  -webkit-clip-path: inset(0 round 36px) !important;
+
+  /* Force complete card painting inside curve */
+  contain: paint !important;
+  isolation: isolate !important;
+
+  /* Chrome rendering fix */
+  -webkit-mask-image: -webkit-radial-gradient(
+    white,
+    black
+  );
+}
+/* =========================================================
+   PIPS STANDARD ACCOUNTS V3
+   UNIQUE CARD SHELL SYSTEM
+
+   OUTER = SHADOW
+   INNER = CURVE + IMAGE
+
+   DO NOT REUSE THESE CLASS NAMES
+========================================================= */
+
+
+/* =========================================================
+   OUTER CARD
+   SHADOW LIVES HERE
+========================================================= */
+
+.pips-stdacc-v3-section
+.pips-stdacc-v3-shell {
+
+  /* Existing width / height remain untouched */
+
+  /* Remove padding from OUTER card.
+     Padding is moved to inner surface below. */
+  padding: 0 !important;
+
+  /* Outer must stay transparent */
+  background: transparent !important;
+
+  /* Important:
+     DO NOT hide overflow here.
+     Otherwise shadow gets clipped. */
+  overflow: visible !important;
+
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+
+  /* No clip-path on outer card */
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+
+  /* Outer radius follows inner radius */
+  border-radius: 32px !important;
+
+  /* Remove old card border */
+  border: none !important;
+
+  /* LIGHT PREMIUM SEPARATE SHADOW */
+  box-shadow:
+    0 4px 12px rgba(1, 45, 101, 0.06),
+    0 12px 28px rgba(1, 45, 101, 0.10),
+    0 20px 48px rgba(1, 45, 101, 0.08) !important;
+
+  /* Do not change horizontal card movement */
+  filter: none !important;
+}
+
+
+/* =========================================================
+   INNER CARD SURFACE
+   IMAGE + CONTENT + CURVE
+========================================================= */
+
+.pips-stdacc-v3-section
+.pips-stdacc-v3-shell
+> .pips-stdacc-v3-surface {
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  box-sizing: border-box;
+
+  /* =====================================
+     ACTUAL VISIBLE CURVE
+  ===================================== */
+  border-radius: 32px !important;
+
+  /* THIS clips background image
+     to the rounded shape */
+  overflow: hidden !important;
+
+  /* Existing card padding moved here */
+  padding:
+    var(--card-padding-top)
+    var(--card-padding-right)
+    var(--card-padding-bottom)
+    var(--card-padding-left);
+
+  /* =====================================
+     KEEP YOUR EXISTING CARD BACKGROUND
+     AND IMAGE SETTINGS
+  ===================================== */
+  background:
+    linear-gradient(
+      var(--card-overlay),
+      var(--card-overlay)
+    ),
+    var(--card-image),
+    var(--card-fill, #012d65) !important;
+
+  background-size:
+    100% 100%,
+    var(--card-image-size, contain) !important;
+
+  background-position:
+    center,
+    var(--card-background-x)
+    var(--card-background-y) !important;
+
+  background-repeat:
+    no-repeat !important;
+}
+
+
+/* =========================================================
+   HOVER
+   KEEP CARD STILL
+========================================================= */
+
+.pips-stdacc-v3-section
+.pips-stdacc-v3-shell:hover {
+
+  transform: none !important;
+
+  box-shadow:
+    0 4px 12px rgba(1, 45, 101, 0.06),
+    0 12px 28px rgba(1, 45, 101, 0.10),
+    0 20px 48px rgba(1, 45, 101, 0.08) !important;
+}
+
+
+/* =========================================================
+   GIVE SHADOW SOME VERTICAL SPACE
+   DOES NOT CHANGE HORIZONTAL MOVEMENT
+========================================================= */
+
+.pips-stdacc-v3-section
+.pips-scroll-accounts-track {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+/* =========================================================
+   TYPES OF ACCOUNTS PAGE — FINAL MOBILE OVERRIDES
+   2026-10-05
+
+   IMPORTANT:
+   - Appended only. Existing desktop/tablet/manual adjustments above are unchanged.
+   - Scoped to the Types of Accounts page using .pips-accounts-banner.
+   - Card mobile sizing/peek behavior stays in StandardAccountsContentOne.module.scss.
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =======================================================
+     MOBILE NAVBAR — TYPES OF ACCOUNTS PAGE ONLY
+     Top: light blue background
+     Scrolled: white background
+  ======================================================= */
+
+  body:has(.pips-accounts-banner)
+  .dg__header.header--absolute,
+  body:has(.pips-accounts-banner)
+  .header--absolute {
+    height: 64px !important;
+    min-height: 64px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body:has(.pips-accounts-banner)
+  .dg__header.header--absolute:not(.stick),
+  body:has(.pips-accounts-banner)
+  .header--absolute:not(.stick) {
+    background: rgba(147, 174, 207, 0.96) !important;
+    backdrop-filter: blur(12px) saturate(115%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(115%) !important;
+    box-shadow: none !important;
+  }
+
+  body:has(.pips-accounts-banner)
+  .dg__header.header--absolute.stick,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 5px 20px rgba(1, 45, 101, 0.08) !important;
+  }
+
+  body:has(.pips-accounts-banner)
+  .header--absolute .container-fluid,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .container-fluid,
+  body:has(.pips-accounts-banner)
+  .header--absolute .dg__header,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .dg__header {
+    height: 64px !important;
+    min-height: 64px !important;
+    display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+  }
 
-    text-align: center !important;
-
-    /* REMOVE PADDING PUSHING TEXT */
+  /* Official PIPS logo already loaded from /images/logo/logo.png. */
+  body:has(.pips-accounts-banner)
+  .header--absolute .logo,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .logo {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
     padding: 0 !important;
+    transform: none !important;
+  }
 
-    line-height: 1 !important;
+  body:has(.pips-accounts-banner)
+  .header--absolute .logo a,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .logo a,
+  body:has(.pips-accounts-banner)
+  .header--absolute .logo a picture,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .logo a picture {
+    display: flex !important;
+    align-items: center !important;
+  }
 
+  body:has(.pips-accounts-banner)
+  .header--absolute .logo img,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .logo img,
+  body:has(.pips-accounts-banner)
+  .header--absolute .logo .logo-img,
+  body:has(.pips-accounts-banner)
+  .header--absolute.stick .logo .logo-img {
+    width: 92px !important;
+    height: auto !important;
+    max-height: 44px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+  }
+
+  /* Hamburger / three-line icon = PIPS blue. */
+  body:has(.pips-accounts-banner)
+  .mobile-aside-button {
+    color: #012d65 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  body:has(.pips-accounts-banner)
+  .mobile-aside-button svg,
+  body:has(.pips-accounts-banner)
+  .mobile-aside-button svg * {
+    color: #012d65 !important;
+    fill: #012d65 !important;
+    stroke: #012d65 !important;
+  }
+
+  /* =======================================================
+     MOBILE TYPES OF ACCOUNTS HERO
+     Reduced height only — desktop adjustments stay untouched.
+  ======================================================= */
+
+  .pips-accounts-banner {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-top: 64px !important;
+  }
+
+  .pips-accounts-banner__surface {
+    width: 100% !important;
+
+    height: clamp(520px, 68svh, 590px) !important;
+    min-height: 520px !important;
+    max-height: 590px !important;
+
+    padding: 64px 18px 34px !important;
+
+    background-position: center !important;
+    background-size: cover !important;
+
+    border-radius: 0 0 28px 28px !important;
     box-sizing: border-box !important;
   }
 
+  .pips-accounts-banner__content {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .pips-accounts-banner__title {
+    margin: 0 0 12px !important;
+    font-size: clamp(28px, 9vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .pips-accounts-banner__subtitle {
+    margin: 0 0 22px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .pips-accounts-banner__button {
+    min-width: 136px !important;
+    min-height: 44px !important;
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+  }
 }
 /* =========================================================
-   TYPES OF ACCOUNTS HERO
-   AUTO MOVING "THE PIPS"
-   DESKTOP ONLY
+   TYPES OF ACCOUNTS — MOBILE HERO IMAGE MANUAL CONTROL
 ========================================================= */
 
-@media (min-width: 1200px) {
+@media (max-width: 767px) {
+  .pips-accounts-banner__surface {
+    /* =========================
+       IMAGE ZOOM
+       100% = normal
+       95%  = zoom out
+       90%  = more zoom out
+       110% = zoom in
+    ========================= */
+    background-size: auto 85% !important;
 
-  .standard-accounts-hero {
-    position: relative !important;
-    overflow: hidden !important;
+    /* =========================
+       IMAGE LEFT / RIGHT
+       smaller % = move image RIGHT
+       bigger %  = move image LEFT
+    ========================= */
+    background-position: 80% center !important;
+
+    background-repeat: no-repeat !important;
+    background-color: #012d65 !important;
   }
-
-
-  /* =====================================================
-     MARQUEE WINDOW
-  ===================================================== */
-
-  .pips-hero-marquee {
-
-    position: absolute !important;
-
-    /* =====================================
-       MANUAL UP / DOWN
-
-       smaller bottom = DOWN
-       bigger bottom  = UP
-    ===================================== */
-    bottom: 10px !important;
-
-
-    /* =====================================
-       MANUAL LEFT / RIGHT AREA
-    ===================================== */
-    left: 714px !important;
-    right: 0 !important;
-
-
-    height: 145px !important;
-
-    display: flex !important;
-    align-items: center !important;
-
-    overflow: hidden !important;
-
-    z-index: 8 !important;
-
-    pointer-events: none !important;
-
-    white-space: nowrap !important;
-  }
-
-
-  /* =====================================================
-     MOVING TRACK
-  ===================================================== */
-
-  .pips-hero-marquee-track {
-
-    display: flex !important;
-
-    width: max-content !important;
-
-    flex-shrink: 0 !important;
-
-    animation:
-      pipsHeroMarqueeMove
-      16s
-      linear
-      infinite !important;
-
-    will-change: transform;
-  }
-
-
-  .pips-hero-marquee-group {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    flex-shrink: 0 !important;
-
-    gap: 70px !important;
-
-    padding-right: 70px !important;
-  }
-
-
-  /* =====================================================
-     THE PIPS TEXT
-  ===================================================== */
-
-  .pips-hero-marquee-group span {
-
-    display: inline-block !important;
-
-    color: #012d65 !important;
-
-    font-size: 92px !important;
-
-    font-weight: 800 !important;
-
-    line-height: 1 !important;
-
-    letter-spacing: -3px !important;
-
-    white-space: nowrap !important;
-  }
-
-
-  /* =====================================================
-     RIGHT -> LEFT INFINITE LOOP
-  ===================================================== */
-
-  @keyframes pipsHeroMarqueeMove {
-
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-50%);
-    }
-
-  }
-
-}
-
-
-/* HIDE ON LAPTOP / TABLET / MOBILE */
-@media (max-width: 1199px) {
-
-  .pips-hero-marquee {
-    display: none !important;
-  }
-
 }

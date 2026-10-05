@@ -1,49 +1,547 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const BreadcrumbDepositsAndWithdrawals = () => {
-  const desktopImage =
-    process.env.PUBLIC_URL + "/images/about/bull_right_side.png";
+  const bannerImage =
+    process.env.PUBLIC_URL +
+    "/images/home/accounts-header-blue3.png";
 
   return (
-    <div
-      className="ht__bradcaump__area_market pips-desktop-bull-all-devices deposits-withdrawals-hero"
-      style={{
-        backgroundImage: `url(${desktopImage})`,
-      }}
-    >
-      <div className="ht__bradcaump__container_market">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9">
-              <h1>Your money, when you want it</h1>
+    <>
+      <style>
+        {`
+          /* =====================================================
+             DEPOSITS & WITHDRAWALS HERO
+             UNIQUE TO THIS PAGE ONLY
+          ===================================================== */
 
-              <p>
-                Stay in control with 24/7 access to your funds. Get requests
-                approved automatically using secure local and global payment
-                methods.
-              </p>
+          .pips-deposit26-hero {
+            /* =============================
+               MANUAL DESKTOP CONTROLS
+            ============================= */
 
-              <div>
-                <a
-                  className="slide__btn dg__btn"
-                  href="https://portal.thepips.com/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Register
-                </a>
-              </div>
-            </div>
-          </div>
+            --deposit26-height: 100vh;
+            --deposit26-radius: 72px;
+
+            --deposit26-title-size: 68px;
+            --deposit26-description-size: 17px;
+
+            --deposit26-button-width: 180px;
+            --deposit26-button-height: 54px;
+
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            height: var(--deposit26-height);
+            min-height: var(--deposit26-height);
+
+            margin: 0;
+
+            padding:
+              110px
+              40px
+              70px;
+
+            box-sizing: border-box;
+
+
+            /* =============================
+               BLUE WAVE BACKGROUND
+            ============================= */
+
+            background-color: #012d65;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            background-position:
+              center
+              center;
+
+
+            /* =============================
+               BOTTOM CURVE
+            ============================= */
+
+            border-radius:
+              0
+              0
+              var(--deposit26-radius)
+              var(--deposit26-radius);
+
+            overflow: hidden;
+          }
+
+
+          /* =====================================================
+             CENTER CONTENT
+          ===================================================== */
+
+          .pips-deposit26-content {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+            text-align: center;
+          }
+
+
+          /* =====================================================
+             TITLE
+          ===================================================== */
+
+          .pips-deposit26-title {
+            margin:
+              0
+              0
+              18px;
+
+            padding: 0;
+
+            color: #ffffff !important;
+
+            font-size:
+              var(--deposit26-title-size);
+
+            line-height: 1.08;
+
+            font-weight: 800;
+
+            letter-spacing: -1.3px;
+
+            text-align: center !important;
+          }
+
+
+          /* =====================================================
+             DESCRIPTION
+          ===================================================== */
+
+          .pips-deposit26-description {
+            width: 100%;
+
+            max-width: 850px;
+
+            margin:
+              0
+              auto
+              30px;
+
+            color:
+              rgba(255, 255, 255, 0.95) !important;
+
+            font-size:
+              var(--deposit26-description-size);
+
+            line-height: 1.6;
+
+            text-align: center !important;
+          }
+
+
+          /* =====================================================
+             REGISTER BUTTON
+          ===================================================== */
+
+          .pips-deposit26-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width:
+              var(--deposit26-button-width);
+
+            min-width:
+              var(--deposit26-button-width);
+
+            height:
+              var(--deposit26-button-height);
+
+            margin: 0 auto;
+
+            padding:
+              0
+              26px;
+
+            border: 0;
+
+            border-radius: 6px;
+
+            background: #ffffff;
+
+            color: #012d65 !important;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            line-height: 1;
+
+            white-space: nowrap;
+
+            text-align: center;
+
+            text-decoration: none !important;
+
+            text-transform: uppercase;
+
+            box-sizing: border-box;
+
+            transition:
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+          }
+
+
+          .pips-deposit26-button:hover {
+            background: #ffffff;
+
+            color: #012d65 !important;
+
+            text-decoration: none !important;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+              0 10px 28px
+              rgba(0, 0, 0, 0.16);
+          }
+
+
+          /* =====================================================
+             NAVBAR — THIS PAGE ONLY
+
+             TOP:
+             light-blue blur
+
+             SCROLLED:
+             solid white
+          ===================================================== */
+
+
+          /* =====================================================
+             NOT SCROLLED
+          ===================================================== */
+
+          body:has(.pips-deposit26-hero)
+          .dg__header.header--absolute:not(.stick) {
+
+            background:
+              rgba(151, 177, 210, 0.88) !important;
+
+            background-color:
+              rgba(151, 177, 210, 0.88) !important;
+
+            backdrop-filter:
+              blur(15px)
+              saturate(120%) !important;
+
+            -webkit-backdrop-filter:
+              blur(15px)
+              saturate(120%) !important;
+
+            box-shadow:
+              none !important;
+
+            border-bottom:
+              1px solid
+              rgba(255, 255, 255, 0.12) !important;
+          }
+
+
+          /* =====================================================
+             AFTER SCROLL
+          ===================================================== */
+
+          body:has(.pips-deposit26-hero)
+          .dg__header.header--absolute.stick {
+
+            background:
+              #ffffff !important;
+
+            background-color:
+              #ffffff !important;
+
+            backdrop-filter:
+              none !important;
+
+            -webkit-backdrop-filter:
+              none !important;
+
+            box-shadow:
+              0 5px 20px
+              rgba(1, 45, 101, 0.08) !important;
+
+            border-bottom:
+              1px solid
+              rgba(1, 45, 101, 0.05) !important;
+          }
+
+
+          /* =====================================================
+             LOGO
+          ===================================================== */
+
+          body:has(.pips-deposit26-hero)
+          .dg__header
+          .logo
+          .logo-img {
+
+            opacity: 1 !important;
+
+            visibility: visible !important;
+
+            filter: none !important;
+          }
+
+
+          /* =====================================================
+             MOBILE HAMBURGER
+             ALWAYS BLUE
+          ===================================================== */
+
+          body:has(.pips-deposit26-hero)
+          .mobile-aside-button,
+
+          body:has(.pips-deposit26-hero)
+          .mobile-aside-button svg,
+
+          body:has(.pips-deposit26-hero)
+          .mobile-aside-button svg * {
+
+            color: #012d65 !important;
+
+            fill: #012d65 !important;
+
+            stroke: #012d65 !important;
+          }
+
+
+          /* =====================================================
+             LAPTOP
+          ===================================================== */
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+
+            .pips-deposit26-hero {
+
+              --deposit26-height: 100vh;
+
+              --deposit26-radius: 58px;
+
+              --deposit26-title-size: 50px;
+
+              --deposit26-description-size: 16px;
+
+              padding:
+                100px
+                35px
+                60px;
+            }
+
+          }
+
+
+          /* =====================================================
+             TABLET
+          ===================================================== */
+
+          @media (min-width: 768px) and (max-width: 991px) {
+
+            .pips-deposit26-hero {
+
+              --deposit26-height: 100vh;
+
+              --deposit26-radius: 46px;
+
+              --deposit26-title-size: 42px;
+
+              --deposit26-description-size: 15px;
+
+              padding:
+                90px
+                28px
+                50px;
+            }
+
+
+            .pips-deposit26-description {
+              max-width: 650px;
+            }
+
+          }
+
+
+          /* =====================================================
+             MOBILE ONLY
+          ===================================================== */
+
+          @media (max-width: 767px) {
+
+            .pips-deposit26-hero {
+
+              /* =============================
+                 MANUAL MOBILE CONTROLS
+              ============================= */
+
+              --deposit26-height: 100svh;
+
+              --deposit26-radius: 32px;
+
+              --deposit26-title-size: 30px;
+
+              --deposit26-description-size: 13px;
+
+              --deposit26-button-width: 155px;
+
+              --deposit26-button-height: 46px;
+
+
+              height:
+                var(--deposit26-height);
+
+              min-height:
+                var(--deposit26-height);
+
+
+              padding:
+                90px
+                18px
+                42px;
+
+
+              background-size:
+                cover;
+
+              background-position:
+                center
+                center;
+
+
+              border-radius:
+                0
+                0
+                var(--deposit26-radius)
+                var(--deposit26-radius);
+            }
+
+
+            .pips-deposit26-content {
+              max-width: 100%;
+            }
+
+
+            .pips-deposit26-title {
+
+              margin-bottom: 12px;
+
+              font-size:
+                var(--deposit26-title-size);
+
+              line-height: 1.12;
+
+              letter-spacing: -0.4px;
+            }
+
+
+            .pips-deposit26-description {
+
+              max-width: 295px;
+
+              margin-bottom: 24px;
+
+              font-size:
+                var(--deposit26-description-size);
+
+              line-height: 1.5;
+            }
+
+
+            .pips-deposit26-button {
+
+              width:
+                var(--deposit26-button-width);
+
+              min-width:
+                var(--deposit26-button-width);
+
+              height:
+                var(--deposit26-button-height);
+
+              padding:
+                0
+                18px;
+
+              font-size: 13px;
+
+              white-space: nowrap;
+            }
+
+          }
+        `}
+      </style>
+
+
+      <section
+        className="pips-deposit26-hero"
+        style={{
+          backgroundImage:
+            `url("${bannerImage}")`,
+        }}
+        aria-labelledby="pips-deposit26-title"
+      >
+
+        <div className="pips-deposit26-content">
+
+          <h1
+            id="pips-deposit26-title"
+            className="pips-deposit26-title"
+          >
+            Your Money, When You Want it
+          </h1>
+
+
+          <p className="pips-deposit26-description">
+            Stay in control with 24/7 access to your funds.
+            Get requests approved automatically using secure
+            local and global payment methods.
+          </p>
+
+
+          <a
+            className="pips-deposit26-button"
+            href="https://portal.thepips.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register
+          </a>
+
         </div>
-      </div>
-    </div>
-  );
-};
 
-BreadcrumbDepositsAndWithdrawals.propTypes = {
-  title: PropTypes.string,
+      </section>
+    </>
+  );
 };
 
 export default BreadcrumbDepositsAndWithdrawals;

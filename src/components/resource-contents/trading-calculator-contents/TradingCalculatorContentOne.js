@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import TopicOne from "../../resource-contents/trading-calculator-contents/TopicOne";
 import { useEffect, useState, useCallback } from "react";
 
@@ -353,7 +353,6 @@ function calculate({
 // ─────────────────────────────────────────────────────────────────────────────
 
 const TradingCalculatorContentOne = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const [activeTab, setActiveTab] = useState("Forex");
   const [accountType, setAccountType] = useState("Standard");
@@ -364,11 +363,6 @@ const TradingCalculatorContentOne = () => {
   const [results, setResults] = useState(null);
   const [calculated, setCalculated] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Reset instrument when tab changes
   useEffect(() => {

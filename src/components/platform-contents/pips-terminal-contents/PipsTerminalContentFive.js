@@ -1,4 +1,4 @@
-import TopicTwo from "../../../components/platform-contents/pips-terminal-contents/TopicTwo";
+
 
 const PipsTerminalContentFive = () => {
   return (

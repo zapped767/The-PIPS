@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import TopicOne from "../meta-trader-5-mobile-contents/TopicOne";
 
 const MetaTrader5MobileContentOne = () => {

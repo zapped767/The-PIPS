@@ -1,0 +1,190 @@
+// Keep hero geometry relative to its container, not to one monitor's pixels.
+// Scoped selectors supersede the legacy per-slide !important offsets.
+@media (min-width: 768px) {
+  .slider--2 .pips-responsive-slider {
+    height: auto !important;
+    min-height: clamp(580px, 47vw, 900px) !important;
+    padding: clamp(125px, 14vw, 210px) 0 65px !important;
+    background-size: cover;
+    background-position: center;
+
+    > .container {
+      width: 100%;
+      max-width: 1500px;
+      padding-inline: clamp(28px, 6vw, 100px);
+    }
+
+    > .container > .row {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    > .container > .row > div {
+      width: 100%;
+      max-width: 100%;
+      padding-inline: 0;
+    }
+
+    .hero-slide-content {
+      position: relative !important;
+      inset: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 52% !important;
+      max-width: 650px !important;
+      min-width: 0;
+    }
+
+    .hero-slide-content.slide-3 {
+      margin-left: auto !important;
+    }
+
+    .hero-slide-content h1,
+    .hero-slide-content h1 span {
+      font-size: clamp(30px, 3.3vw, 62px) !important;
+      line-height: 1.1 !important;
+      white-space: normal !important;
+      width: auto !important;
+      max-width: 100% !important;
+      margin: 0 0 16px !important;
+      overflow-wrap: break-word;
+    }
+
+    .hero-slide-content p,
+    .hero-slide-content p span {
+      width: auto !important;
+      max-width: 100% !important;
+      font-size: clamp(14px, 1.1vw, 20px) !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+    }
+
+    .slide-3-large-desktop-paragraph {
+      display: none !important;
+    }
+
+    .hero-register-wrapper {
+      position: static !important;
+      inset: auto !important;
+      margin: 48px 0 0 !important;
+      transform: none !important;
+      text-align: center !important;
+    }
+
+    .hero-register-wrapper .slide__btn {
+      position: static !important;
+      margin: 0 !important;
+    }
+  }
+
+  .standard-accounts-hero.pips-responsive-accounts {
+    position: relative !important;
+    height: clamp(540px, 46vw, 920px) !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    background-size: 101% 103% !important;
+    background-position: center !important;
+    overflow: hidden !important;
+
+    .ht__bradcaump__container_market {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+
+    .container, .row, .row > div {
+      position: static !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    h1 {
+      position: absolute !important;
+      top: max(110px, 15%) !important;
+      left: 34% !important;
+      right: 3%;
+      margin: 0 !important;
+      font-size: clamp(32px, 4.1vw, 78px) !important;
+      line-height: 1.1 !important;
+      white-space: normal !important;
+      text-align: center !important;
+    }
+
+    p {
+      position: absolute !important;
+      top: calc(max(110px, 15%) + clamp(44px, 5.3vw, 100px)) !important;
+      left: 34% !important;
+      right: 3%;
+      margin: 0 !important;
+      font-size: clamp(14px, 1.1vw, 20px) !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+    }
+
+    .ht__bradcaump__container_market .slide__btn.dg__btn {
+      position: absolute !important;
+      top: auto !important;
+      left: 16% !important;
+      bottom: 7%;
+      margin: 0 !important;
+      width: clamp(120px, 13vw, 250px) !important;
+      min-width: 0 !important;
+      height: clamp(44px, 4.7vw, 90px) !important;
+      padding: 0 !important;
+      font-size: clamp(15px, 1.6vw, 30px) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .pips-hero-marquee {
+      left: 38% !important;
+      bottom: 1% !important;
+      height: 16% !important;
+    }
+
+    .pips-hero-marquee-group span {
+      font-size: clamp(40px, 4.8vw, 92px) !important;
+    }
+  }
+
+  // Fixed-height sections must grow when text is taller than a laptop viewport.
+  .pips-account-conditions-section {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .pips-account-conditions-container {
+    width: 100% !important;
+    max-width: 1200px !important;
+  }
+}
+
+// On narrower screens, reserve a text band above the artwork instead of
+// stretching the coins vertically or placing the subtitle over them.
+@media (min-width: 768px) and (max-width: 1199px) {
+  .standard-accounts-hero.pips-responsive-accounts {
+    height: calc(200px + 56.28vw) !important;
+    background-size: 100% auto !important;
+    background-position: center bottom !important;
+
+    h1, p { left: 5% !important; right: 5%; }
+    h1 { top: 110px !important; font-size: clamp(32px, 4vw, 46px) !important; }
+    p { top: 170px !important; }
+
+    .ht__bradcaump__container_market .slide__btn.dg__btn {
+      background: #012d65 !important;
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      border-color: #012d65 !important;
+    }
+  }
+}

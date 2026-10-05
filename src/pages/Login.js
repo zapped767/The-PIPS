@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
 import { Link } from "react-router-dom";
-import LayoutTwo from "../layouts/LayoutTwo";
-import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
+
+
 import Logo from "../components/header/Logo";
 
 const Login = () => {
