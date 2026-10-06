@@ -15,45 +15,46 @@ const BannerTwo = () => {
           ===================================================== */
 
           .pips-banner-two-image26 {
-            /* =========================================
-               MANUAL CONTROLS
-            ========================================= */
+  /* =========================================
+     MANUAL CONTROLS
+  ========================================= */
 
-            --banner-two-height: 520px;
+  --banner-two-height: 520px;
 
-            /* BACKGROUND IMAGE POSITION */
-            --banner-two-bg-x: 50%;
-            --banner-two-bg-y: 30%;
+  /* BACKGROUND IMAGE POSITION */
+  --banner-two-bg-x: 50%;
+  --banner-two-bg-y: 30%;
 
-            /* CONTENT MOVEMENT */
-            --banner-two-content-x: -200px;
-            --banner-two-content-y: 0px;
+  /* CONTENT MOVEMENT */
+  --banner-two-content-x: -200px;
+  --banner-two-content-y: 0px;
 
-            /* LEFT CONTENT WIDTH */
-            --banner-two-content-width: 650px;
+  /* LEFT CONTENT WIDTH */
+  --banner-two-content-width: 650px;
 
+  /* CURVE MANUAL CONTROL */
+  --banner-two-radius: 36px;
 
-            position: relative;
+  position: relative;
+  display: flex;
+  align-items: center;
 
-            display: flex;
-            align-items: center;
+  width: 100%;
+  height: var(--banner-two-height);
+  min-height: var(--banner-two-height);
 
-            width: 100%;
+  overflow: hidden;
 
-            height: var(--banner-two-height);
-            min-height: var(--banner-two-height);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:
+    var(--banner-two-bg-x)
+    var(--banner-two-bg-y);
 
-            overflow: hidden;
+  border-radius: var(--banner-two-radius);
 
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            background-position:
-              var(--banner-two-bg-x)
-              var(--banner-two-bg-y);
-
-            box-sizing: border-box;
-          }
+  box-sizing: border-box;
+}
 
 
           /* =====================================================
@@ -97,7 +98,7 @@ const BannerTwo = () => {
 
             padding:
               0
-              70px;
+              40px;
 
             box-sizing: border-box;
           }
