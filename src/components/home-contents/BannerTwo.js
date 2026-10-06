@@ -26,7 +26,7 @@ const BannerTwo = () => {
   --banner-two-bg-y: 30%;
 
   /* CONTENT MOVEMENT */
-  --banner-two-content-x: -200px;
+ --banner-two-content-x: 0px;
   --banner-two-content-y: 0px;
 
   /* LEFT CONTENT WIDTH */
@@ -86,23 +86,34 @@ const BannerTwo = () => {
              CONTENT WRAPPER
           ===================================================== */
 
-          .pips-banner-two-image26__inner {
-            position: relative;
+        .pips-banner-two-image26__inner {
+          position: relative;
+          z-index: 2;
 
-            z-index: 2;
+          width: 100%;
+          max-width: 1440px;
 
-            width: 100%;
-            max-width: 1440px;
+          margin: 0 auto;
 
-            margin: 0 auto;
+          padding-left: clamp(28px, 4vw, 70px);
+          padding-right: clamp(28px, 4vw, 70px);
 
-            padding:
-              0
-              40px;
+          box-sizing: border-box;
+}
+@media (min-width: 992px) and (max-width: 1500px) {
+  .pips-banner-two-image26 {
+    --banner-two-content-x: 0px;
+    --banner-two-content-width: 620px;
+  }
 
-            box-sizing: border-box;
-          }
+  .pips-banner-two-image26__title {
+    font-size: 44px;
+  }
 
+  .pips-banner-two-image26__description {
+    max-width: 590px;
+  }
+}
 
           /* =====================================================
              LEFT CONTENT
