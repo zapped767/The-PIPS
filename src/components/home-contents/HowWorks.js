@@ -6,16 +6,16 @@ import React, { useEffect, useRef } from "react";
 ========================================================= */
 
 const CARD_1_LOGOS = [
-  "/images/home/homeworks/logo-1.png",
-  "/images/home/homeworks/logo-2.png",
-  "/images/home/homeworks/logo-3.png",
-  "/images/home/homeworks/logo-4.png",
-  "/images/home/homeworks/logo-5.png",
-  "/images/home/homeworks/logo-6.png",
-  "/images/home/homeworks/logo-7.jpg",
-  "/images/home/homeworks/logo-8.jpg",
-  "/images/home/homeworks/logo-9.png",
-  "/images/home/homeworks/logo-10.png",
+  "/images/home/homeworks/ai_trading_01.png",
+  "/images/home/homeworks/ai_trading_02.png",
+  "/images/home/homeworks/ai_trading_03.png",
+  "/images/home/homeworks/ai_trading_04.png",
+  "/images/home/homeworks/ai_trading_05.png",
+  "/images/home/homeworks/ai_trading_06.png",
+  "/images/home/homeworks/ai_trading_07.png",
+  "/images/home/homeworks/ai_trading_08.png",
+  "/images/home/homeworks/ai_trading_09.png",
+  "/images/home/homeworks/ai_trading_10.png",
 ];
 /* =========================================================
    HOW WORKS

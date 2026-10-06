@@ -121,19 +121,7 @@ const footerColumns = [
     ],
   },
 
-  {
-    title: "Company",
-    links: [
-      {
-        label: "About Us",
-        href: "/company/about",
-      },
-      {
-        label: "Contact Us",
-        href: "/company/contact",
-      },
-    ],
-  },
+
 
   {
     title: "Legal",
@@ -700,9 +688,7 @@ const Footer = () => {
   </div>
 
 
-  <div className="pipsfx-mobile-legal__copyright">
-    © Copyright 2026 - The Pips
-  </div>
+
 
 </section>
         {/* ====================================================
@@ -891,29 +877,7 @@ const Footer = () => {
           </p>
 
 
-          {/* BOTTOM LINKS */}
 
-          <div className="pipsfx-bottom__links">
-
-            <Link to="/company/about">
-
-              About Us
-
-            </Link>
-
-            <span aria-hidden="true">
-
-              |
-
-            </span>
-
-            <Link to="/company/contact">
-
-              Contact Us
-
-            </Link>
-
-          </div>
 
 
         </div>

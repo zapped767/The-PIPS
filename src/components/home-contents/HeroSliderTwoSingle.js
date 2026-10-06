@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
    SLIDER SETTINGS
 ========================================= */
 
-const AUTO_SLIDE_ENABLED = false;
+const AUTO_SLIDE_ENABLED = true;
 const AUTO_SLIDE_DELAY = 5000;
 
 const HeroSliderTwoSingle = ({ data }) => {
@@ -1886,12 +1886,6 @@ const HeroSliderTwoSingle = ({ data }) => {
   .hero-slide-content.slide-3 {
     position: relative;
 
-    /* + = RIGHT / - = LEFT */
-    margin-left: 560px !important;
-
-    /* - = UP / + = DOWN */
-    top: -60px !important;
-
     width: 620px !important;
     max-width: 620px !important;
 
@@ -1973,6 +1967,8 @@ const HeroSliderTwoSingle = ({ data }) => {
     min-width: 200px !important;
 
     text-decoration: none !important;
+    font-size: 16px !important;
+font-weight: 700 !important;
   }
 
   .register-slide-3 .slide__btn:hover {
@@ -2034,7 +2030,7 @@ const HeroSliderTwoSingle = ({ data }) => {
       -250px = little LEFT
          0px = center
     */
-    margin-left: 700px !important;
+   
 
     /*
       UP / DOWN
@@ -2043,7 +2039,7 @@ const HeroSliderTwoSingle = ({ data }) => {
        -60px = recommended
        -20px = DOWN
     */
-    top: -140px !important;
+    
 
     width: 620px !important;
     max-width: 620px !important;
@@ -2142,6 +2138,93 @@ const HeroSliderTwoSingle = ({ data }) => {
   .register-slide-3 .slide__btn {
     margin-left: 0 !important;
   }
+}
+
+  /* =========================================================
+   DESKTOP ONLY - ALL 4 SLIDES
+   MANUAL TEXT POSITION CONTROLS
+
+   1200PX AND ABOVE ONLY
+   LAPTOP / TABLET / MOBILE NOT AFFECTED
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .hero-image-slider {
+    /* =====================================
+       SLIDE 1 MANUAL POSITION
+    ===================================== */
+
+    /* MORE NEGATIVE = LEFT
+       LESS NEGATIVE / POSITIVE = RIGHT */
+    --slide-1-text-x: -170px;
+
+    /* MORE NEGATIVE = UP
+       POSITIVE = DOWN */
+    --slide-1-text-y: -120px;
+
+
+    /* =====================================
+       SLIDE 2 MANUAL POSITION
+    ===================================== */
+
+    --slide-2-text-x: -120px;
+    --slide-2-text-y: -80px;
+
+
+    /* =====================================
+       SLIDE 3 MANUAL POSITION
+    ===================================== */
+
+    /* Slide 3 is on the RIGHT side.
+       Smaller number = LEFT
+       Bigger number = RIGHT */
+    --slide-3-text-x: 150px;
+
+    --slide-3-text-y: -150px;
+
+
+    /* =====================================
+       SLIDE 4 MANUAL POSITION
+    ===================================== */
+
+    --slide-4-text-x: -170px;
+    --slide-4-text-y: -65px;
+  }
+
+
+/* =====================================================
+   DESKTOP TEXT POSITION
+   USE TRANSLATE SO OTHER CSS CANNOT RESET MOVEMENT
+===================================================== */
+
+/* SLIDE 1 */
+.hero-slide-content.slide-1 {
+  translate:
+    var(--slide-1-text-x)
+    var(--slide-1-text-y) !important;
+}
+
+/* SLIDE 2 */
+.hero-slide-content.slide-2 {
+  translate:
+    var(--slide-2-text-x)
+    var(--slide-2-text-y) !important;
+}
+
+/* SLIDE 3 */
+.hero-slide-content.slide-3 {
+  translate:
+    var(--slide-3-text-x)
+    var(--slide-3-text-y) !important;
+}
+
+/* SLIDE 4 */
+.hero-slide-content.slide-4 {
+  translate:
+    var(--slide-4-text-x)
+    var(--slide-4-text-y) !important;
+}
 }
       `}</style>
 

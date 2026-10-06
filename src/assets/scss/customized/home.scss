@@ -10143,3 +10143,130 @@ and
   }
 
 }
+/* =========================================================
+   CARD 1 ONLY
+   NEW AI TRADING LOGOS
+   DESKTOP ONLY
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* =====================================
+     MANUAL CONTROLS
+  ===================================== */
+
+  .hw__section .hw__card-1 {
+    --card1-logo-square-size: 86px;
+    --card1-logo-gap: 14px;
+
+    --card1-logo-window-width: 430px;
+    --card1-logo-window-height: 132px;
+
+    --card1-logo-window-top: 45px;
+    --card1-logo-window-right: -53px;
+  }
+
+
+  /* =====================================
+     COMPLETE LOGO WINDOW
+  ===================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-window {
+    width: var(--card1-logo-window-width) !important;
+    max-width: none !important;
+
+    height: var(--card1-logo-window-height) !important;
+
+    top: var(--card1-logo-window-top) !important;
+    right: var(--card1-logo-window-right) !important;
+    left: auto !important;
+  }
+
+
+  /* =====================================
+     GLASS CONTAINER
+  ===================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-glass {
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 0 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================
+     MOVING LOGO TRACK
+  ===================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-track {
+    gap: var(--card1-logo-gap) !important;
+    align-items: center !important;
+  }
+
+
+  /* =====================================
+     BIG SQUARE BOX
+  ===================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-box {
+    flex:
+      0 0
+      var(--card1-logo-square-size) !important;
+
+    width:
+      var(--card1-logo-square-size) !important;
+
+    height:
+      var(--card1-logo-square-size) !important;
+
+    padding: 0 !important;
+
+    border-radius: 12px !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =====================================
+     IMAGE FULL FILL INSIDE SQUARE
+  ===================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-box
+  .hw__card-1-logo {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border-radius: inherit !important;
+  }
+}

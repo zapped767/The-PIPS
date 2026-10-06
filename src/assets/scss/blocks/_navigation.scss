@@ -1191,3 +1191,481 @@ body:has(.standard-accounts-hero)
     stroke: #012d65 !important;
   }
 }
+/* =========================================================
+   PIPS MOBILE + TABLET MENU
+   ZQFX-STYLE LAYOUT
+   MOBILE / TABLET ONLY
+   DESKTOP NOT AFFECTED
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  /* =====================================================
+     1. OFFCANVAS FULL WIDTH
+  ===================================================== */
+
+  #offcanvas-mobile-menu,
+  .offcanvas-mobile-menu {
+    position: fixed !important;
+
+    top: 64px !important;
+    right: 0 !important;
+    left: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: calc(100vh - 64px) !important;
+    max-height: calc(100vh - 64px) !important;
+
+    margin: 0 !important;
+    padding: 22px 18px 30px !important;
+
+    background: #ffffff !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    box-sizing: border-box !important;
+
+    border: none !important;
+
+    box-shadow:
+      0 15px 40px
+      rgba(1, 45, 101, 0.12) !important;
+
+    z-index: 9998 !important;
+  }
+
+
+  /* =====================================================
+     2. MENU LIST
+  ===================================================== */
+
+  #offcanvas-mobile-menu ul,
+  .offcanvas-mobile-menu ul {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+  }
+
+
+  /* TOP LEVEL MENU ITEM */
+
+  #offcanvas-mobile-menu > ul > li,
+  .offcanvas-mobile-menu > ul > li,
+  #offcanvas-mobile-menu nav > ul > li,
+  .offcanvas-mobile-menu nav > ul > li {
+    width: 100% !important;
+
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+
+    border:
+      1px solid
+      rgba(1, 45, 101, 0.18) !important;
+
+    border-radius: 4px !important;
+
+    background: #ffffff !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* =====================================================
+     3. TRADING / MARKETS / PLATFORMS...
+  ===================================================== */
+
+  #offcanvas-mobile-menu > ul > li > a,
+  .offcanvas-mobile-menu > ul > li > a,
+  #offcanvas-mobile-menu nav > ul > li > a,
+  .offcanvas-mobile-menu nav > ul > li > a {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    min-height: 54px !important;
+
+    padding: 0 18px !important;
+
+    margin: 0 !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    background: #ffffff !important;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.2 !important;
+
+    text-transform: uppercase !important;
+
+    text-decoration: none !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =====================================================
+     4. PLUS / ARROW ICON
+  ===================================================== */
+
+  #offcanvas-mobile-menu li button,
+  .offcanvas-mobile-menu li button,
+  #offcanvas-mobile-menu li svg,
+  .offcanvas-mobile-menu li svg {
+    color: #012d65 !important;
+    stroke: #012d65 !important;
+  }
+
+
+  /* =====================================================
+     5. SUB MENU
+  ===================================================== */
+
+  #offcanvas-mobile-menu li ul,
+  .offcanvas-mobile-menu li ul {
+    padding:
+      0
+      16px
+      12px !important;
+
+    background: #ffffff !important;
+  }
+
+
+  #offcanvas-mobile-menu li ul li,
+  .offcanvas-mobile-menu li ul li {
+    border: none !important;
+
+    margin: 0 !important;
+
+    background: transparent !important;
+  }
+
+
+  #offcanvas-mobile-menu li ul li a,
+  .offcanvas-mobile-menu li ul li a {
+    display: block !important;
+
+    padding:
+      10px
+      4px !important;
+
+    color: #035391 !important;
+    -webkit-text-fill-color: #035391 !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    text-transform: none !important;
+
+    background: transparent !important;
+  }
+
+
+  /* =====================================================
+     6. LOGIN / SIGN IN AREA
+  ===================================================== */
+
+  .mobile-widget-area {
+    width: 100% !important;
+
+    margin-top: 22px !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 12px !important;
+  }
+
+
+  .mobile-account-row {
+    display: grid !important;
+
+    grid-template-columns:
+      1fr
+      1fr !important;
+
+    gap: 12px !important;
+
+    width: 100% !important;
+  }
+
+
+  /* LOGIN */
+
+  .mobile-login-item {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 48px !important;
+
+    padding: 0 15px !important;
+
+    border:
+      1.5px solid
+      #012d65 !important;
+
+    border-radius: 3px !important;
+
+    background: #ffffff !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    text-align: center !important;
+  }
+
+
+  /* SIGN IN */
+
+  .mobile-signin-item {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 48px !important;
+
+    padding: 0 15px !important;
+
+    border:
+      1.5px solid
+      #012d65 !important;
+
+    border-radius: 3px !important;
+
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    text-align: center !important;
+  }
+
+
+  .mobile-login-item svg,
+  .mobile-signin-item svg {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     7. CONTACT + EMAIL
+  ===================================================== */
+
+  .mobile-contact-item,
+  .mobile-email-item {
+    width: 100% !important;
+
+    min-height: 46px !important;
+
+    padding:
+      0
+      14px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    border:
+      1px solid
+      rgba(1, 45, 101, 0.14) !important;
+
+    border-radius: 3px !important;
+
+    background:
+      rgba(1, 45, 101, 0.025) !important;
+
+    color: #012d65 !important;
+  }
+
+
+  .mobile-contact-item svg,
+  .mobile-email-item svg {
+    color: #012d65 !important;
+    stroke: #012d65 !important;
+  }
+
+
+  .mobile-widget-label,
+  .mobile-widget-value {
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+  }
+
+
+  /* =====================================================
+     8. CLOSE BUTTON
+     BLUE X + WHITE BACKGROUND
+  ===================================================== */
+
+  #offcanvas-mobile-menu
+  [aria-label*="close" i],
+
+  .offcanvas-mobile-menu
+  [aria-label*="close" i],
+
+  #offcanvas-mobile-menu
+  .mobile-menu-close,
+
+  .offcanvas-mobile-menu
+  .mobile-menu-close,
+
+  #offcanvas-mobile-menu
+  .offcanvas-menu-close,
+
+  .offcanvas-mobile-menu
+  .offcanvas-menu-close {
+    background: #ffffff !important;
+
+    color: #012d65 !important;
+
+    border:
+      1px solid
+      rgba(1, 45, 101, 0.16) !important;
+
+    box-shadow: none !important;
+  }
+
+
+  #offcanvas-mobile-menu
+  [aria-label*="close" i] svg,
+
+  .offcanvas-mobile-menu
+  [aria-label*="close" i] svg,
+
+  #offcanvas-mobile-menu
+  .mobile-menu-close svg,
+
+  .offcanvas-mobile-menu
+  .mobile-menu-close svg,
+
+  #offcanvas-mobile-menu
+  .offcanvas-menu-close svg,
+
+  .offcanvas-mobile-menu
+  .offcanvas-menu-close svg {
+    color: #012d65 !important;
+
+    fill: none !important;
+    stroke: #012d65 !important;
+  }
+
+
+  #offcanvas-mobile-menu
+  [aria-label*="close" i] svg path,
+
+  .offcanvas-mobile-menu
+  [aria-label*="close" i] svg path {
+    stroke: #012d65 !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE ONLY
+   320PX - 767PX
+========================================================= */
+
+@media (max-width: 767px) {
+
+  #offcanvas-mobile-menu,
+  .offcanvas-mobile-menu {
+    padding:
+      18px
+      16px
+      28px !important;
+  }
+
+
+  #offcanvas-mobile-menu > ul > li > a,
+  .offcanvas-mobile-menu > ul > li > a,
+  #offcanvas-mobile-menu nav > ul > li > a,
+  .offcanvas-mobile-menu nav > ul > li > a {
+    min-height: 52px !important;
+
+    padding:
+      0
+      16px !important;
+
+    font-size: 13px !important;
+  }
+
+
+  .mobile-account-row {
+    grid-template-columns: 1fr !important;
+  }
+
+
+  .mobile-login-item,
+  .mobile-signin-item {
+    width: 100% !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET ONLY
+   768PX - 1199PX
+========================================================= */
+
+@media
+(min-width: 768px)
+and
+(max-width: 1199px) {
+
+  #offcanvas-mobile-menu,
+  .offcanvas-mobile-menu {
+    padding:
+      28px
+      34px
+      36px !important;
+  }
+
+
+  #offcanvas-mobile-menu > ul > li > a,
+  .offcanvas-mobile-menu > ul > li > a,
+  #offcanvas-mobile-menu nav > ul > li > a,
+  .offcanvas-mobile-menu nav > ul > li > a {
+    min-height: 58px !important;
+
+    font-size: 15px !important;
+  }
+}
+/* =========================================================
+   HIDE CONTACT + EMAIL
+   MOBILE / TABLET / LAPTOP OFFCANVAS ONLY
+   DESKTOP NOT AFFECTED
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .mobile-contact-item,
+  .mobile-email-item {
+    display: none !important;
+  }
+
+}

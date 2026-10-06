@@ -179,7 +179,7 @@
   text-align: left;
 }
 .ht__bradcaump__container_market p {
-  color: #ffffff;
+  color: #012d65;
   margin-bottom: 30px;
 }
 
@@ -187,7 +187,7 @@
   text-align: left;
   font-size: 48px;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: #012d65;
 }
 
 /* --------------------
@@ -1223,21 +1223,6 @@ linear-gradient(
       rgba(0, 0, 0, 0) 50%
     );
 }
-
-
-/* CONTENT ABOVE VIDEO + SHADOW */
-
-.banner-two-video-section
-.ht__bradcaump__container__home__banner__two {
-  position: relative;
-
-  z-index: 2;
-
-  height: 520px;
-
-  padding-top: 100px;
-}
-
 
 /* TEXT CONTENT */
 
@@ -2487,4 +2472,75 @@ linear-gradient(
     grid-template-columns: 1fr !important;
   }
 
+}
+/* =========================================================
+   DEMO TRADING ACCOUNT
+   EXPLORE ASSETS BUTTON
+   ONLY THIS SECTION
+========================================================= */
+
+.demo-trading-assets-hero {
+  .slide__btn.dg__btn {
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: 1.5px solid #012d65 !important;
+
+    text-decoration: none !important;
+
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .slide__btn.dg__btn:hover {
+    background: #f7a901 !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    border-color: #f7a901 !important;
+
+    transform: translateY(-2px);
+  }
+
+  .slide__btn.dg__btn:focus {
+    background: #f7a901 !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    border-color: #f7a901 !important;
+  }
+}
+/* =========================================================
+   DEMO TRADING ACCOUNT
+   EXPLORE ASSETS BUTTON
+   ONLY THIS SECTION
+========================================================= */
+
+.demo-trading-assets-hero {
+  .slide__btn.dg__btn {
+    background: #012d65 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: 1.5px solid #012d65 !important;
+
+    text-decoration: none !important;
+  }
+
+  .slide__btn.dg__btn:hover {
+    background: #f7a901 !important;
+
+    color: #012d65 !important;
+    -webkit-text-fill-color: #012d65 !important;
+
+    border-color: #f7a901 !important;
+  }
 }
