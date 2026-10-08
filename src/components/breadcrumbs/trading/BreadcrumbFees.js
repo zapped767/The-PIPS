@@ -3,7 +3,7 @@ import React from "react";
 const BreadcrumbFees = () => {
   const bannerImage =
     process.env.PUBLIC_URL +
-    "/images/home/accounts-header-blue4.png";
+    "/images/home/accounts-header-blue.png";
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../layouts/LayoutTwo";
 import BlogGridTwo from "../containers/blog-grids/BlogGridTwo";
 import SoftwareDownloadTwo from "../components/software-downloads/SoftwareDownloadTwo";
@@ -13,10 +13,10 @@ import HeroSliderFour from "../containers/hero-sliders/HeroSliderFour";
 const HomeFour = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Home Four</title>
         <meta name="description" content="Homepage of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* hero slider */}
         <HeroSliderFour />

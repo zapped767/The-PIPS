@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbBornToTradePodcast from "../../components/breadcrumbs/resources/BreadcrumbBornToTradePodcast";
 import BornToTradePodcastContentOne from "../../components/resource-contents/born-to-trade-podcast-contents/BornToTradePodcastContentOne";
@@ -12,10 +12,10 @@ import BornToTradePodcastContentSix from "../../components/resource-contents/bor
 const BornToTradePodcast = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Born To Trade Podcast</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbBornToTradePodcast title="Born To Trade Podcast" />
         <BornToTradePodcastContentOne />

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbVPSHosting from "../../components/breadcrumbs/resources/BreadcrumbVPSHosting";
 import VPSHostingContentOne from "../../components/resource-contents/vps-hosting-contents/VPSHostingContentOne";
@@ -12,10 +12,10 @@ import VPSHostingContentSix from "../../components/resource-contents/vps-hosting
 const VPSHosting = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | VPS Hosting</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbVPSHosting title="VPS Hosting" />
         <VPSHostingContentOne />

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../layouts/LayoutTwo";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 import ServiceContentTwo from "../components/service-contents/ServiceContentTwo";
@@ -9,10 +9,10 @@ import ServiceFeature from "../containers/service-contents/ServiceFeature";
 const ServiceDetails = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Service Details</title>
         <meta name="description" content="Service details page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
         <Breadcrumb title="SERVICES DETAILS" />

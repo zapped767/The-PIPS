@@ -27,7 +27,7 @@ const MAIN_IMAGE =
 const serviceCards = [
   {
     id: 1,
-    title: "Beginner-Focused Learning",
+    title: "Beginner Focused Learning",
     description:
       "Easy resources that simplify trading concepts.",
     icon: <FiBookOpen />,

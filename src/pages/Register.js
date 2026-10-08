@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 import Select from "react-select";
@@ -41,7 +41,7 @@ const Register = () => {
 
   return (
     <>
-      <MetaTags>
+      <Helmet>
 
         <title>
           PIPS | Register
@@ -52,7 +52,7 @@ const Register = () => {
           content="Create your PIPS account."
         />
 
-      </MetaTags>
+      </Helmet>
 
 
       <div className="pips-register-page">

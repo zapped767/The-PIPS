@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import LayoutTwo from "../layouts/LayoutTwo";
 import Tab from "react-bootstrap/Tab";
@@ -9,10 +9,10 @@ import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 const LoginRegister = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Login</title>
         <meta name="description" content="Login page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
         <Breadcrumb title="LOGIN - REGISTER" />

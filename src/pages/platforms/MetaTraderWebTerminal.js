@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbMetaTraderWebTerminal from "../../components/breadcrumbs/platforms/BreadcrumbMetaTraderWebTerminal";
 import MetaTraderWebTerminalContentOne from "../../components/platform-contents/meta-trader-web-terminal-contents/MetaTraderWebTerminalContentOne";
@@ -11,10 +11,10 @@ import MetaTraderWebTerminalContentFive from "../../components/platform-contents
 const MetaTraderWebTerminal = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Meta Trader Web Terminal</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbMetaTraderWebTerminal title="Meta Trader Web Terminal" />
         <MetaTraderWebTerminalContentOne />

@@ -15,7 +15,7 @@ const CARD_1_LOGOS = [
   "/images/home/homeworks/ai_trading_07.png",
   "/images/home/homeworks/ai_trading_08.png",
   "/images/home/homeworks/ai_trading_09.png",
-  "/images/home/homeworks/ai_trading_10.png",
+  "/images/home/homeworks/ai_trading_10.jpg",
 ];
 /* =========================================================
    HOW WORKS

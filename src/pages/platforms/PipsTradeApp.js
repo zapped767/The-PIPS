@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbPipsTradeApp from "../../components/breadcrumbs/platforms/BreadcrumbPipsTradeApp";
 import PipsTradeAppContentOne from "../../components/platform-contents/pips-trade-app-contents/PipsTradeAppContentOne";
@@ -11,10 +11,10 @@ import PipsTradeAppContentFive from "../../components/platform-contents/pips-tra
 const PipsTradeApp = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Pips Trade App</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbPipsTradeApp title="Pips Trade App" />
         <PipsTradeAppContentOne />

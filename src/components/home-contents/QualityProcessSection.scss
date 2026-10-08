@@ -3160,3 +3160,23 @@
   }
 
 }
+/* =========================================================
+   LAPTOP DESKTOP FIX
+   MATCH LARGE PC DESKTOP VERTICAL LAYOUT
+
+   Laptop viewport height is smaller, so 60vh becomes
+   too short for the 540px curved container.
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+
+  .quality-section .quality-cards-section {
+    height: 60vh !important;
+    min-height: 580px !important;
+  }
+
+  .quality-section .quality-sticky-stage {
+    top: 100px !important;
+  }
+
+}

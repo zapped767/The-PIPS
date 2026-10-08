@@ -297,20 +297,27 @@ async function fetchBinanceHistory(
 async function fetchYahooChart(
   yahooSymbol
 ) {
-
   return withRetry(
     async () => {
-
       const yahooUrl =
         `https://query1.finance.yahoo.com/v8/finance/chart/${yahooSymbol}` +
         `?interval=5m&range=1d&_=${Date.now()}`;
 
+      const corsProxyKey =
+        process.env.REACT_APP_CORSPROXY_KEY;
+
+      if (!corsProxyKey) {
+        throw new Error(
+          "Missing REACT_APP_CORSPROXY_KEY"
+        );
+      }
 
       const proxyUrl =
-        `https://corsproxy.io/?key=1dc9c7fd&url=${encodeURIComponent(
+        `https://corsproxy.io/?key=${encodeURIComponent(
+          corsProxyKey
+        )}&url=${encodeURIComponent(
           yahooUrl
         )}`;
-
 
       const res =
         await fetchWithTimeout(
@@ -318,112 +325,67 @@ async function fetchYahooChart(
           12000
         );
 
-
-      if (
-        !res.ok
-      ) {
-
+      if (!res.ok) {
         throw new Error(
           `Yahoo proxy failed: ${res.status}`
         );
       }
 
-
       const data =
         await res.json();
 
-
       const result =
-        data?.chart
-          ?.result?.[0];
+        data?.chart?.result?.[0];
 
-
-      if (
-        !result
-      ) {
-
-        console.log(
-          data
-        );
-
+      if (!result) {
+        console.log(data);
 
         throw new Error(
           "Invalid Yahoo response"
         );
       }
 
-
       const timestamps =
         result.timestamp;
 
-
       const closes =
-        result
-          .indicators
-          ?.quote?.[0]
-          ?.close;
-
+        result.indicators?.quote?.[0]?.close;
 
       return timestamps
-        .map(
-          (
-            ts,
-            i
-          ) => {
+        .map((ts, i) => {
+          const close =
+            closes[i];
 
-            const close =
-              closes[i];
-
-
-            if (
-              close ==
-              null
-            ) {
-
-              return null;
-            }
-
-
-            return {
-
-              time:
-                new Date(
-                  ts *
-                  1000
-                ).toLocaleTimeString(
-                  "en-US",
-                  {
-                    hour:
-                      "2-digit",
-
-                    minute:
-                      "2-digit",
-
-                    hour12:
-                      true,
-                  }
-                ),
-
-              timestamp:
-                ts *
-                1000,
-
-              value:
-                parseFloat(
-                  close.toFixed(
-                    close >
-                    100
-                      ? 2
-                      : 4
-                  )
-                ),
-            };
+          if (close == null) {
+            return null;
           }
-        )
 
-        .filter(
-          Boolean
-        );
+          return {
+            time: new Date(
+              ts * 1000
+            ).toLocaleTimeString(
+              "en-US",
+              {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+              }
+            ),
+
+            timestamp:
+              ts * 1000,
+
+            value:
+              parseFloat(
+                close.toFixed(
+                  close > 100
+                    ? 2
+                    : 4
+                )
+              ),
+          };
+        })
+        .filter(Boolean);
     },
 
     3

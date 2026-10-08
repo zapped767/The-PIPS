@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbTickHistory from "../../components/breadcrumbs/resources/BreadcrumbTickHistory";
 import TickHistoryContentOne from "../../components/resource-contents/tick-history-contents/TickHistoryContentOne";
@@ -12,10 +12,10 @@ import TickHistoryContentSix from "../../components/resource-contents/tick-histo
 const TickHistory = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Tick History</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbTickHistory title="Tick History" />
         <TickHistoryContentOne />

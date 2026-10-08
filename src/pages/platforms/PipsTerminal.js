@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbPipsTerminal from "../../components/breadcrumbs/platforms/BreadcrumbPipsTerminal";
 import PipsTerminalContentOne from "../../components/platform-contents/pips-terminal-contents/PipsTerminalContentOne";
@@ -11,10 +11,10 @@ import PipsTerminalContentFive from "../../components/platform-contents/pips-ter
 const PipsTerminal = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Pips Terminal</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbPipsTerminal title="Pips Terminal" />
         <PipsTerminalContentOne />

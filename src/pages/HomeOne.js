@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutOne from "../layouts/LayoutOne";
 import HeroSlider from "../containers/hero-sliders/HeroSlider";
 import CurrencyTicker from "../containers/currency-tickers/CurrencyTicker";
@@ -14,10 +14,10 @@ import CurrencyCalculation from "../components/currency-calculations/CurrencyCal
 const HomeOne = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Home One</title>
         <meta name="description" content="Homepage of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutOne>
         {/* hero slider */}
         <HeroSlider />

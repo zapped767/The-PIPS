@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbDepositsAndWithdrawals from "../../components/breadcrumbs/trading/BreadcrumbDepositsAndWithdrawals";
 import DepositsAndWithdrawalsContentThree from "../../components/trading-contents/deposits-and-withdrawals-contents/DepositsAndWithdrawalsContentThree";
@@ -10,10 +10,10 @@ import DepositsAndWithdrawalsContentOne from "../../components/trading-contents/
 const DepositsAndWithdrawals = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Deposits and Withdrawals</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbDepositsAndWithdrawals title="Deposits and Withdrawals" />
         <DepositsAndWithdrawalsContentOne />

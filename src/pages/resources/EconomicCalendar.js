@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbEconomicCalendar from "../../components/breadcrumbs/resources/BreadcrumbEconomicCalendar";
 import EconomicCalendarContentOne from "../../components/resource-contents/economic-calendar-contents/EconomicCalendarContentOne";
@@ -12,10 +12,10 @@ import EconomicCalendarContentSix from "../../components/resource-contents/econo
 const EconomicCalendar = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Economic Calendar</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbEconomicCalendar title="Economic Calendar" />
         <EconomicCalendarContentOne />

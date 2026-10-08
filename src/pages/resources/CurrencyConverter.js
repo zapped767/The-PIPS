@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbCurrencyConverter from "../../components/breadcrumbs/resources/BreadcrumbCurrencyConverter";
 import CurrencyConverterContentOne from "../../components/resource-contents/currency-converter-contents/CurrencyConverterContentOne";
@@ -12,10 +12,10 @@ import CurrencyConverterContentSix from "../../components/resource-contents/curr
 const CurrencyConverter = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Currency Converter</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbCurrencyConverter title="Currency Converter" />
         <CurrencyConverterContentOne />

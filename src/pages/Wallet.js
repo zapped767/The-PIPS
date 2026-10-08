@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../layouts/LayoutTwo";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 import SoftwareDownloadTwo from "../components/software-downloads/SoftwareDownloadTwo";
@@ -11,10 +11,10 @@ import WalletContent from "../components/wallet-contents/WalletContent";
 const Wallet = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Wallet</title>
         <meta name="description" content="Wallet page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
         <Breadcrumb title="WALLET" />

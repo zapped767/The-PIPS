@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../layouts/LayoutTwo";
 import BreadcrumbContact from "../components/breadcrumbs/BreadcrumbContact";
 import ContactMap from "../components/contact-maps/ContactMap";
@@ -7,10 +7,10 @@ import ContactMap from "../components/contact-maps/ContactMap";
 const Contact = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Contact</title>
         <meta name="description" content="Contact page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         {/* breadcrumb */}
         <BreadcrumbContact title="CONTACT" />

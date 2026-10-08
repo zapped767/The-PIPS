@@ -188,3 +188,135 @@
     }
   }
 }
+/* =========================================================
+   THE PIPS HOME HERO
+   LAPTOP / MEDIUM DESKTOP FIX
+
+   1200PX - 1599PX ONLY
+
+   LAPTOP TESTED:
+   WIDTH: 1528PX
+   DPR: 1.25
+
+   DOES NOT AFFECT:
+   MOBILE
+   TABLET
+   1600PX+ LARGE DESKTOP / PC
+   OTHER PAGES
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+
+  .slider--2 .pips-responsive-slider {
+
+    /* =====================================================
+       SLIDE 1
+       REMOVE NEGATIVE HORIZONTAL PUSH
+       KEEP CURRENT VERTICAL POSITION
+    ===================================================== */
+
+    .hero-slide-content.slide-1 {
+      translate:
+        0px
+        -120px !important;
+    }
+
+
+    /* =====================================================
+       SLIDE 2
+       REMOVE NEGATIVE HORIZONTAL PUSH
+    ===================================================== */
+
+    .hero-slide-content.slide-2 {
+      translate:
+        0px
+        -80px !important;
+    }
+
+
+    /* =====================================================
+       SLIDE 3
+       REMOVE +150PX RIGHT PUSH
+
+       margin-left:auto already places it on right.
+    ===================================================== */
+
+    .hero-slide-content.slide-3 {
+      margin-left: auto !important;
+
+      translate:
+        0px
+        -150px !important;
+    }
+
+
+    /* =====================================================
+       SLIDE 4
+       REMOVE NEGATIVE HORIZONTAL PUSH
+    ===================================================== */
+
+    .hero-slide-content.slide-4 {
+      translate:
+        0px
+        -65px !important;
+    }
+
+  }
+
+} 
+
+/* =========================================================
+   HOME HERO
+   TABLET + LAPTOP TEXT ONLY
+   MOVE H1 + PARAGRAPH LITTLE UP
+
+   BUTTON / DOTS / IMAGE / VIDEO NOT AFFECTED
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+   768PX - 991PX
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .slider--2 .pips-responsive-slider {
+
+    .hero-slide-content h1 {
+      position: relative !important;
+      top: -35px !important;
+    }
+
+    .hero-slide-content p {
+      position: relative !important;
+      top: -35px !important;
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   992PX - 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .slider--2 .pips-responsive-slider {
+
+    .hero-slide-content h1 {
+      position: relative !important;
+      top: -42px !important;
+    }
+
+    .hero-slide-content p {
+      position: relative !important;
+      top: -42px !important;
+    }
+
+  }
+
+}

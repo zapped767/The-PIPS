@@ -97,8 +97,9 @@ const HeroSliderTwoSingle = ({ data }) => {
           muted
           loop
           playsInline
+          preload="metadata"
         >
-          <source
+                  <source
             src={process.env.PUBLIC_URL + slide.media}
             type="video/mp4"
           />
@@ -2325,6 +2326,7 @@ font-weight: 700 !important;
                 muted
                 loop
                 playsInline
+                preload="metadata"
               >
 
                 <source

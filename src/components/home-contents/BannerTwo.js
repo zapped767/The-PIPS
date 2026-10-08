@@ -294,6 +294,12 @@ const BannerTwo = () => {
 
               --banner-two-content-width: 100%;
             }
+              --banner-two-radius: 28px;
+
+                border-radius: 28px !important;
+                overflow: hidden !important;
+                background-clip: padding-box !important;
+                isolation: isolate;
 
 
             .pips-banner-two-image26::before {

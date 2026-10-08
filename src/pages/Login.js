@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 
@@ -8,10 +8,10 @@ import Logo from "../components/header/Logo";
 const Login = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Login</title>
         <meta name="description" content="Login page for PIPS user portal." />
-      </MetaTags>
+      </Helmet>
       <section className="login__area">
         <div>
           <div className="row">

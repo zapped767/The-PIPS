@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../layouts/LayoutTwo";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 import BlogPostContent from "../containers/blog/BlogPostContent";
@@ -7,10 +7,10 @@ import BlogPostContent from "../containers/blog/BlogPostContent";
 const BlogPost = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | News Details</title>
         <meta name="description" content="News details page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
         <Breadcrumb title="NEWS DETAILS" />

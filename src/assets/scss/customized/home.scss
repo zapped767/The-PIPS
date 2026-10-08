@@ -3421,69 +3421,422 @@ top:-10px;
 
 
 /* =========================================================
-   LAPTOP
+   HOW WORKS - LAPTOP
    992PX - 1199PX
 
-   STILL 3 COLUMNS × 2 ROWS
+   2 COLUMNS × 3 ROWS
 ========================================================= */
 
-@media
-(min-width: 992px)
-and
-(max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
 
   .hw__section {
+    /* MANUAL LAPTOP CONTROLS */
+    --lap-grid-width: 900px;
+    --lap-card-height: 285px;
+    --lap-card-gap: 14px;
+
     padding:
-      75px
+      70px
       22px
       80px;
   }
 
 
-  .hw__bento-layout {
-    max-width: 1080px;
+  /* =====================================================
+     MAIN GRID
+     CARD 1 | CARD 2
+     CARD 3 | CARD 4
+     CARD 5 | CARD 6
+  ===================================================== */
+
+  .hw__section .hw__bento-layout {
+    width: 100% !important;
+
+    max-width:
+      var(--lap-grid-width) !important;
+
+    display: grid !important;
 
     grid-template-columns:
       repeat(
-        3,
-        minmax(
-          0,
-          1fr
-        )
-      );
+        2,
+        minmax(0, 1fr)
+      ) !important;
 
     grid-template-rows:
       repeat(
-        2,
-        300px
-      );
+        3,
+        var(--lap-card-height)
+      ) !important;
 
-    gap: 14px;
-  }
+    gap:
+      var(--lap-card-gap) !important;
 
+    margin:
+      0 auto !important;
 
-  .hw__card-image-area {
-    height: 60%;
-  }
-
-
-  .hw__card-content {
     padding:
-      16px
-      18px;
+      0 !important;
+
+    align-items:
+      stretch !important;
   }
 
 
+  /* =====================================================
+     RESET OLD DESKTOP CARD SIZE / POSITION
+  ===================================================== */
+
+  .hw__section
+  .hw__bento-layout
+  > .hw__bento-card {
+
+    position:
+      relative !important;
+
+    width:
+      100% !important;
+
+    max-width:
+      100% !important;
+
+    min-width:
+      0 !important;
+
+    height:
+      var(--lap-card-height) !important;
+
+    min-height:
+      var(--lap-card-height) !important;
+
+    top:
+      auto !important;
+
+    right:
+      auto !important;
+
+    bottom:
+      auto !important;
+
+    left:
+      auto !important;
+
+    margin:
+      0 !important;
+
+    grid-column:
+      auto !important;
+
+    grid-row:
+      auto !important;
+
+    border-radius:
+      16px !important;
+
+    overflow:
+      hidden !important;
+
+    box-sizing:
+      border-box !important;
+  }
+
+
+  /* =====================================================
+     TEXT POSITION
+  ===================================================== */
+
+  .hw__section
+  .hw__card-1
+  .hw__card-content,
+
+  .hw__section
+  .hw__card-2
+  .hw__card-content,
+
+  .hw__section
+  .hw__card-3
+  .hw__card-content,
+
+  .hw__section
+  .hw__card-4
+  .hw__card-content,
+
+  .hw__section
+  .hw__card-5
+  .hw__card-content,
+
+  .hw__section
+  .hw__card-6
+  .hw__card-content {
+
+    position:
+      absolute !important;
+
+    top:
+      auto !important;
+
+    right:
+      0 !important;
+
+    bottom:
+      14px !important;
+
+    left:
+      0 !important;
+
+    width:
+      100% !important;
+
+    padding:
+      14px
+      18px !important;
+
+    box-sizing:
+      border-box !important;
+
+    z-index:
+      5 !important;
+  }
+
+
+  /* TEXT SIZE */
+
+  .hw__section
   .hw__card-content h3 {
-    font-size: 16px;
+
+    font-size:
+      20px !important;
+
+    line-height:
+      1.2 !important;
+
+    margin:
+      0 0 6px !important;
   }
 
 
+  .hw__section
   .hw__card-content p {
-    font-size: 10px;
 
-    line-height: 1.45;
+    font-size:
+      12px !important;
+
+    line-height:
+      1.45 !important;
+
+    max-width:
+      100% !important;
   }
+
+
+  /* =====================================================
+     CARD 1 - LAPTOP IMAGE
+  ===================================================== */
+
+  .hw__section
+  .hw__card-1-corner-image {
+
+    width:
+      290px !important;
+
+    max-width:
+      72% !important;
+
+    top:
+      -8px !important;
+
+    right:
+      -4px !important;
+  }
+
+
+  /* CARD 1 BLUR LOGO CONTAINER */
+
+  .hw__section
+  .hw__card-1-logo-window {
+
+    width:
+      260px !important;
+
+    max-width:
+      62% !important;
+
+    height:
+      58px !important;
+
+    top:
+      46px !important;
+
+    right:
+      0 !important;
+
+    left:
+      auto !important;
+  }
+
+
+  .hw__section
+  .hw__card-1-logo-box {
+
+    flex:
+      0 0 46px !important;
+
+    width:
+      46px !important;
+
+    height:
+      42px !important;
+
+    padding:
+      5px !important;
+  }
+
+
+  /* =====================================================
+     CARD 2 - MARKET ROWS
+  ===================================================== */
+
+  .hw__section
+  .hw__card-2-market-window {
+
+    top:
+      20px !important;
+
+    height:
+      112px !important;
+  }
+
+
+  .hw__section
+  .hw__card-2-row--one {
+
+    top:
+      0 !important;
+
+    height:
+      44px !important;
+  }
+
+
+  .hw__section
+  .hw__card-2-row--two {
+
+    top:
+      52px !important;
+
+    height:
+      44px !important;
+  }
+
+
+  .hw__section
+  .hw__market-pill {
+
+    height:
+      38px !important;
+  }
+
+
+  /* =====================================================
+     CARD 3 IMAGE
+  ===================================================== */
+
+  .hw__section
+  .hw__card-3-corner-image {
+
+    width:
+      220px !important;
+
+    max-width:
+      58% !important;
+
+    top:
+      5px !important;
+
+    right:
+      5px !important;
+  }
+
+
+  /* =====================================================
+     CARD 4 VIDEO FULL CARD
+  ===================================================== */
+
+  .hw__section
+  .hw__card-4 {
+
+    position:
+      relative !important;
+
+    overflow:
+      hidden !important;
+  }
+
+
+  .hw__section
+  .hw__card-4-middle-video {
+
+    position:
+      absolute !important;
+
+    inset:
+      0 !important;
+
+    width:
+      100% !important;
+
+    height:
+      100% !important;
+
+    object-fit:
+      cover !important;
+
+    object-position:
+      center center !important;
+
+    transform:
+      none !important;
+
+    z-index:
+      1 !important;
+  }
+
+
+  /* =====================================================
+     CARD 5 - RESET OLD TEXT OFFSET
+  ===================================================== */
+
+  .hw__section
+  .hw__card-5
+  .hw__card-content h3,
+
+  .hw__section
+  .hw__card-5
+  .hw__card-content p {
+
+    top:
+      0 !important;
+
+    left:
+      0 !important;
+  }
+
+
+  /* =====================================================
+     CARD 6 - RESET OLD TEXT OFFSET
+  ===================================================== */
+
+  .hw__section
+  .hw__card-6
+  .hw__card-content {
+
+    top:
+      auto !important;
+
+    bottom:
+      14px !important;
+  }
+
 }
 
 
@@ -10270,3 +10623,251 @@ and
     border-radius: inherit !important;
   }
 }
+/* =========================================================
+   CARD 1 BLUR CONTAINER
+   MANUAL MOBILE M / MOBILE L RIGHT POSITION
+========================================================= */
+
+
+/* =========================
+   MOBILE M - 375PX
+========================= */
+@media (min-width: 350px) and (max-width: 399px) {
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-window {
+
+    /* RESET OLD MOVEMENT */
+    transform: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    /* ==================================
+       MANUAL LEFT / RIGHT POSITION
+
+       0px    = normal
+       -10px  = move RIGHT
+       -20px  = move more RIGHT
+       -30px  = move more RIGHT
+       -40px  = move much more RIGHT
+    ================================== */
+
+    right: -30px !important;
+    left: auto !important;
+  }
+
+}
+
+
+/* =========================
+   MOBILE L - 425PX
+========================= */
+@media (min-width: 400px) and (max-width: 480px) {
+
+  .hw__section
+  .hw__card-1
+  .hw__card-1-logo-window {
+
+    /* RESET OLD MOVEMENT */
+    transform: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    /* ==================================
+       MANUAL LEFT / RIGHT POSITION
+    ================================== */
+
+    right: -55px !important;
+    left: auto !important;
+  }
+
+}
+/* =========================================================
+   BANNER ONE - LAPTOP ONLY
+   992PX - 1199PX
+
+   Unlock Smarter Crypto Trading
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .pips-app-banner-section {
+
+    /* =========================
+       MANUAL CONTROLS
+    ========================= */
+
+    /* TITLE */
+    --lap-banner-h1-size: 34px;
+
+    /* PARAGRAPH */
+    --lap-banner-p-size: 13px;
+
+    /* PHONE IMAGE */
+    --lap-banner-phone-top: -70px;
+
+    /* BUTTON */
+    --lap-banner-btn-top: -28px;
+  }
+
+
+  /* =========================
+     TITLE
+  ========================= */
+
+  .pips-app-banner-section
+  .pips-app-banner-content h1 {
+
+    font-size:
+      var(--lap-banner-h1-size) !important;
+
+    line-height:
+      1.12 !important;
+
+    margin-bottom:
+      16px !important;
+  }
+
+
+  /* =========================
+     PARAGRAPH
+  ========================= */
+
+  .pips-app-banner-section
+  .pips-app-banner-content p {
+
+    font-size:
+      var(--lap-banner-p-size) !important;
+
+    line-height:
+      1.5 !important;
+
+    max-width:
+      410px !important;
+  }
+
+
+  /* =========================
+     GET STARTED NOW BUTTON
+     NEGATIVE = MOVE UP
+  ========================= */
+
+  .pips-app-banner-section
+  .pips-banner-btn {
+
+    position:
+      relative !important;
+
+    top:
+      var(--lap-banner-btn-top) !important;
+
+    left:
+      0 !important;
+
+    font-size:
+      13px !important;
+
+    padding:
+      13px
+      26px !important;
+  }
+
+
+  /* =========================
+     RIGHT PHONE IMAGE
+     NEGATIVE = MOVE UP
+  ========================= */
+
+  .pips-app-banner-section
+  .pips-app-banner-visual {
+
+    position:
+      relative !important;
+
+    overflow:
+      visible !important;
+  }
+
+
+  .pips-app-banner-section
+  .pips-banner-phone-main {
+
+    position:
+      relative !important;
+
+    top:
+      var(--lap-banner-phone-top) !important;
+
+    height:
+      auto !important;
+
+    display:
+      block !important;
+  }
+
+}
+/* =========================================================
+   BANNER ONE - LAPTOP PHONE OVERLAP
+   992PX - 1199PX
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .pips-app-banner-section {
+    overflow: visible !important;
+  }
+
+  .pips-app-banner-section
+  .pips-app-banner-card {
+    position: relative !important;
+
+    /* IMPORTANT:
+       allow phone to sit outside / above card */
+    overflow: visible !important;
+  }
+
+
+  /* RIGHT SIDE PHONE WRAPPER */
+  .pips-app-banner-section
+  .pips-app-banner-visual {
+
+    position: absolute !important;
+
+    /* MANUAL POSITION */
+    top: -80px !important;
+    right: 10px !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 48% !important;
+    height: auto !important;
+
+    z-index: 10 !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* PHONE IMAGE */
+  .pips-app-banner-section
+  .pips-banner-phone-main {
+
+    position: relative !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 430px !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+  }
+
+}
+

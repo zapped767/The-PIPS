@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbCryptoMarket from "../../components/breadcrumbs/markets/BreadcrumbCryptoMarket";
 import CryptoMarketContentOne from "../../components/market-contents/crypto-market-contents/CryptoMarketContentOne";
@@ -11,10 +11,10 @@ import MarketTable from "../../components/market-tables/MarketTable";
 const CryptoMarket = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Crypto Market</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbCryptoMarket title="Forex Market" />
         <CryptoMarketContentThree />

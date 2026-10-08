@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import LayoutTwo from "../layouts/LayoutTwo";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
@@ -7,10 +7,10 @@ import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 const NotFound = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Not Found</title>
         <meta name="description" content="404 page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
         <Breadcrumb title="NOT FOUND" />

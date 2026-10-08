@@ -184,7 +184,7 @@ const paymentMethods = [
   {
     id: 7,
     src:
-      "/images/referenceLogos/PikPng.com_transparent-png-icons_4195720.png",
+      "/images/referenceLogos/upi icon.png",
     alt: "UPI",
   },
   {

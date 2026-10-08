@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbStandardAccounts from "../../components/breadcrumbs/trading/BreadcrumbStandardAccounts";
 
@@ -7,10 +7,10 @@ import StandardAccountsContentOne from "../../components/trading-contents/standa
 const StandardAccounts = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Types of Accounts</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbStandardAccounts title="Types of Accounts" />
         <StandardAccountsContentOne />

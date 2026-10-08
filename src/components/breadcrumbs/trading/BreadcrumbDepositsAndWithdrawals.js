@@ -3,7 +3,7 @@ import React from "react";
 const BreadcrumbDepositsAndWithdrawals = () => {
   const bannerImage =
     process.env.PUBLIC_URL +
-    "/images/home/accounts-header-blue3.png";
+    "/images/home/accounts-header-blue.png";
 
   return (
     <>

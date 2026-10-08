@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet-async";
 import LayoutTwo from "../../layouts/LayoutTwo";
 import BreadcrumbAnalyticalTools from "../../components/breadcrumbs/resources/BreadcrumbAnalyticalTools";
 import AnalyticalToolsContentOne from "../../components/resource-contents/analytical-tools-contents/AnalyticalToolsContentOne";
@@ -12,10 +12,10 @@ import AnalyticalToolsContentSix from "../../components/resource-contents/analyt
 const AnalyticalTools = () => {
   return (
     <Fragment>
-      <MetaTags>
+      <Helmet>
         <title>PIPS | Analytical Tools</title>
         <meta name="description" content="About page of The Pips" />
-      </MetaTags>
+      </Helmet>
       <LayoutTwo theme="blue">
         <BreadcrumbAnalyticalTools title="Analytical Tools" />
         <AnalyticalToolsContentOne />
