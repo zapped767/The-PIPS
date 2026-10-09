@@ -140,7 +140,7 @@ const HeroSliderTwoSingle = ({ data }) => {
         .hero-video-slide {
           overflow: hidden;
 
-          background: #012d65;
+          background: #ffffff;
         }
 
 

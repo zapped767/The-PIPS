@@ -1,22 +1,8 @@
 import React, { useEffect, useRef } from "react";
 
-/* =========================================================
-   CARD 1 - PLATFORM LOGOS
-   CHANGE ONLY THE FILENAMES
-========================================================= */
 
-const CARD_1_LOGOS = [
-  "/images/home/homeworks/ai_trading_01.png",
-  "/images/home/homeworks/ai_trading_02.png",
-  "/images/home/homeworks/ai_trading_03.png",
-  "/images/home/homeworks/ai_trading_04.png",
-  "/images/home/homeworks/ai_trading_05.png",
-  "/images/home/homeworks/ai_trading_06.png",
-  "/images/home/homeworks/ai_trading_07.png",
-  "/images/home/homeworks/ai_trading_08.png",
-  "/images/home/homeworks/ai_trading_09.png",
-  "/images/home/homeworks/ai_trading_10.jpg",
-];
+
+
 /* =========================================================
    HOW WORKS
    6 CARDS
@@ -162,91 +148,29 @@ const HowWorks = () => {
       <div className="hw__bento-layout">
 
 
-        {/* =================================================
-            CARD 1
-            SMART TRADING
-        ================================================= */}
+       {/* =================================================
+    CARD 1
+    SMART TRADING
+================================================= */}
 
-        <article
-          className="hw__bento-card hw__card-1"
-        >
+<article className="hw__bento-card hw__card-1">
+  <img
+    src={
+      process.env.PUBLIC_URL +
+      "/images/home/homeworks/card-1-ai-partnership.png"
+    }
+    alt=""
+    aria-hidden="true"
+    className="hw__card-1-ai-image"
+  />
 
-          {/* ===============================================
-              CARD 1 TOP-RIGHT IMAGE ONLY
-          =============================================== */}
-
-          <img
-            src={
-              process.env.PUBLIC_URL +
-              "/images/home/homeworks/card-1-corner.png"
-            }
-            alt=""
-            aria-hidden="true"
-            className="hw__card-1-corner-image"
-          />
-{/* ===============================================
-    CARD 1 - MOVING PLATFORM LOGOS
-=============================================== */}
-
-<div className="hw__card-1-logo-window">
-
-  {/* BLUR / GLASS BACKGROUND */}
-  <div className="hw__card-1-logo-glass">
-
-    <div className="hw__card-1-logo-track">
-
-      {/* FIRST SET */}
-      {CARD_1_LOGOS.map((logo, index) => (
-        <div
-          className="hw__card-1-logo-box"
-          key={`first-${index}`}
-        >
-          <img
-            src={process.env.PUBLIC_URL + logo}
-            alt={`Trading platform ${index + 1}`}
-            className="hw__card-1-logo"
-          />
-        </div>
-      ))}
-
-      {/* DUPLICATE SET FOR SMOOTH LOOP */}
-      {CARD_1_LOGOS.map((logo, index) => (
-        <div
-          className="hw__card-1-logo-box"
-          key={`second-${index}`}
-          aria-hidden="true"
-        >
-          <img
-            src={process.env.PUBLIC_URL + logo}
-            alt=""
-            className="hw__card-1-logo"
-          />
-        </div>
-      ))}
-
-    </div>
-
+  <div className="hw__card-content hw__card-1-content">
+    <h3>Smart Trading</h3>
+    <p>
+      Guided approach to confident and informed trading decisions.
+    </p>
   </div>
-</div>
-
-          {/* ===============================================
-              CARD 1 CONTENT
-          =============================================== */}
-
-          <div className="hw__card-content">
-
-            <h3>
-              Smart Trading
-            </h3>
-
-
-            <p>
-              Guided approach to confident and informed trading decisions.
-            </p>
-
-          </div>
-
-        </article>
+</article>
 
 
         {/* =================================================
