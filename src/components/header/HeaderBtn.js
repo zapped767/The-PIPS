@@ -36,12 +36,12 @@ const HeaderBtn = () => {
 
         {/* REGISTER */}
         <li>
-          <Link
-            className="header-signin-btn"
-            to={process.env.PUBLIC_URL + "/register"}
-          >
-            Register
-          </Link>
+          <a
+  className="slide__btn dg__btn"
+  href="https://portal.thepips.com/register"
+>
+  Register Now
+</a>
         </li>
 
       </ul>

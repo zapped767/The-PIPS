@@ -2363,15 +2363,12 @@ font-weight: 700 !important;
             className={`text-center w-100 hero-register-wrapper register-slide-${slide.id}`}
           >
 
-            <Link
-              className="slide__btn dg__btn"
-              to={
-                process.env.PUBLIC_URL +
-                "/register"
-              }
-            >
-              Register Now
-            </Link>
+           <a
+  className="slide__btn dg__btn"
+  href="https://portal.thepips.com/register"
+>
+  Register Now
+</a>
 
           </div>
 

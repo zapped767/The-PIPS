@@ -41,12 +41,12 @@ const BornToTradePodcastContentTwo = () => {
                 markets, real trading experiences, and key trends helping you
                 apply practical ideas to your trading journey.
               </p>
-              <Link
-                className="slide__btn dg__btn"
-                to={process.env.PUBLIC_URL + "/register"}
-              >
-                Register now
-              </Link>
+              <a
+  className="slide__btn dg__btn"
+  href="https://portal.thepips.com/register"
+>
+  Register Now
+</a>
             </div>
           </div>
         </div>
