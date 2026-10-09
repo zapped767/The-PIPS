@@ -14,206 +14,130 @@ const DemoTradingAccountContentTwo = () => {
       <style>
         {`
           /* =====================================================
-             DEMO TRADING ACCOUNT
-             EXPLORE ASSETS AND MARKETS
-             UNIQUE COMPONENT CSS ONLY
+             DEMO PAGE - EXPLORE PIPS ASSETS
+             UNIQUE COMPONENT CSS
+             WILL NOT OVERRIDE OTHER PAGES
           ===================================================== */
 
-          .pips-demo-assets26 {
-            /* =====================================
-               DESKTOP MANUAL CONTROLS
-            ===================================== */
-
+          .pips-demo-old-assets26 {
             --demo-assets-height: 550px;
-
-            --demo-assets-content-left: 100px;
-            --demo-assets-content-top: 100px;
-
-            --demo-assets-title-size: 48px;
-            --demo-assets-title-width: 620px;
-
-            --demo-assets-desc-size: 15px;
-            --demo-assets-desc-width: 650px;
-
-            --demo-assets-button-width: 200px;
-            --demo-assets-button-height: 52px;
-            --demo-assets-button-font: 13px;
-
-            --demo-assets-bg-x: 50%;
-            --demo-assets-bg-y: 50%;
 
             position: relative;
 
-            display: flex;
-            align-items: flex-start;
-
             width: 100%;
-
             height: var(--demo-assets-height);
             min-height: var(--demo-assets-height);
 
+            display: flex;
+            align-items: center;
+
             overflow: hidden;
 
-            background-color: #ffffff;
-
-            background-image:
-              var(--demo-assets-desktop-image);
-
+            background-color: #071425;
+            background-image: var(--demo-assets-desktop-image);
             background-repeat: no-repeat;
-
-            background-size: 105% 100%;
-
-            background-position:
-              var(--demo-assets-bg-x)
-              var(--demo-assets-bg-y);
+            background-position: center center;
+            background-size: cover;
 
             box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
           }
 
+          /* Dark left overlay only for text readability */
+          .pips-demo-old-assets26::before {
+            content: "";
 
-          /* =====================================================
-             CONTENT WRAPPER
-          ===================================================== */
+            position: absolute;
+            inset: 0;
 
-          .pips-demo-assets26__inner {
+            z-index: 1;
+
+            background:
+              linear-gradient(
+                90deg,
+                rgba(0, 8, 24, 0.72) 0%,
+                rgba(0, 8, 24, 0.50) 28%,
+                rgba(0, 8, 24, 0.10) 55%,
+                rgba(0, 8, 24, 0) 72%
+              );
+
+            pointer-events: none;
+          }
+
+          .pips-demo-old-assets26__inner {
             position: relative;
-
             z-index: 2;
 
             width: 100%;
+            max-width: 1440px;
 
-            padding-top:
-              var(--demo-assets-content-top);
-
-            padding-left:
-              var(--demo-assets-content-left);
-
-            padding-right: 40px;
+            margin: 0 auto;
+            padding: 0 70px;
 
             box-sizing: border-box;
           }
 
-
-          .pips-demo-assets26__content {
+          .pips-demo-old-assets26__content {
             width: 100%;
-            max-width: 720px;
+            max-width: 650px;
 
             text-align: left;
           }
 
+          .pips-demo-old-assets26__title {
+            max-width: 570px;
 
-          /* =====================================================
-             TITLE
-          ===================================================== */
+            margin: 0 0 18px;
 
-          .pips-demo-assets26__title {
-            width: 100%;
-            max-width:
-              var(--demo-assets-title-width);
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
 
-            margin:
-              0
-              0
-              14px;
-
-            padding: 0;
-
-            color: #012d65 !important;
-
-            font-size:
-              var(--demo-assets-title-size);
-
+            font-size: 46px;
             font-weight: 700;
-
             line-height: 1.15;
-
-            letter-spacing: -0.5px;
-
-            text-align: left;
           }
 
+          .pips-demo-old-assets26__description {
+            max-width: 650px;
 
-          /* =====================================================
-             DESCRIPTION
-          ===================================================== */
+            margin: 0 0 30px;
 
-          .pips-demo-assets26__description {
-            width: 100%;
-            max-width:
-              var(--demo-assets-desc-width);
+            color: rgba(255, 255, 255, 0.78) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.78) !important;
 
-            margin:
-              0
-              0
-              30px;
-
-            padding: 0;
-
-            color: #012d65 !important;
-
-            font-size:
-              var(--demo-assets-desc-size);
-
+            font-size: 15px;
             font-weight: 400;
-
-            line-height: 1.65;
-
-            text-align: left;
+            line-height: 1.7;
           }
 
-
-          /* =====================================================
+          /* =============================================
              BUTTON
-          ===================================================== */
+          ============================================= */
 
-          .pips-demo-assets26__button {
+          .pips-demo-old-assets26__button {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
-            width:
-              var(--demo-assets-button-width);
+            min-width: 210px;
+            height: 52px;
 
-            min-width:
-              var(--demo-assets-button-width);
+            padding: 0 24px;
 
-            height:
-              var(--demo-assets-button-height);
+            border: 1.5px solid #012d65;
+            border-radius: 4px;
 
-            padding:
-              0
-              22px;
+            background: #012d65 !important;
 
-            border:
-              1.5px solid
-              #012d65;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
 
-            border-radius: 3px;
-
-            background:
-              #012d65;
-
-            color:
-              #ffffff !important;
-
-            -webkit-text-fill-color:
-              #ffffff !important;
-
-            font-size:
-              var(--demo-assets-button-font);
-
+            font-size: 13px;
             font-weight: 700;
-
             line-height: 1;
 
-            text-align: center;
-
             text-transform: uppercase;
-
             text-decoration: none !important;
-
-            white-space: nowrap;
 
             box-sizing: border-box;
 
@@ -221,314 +145,185 @@ const DemoTradingAccountContentTwo = () => {
               background-color 0.3s ease,
               color 0.3s ease,
               border-color 0.3s ease,
-              transform 0.3s ease,
-              box-shadow 0.3s ease;
+              transform 0.3s ease;
           }
 
+          .pips-demo-old-assets26__button:hover,
+          .pips-demo-old-assets26__button:focus-visible {
+            background: #f7a901 !important;
 
-          /* =====================================================
-             BUTTON HOVER
-          ===================================================== */
+            color: #012d65 !important;
+            -webkit-text-fill-color: #012d65 !important;
 
-          .pips-demo-assets26__button:hover {
-            background:
-              #f7a901 !important;
-
-            color:
-              #012d65 !important;
-
-            -webkit-text-fill-color:
-              #012d65 !important;
-
-            border-color:
-              #f7a901 !important;
+            border-color: #f7a901 !important;
 
             text-decoration: none !important;
 
-            transform:
-              translateY(-2px);
-
-            box-shadow:
-              0 8px 20px
-              rgba(1, 45, 101, 0.15);
+            transform: translateY(-2px);
           }
 
-
-          .pips-demo-assets26__button:focus {
-            background:
-              #f7a901 !important;
-
-            color:
-              #012d65 !important;
-
-            -webkit-text-fill-color:
-              #012d65 !important;
-
-            border-color:
-              #f7a901 !important;
-
-            outline: none;
+          .pips-demo-old-assets26__button:active {
+            transform: translateY(0);
           }
 
-
-          /* =====================================================
-             LARGE LAPTOP
-          ===================================================== */
-
-          @media (min-width: 1200px) and (max-width: 1500px) {
-
-            .pips-demo-assets26 {
-              --demo-assets-height: 540px;
-
-              --demo-assets-content-left: 80px;
-              --demo-assets-content-top: 95px;
-
-              --demo-assets-title-size: 44px;
-
-              --demo-assets-desc-size: 14px;
-
-              background-size:
-                105% 100%;
-            }
-
-          }
-
-
-          /* =====================================================
+          /* =============================================
              LAPTOP
-          ===================================================== */
+          ============================================= */
 
           @media (min-width: 992px) and (max-width: 1199px) {
-
-            .pips-demo-assets26 {
+            .pips-demo-old-assets26 {
               --demo-assets-height: 500px;
-
-              --demo-assets-content-left: 55px;
-              --demo-assets-content-top: 80px;
-
-              --demo-assets-title-size: 40px;
-
-              --demo-assets-title-width: 520px;
-
-              --demo-assets-desc-size: 14px;
-              --demo-assets-desc-width: 540px;
-
-              --demo-assets-button-width: 185px;
-              --demo-assets-button-height: 48px;
-
-              background-size:
-                105% 100%;
             }
 
+            .pips-demo-old-assets26__inner {
+              padding: 0 50px;
+            }
+
+            .pips-demo-old-assets26__title {
+              font-size: 40px;
+              max-width: 500px;
+            }
+
+            .pips-demo-old-assets26__description {
+              max-width: 520px;
+              font-size: 14px;
+            }
           }
 
-
-          /* =====================================================
+          /* =============================================
              TABLET
-          ===================================================== */
+          ============================================= */
 
           @media (min-width: 768px) and (max-width: 991px) {
-
-            .pips-demo-assets26 {
-              --demo-assets-height: 440px;
-
-              --demo-assets-content-left: 35px;
-              --demo-assets-content-top: 55px;
-
-              --demo-assets-title-size: 32px;
-
-              --demo-assets-title-width: 430px;
-
-              --demo-assets-desc-size: 13px;
-              --demo-assets-desc-width: 430px;
-
-              --demo-assets-button-width: 175px;
-              --demo-assets-button-height: 44px;
-              --demo-assets-button-font: 11px;
-
-              background-size:
-                105% 100%;
+            .pips-demo-old-assets26 {
+              --demo-assets-height: 450px;
             }
 
+            .pips-demo-old-assets26__inner {
+              padding: 0 35px;
+            }
+
+            .pips-demo-old-assets26__content {
+              max-width: 470px;
+            }
+
+            .pips-demo-old-assets26__title {
+              font-size: 34px;
+              max-width: 440px;
+            }
+
+            .pips-demo-old-assets26__description {
+              max-width: 450px;
+              font-size: 13px;
+            }
+
+            .pips-demo-old-assets26__button {
+              min-width: 185px;
+              height: 46px;
+              font-size: 11px;
+            }
           }
 
-
-          /* =====================================================
+          /* =============================================
              MOBILE
-          ===================================================== */
+          ============================================= */
 
           @media (max-width: 767px) {
-
-            .pips-demo-assets26 {
-              /* =============================
-                 MOBILE MANUAL CONTROLS
-              ============================= */
-
-              --demo-assets-height: 380px;
-
-              --demo-assets-content-left: 18px;
-              --demo-assets-content-top: 0px;
-
-              --demo-assets-title-size: 22px;
-              --demo-assets-title-width: 220px;
-
-              --demo-assets-desc-size: 11px;
-              --demo-assets-desc-width: 225px;
-
-              --demo-assets-button-width: 155px;
-              --demo-assets-button-height: 40px;
-              --demo-assets-button-font: 10px;
-
-              --demo-assets-bg-x: 50%;
-              --demo-assets-bg-y: 50%;
-
-              align-items: center;
-
-              height:
-                var(--demo-assets-height);
-
-              min-height:
-                var(--demo-assets-height);
+            .pips-demo-old-assets26 {
+              --demo-assets-height: 390px;
 
               background-image:
-                linear-gradient(
-                  rgba(34, 34, 34, 0.45),
-                  rgba(39, 38, 38, 0.45)
-                ),
                 var(--demo-assets-mobile-image);
 
-              background-size:
-                cover;
-
-              background-position:
-                var(--demo-assets-bg-x)
-                var(--demo-assets-bg-y);
+              background-position: center center;
             }
 
-
-            .pips-demo-assets26__inner {
-              padding-top:
-                var(--demo-assets-content-top);
-
-              padding-left:
-                var(--demo-assets-content-left);
-
-              padding-right: 15px;
+            .pips-demo-old-assets26::before {
+              background:
+                linear-gradient(
+                  90deg,
+                  rgba(0, 8, 24, 0.78) 0%,
+                  rgba(0, 8, 24, 0.55) 55%,
+                  rgba(0, 8, 24, 0.18) 100%
+                );
             }
 
-
-            .pips-demo-assets26__title {
-              margin-bottom: 9px;
-
-              color:
-                #ffffff !important;
-
-              font-size:
-                var(--demo-assets-title-size);
-
-              line-height: 1.15;
+            .pips-demo-old-assets26__inner {
+              padding: 0 20px;
             }
 
-
-            .pips-demo-assets26__description {
-              margin-bottom: 18px;
-
-              color:
-                #ffffff !important;
-
-              font-size:
-                var(--demo-assets-desc-size);
-
-              line-height: 1.5;
+            .pips-demo-old-assets26__content {
+              max-width: 300px;
             }
 
+            .pips-demo-old-assets26__title {
+              max-width: 270px;
 
-            .pips-demo-assets26__button {
-              width:
-                var(--demo-assets-button-width);
-
-              min-width:
-                var(--demo-assets-button-width);
-
-              height:
-                var(--demo-assets-button-height);
-
-              padding:
-                0
-                14px;
-
-              font-size:
-                var(--demo-assets-button-font);
+              font-size: 27px;
             }
 
+            .pips-demo-old-assets26__description {
+              max-width: 290px;
+
+              font-size: 12px;
+              line-height: 1.55;
+            }
+
+            .pips-demo-old-assets26__button {
+              min-width: 165px;
+              height: 42px;
+
+              padding: 0 17px;
+
+              font-size: 10px;
+            }
           }
 
-
-          /* =====================================================
-             VERY SMALL MOBILE
-          ===================================================== */
-
           @media (max-width: 420px) {
-
-            .pips-demo-assets26 {
-              --demo-assets-height: 350px;
-
-              --demo-assets-content-left: 15px;
-
-              --demo-assets-title-size: 20px;
-
-              --demo-assets-desc-size: 10px;
-
-              --demo-assets-button-width: 145px;
-              --demo-assets-button-height: 38px;
-              --demo-assets-button-font: 9px;
+            .pips-demo-old-assets26 {
+              --demo-assets-height: 360px;
             }
 
+            .pips-demo-old-assets26__title {
+              font-size: 24px;
+            }
+
+            .pips-demo-old-assets26__description {
+              font-size: 11px;
+            }
           }
         `}
       </style>
 
-
       <section
-        className="pips-demo-assets26"
+        className="pips-demo-old-assets26"
         style={{
-          "--demo-assets-desktop-image":
-            `url("${desktopImage}")`,
-
-          "--demo-assets-mobile-image":
-            `url("${mobileImage}")`,
+          "--demo-assets-desktop-image": `url("${desktopImage}")`,
+          "--demo-assets-mobile-image": `url("${mobileImage}")`,
         }}
       >
+        <div className="pips-demo-old-assets26__inner">
+          <div className="pips-demo-old-assets26__content">
+            <h2 className="pips-demo-old-assets26__title">
+              Explore Pips assets and markets
+            </h2>
 
-        <div className="pips-demo-assets26__inner">
-
-          <div className="pips-demo-assets26__content">
-
-            <h1 className="pips-demo-assets26__title">
-              Explore Pips Assets And Markets
-            </h1>
-
-
-            <p className="pips-demo-assets26__description">
-              Learn to trade with our various assets from leading
-              global financial markets with the same conditions as
-              on live trading accounts.
+            <p className="pips-demo-old-assets26__description">
+              Learn to trade with our various assets from leading global
+              financial markets with the same conditions as on live trading
+              accounts.
             </p>
 
-
             <a
-              className="pips-demo-assets26__button"
+              className="pips-demo-old-assets26__button"
               href="https://portal.thepips.com/login"
               target="_blank"
               rel="noopener noreferrer"
             >
               Start Practicing Now
             </a>
-
           </div>
-
         </div>
-
       </section>
     </>
   );
