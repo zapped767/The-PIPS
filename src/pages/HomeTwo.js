@@ -1,4 +1,6 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+
+import PipsIntro from "../components/common/PipsIntro";
 
 import SEO from "../components/common/SEO";
 import OrganizationSchema from "../components/common/OrganizationSchema";
@@ -15,17 +17,67 @@ import BannerOne from "../components/home-contents/BannerOne";
 import BannerTwo from "../components/home-contents/BannerTwo";
 
 const HomeTwo = () => {
+  /* =========================================================
+     INTRO
+     TRUE = SHOW INTRO EVERY TIME HOME PAGE LOADS / REFRESHES
+  ========================================================= */
+  const [showIntro, setShowIntro] = useState(true);
+
+  /* =========================================================
+     AFTER INTRO FINISH
+  ========================================================= */
+  const finishIntro = () => {
+    setShowIntro(false);
+  };
+
+
+  /* =========================================================
+     INTRO FIRST
+
+     IMPORTANT:
+     HOME PAGE IS NOT MOUNTED BEHIND THE INTRO.
+
+     Therefore HeroSliderTwo starts fresh from Slide 1
+     only after intro finishes.
+  ========================================================= */
+  if (showIntro) {
+    return (
+      <>
+        <SEO
+          title="Forex, Crypto, Stocks & Global Trading Platform"
+          description="Explore The PIPS trading platform for forex, crypto, stocks, indices and commodities. Access trading accounts, market tools, analytical resources and global trading opportunities."
+          path="/"
+          image="/images/logo/logo.png"
+        />
+
+        <PipsIntro
+          onFinish={finishIntro}
+        />
+      </>
+    );
+  }
+
+
+  /* =========================================================
+     HOME PAGE
+     LOADS ONLY AFTER INTRO COMPLETES
+  ========================================================= */
   return (
     <Fragment>
+
       <SEO
         title="Forex, Crypto, Stocks & Global Trading Platform"
         description="Explore The PIPS trading platform for forex, crypto, stocks, indices and commodities. Access trading accounts, market tools, analytical resources and global trading opportunities."
         path="/"
         image="/images/logo/logo.png"
       />
+
       <OrganizationSchema />
 
+
       <LayoutTwo theme="blue">
+
+        {/* ALWAYS STARTS FROM SLIDE 1 */}
         <HeroSliderTwo />
 
         <FeatureBlock />
@@ -43,7 +95,9 @@ const HomeTwo = () => {
         <BannerTwo />
 
         <HowWorksTwo />
+
       </LayoutTwo>
+
     </Fragment>
   );
 };

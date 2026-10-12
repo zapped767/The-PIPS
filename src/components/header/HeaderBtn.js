@@ -34,15 +34,15 @@ const HeaderBtn = () => {
           </Link>
         </li>
 
-        {/* REGISTER */}
-        <li>
-          <a
-  className="slide__btn dg__btn"
-  href="https://portal.thepips.com/register"
->
-  Register Now
-</a>
-        </li>
+{/* REGISTER */}
+<li>
+  <a
+    className="header-signin-btn"
+    href="https://portal.thepips.com/register"
+  >
+    Register
+  </a>
+</li>
 
       </ul>
 
